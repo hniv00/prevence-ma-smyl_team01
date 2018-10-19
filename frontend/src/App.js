@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Parallax, Background } from 'react-parallax';
 import logo from './logo.svg';
 import './App.css';
 
+/* Default... */
 class App extends Component {
   render() {
     return (
