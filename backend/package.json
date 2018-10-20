@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "build/main.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "backpack dev",
+    "start": "node ./build/main.js",
+    "build": "backpack build",
+    "build:watch": "nodemon --watch ./src --exec 'npm run build'"
+  },
+  "dependencies": {
+    "backpack-core": "^0.7.0",
+    "express": "^4.16.4"
+  }
+}
