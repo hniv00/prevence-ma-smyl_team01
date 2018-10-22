@@ -3,9 +3,7 @@ import React, {Component} from 'react'
 export class HelloPage extends Component{
     render(){
         return(
-        <p>
-            Hello World!!
-        </p>
+          <header>Nic to nebolí. Nic to nestojí. Může ti zachránit život. Prevence má smysl!</header>
         );
     }
 }
