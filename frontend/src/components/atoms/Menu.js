@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Nav, NavItem, NavLink } from 'reactstrap';
 import "../../App.css";
 
 export class Menu extends Component {
@@ -7,9 +8,6 @@ export class Menu extends Component {
       <Nav navbar>
         <NavItem>
           <NavLink href="/">Landing Page</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="/vysetreni">Preventivní vyšetření</NavLink>
@@ -25,6 +23,9 @@ export class Menu extends Component {
         </NavItem>
         <NavItem>
           <NavLink href="/kontakty">Kontakt</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/admin">Admin modul</NavLink>
         </NavItem>
       </Nav>
     );

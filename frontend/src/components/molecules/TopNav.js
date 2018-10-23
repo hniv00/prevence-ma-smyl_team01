@@ -1,7 +1,10 @@
-import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import React, { Component } from "react"
+import { Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
+import {Menu} from '../atoms/Menu';
 
-export default class Example extends React.Component {
+import logo from '../../img/logo.jpg';
+
+export class TopNav extends Component {
   constructor(props) {
     super(props);
 
@@ -20,10 +23,10 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">#prevenceMaSmysl</NavbarBrand>
+          <NavbarBrand href="/" className="mr-auto"><img src={"logo"}/>logo TBD</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Menu/>
+            <Menu></Menu>
           </Collapse>
         </Navbar>
       </div>
