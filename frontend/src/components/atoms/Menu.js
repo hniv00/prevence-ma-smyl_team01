@@ -13,12 +13,12 @@ export class Menu extends Component {
       <div id="flyoutMenu"
            onMouseDown={this.props.handleMouseDown}
            className={visibility}>
-        <h2><a href="#">Landing Page</a></h2>
-        <h2><a href="#">Preventivní vyšetření</a></h2>
-        <h2><a href="#">#PrevenceMaSmysl</a></h2>
-        <h2><a href="#">Příběhy</a></h2>
-        <h2><a href="#">Akce</a></h2>
-        <h2><a href="#">Kontakt</a></h2>
+        <a href="/"><h2>Landing Page</h2></a>
+        <a href="/vysetreni"><h2>Preventivní vyšetření</h2></a>
+        <a href="/feed"><h2>#PrevenceMaSmysl</h2></a>
+        <a href="/pribehy"><h2>Příběhy</h2></a>
+        <a href="/akce"><h2>Akce</h2></a>
+        <a href="/kontakty"><h2>Kontakt</h2></a>
       </div>
     );
   }
