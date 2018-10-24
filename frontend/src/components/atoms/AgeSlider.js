@@ -2,6 +2,8 @@ import React, { Component } from "react"
 // Plugin NoUiSlider that creates slider
 import {nouislider} from 'nouislider';
 
+// Not working
+
 export class AgeSlider extends Component {
   /*
   var mySlider = (
