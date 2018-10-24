@@ -11,10 +11,11 @@
     "build:watch": "nodemon --watch ./src --exec 'npm run build'"
   },
   "dependencies": {
+    "@types/sequelize": "^4.27.28",
     "backpack-core": "^0.7.0",
     "express": "^4.16.4",
     "express-async-await": "^1.1.0",
-    "sequelize": "^4.41.0",
-    "sqlite3": "^4.0.3"
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.41.0"
   }
 }

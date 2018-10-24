@@ -1,3 +1,8 @@
 import Sequelize from 'sequelize';
 
-export const sequelize = new Sequelize('sqlite:./prevencemasmysl.db3');
+const sequelize = new Sequelize({
+    database: 'prevencemasmysl',
+    username: 'root',
+    password: null,
+    dialect: 'mysql'
+  });
