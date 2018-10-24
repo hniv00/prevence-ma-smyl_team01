@@ -4,30 +4,26 @@ import "../../App.css";
 
 export class Menu extends Component {
   render() {
+    var visibility = "hide";
+
+    if (this.props.menuVisibility) {
+      visibility = "show";
+    }
+
     return (
-      <Nav navbar>
-        <NavItem>
-          <NavLink href="/">Landing Page</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/vysetreni">Preventivní vyšetření</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/feed">#PrevenceMaSmysl</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/pribehy">Příběhy</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/akce">Akce</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/kontakty">Kontakt</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/admin">Admin modul</NavLink>
-        </NavItem>
-      </Nav>
+      <div id="flyoutMenu"
+           onMouseDown={this.props.handleMouseDown}
+           className={visibility}>
+        <a href="#" class="menu-close-button" data-rel="menu-close-button">
+				<span>Zavřít</span> </a>
+        <a href="/"><p>Landing Page</p></a>
+        <a href="/vysetreni"><p>Preventivní vyšetření</p></a>
+        <a href="/feed"><p>#PrevenceMaSmysl</p></a>
+        <a href="/pribehy"><p>Příběhy</p></a>
+        <a href="/akce"><p>Akce</p></a>
+        <a href="/kontakty"><p>Kontakt</p></a>
+        <a href="/admin"><p>Admin modul</p></a>
+      </div>
     );
   }
 }

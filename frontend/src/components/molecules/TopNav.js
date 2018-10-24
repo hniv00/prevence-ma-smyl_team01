@@ -1,35 +1,48 @@
-import React, { Component } from "react"
-import { Collapse, Navbar, NavbarToggler, NavbarBrand } from 'reactstrap';
+import React, {Component} from 'react'
+import {Container, Row, Col, Button} from 'reactstrap'
+
 import {Menu} from '../atoms/Menu';
+import {MenuButton} from '../atoms/MenuButton';
 
-import logo from '../../img/logo.jpg';
 
-export class TopNav extends Component {
-  constructor(props) {
-    super(props);
+/*
+When you click on a button, the menu slides into view
+When you click anywhere on the menu, the menu slides out of view
+*/
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+export class TopNav extends React.Component {
+
+  constructor(props, context) {
+    super(props, context);
+
     this.state = {
-      collapsed: true
+      visible: false
     };
+
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  toggleNavbar() {
+  handleMouseDown(e) {
+    this.toggleMenu();
+
+    console.log("clicked");
+    e.stopPropagation();
+  }
+
+  toggleMenu() {
     this.setState({
-      collapsed: !this.state.collapsed
+        visible: !this.state.visible
     });
   }
+
   render() {
-    return (
-      <div>
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto"><img src={"logo"}/>logo TBD</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Menu></Menu>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <MenuButton handleMouseDown={this.handleMouseDown}/>
+      <Menu handleMouseDown={this.handleMouseDown}
+            menuVisibility={this.state.visible}/>
+    </div>
+  );
+}
 }
