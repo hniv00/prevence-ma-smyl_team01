@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 import {HelloPage} from "./components/pages/HelloPage"
 
 class App extends Component{
+
   render(){
     return(
       <BrowserRouter>
