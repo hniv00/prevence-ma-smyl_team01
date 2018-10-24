@@ -12,6 +12,7 @@ import logo from '../../img/logo.jpg';
 export class HelloPage extends Component {
   render() {
     return (<div>
+
       <header>
         <Row>
           <Col>
@@ -21,25 +22,37 @@ export class HelloPage extends Component {
       </header>
 
       <Container>
+
+        <Parallax blur={10} strength={200}>
+          <div style={{ height: '50px' }} />
+          <section>
+            <Row>
+              <Col xs="0" sm="2"></Col>
+              <Col xs="12" sm="8">
+                <h4>Nic to nebolí. Nic to nestojí. Může ti zachránit život. Prevence má smysl! Stačí pár kliknutí a hned budete vědět, na jakou preventivní prohlídku nezapomenout.</h4>
+              </Col>
+              <Col xs="0" sm="2"></Col>
+            </Row>
+            <Row>
+              <Col xs="0" sm="2"></Col>
+              <Col xs="12" sm="8">
+                <Filter></Filter>
+              </Col>
+              <Col xs="0" sm="2"></Col>
+            </Row>
+          </section>
+
+          <Background className="custom-bg" >
+            <img src="http://cdn.strategyonline.ca/wp/wp-content/uploads/2018/08/Cossette-Health1.jpg?93ff1b" alt="lp-image"
+            style = {{width: '1200px'}}/>
+          </Background>
+          <div style={{ height: '50px' }} />
+        </Parallax>
+
         <section>
-          <Row>
-            <Col xs="0" sm="2"></Col>
-            <Col xs="12" sm="8">
-              <h4>Nic to nebolí. Nic to nestojí. Může ti zachránit život. Prevence má smysl! Stačí pár kliknutí a hned budete vědět, na jakou preventivní prohlídku nezapomenout.</h4>
-            </Col>
-            <Col xs="0" sm="2"></Col>
-          </Row>
-          <Row>
-            <Col xs="0" sm="2"></Col>
-            <Col xs="12" sm="8">
-              <Filter></Filter>
-            </Col>
-            <Col xs="0" sm="2"></Col>
-          </Row>
-
+          <h5>Vyhledaná preventivní vyšetření</h5>
+          <div style={{ height: '50px' }} />
         </section>
-
-        <section>Výsledky</section>
 
         <section>
           <h5>O projektu</h5>
