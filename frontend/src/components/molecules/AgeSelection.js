@@ -6,7 +6,7 @@ export class AgeSelection extends Component {
     return (
       <div>
         <h6>Vyber věk</h6>
-        <AgeSlider></AgeSlider>
+        <AgeSlider/>
       </div>
     );
   }
