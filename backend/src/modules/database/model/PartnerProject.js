@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const Diagnosis = sequelize.define('Diagnosis', {
+  const PartnerProject = sequelize.define('PartnerProject', {
       Name: DataTypes.STRING,
       Description: DataTypes.TEXT
     }, {});
-  return Diagnosis;
+  return PartnerProject;
 };

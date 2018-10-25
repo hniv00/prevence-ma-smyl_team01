@@ -4,7 +4,8 @@ export class DiagnosisController{
   }
 
   getById(req, res){
-    
+    if (req.params.id === '0') next('route')
+    else next()
   }
 
   search(){
