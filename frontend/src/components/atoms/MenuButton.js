@@ -19,3 +19,16 @@ export class MenuButton extends Component {
     );
   }
 }
+
+/*
+Try to change it..
+Change like this..
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+
+Into this..
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+*/

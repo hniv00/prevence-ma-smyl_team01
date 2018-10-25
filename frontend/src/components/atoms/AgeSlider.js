@@ -1,24 +1,22 @@
 import React, { Component } from "react"
-// Plugin NoUiSlider that creates slider
-import {nouislider} from 'nouislider';
-
-// Not working
 
 export class AgeSlider extends Component {
-  /*
-  var mySlider = (
-      nouislider.create(this.refs.slider1, {
-        start: [40],
-        connect: [true, false],
-        step: 1,
-        range: { min: 0, max: 120 }
-      });
-)
-*/
+  constructor(props){
+    super(props)
+    this.state = {value: 35};
 
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event){
+    this.setState({value: event.target.value})
+  }
 
   render() {
-    return ( null
+    return (
+      <div class="sliderContainer">
+         <input type="range" min="1" max="130" class="" value={this.state.value} onChange={this.handleChange}/>
+      </div>
     );
   }
 }
