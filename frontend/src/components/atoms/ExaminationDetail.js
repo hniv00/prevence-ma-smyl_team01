@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
 
-export class ExaminationModal extends Component {
+export class ExaminationDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {

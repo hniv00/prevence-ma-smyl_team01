@@ -7,8 +7,10 @@ export class ExaminationList extends Component {
   render() {
     return (
     <div>
-      <h5>Seznam vyhledaných preventivních vyšetření</h5>
-      <Examination></Examination>
+        <h5>Seznam vyhledaných preventivních vyšetření</h5>
+        <Examination></Examination>
+      <div style={{ height: '20px' }} />
+        <Button color="info">Chci vidět více výsledků</Button>{' '}
     </div>
   );
 }
