@@ -14,4 +14,4 @@
     "host": "localhost",
     "dialect": 'mysql'
   }
-  });
+  };
