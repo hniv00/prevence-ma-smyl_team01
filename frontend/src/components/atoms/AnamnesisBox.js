@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Button, ButtonGroup } from 'reactstrap';
 
+
 export class AnamnesisBox extends Component {
   constructor (props) {
     super(props);
@@ -33,3 +34,38 @@ export class AnamnesisBox extends Component {
     );
   }
 }
+
+
+
+/* Test of combo box with tags */
+/*
+import { SelectPopover} from 'react-select-popover';
+
+export class AnamnesisBox extends Component {
+render () {
+var options = [
+    { label: "CSS", value: "css" },
+    { label: "HTML", value: "html" },
+    { label: "JavaScript", value: "js" },
+    { label: "Ruby on Rails", value: "ror" },
+];
+var selectFieldName = "my-select";
+var selectPlaceholder = "Choose some options...";
+var onChange = function(obj) {
+    console.log("EVENT", obj.event); // "added" or "removed"
+    console.log("ITEM", obj.item);   // item that has been added/removed { label: '...', value: '...' }
+    console.log("VALUE", obj.value); // [{label: '...', value: '...'}, {label: '...', value: '...'}]
+}
+
+return(
+    <SelectPopover
+        options={options}
+        name={selectFieldName}
+        selectPlaceholder={selectPlaceholder}
+        onChange={ onChange }
+    />
+);
+}
+}
+
+*/

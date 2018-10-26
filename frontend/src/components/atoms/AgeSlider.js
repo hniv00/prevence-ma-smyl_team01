@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import './AgeSlider.css'
+// import './AgeSlider.css'
 
 export class AgeSlider extends Component {
   constructor(props){
