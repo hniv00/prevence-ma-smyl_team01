@@ -1,32 +1,31 @@
 import React, {Component} from 'react';
 import { Container, Button, Row, Col } from 'reactstrap';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGhost } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faGhost)
-
+import {FontIcon} from "../atoms/FontIcon";
 
 export class Footer extends Component {
-
-
   render() {
     return (
       <div>
         <Container>
           <Row>
             <Col>
-              <button type="button" class="btn btn-fb"><i className="fa fa-facebook pr-1"></i> Facebook</button>
+            <a href="/" className="footerMenu">Landing Page</a>
+            <a href="/vysetreni" className="footerMenu">Preventivní vyšetření</a>
+            <a href="/feed" className="footerMenu">#PrevenceMaSmysl</a>
+            <a href="/pribehy" className="footerMenu">Příběhy</a>
+            <a href="/akce" className="footerMenu">Akce</a>
+            <a href="/kontakty" className="footerMenu">Kontakt</a>
+            <a href="/admin" className="footerMenu">Admin modul</a>
             </Col>
             <Col>
-              <button type="button" class="btn btn-tw"><i className="fa fa-twitter pr-1"></i> Twitter</button>
+              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'facebook'}/><i/></a>
+              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'twitter'}/><i/></a>
+              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'instagram'}/><i/></a>
+              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'google'}/><i/></a>
             </Col>
             <Col>
-              <button type="button" class="btn btn-ins"><i className="fa fa-instagram pr-1"></i> Instagram</button>
-            </Col>
-            <Col>
-              <FontAwesomeIcon icon="ghost" />Google +
+              <a href="#" ><FontIcon icon={'angle-up'}/><i/></a>
             </Col>
           </Row>
           <Row>
