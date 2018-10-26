@@ -39,7 +39,7 @@ export class TopNav extends React.Component {
   render() {
   return (
     <div>
-      <MenuButton handleMouseDown={this.handleMouseDown}/>
+      <MenuButton handleMouseDown={this.handleMouseDown} />
       <Menu handleMouseDown={this.handleMouseDown}
             menuVisibility={this.state.visible}/>
     </div>

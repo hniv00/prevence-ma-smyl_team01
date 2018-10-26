@@ -4,12 +4,14 @@ import '../../App.css';
 export class MenuButton extends Component {
   myFunction(x) {
     x.classList.toggle("change");
+
+    console.log("shouldbechanged");
 }
 
   render() {
     return (
       <div>
-        <div class="buttonContainer" onclick="myFunction(this)"
+        <div class="buttonContainer" onClick={this.myFunction}
              onMouseDown={this.props.handleMouseDown}>
           <div class="bar1"></div>
           <div class="bar2"></div>
@@ -21,8 +23,7 @@ export class MenuButton extends Component {
 }
 
 /*
-Try to change it..
-Change like this..
+Try to change it like this..
 <button onclick="activateLasers()">
   Activate Lasers
 </button>

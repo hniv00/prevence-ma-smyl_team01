@@ -53,8 +53,8 @@ export class HelloPage extends Component {
         </Parallax>
 
         <section>
-        <div style={{ height: '50px' }} />
-          <ExaminationList></ExaminationList>
+          <div style={{ height: '50px' }} />
+            <ExaminationList></ExaminationList>
           <div style={{ height: '50px' }} />
         </section>
 

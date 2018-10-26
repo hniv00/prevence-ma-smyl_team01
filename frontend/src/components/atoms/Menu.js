@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import "../../App.css";
+import {MenuButton} from "./MenuButton"
 
 export class Menu extends Component {
   render() {
@@ -15,7 +16,7 @@ export class Menu extends Component {
            onMouseDown={this.props.handleMouseDown}
            className={visibility}>
         <a href="#" class="menu-close-button" data-rel="menu-close-button">
-				<span>Zavřít</span> </a>
+				<MenuButton handleMouseDown={this.handleMouseDown}/> </a>
         <a href="/"><p>Landing Page</p></a>
         <a href="/vysetreni"><p>Preventivní vyšetření</p></a>
         <a href="/feed"><p>#PrevenceMaSmysl</p></a>

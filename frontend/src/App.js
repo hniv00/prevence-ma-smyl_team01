@@ -3,6 +3,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import {HelloPage} from "./components/pages/HelloPage"
+import {ExamPage} from "./components/pages/ExamPage"
 
 class App extends Component{
 
@@ -11,6 +12,7 @@ class App extends Component{
       <BrowserRouter>
         <Route exact path="/" component={HelloPage} />
       </BrowserRouter>
+      //  <Route path="/vysetreni" component={ExamPage} />
     );
   }
 }

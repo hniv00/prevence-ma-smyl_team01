@@ -68,40 +68,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 4px;
     background-color: #333;
-    margin: 6px 0;
+    margin: 5px 0;
     transition: 0.4s;
+    border-radius: 25px;
 }
 
 /* Rotate first bar */
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-10px, 7px);
 }
 
 /* Fade out the second bar */
-.change .bar2 {
-    opacity: 0;
-}
+.change .bar2 {opacity: 0;}
 
 /* Rotate last bar */
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-5px, -8px);
+    transform: rotate(45deg) translate(-5px, -4px);
 }
-
 
 
 /* Menu */
 #flyoutMenu {
-  width: 33vw;
+  width: 66vw;
   height: 100vh;
-  background-color: #96D9FF;
+  background-color: #999;
   position: fixed;
   top: 0;
   right: 0;
+  padding: 15px;
   transition: transform .3s
               cubic-bezier(0, .52, 0, 1);
   overflow: scroll;
@@ -117,12 +116,30 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-#flyoutMenu p a {
-  margin-left: 15px;
+#flyoutMenu a p {
+  color: #212529;
+  margin-left: 10px;
   text-decoration: none;
 }
 
-#flyoutMenu p a:hover {
+#flyoutMenu a:hover {
   text-decoration: none;
-  transform: scale(110%);
+  font-size: 17px;
+}
+
+
+
+@media screen and (min-width: 480px) {
+
+  #flyoutMenu {
+    width: 33vw;
+  }
+}
+
+
+
+@media screen and (min-width: 960px) {
+  #flyoutMenu {
+    width: 25vw;
+  }
 }
