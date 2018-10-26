@@ -1,0 +1,31 @@
+.sliderContainer{
+    width: 50%;
+    margin: 2px auto;
+}
+
+.slider {
+    -webkit-appearance: none; 
+    appearance: none;
+    height: 2px; 
+    background: #969696; 
+    outline: none; 
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    border: 1px solid #969696;
+    appearance: none;
+    width: 25px; 
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff; 
+}
+
+.slider::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px; 
+    height: 25px;
+    border-radius: 50%; 
+    background: #ffffff; 
+}
