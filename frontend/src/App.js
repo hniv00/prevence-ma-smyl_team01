@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import {HelloPage} from "./components/pages/HelloPage"
@@ -10,9 +10,13 @@ class App extends Component{
   render(){
     return(
       <BrowserRouter>
-        <Route exact path="/" component={HelloPage} />
+        <Switch>
+          <Route exact path="/" component={HelloPage} />
+          <Route path="/vysetreni" component={ExamPage} />
+          <Route path="/admin-login" component={ExamPage} />
+        </Switch>
       </BrowserRouter>
-      //  <Route path="/vysetreni" component={ExamPage} />
+
     );
   }
 }
