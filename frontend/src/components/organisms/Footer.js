@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import { Container, Button, Row, Col } from 'reactstrap';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faCapsules } from '@fortawesome/free-solid-svg-icons'
-import { facebook } from '@fortawesome/free-solid-svg-icons'
+import { faGhost } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faGhost)
 
 
 export class Footer extends Component {
+
 
   render() {
     return (
@@ -15,16 +17,16 @@ export class Footer extends Component {
         <Container>
           <Row>
             <Col>
-              <button type="button" class="btn btn-fb"><i class="fa fa-facebook pr-1"></i> Facebook</button>
+              <button type="button" class="btn btn-fb"><i className="fa fa-facebook pr-1"></i> Facebook</button>
             </Col>
             <Col>
-              <button type="button" class="btn btn-tw"><i class="fa fa-twitter pr-1"></i> Twitter</button>
+              <button type="button" class="btn btn-tw"><i className="fa fa-twitter pr-1"></i> Twitter</button>
             </Col>
             <Col>
-              <button type="button" class="btn btn-ins"><i class="fa fa-instagram pr-1"></i> Instagram</button>
+              <button type="button" class="btn btn-ins"><i className="fa fa-instagram pr-1"></i> Instagram</button>
             </Col>
             <Col>
-              <button type="button" class="btn btn-gplus"><i class="fa fa-google-plus pr-1"></i> Google +</button>
+              <FontAwesomeIcon icon="ghost" />Google +
             </Col>
           </Row>
           <Row>
