@@ -9,7 +9,7 @@ import {ExaminationList} from '../organisms/ExaminationList';
 import {About} from '../organisms/About';
 import {Footer} from '../organisms/Footer';
 
-import logo from '../../img/logo.jpg';
+import logo from '../../img/logo_prevence.png';
 
 export class HelloPage extends Component {
   render() {
@@ -17,6 +17,9 @@ export class HelloPage extends Component {
 
       <header>
         <Row>
+          <Col>
+            <img src={logo} style = {{width: '200px', margin: '15px 15px'}} alt="My logo" />
+          </Col>
           <Col>
             <TopNav></TopNav>
           </Col>
