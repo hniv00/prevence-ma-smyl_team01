@@ -33,10 +33,13 @@ export const EXAMINATIONS = [
    },
    {
     IDExamination: 5,
-    Name: 'Prohlídka u pedagoga',
+    Name: 'Prohlídka u pediatra',
     Description: 'To nejlepší pro vaše ratolesti.',
     AgeFrom: 0,
     AgeUntil: 18,
     Gender: 'U',
     },
 ];
+
+
+export const IDS = [ 1, 3, 4];
