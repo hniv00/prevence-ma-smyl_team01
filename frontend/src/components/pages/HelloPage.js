@@ -4,7 +4,7 @@ import {Row, Col} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Filter} from '../organisms/Filter';
-import {ExaminationList} from '../organisms/ExaminationList.1';
+import {ExaminationList} from '../organisms/ExaminationList';
 import {About} from '../organisms/About';
 import {Footer} from '../organisms/Footer';
 
