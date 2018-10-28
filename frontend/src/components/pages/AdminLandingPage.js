@@ -15,15 +15,17 @@ export class AdminLandingPage extends Component {
       <div>
         <h2>Vítejte v admin modulu</h2>
         <h3>Zde budete mít brzy možnost spravovat obsah webu ...</h3>
-        <Button id="cssButton"
-          className="signin-btn"
-          //color="danger"
-          //type="button"
-          //onClick={() => this.signUp()}
-          href="/admin-login"
-          >
-          Odhlásit
-        </Button>
+        <div className="logout">
+          <Button
+            className="logout-btn"
+            color="danger"
+            type="button"
+            //onClick={() => this.signUp()}
+            href="/admin-login"
+            >
+            Odhlásit
+          </Button>
+        </div>
       </div>
     );
   }
