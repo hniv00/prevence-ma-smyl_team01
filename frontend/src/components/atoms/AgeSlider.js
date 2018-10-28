@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import './AgeSlider.css'
+import './AgeSlider.css'
 
 export class AgeSlider extends Component {
   constructor(props){
@@ -16,7 +16,7 @@ export class AgeSlider extends Component {
   render() {
     return (
       <div class="sliderContainer">
-         <input type="range" min="1" max="130" class="slider" value={this.state.value} onChange={this.handleChange}/>
+         <input type="range" min="18" max="120" class="slider" value={this.state.value} onChange={this.handleChange}/>
       </div>
     );
   }
