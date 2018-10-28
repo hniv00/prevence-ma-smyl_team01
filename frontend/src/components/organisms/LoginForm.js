@@ -48,7 +48,6 @@ export class LoginForm extends React.Component {
                 Přihlásit
                 </Button>
             </div>
-
         </Jumbotron>
     );
   }

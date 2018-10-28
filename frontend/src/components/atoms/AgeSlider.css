@@ -4,28 +4,28 @@
 }
 
 .slider {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
-    height: 2px; 
-    background: #969696; 
-    outline: none; 
+    height: 2px;
+    background: #065B69;
+    outline: none;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; 
-    border: 1px solid #969696;
+    -webkit-appearance: none;
+    border: 1px solid #065B69;
     appearance: none;
-    width: 25px; 
+    width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #ffffff; 
+    background: white;
 }
 
 .slider::-moz-range-thumb {
     -moz-appearance: none;
     appearance: none;
-    width: 25px; 
+    width: 25px;
     height: 25px;
-    border-radius: 50%; 
-    background: #ffffff; 
+    border-radius: 50%;
+    background: #ffffff;
 }
