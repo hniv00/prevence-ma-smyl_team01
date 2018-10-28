@@ -8,34 +8,27 @@ import {ExaminationList} from '../organisms/ExaminationList';
 import {About} from '../organisms/About';
 import {Footer} from '../organisms/Footer';
 
-import logo from '../../img/logo_prevence.png';
+import logo from '../../img/logo_invert.png';
 import '../../parallax.css';
 
-const image = 'https://www.iamexpat.nl/sites/default/files/styles/article--full/public/dutch-health-insurance.jpg?itok=J7ryjAH6';
+import image from '../../img/hands.jpg';
 
 export class HelloPage extends Component {
   render() {
     return (<div>
 
-      <header>
-        <Row>
-          <Col>
-            <img src={logo} style = {{width: '200px', margin: '15px 15px'}} alt="My logo" />
-          </Col>
-          <Col>
-            <TopNav/>
-          </Col>
-        </Row>
-      </header>
-
-        <Parallax blur={3} strength={200} bgImage={image} >
-          <div style={{margin: '2%'}}>
+        <Parallax strength={200} bgImage={image} >
+          <header style={{margin: '2%'}}>
             <Row>
-              <Col xs="0" sm="2"/>
-              <Col xs="12" sm="8">
-                <h4>Nic to nebolí. Nic to nestojí. Může ti zachránit život. Prevence má smysl! Stačí pár kliknutí a hned budete vědět, na jakou preventivní prohlídku nezapomenout.</h4>
+              <Col xs="0" sm="0" md="3">
+                <img src={logo} style = {{width: '100%', 'max-width': '200px', margin: '15px 15px'}} alt="My logo" />
               </Col>
-              <Col xs="0" sm="2"/>
+              <Col xs="12" sm="12" md="6">
+                <h3 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. Prevence má smysl. Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.</h3>
+              </Col>
+              <Col xs="0" sm="0" md="3">
+                <TopNav/>
+              </Col>
             </Row>
             <Row>
               <Col xs="0" sm="2"/>
@@ -44,7 +37,7 @@ export class HelloPage extends Component {
               </Col>
               <Col xs="0" sm="2"/>
             </Row>
-            </div>
+            </header>
         </Parallax>
 
         <Parallax>

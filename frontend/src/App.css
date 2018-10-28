@@ -11,13 +11,12 @@ html {
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
   background-color: #33b2a2
 }
 
 p {
   text-align: justify;
-  background-color: white;
+
 }
 
 #cssTextProject {
@@ -27,14 +26,29 @@ p {
 #cssTextStory {
   background-color: #33b2a2;
 }
-  h1, h2, h3, h4, h5, h6 {
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
   text-align: center;
   color: #065B69;
 }
 
+h3 {
+  margin-top: 80px;
+  text-align: center;
+  color: white;
+}
+
+header h6 {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+
 /* Color of "Selected:" */
 #cssTitle {
-  color: #065B69;
+  color: white;
 }
 
 
@@ -78,7 +92,7 @@ p {
 /* Color of Examination */
 #cssExamination {
   background-color: #065B69;
-  color: #a5f9ee;
+  color: white;
 }
 
 #cssCardExamination {
@@ -90,32 +104,38 @@ p {
 /* Color of Buttons */
 #cssButtonChecked  {
   background-color: white;
-  color: #065B69;
-  border-color: #065B69;
+  color: #06213e9;
+  border-color: #06213e9;
 }
 
 #cssButtonChecked:active {
-  background-color: #065B69;
-  color: #a5f9ee;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 #cssButton  {
-  background-color: #065B69;
-  color: #a5f9ee;
-  border-color: #065B69;
+  background-color: white;
+  color: #06213e;
+  border-color: #06213e;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary {
+  background-color: white;
+  color: #06213e;
+  border-color: #06213e;
 }
 
 #cssButton:active {
-  background-color: #a5f9ee;
-  color: #065B69;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 #cssButton:hover {
-  background-color: #a5f9ee;
-  color: #065B69;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 /* Menu button ala hamburger */
@@ -123,6 +143,7 @@ p {
     display: inline-block;
     cursor: pointer;
     position: fixed;
+    margin-top: 15px;
     top: 15px;
     right: 15px;
 }
@@ -208,11 +229,13 @@ p {
 
 /* Color of Footer */
 #cssFooterMenu {
+  font-size: 90%;
   color: #33b2a2;
 }
 
 #cssFooterMenu:hover {
   color: #065B69;
+  text-decoration: none;
 }
 
 #cssCopyright {
