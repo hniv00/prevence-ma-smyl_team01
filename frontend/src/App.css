@@ -151,6 +151,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 50%;
   padding: 5px;
 }
+/*login-button*/
+.login-button {
+  margin-top: 15px;
+  width: 48%;
+}
+
 /*logout-btn*/
 .logout{
   margin-top: 5%;
