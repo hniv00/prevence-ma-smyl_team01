@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Jumbotron, Button, Row, Col, Label } from 'reactstrap';
 import { Link } from "react-router-dom";
+import {LoginButton} from '../atoms/LoginButton';
+
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -39,14 +41,7 @@ export class LoginForm extends React.Component {
               onChange={event => this.setState({username: event.target.value})}/>
             </div>
             <div className="Submit-button">
-              <Button
-                className="login-button"
-                color="primary"
-                type="button"
-                //onClick={() => this.signUp()}
-                href="/admin-lp">
-                Přihlásit
-                </Button>
+                <LoginButton></LoginButton>
             </div>
         </Jumbotron>
     );

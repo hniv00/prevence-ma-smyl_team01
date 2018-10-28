@@ -212,15 +212,17 @@ p {
   height: 300px;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 5px 5px 25px lightgrey;
+  box-shadow: 5px 5px 30px #343233;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .login-input-group {
   margin: 10px;
+
 }
 
 .login-input {
@@ -235,9 +237,9 @@ p {
 }
 
 /*logout-btn*/
-.logout{
-  margin-top: 5%;
-  text-align: center;
+.logout-button{
+  margin-top: 10%;
+  margin-left: 70%;
 }
 
 /* Color of Footer */
