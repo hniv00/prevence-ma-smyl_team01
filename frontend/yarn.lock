@@ -6828,6 +6828,10 @@ react-dev-utils@^6.0.5:
 react-dom@^0.14.2:
   version "0.14.9"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.14.9.tgz#05064a3dcf0fb1880a3b2bfc9d58c55d8d9f6293"
+<<<<<<< HEAD
+  integrity sha1-BQZKPc8PsYgKOyv8nVjFXY2fYpM=
+=======
+>>>>>>> master
 
 react-dom@^16.5.2:
   version "16.5.2"
@@ -6849,6 +6853,11 @@ react-lifecycles-compat@^3.0.4:
 react-onclickoutside@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-4.0.1.tgz#4525fcc28a9fdccfa2a34313eec0d842e7c98e33"
+
+react-onclickoutside@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-4.0.1.tgz#4525fcc28a9fdccfa2a34313eec0d842e7c98e33"
+  integrity sha1-RSX8woqf3M+io0MT7sDYQufJjjM=
 
 react-parallax@^2.0.1:
   version "2.0.1"
@@ -6940,6 +6949,7 @@ react-scripts@2.0.5:
 react-select-popover@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/react-select-popover/-/react-select-popover-0.1.1.tgz#595a5dad7c99542fad471f5e45f43e24474b2193"
+  integrity sha1-WVpdrXyZVC+tRx9eRfQ+JEdLIZM=
   dependencies:
     react-dom "^0.14.2"
     react-onclickoutside "4.0.1"
