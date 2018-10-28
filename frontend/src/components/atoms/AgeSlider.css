@@ -18,7 +18,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #a5f9ee;
+    background: white;
 }
 
 .slider::-moz-range-thumb {

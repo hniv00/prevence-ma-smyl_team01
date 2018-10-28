@@ -17,9 +17,16 @@ body {
 
 p {
   text-align: justify;
+  background-color: white;
+}
+
+#cssTextProject {
   background-color: #a5f9ee;
 }
 
+#cssTextStory {
+  background-color: #33b2a2;
+}
   h1, h2, h3, h4, h5, h6 {
   text-align: center;
   color: #065B69;
@@ -37,6 +44,11 @@ p {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+#cssAboutProject {
+  background-color: #a5f9ee;
+  color: #065B69;
 }
 
 /* Custom page footer */
@@ -70,14 +82,14 @@ p {
 }
 
 #cssCardExamination {
-  background-color: #a5f9ee;
+  background-color: white;
   color: #065B69;
   border-color: #065B69;
 }
 
 /* Color of Buttons */
 #cssButtonChecked  {
-  background-color: #a5f9ee;
+  background-color: white;
   color: #065B69;
   border-color: #065B69;
 }
@@ -89,20 +101,20 @@ p {
 }
 
 #cssButton  {
-  background-color: #a5f9ee;
-  color: #065B69;
+  background-color: #065B69;
+  color: #a5f9ee;
   border-color: #065B69;
 }
 
 #cssButton:active {
-  background-color: #065B69;
-  color: #a5f9ee;
+  background-color: #a5f9ee;
+  color: #065B69;
   border-color: #a5f9ee;
 }
 
 #cssButton:hover {
-  background-color: #065B69;
-  color: #a5f9ee;
+  background-color: #a5f9ee;
+  color: #065B69;
   border-color: #a5f9ee;
 }
 
@@ -122,8 +134,8 @@ p {
 .bar1, .bar2, .bar3 {
     width: 30px;
     height: 4px;
-    background-color: #065B69;
-    margin: 5px 0;
+    background-color: white;
+    margin: 4px 0;
     transition: 0.4s;
     border-radius: 25px;
 }
@@ -213,7 +225,7 @@ p {
 
 /* Admin login */
 #cssAdminLogin   {
-  background-color: #a5f9ee;
+  background-color: white;
   color: #065B69;
   border-color: #a5f9ee;
 }
