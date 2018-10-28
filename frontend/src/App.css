@@ -132,6 +132,30 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   position: fixed;
 }
+/* Login Form */
+.login-form {
+  margin: auto;
+  width: 500px;
+  height: 300px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 5px 5px 25px lightgrey;
+}
+
+.login-input-group {
+  margin: 10px;
+}
+
+.login-input {
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+}
+/*logout-btn*/
+.logout{
+  margin-top: 5%;
+  text-align: center;
+}
 
 /* Icons */
 a .fab, a .fas{
