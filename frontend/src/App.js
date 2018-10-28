@@ -4,6 +4,8 @@ import { Button } from 'reactstrap';
 
 import {HelloPage} from "./components/pages/HelloPage"
 import {ExamPage} from "./components/pages/ExamPage"
+import {LoginPage} from "./components/pages/LoginPage"
+import {AdminLandingPage} from "./components/pages/AdminLandingPage"
 
 class App extends Component{
 
@@ -13,7 +15,8 @@ class App extends Component{
         <Switch>
           <Route exact path="/" component={HelloPage} />
           <Route path="/vysetreni" component={ExamPage} />
-          <Route path="/admin-login" component={ExamPage} />
+          <Route path="/admin-login" component={LoginPage} />
+          <Route path="/admin-lp" component={AdminLandingPage} />
         </Switch>
       </BrowserRouter>
 
