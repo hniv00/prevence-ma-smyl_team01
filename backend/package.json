@@ -5,14 +5,20 @@
   "license": "MIT",
   "scripts": {
     "dev": "backpack dev",
-    "dev:debug": "backpack dev --inspect --debug-brk",
+    "dev:debug": "backpack dev --inspect-brk",
     "start": "node ./build/main.js",
     "build": "backpack build",
     "build:watch": "nodemon --watch ./src --exec 'npm run build'"
   },
   "dependencies": {
+    "@types/sequelize": "^4.27.28",
     "backpack-core": "^0.7.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "express-async-await": "^1.1.0"
+    "express-async-await": "^1.1.0",
+    "log4js": "^3.0.6",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.41.0"
   }
 }
