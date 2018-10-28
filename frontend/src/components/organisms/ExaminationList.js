@@ -10,7 +10,7 @@ export class ExaminationList extends Component {
         <h5>Seznam vyhledaných preventivních vyšetření</h5>
         <Examination/>
       <div style={{ height: '20px' }} />
-        <Button color="info">Chci vidět více výsledků</Button>{' '}
+        <Button id="cssButton" color="info">Chci vidět více výsledků</Button>{' '}
     </div>
   );
 }

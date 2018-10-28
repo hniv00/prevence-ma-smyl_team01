@@ -10,13 +10,13 @@ export class Footer extends Component {
         <Container>
           <Row>
             <Col>
-            <a href="/" className="footerMenu">Landing Page</a>
-            <a href="/vysetreni" className="footerMenu">Preventivní vyšetření</a>
-            <a href="/feed" className="footerMenu">#PrevenceMaSmysl</a>
-            <a href="/pribehy" className="footerMenu">Příběhy</a>
-            <a href="/akce" className="footerMenu">Akce</a>
-            <a href="/kontakty" className="footerMenu">Kontakt</a>
-            <a href="/admin" className="footerMenu">Admin modul</a>
+            <a id="cssFooterMenu" href="/" className="footerMenu">Landing Page</a>
+            <a id="cssFooterMenu" href="/vysetreni" className="footerMenu">Preventivní vyšetření</a>
+            <a id="cssFooterMenu" href="/feed" className="footerMenu">#PrevenceMaSmysl</a>
+            <a id="cssFooterMenu" href="/pribehy" className="footerMenu">Příběhy</a>
+            <a id="cssFooterMenu" href="/akce" className="footerMenu">Akce</a>
+            <a id="cssFooterMenu" href="/kontakty" className="footerMenu">Kontakt</a>
+            <a id="cssFooterMenu" href="/admin" className="footerMenu">Admin modul</a>
             </Col>
             <Col>
               <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'facebook'}/><i/></a>
@@ -25,17 +25,17 @@ export class Footer extends Component {
               <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'google'}/><i/></a>
             </Col>
             <Col>
-              <a href="#" ><FontIcon icon={'angle-up'}/><i/></a>
+              <a id="cssFooterArrow" href="#" ><FontIcon icon={'angle-up'}/><i/></a>
             </Col>
           </Row>
           <Row>
             <Col>
-              -
+              <a id="cssCopyright" >-</a>
             </Col>
           </Row>
           <Row>
             <Col>
-              © Tým 1 - Prevence má smysl {new Date().getFullYear()}
+              <a id="cssCopyright" >© Tým 1 - Prevence má smysl {new Date().getFullYear()}</a>
             </Col>
           </Row>
         </Container>
