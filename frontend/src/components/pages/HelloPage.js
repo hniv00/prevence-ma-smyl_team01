@@ -49,7 +49,7 @@ export class HelloPage extends Component {
           </section>
 
           <Background className="custom-bg" >
-            <img src="http://cdn.strategyonline.ca/wp/wp-content/uploads/2018/08/Cossette-Health1.jpg?93ff1b" alt="lp-image"
+            <img src="https://www.iamexpat.nl/sites/default/files/styles/article--full/public/dutch-health-insurance.jpg?itok=J7ryjAH6" alt="lp-image"
             style = {{width: '1200px'}}/>
           </Background>
           <div style={{ height: '50px' }} />
