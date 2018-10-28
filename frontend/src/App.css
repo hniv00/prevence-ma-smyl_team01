@@ -120,6 +120,7 @@ p {
 
 /* Menu button ala hamburger */
 .buttonContainer {
+    z-index: 100;
     display: inline-block;
     cursor: pointer;
     position: fixed;
