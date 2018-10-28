@@ -11,7 +11,7 @@ export const Examination = (props) => {
           <Card body>
             <CardTitle>Preventivní prohlídka</CardTitle>
             <CardText>
-            <p>
+              <p>
               <Badge color="secondary">Obezita</Badge>{' '}
               <Badge color="secondary">Krátkozrakost</Badge></p>
             Docházejte pravidelně na preventivní prohlídky,

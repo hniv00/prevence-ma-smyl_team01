@@ -12,15 +12,19 @@ html {
 /* Space out content a bit */
 body {
   padding-top: 20px;
+  background-color: #33b2a2
 }
 
 p {
   text-align: justify;
+  background-color: #a5f9ee;
 }
 
-h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
   text-align: center;
+  color: #065B69;
 }
+
 
 /* Everything gets side spacing for mobile first views */
 .header,
@@ -38,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   padding: 15px;
-  background-color: #efefef;
+  background-color: #a5f9ee;
   text-align: center;
 }
 
@@ -51,8 +55,19 @@ h1, h2, h3, h4, h5, h6 {
 .jumbotron p {
   text-align: center;
   margin: 5px;
+  background-color: inherit ;
 }
 
+#tlacitka  {
+  background-color: #a5f9ee;
+  color: white;
+  border-color: #a5f9ee;
+}
+
+#tlacitka:active {
+  background-color: #065B69;
+  border-color: #065B69;
+}
 
 /* Menu button ala hamburger */
 .buttonContainer {
@@ -70,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 .bar1, .bar2, .bar3 {
     width: 30px;
     height: 4px;
-    background-color: #333;
+    background-color: #065B69;
     margin: 5px 0;
     transition: 0.4s;
     border-radius: 25px;
@@ -96,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 #flyoutMenu {
   width: 66vw;
   height: 100vh;
-  background-color: #999;
+  background-color: #a5f9ee;
   position: fixed;
   top: 0;
   right: 0;
@@ -117,10 +132,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #flyoutMenu a p {
-  color: #212529;
+  color: #065B69;
   margin-left: 10px;
   text-decoration: none;
+
 }
+
 
 #flyoutMenu a:hover {
   text-decoration: none;
@@ -140,7 +157,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #0b0d0f;
+  color: #33b2a2;
   margin: 0 15px;
   display: block;
   border-radius: 50%;

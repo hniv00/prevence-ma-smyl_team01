@@ -10,7 +10,7 @@ import {Footer} from '../organisms/Footer';
 
 import logo from '../../img/logo_prevence.png';
 
-const image = 'http://cdn.strategyonline.ca/wp/wp-content/uploads/2018/08/Cossette-Health1.jpg?93ff1b';
+const image = 'https://www.iamexpat.nl/sites/default/files/styles/article--full/public/dutch-health-insurance.jpg?itok=J7ryjAH6';
 
 export class HelloPage extends Component {
   render() {
