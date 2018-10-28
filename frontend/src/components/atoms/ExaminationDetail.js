@@ -22,12 +22,12 @@ export class ExaminationDetail extends Component {
 
       return (
       <div>
-        <Button color="danger" onClick={this.toggle}>Zobrazit detail vyšetření</Button>
+        <Button id="cssButton" color="danger" onClick={this.toggle}>Zobrazit detail vyšetření</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle} close={closeBtn}>Preventivní prohlídka</ModalHeader>
-          <ModalBody>
-            <p><Badge color="secondary">Obezita</Badge>{' '}
-            <Badge color="secondary">Krátkozrakost</Badge></p>
+          <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>Preventivní prohlídka</ModalHeader>
+          <ModalBody id="cssCardExamination">
+            <p><Badge id="cssExamination" color="secondary">Obezita</Badge>{' '}
+            <Badge id="cssExamination" color="secondary">Krátkozrakost</Badge></p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu

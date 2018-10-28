@@ -28,22 +28,22 @@ export class LoginForm extends React.Component {
         Přihlášení
         </h2>
       <div className="admin-login">
-        <input
+        <input id="cssAdminLogin"
           className="admin-username"
           placeholder="Uživatelské jméno"
           type="text"
           onChange={event => this.setState({username: event.target.value})}
         />
-        <input
+        <input id="cssAdminLogin"
           className="admin-password"
           placeholder="Heslo"
           type="password"
           onChange={event => this.setState({password: event.target.value})}
         />
-        <Button
+        <Button id="cssButton"
           className="signin-btn"
-          color="primary"
-          type="button"
+          //color="primary"
+          //type="button"
           //onClick={() => this.signUp()}
           href="/admin-lp"
           >

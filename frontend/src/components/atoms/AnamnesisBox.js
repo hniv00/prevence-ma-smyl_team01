@@ -25,11 +25,11 @@ export class AnamnesisBox extends Component {
     return (
       <div>
         <ButtonGroup>
-          <Button outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
-          <Button outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
-          <Button outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
+          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
+          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
+          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
         </ButtonGroup>
-        <p>Selected: {JSON.stringify(this.state.cSelected)}</p>
+        <p id="cssTitle"> Selected: {JSON.stringify(this.state.cSelected)}</p>
       </div>
     );
   }

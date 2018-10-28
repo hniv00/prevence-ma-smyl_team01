@@ -25,6 +25,11 @@ p {
   color: #065B69;
 }
 
+/* Color of "Selected:" */
+#cssTitle {
+  color: #065B69;
+}
+
 
 /* Everything gets side spacing for mobile first views */
 .header,
@@ -58,15 +63,47 @@ p {
   background-color: inherit ;
 }
 
-#tlacitka  {
+/* Color of Examination */
+#cssExamination {
+  background-color: #065B69;
+  color: #a5f9ee;
+}
+
+#cssCardExamination {
   background-color: #a5f9ee;
-  color: white;
+  color: #065B69;
+  border-color: #065B69;
+}
+
+/* Color of Buttons */
+#cssButtonChecked  {
+  background-color: #a5f9ee;
+  color: #065B69;
+  border-color: #065B69;
+}
+
+#cssButtonChecked:active {
+  background-color: #065B69;
+  color: #a5f9ee;
   border-color: #a5f9ee;
 }
 
-#tlacitka:active {
-  background-color: #065B69;
+#cssButton  {
+  background-color: #a5f9ee;
+  color: #065B69;
   border-color: #065B69;
+}
+
+#cssButton:active {
+  background-color: #065B69;
+  color: #a5f9ee;
+  border-color: #a5f9ee;
+}
+
+#cssButton:hover {
+  background-color: #065B69;
+  color: #a5f9ee;
+  border-color: #a5f9ee;
 }
 
 /* Menu button ala hamburger */
@@ -132,14 +169,21 @@ p {
 }
 
 #flyoutMenu a p {
-  color: #065B69;
+  color: #33b2a2;
   margin-left: 10px;
   text-decoration: none;
 
 }
 
 
-#flyoutMenu a:hover {
+#flyoutMenu a p:hover {
+  color: #065B69;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#cssHamburgerMenu:hover {
+  color: #065B69;
   text-decoration: none;
   font-size: 17px;
 }
@@ -148,6 +192,34 @@ p {
   text-decoration: none;
   display: flex;
   position: fixed;
+}
+
+/* Color of Footer */
+#cssFooterMenu {
+  color: #33b2a2;
+}
+
+#cssFooterMenu:hover {
+  color: #065B69;
+}
+
+#cssCopyright {
+  color: #33b2a2;
+}
+
+#cssFooterArrow {
+  color: #065B69;
+}
+
+/* Admin login */
+#cssAdminLogin   {
+  background-color: #a5f9ee;
+  color: #065B69;
+  border-color: #a5f9ee;
+}
+
+.placeholder {
+  color: black;
 }
 
 /* Icons */
@@ -170,7 +242,7 @@ a .fab, a .fas{
 
 a:hover .fab {
   transform: rotateY(360deg);
-  color: #bb1122;
+  color: #065B69;
   transition: .5s;
   text-decoration: none;
 }
