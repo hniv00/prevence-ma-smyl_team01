@@ -10,12 +10,12 @@ export class Footer extends Component {
         <Container>
           <Row>
             <Col>
-            <a id="cssFooterMenu" href="/" className="footerMenu">Landing Page</a>
-            <a id="cssFooterMenu" href="/vysetreni" className="footerMenu">Preventivní vyšetření</a>
-            <a id="cssFooterMenu" href="/feed" className="footerMenu">#PrevenceMaSmysl</a>
-            <a id="cssFooterMenu" href="/pribehy" className="footerMenu">Příběhy</a>
-            <a id="cssFooterMenu" href="/akce" className="footerMenu">Akce</a>
-            <a id="cssFooterMenu" href="/kontakty" className="footerMenu">Kontakt</a>
+            <a id="cssFooterMenu" href="/" className="footerMenu">Landing Page</a><br/>
+            <a id="cssFooterMenu" href="/vysetreni" className="footerMenu">Preventivní vyšetření</a><br/>
+            <a id="cssFooterMenu" href="/feed" className="footerMenu">#PrevenceMaSmysl</a><br/>
+            <a id="cssFooterMenu" href="/pribehy" className="footerMenu">Příběhy</a><br/>
+            <a id="cssFooterMenu" href="/akce" className="footerMenu">Akce</a><br/>
+            <a id="cssFooterMenu" href="/kontakty" className="footerMenu">Kontakt</a><br/>
             <a id="cssFooterMenu" href="/admin" className="footerMenu">Admin modul</a>
             </Col>
             <Col>
