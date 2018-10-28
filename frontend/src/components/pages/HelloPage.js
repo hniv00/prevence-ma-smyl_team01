@@ -18,14 +18,10 @@ export class HelloPage extends Component {
     return (<div>
 
       <header>
-        <Row>
           <Col>
             <img src={logo} style = {{width: '200px', margin: '15px 15px'}} alt="My logo" />
           </Col>
-          <Col>
-            <TopNav/>
-          </Col>
-        </Row>
+        <TopNav/>
       </header>
 
         <Parallax blur={3} strength={200} bgImage={image} >
