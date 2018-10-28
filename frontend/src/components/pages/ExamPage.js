@@ -2,10 +2,8 @@ import React, {Component} from 'react'
 import {Container, Row, Col} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
-import {Heading} from '../atoms/Heading';
 import {Filter} from '../organisms/Filter';
 import {ExaminationList} from '../organisms/ExaminationList';
-import {About} from '../organisms/About';
 import {Footer} from '../organisms/Footer';
 
 export class ExamPage extends Component {
@@ -16,7 +14,7 @@ export class ExamPage extends Component {
       <header>
         <Row>
           <Col>
-            <TopNav></TopNav>
+            <TopNav/>
           </Col>
         </Row>
       </header>
@@ -34,7 +32,7 @@ export class ExamPage extends Component {
             <Row>
               <Col xs="0" sm="2"></Col>
               <Col xs="12" sm="8">
-                <Filter></Filter>
+                <Filter/>
               </Col>
               <Col xs="0" sm="2"></Col>
             </Row>
