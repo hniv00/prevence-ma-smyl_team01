@@ -11,30 +11,43 @@ html {
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  background-color: #33b2a2
+  background-color: #019CC0;
 }
 
 p {
   text-align: justify;
-  background-color: white;
 }
 
 #cssTextProject {
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
 }
 
 #cssTextStory {
-  background-color: #33b2a2;
+  background-color: #019CC0;
 }
-  h1, h2, h3, h4, h5, h6 {
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
   text-align: center;
   color: #065B69;
 }
 
+h3 {
+  margin-top: 80px;
+  text-align: center;
+  color: white;
+}
+
+header h6 {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+
 /* Color of "Selected:" */
 #cssTitle {
-  color: #065B69;
+  color: white;
 }
 
 
@@ -47,7 +60,7 @@ p {
 }
 
 #cssAboutProject {
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
   color: #065B69;
 }
 
@@ -59,7 +72,7 @@ p {
   left: 0;
   width: 100%;
   padding: 15px;
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
   text-align: center;
 }
 
@@ -77,54 +90,63 @@ p {
 
 /* Color of Examination */
 #cssExamination {
-  background-color: #065B69;
-  color: #a5f9ee;
+  background-color: #13a1ab;
+  color: white;
 }
 
 #cssCardExamination {
   background-color: white;
-  color: #065B69;
-  border-color: #065B69;
+  color: #06213;
+  border-color: #06213;
 }
 
 /* Color of Buttons */
 #cssButtonChecked  {
   background-color: white;
-  color: #065B69;
-  border-color: #065B69;
+  color: #06213e;
+  border-color: #06213e;
 }
 
 #cssButtonChecked:active {
-  background-color: #065B69;
-  color: #a5f9ee;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 #cssButton  {
-  background-color: #065B69;
-  color: #a5f9ee;
-  border-color: #065B69;
+  background-color: white;
+  color: #06213e;
+  border-color: #06213e;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary {
+  background-color: white;
+  color: #06213e;
+  border-color: #06213e;
 }
 
 #cssButton:active {
-  background-color: #a5f9ee;
-  color: #065B69;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 #cssButton:hover {
-  background-color: #a5f9ee;
-  color: #065B69;
-  border-color: #a5f9ee;
+  background-color: #06213e;
+  color: white;
+  border-color: #06213e;
 }
 
 /* Menu button ala hamburger */
 .buttonContainer {
+    z-index: 100;
     display: inline-block;
     cursor: pointer;
     position: fixed;
+    margin-top: 15px;
     top: 15px;
     right: 15px;
+    color: white;
 }
 
 .buttonContainer:hover {
@@ -160,7 +182,7 @@ p {
 #flyoutMenu {
   width: 66vw;
   height: 100vh;
-  background-color: #a5f9ee;
+  background-color: #06213e;
   position: fixed;
   top: 0;
   right: 0;
@@ -181,7 +203,7 @@ p {
 }
 
 #flyoutMenu a p {
-  color: #33b2a2;
+  color: white;
   margin-left: 10px;
   text-decoration: none;
 
@@ -189,13 +211,13 @@ p {
 
 
 #flyoutMenu a p:hover {
-  color: #065B69;
+  color: #019CC0;
   text-decoration: none;
   font-size: 17px;
 }
 
 #cssHamburgerMenu:hover {
-  color: #065B69;
+  color: #019CC0;
   text-decoration: none;
   font-size: 17px;
 }
@@ -244,15 +266,17 @@ p {
 
 /* Color of Footer */
 #cssFooterMenu {
-  color: #33b2a2;
+  font-size: 90%;
+  color: #065B69;
 }
 
 #cssFooterMenu:hover {
   color: #065B69;
+  text-decoration: none;
 }
 
 #cssCopyright {
-  color: #33b2a2;
+  color: #065B69;
 }
 
 #cssFooterArrow {
@@ -263,7 +287,7 @@ p {
 #cssAdminLogin   {
   background-color: white;
   color: #065B69;
-  border-color: #a5f9ee;
+  border-color: #13a1ab;
 }
 
 .placeholder {
@@ -277,7 +301,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #33b2a2;
+  color: #065B69;
   margin: 0 15px;
   display: block;
   border-radius: 50%;
@@ -290,7 +314,7 @@ a .fab, a .fas{
 
 a:hover .fab {
   transform: rotateY(360deg);
-  color: #065B69;
+  color: white;
   transition: .5s;
   text-decoration: none;
 }
