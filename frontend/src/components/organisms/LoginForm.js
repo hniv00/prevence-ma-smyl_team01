@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Button } from 'reactstrap';
+import { Input } from 'reactstrap';
 import { Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -28,19 +29,19 @@ export class LoginForm extends React.Component {
         Přihlášení
         </h2>
       <div className="admin-login">
-        <input id="cssAdminLogin"
+        <Input id="cssAdminLogin"
           className="admin-username"
           placeholder="Uživatelské jméno"
           type="text"
           onChange={event => this.setState({username: event.target.value})}
         />
-        <input id="cssAdminLogin"
+        <Input id="cssAdminLogin"
           className="admin-password"
           placeholder="Heslo"
           type="password"
           onChange={event => this.setState({password: event.target.value})}
         />
-        <Button id="cssButton"
+        <Button id="cssButtonChecked" outline color="primary"
           className="signin-btn"
           //color="primary"
           //type="button"

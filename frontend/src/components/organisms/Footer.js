@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 import {FontIcon} from "../atoms/FontIcon";
 

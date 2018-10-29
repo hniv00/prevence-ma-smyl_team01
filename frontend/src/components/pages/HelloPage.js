@@ -11,13 +11,13 @@ import {Footer} from '../organisms/Footer';
 import logo from '../../img/logo_invert.png';
 import '../../parallax.css';
 
-import image from '../../img/hands.jpg';
+import image from '../../img/head_pic.jpg';
 
 export class HelloPage extends Component {
   render() {
     return (<div>
 
-        <Parallax strength={200} bgImage={image} >
+        <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1900px'}>
           <header style={{margin: '2%'}}>
             <Row>
               <Col xs="0" sm="0" md="3">

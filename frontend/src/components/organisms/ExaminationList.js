@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
+import Button from '@material-ui/core/Button';
 
 import {Examination} from '../molecules/Examination';
 
@@ -10,7 +11,7 @@ export class ExaminationList extends Component {
         <h5>Seznam vyhledaných preventivních vyšetření</h5>
         <Examination/>
       <div style={{ height: '20px' }} />
-        <Button id="cssButton" color="info">Chci vidět více výsledků</Button>{' '}
+        <Button variant="contained" color="primary">Chci vidět více výsledků</Button>{' '}
     </div>
   );
 }

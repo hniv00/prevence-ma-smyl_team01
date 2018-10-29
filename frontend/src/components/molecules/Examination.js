@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
 

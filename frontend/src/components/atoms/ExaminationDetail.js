@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
+import Button from '@material-ui/core/Button';
 
 export class ExaminationDetail extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export class ExaminationDetail extends Component {
 
       return (
       <div>
-        <Button id="cssButton" color="danger" onClick={this.toggle}>Zobrazit detail vyšetření</Button>
+        <Button variant="contained" color="primary" onClick={this.toggle}>Zobrazit detail vyšetření</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>Preventivní prohlídka</ModalHeader>
           <ModalBody id="cssCardExamination">
