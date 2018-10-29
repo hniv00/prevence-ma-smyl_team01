@@ -11,7 +11,7 @@ html {
 
 /* Space out content a bit */
 body {
-  background-color: #33b2a2
+  background-color: #019CC0;
 }
 
 p {
@@ -20,11 +20,11 @@ p {
 }
 
 #cssTextProject {
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
 }
 
 #cssTextStory {
-  background-color: #33b2a2;
+  background-color: #019CC0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,7 +61,7 @@ header h6 {
 }
 
 #cssAboutProject {
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
   color: #065B69;
 }
 
@@ -73,7 +73,7 @@ header h6 {
   left: 0;
   width: 100%;
   padding: 15px;
-  background-color: #a5f9ee;
+  background-color: #13a1ab;
   text-align: center;
 }
 
@@ -91,21 +91,21 @@ header h6 {
 
 /* Color of Examination */
 #cssExamination {
-  background-color: #065B69;
+  background-color: #13a1ab;
   color: white;
 }
 
 #cssCardExamination {
   background-color: white;
-  color: #065B69;
-  border-color: #065B69;
+  color: #06213;
+  border-color: #06213;
 }
 
 /* Color of Buttons */
 #cssButtonChecked  {
   background-color: white;
-  color: #06213e9;
-  border-color: #06213e9;
+  color: #06213e;
+  border-color: #06213e;
 }
 
 #cssButtonChecked:active {
@@ -211,13 +211,13 @@ header h6 {
 
 
 #flyoutMenu a p:hover {
-  color: #09a4e6;
+  color: #019CC0;
   text-decoration: none;
   font-size: 17px;
 }
 
 #cssHamburgerMenu:hover {
-  color: #09a4e6;
+  color: #019CC0;
   text-decoration: none;
   font-size: 17px;
 }
@@ -231,7 +231,7 @@ header h6 {
 /* Color of Footer */
 #cssFooterMenu {
   font-size: 90%;
-  color: #33b2a2;
+  color: #065B69;
 }
 
 #cssFooterMenu:hover {
@@ -240,7 +240,7 @@ header h6 {
 }
 
 #cssCopyright {
-  color: #33b2a2;
+  color: #065B69;
 }
 
 #cssFooterArrow {
@@ -251,7 +251,7 @@ header h6 {
 #cssAdminLogin   {
   background-color: white;
   color: #065B69;
-  border-color: #a5f9ee;
+  border-color: #13a1ab;
 }
 
 .placeholder {
@@ -265,7 +265,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #33b2a2;
+  color: #065B69;
   margin: 0 15px;
   display: block;
   border-radius: 50%;
@@ -278,7 +278,7 @@ a .fab, a .fas{
 
 a:hover .fab {
   transform: rotateY(360deg);
-  color: #065B69;
+  color: white;
   transition: .5s;
   text-decoration: none;
 }
