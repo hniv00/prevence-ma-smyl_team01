@@ -7888,6 +7888,11 @@ react-onclickoutside@4.0.1:
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-4.0.1.tgz#4525fcc28a9fdccfa2a34313eec0d842e7c98e33"
   integrity sha1-RSX8woqf3M+io0MT7sDYQufJjjM=
 
+react-onclickoutside@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-4.0.1.tgz#4525fcc28a9fdccfa2a34313eec0d842e7c98e33"
+  integrity sha1-RSX8woqf3M+io0MT7sDYQufJjjM=
+
 react-parallax@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-2.0.1.tgz#22448e166eeb3206ee1a2bd90027d65b56a2a085"
