@@ -19,7 +19,7 @@ p {
 }
 
 #cssTextProject {
-  background-color: #13a1ab;
+  background-color: #17a2b8;
 }
 
 #cssTextStory {
@@ -29,11 +29,12 @@ p {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
   text-align: center;
-  color: #065B69;
+  color: #01656E;
+  font-family: 'Quicksand', sans-serif;
 }
 
 h3 {
-  margin-top: 80px;
+  margin-top: 50px;
   text-align: center;
   color: white;
 }
@@ -41,12 +42,6 @@ h3 {
 header h6 {
   margin-top: 20px;
   text-align: center;
-  color: white;
-}
-
-
-/* Color of "Selected:" */
-#cssTitle {
   color: white;
 }
 
@@ -60,8 +55,8 @@ header h6 {
 }
 
 #cssAboutProject {
-  background-color: #13a1ab;
-  color: #065B69;
+  background-color: #17a2b8;
+  color: #01656E;
 }
 
 /* Custom page footer */
@@ -72,7 +67,7 @@ header h6 {
   left: 0;
   width: 100%;
   padding: 15px;
-  background-color: #13a1ab;
+  background-color: #17a2b8;
   text-align: center;
 }
 
@@ -81,23 +76,30 @@ header h6 {
 }
 
 /* Custom jumbotron */
-.jumbotron,
-.jumbotron p {
-  text-align: center;
-  margin: 5px;
-  background-color: inherit ;
+.jumbotron, .jumbotron p {
+    text-align: center;
+    margin: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: inherit;
 }
 
 /* Color of Examination */
+#filterButton{
+  padding-top: 20px;
+}
+
+
 #cssExamination {
-  background-color: #13a1ab;
+  background-color: #17a2b8;
   color: white;
 }
 
 #cssCardExamination {
   background-color: white;
-  color: #06213;
-  border-color: #06213;
+  color: #06213e;
+  border-color: #06213e;
+  margin: 10px;
 }
 
 /* Color of Buttons */
@@ -114,12 +116,6 @@ header h6 {
 }
 
 #cssButton  {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary {
   background-color: white;
   color: #06213e;
   border-color: #06213e;
@@ -231,27 +227,27 @@ header h6 {
 /* Color of Footer */
 #cssFooterMenu {
   font-size: 90%;
-  color: #065B69;
+  color: #01656E;
 }
 
 #cssFooterMenu:hover {
-  color: #065B69;
+  color: #01656E;
   text-decoration: none;
 }
 
 #cssCopyright {
-  color: #065B69;
+  color: #01656E;
 }
 
 #cssFooterArrow {
-  color: #065B69;
+  color: #01656E;
 }
 
 /* Admin login */
 #cssAdminLogin   {
   background-color: white;
-  color: #065B69;
-  border-color: #13a1ab;
+  color: #01656E;
+  border-color: #17a2b8;
 }
 
 .placeholder {
@@ -265,7 +261,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #065B69;
+  color: #01656E;
   margin: 0 15px;
   display: block;
   border-radius: 50%;

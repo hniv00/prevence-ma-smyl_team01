@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { Input } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
-import Button from '@material-ui/core/Button';
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -41,7 +40,7 @@ export class LoginForm extends React.Component {
           type="password"
           onChange={event => this.setState({password: event.target.value})}
         />
-        <Button id="cssButtonChecked" outline color="primary"
+        <Button outline color="info" size="sm"
           className="signin-btn"
           //color="primary"
           //type="button"

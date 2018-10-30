@@ -15,8 +15,7 @@ export class AdminLandingPage extends Component {
       <div>
         <h2>Vítejte v admin modulu</h2>
         <h3>Zde budete mít brzy možnost spravovat obsah webu ...</h3>
-        <Button id="cssButton"
-          className="signin-btn"
+        <Button outline color="primary" size="sm"
           //color="danger"
           //type="button"
           //onClick={() => this.signUp()}

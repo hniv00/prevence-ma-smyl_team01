@@ -1,12 +1,11 @@
 import React, { Component } from "react"
-import Button from '@material-ui/core/Button';
-
+import { Button, ButtonGroup } from 'reactstrap';
 
 export class FilterButton extends Component {
   render() {
     return (
       <div>
-        <Button variant="contained" color="primary">Vyhledej prevenci!</Button>{' '}
+        <Button outline color="info" size="sm">Vyhledej prevenci!</Button>{' '}
       </div>
     );
   }
