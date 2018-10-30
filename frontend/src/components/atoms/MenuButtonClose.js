@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import '../../App.css';
 
-export class MenuButton extends Component {
+export class MenuButtonClose extends Component {
   render() {
     return (
       <div>
-        <div class="buttonContainer" onClick={this.myFunction}
+        <div class="buttonContainerClose" onClick={this.myFunction}
              onMouseDown={this.props.handleMouseDown}>
-             <i class="material-icons">menu</i>
-
+             <i class="material-icons">close</i>
         </div>
       </div>
     );

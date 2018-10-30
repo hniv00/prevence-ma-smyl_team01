@@ -17,7 +17,7 @@ export const Examination = (props) => {
             Docházejte pravidelně na preventivní prohlídky,
             které praktický lékař provádí v intervalu 2 let.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.</CardText>
-            <ExaminationDetail></ExaminationDetail>
+            <ExaminationDetail/>
           </Card>
         </Col>
         <Col sm="4">
@@ -30,7 +30,7 @@ export const Examination = (props) => {
             Docházejte pravidelně na preventivní prohlídky k zubaři,
             ideálně jednou za půl roku.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.</CardText>
-            <ExaminationDetail></ExaminationDetail>
+            <ExaminationDetail/>
           </Card>
         </Col>
         <Col sm="4">
@@ -43,7 +43,7 @@ export const Examination = (props) => {
             Docházejte pravidelně na preventivní prohlídky,
             které praktický lékař provádí v intervalu 2 let.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.</CardText>
-            <ExaminationDetail></ExaminationDetail>
+            <ExaminationDetail/>
           </Card>
         </Col>
         </Row>

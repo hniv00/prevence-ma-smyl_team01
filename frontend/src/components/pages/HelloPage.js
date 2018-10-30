@@ -8,10 +8,10 @@ import {ExaminationList} from '../organisms/ExaminationList';
 import {About} from '../organisms/About';
 import {Footer} from '../organisms/Footer';
 
-import logo from '../../img/logo_invert.png';
+import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 
-import image from '../../img/head_pic.jpg';
+import image from '../../img/header_pic_2.jpg';
 
 export class HelloPage extends Component {
   render() {
@@ -24,7 +24,7 @@ export class HelloPage extends Component {
                 <img src={logo} style = {{width: '100%', 'max-width': '200px', margin: '15px 15px'}} alt="My logo" />
               </Col>
               <Col xs="12" sm="12" md="6">
-                <h3 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. Prevence má smysl. Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.</h3>
+                <h3 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. <span class="decor">Prevence má smysl.</span> Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.</h3>
               </Col>
               <Col xs="0" sm="0" md="3">
                 <TopNav/>
@@ -50,7 +50,7 @@ export class HelloPage extends Component {
 
         <Parallax>
           <section>
-            <div className='parallax-content'>
+            <div className='parallax-content' id="stories">
               <h5>Příběhy</h5>
               <p id="cssTextStory">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pellentesque quam vel velit. Praesent vitae arcu tempor neque lacinia pretium. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam sit amet magna in magna gravida vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quis nibh at felis congue commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             </div>

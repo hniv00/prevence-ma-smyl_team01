@@ -5,7 +5,7 @@ export class FilterButton extends Component {
   render() {
     return (
       <div>
-        <Button outline color="info" size="sm">Vyhledej prevenci!</Button>{' '}
+        <Button color="info" size="sm">Vyhledej prevenci!</Button>{' '}
       </div>
     );
   }

@@ -18,6 +18,10 @@ p {
   text-align: justify;
 }
 
+.decor{
+  color: #FFCF1C;
+}
+
 #cssTextProject {
   background-color: #17a2b8;
 }
@@ -36,13 +40,13 @@ h1, h2, h3, h4, h5, h6 {
 h3 {
   margin-top: 50px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 header h6 {
   margin-top: 20px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 
@@ -116,11 +120,15 @@ header h6 {
 }
 
 #cssButton  {
-  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+
+/*  background-color: white;
   color: #06213e;
-  border-color: #06213e;
+  border-color: #06213e; */
 }
 
+/*
 #cssButton:active {
   background-color: #06213e;
   color: white;
@@ -132,6 +140,7 @@ header h6 {
   color: white;
   border-color: #06213e;
 }
+*/
 
 /* Menu button ala hamburger */
 .buttonContainer {
@@ -140,14 +149,28 @@ header h6 {
     cursor: pointer;
     position: fixed;
     margin-top: 15px;
+    margin-right: 15px;
+    top: 15px;
+    right: 15px;
+    color: black;
+}
+
+.buttonContainerClosed {
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    margin-top: 15px;
+    margin-right: 15px;
     top: 15px;
     right: 15px;
     color: white;
 }
 
-.buttonContainer:hover {
-  transform: scale(1.1, 1.1);
+.buttonContainer:hover{
+  transform: scale(1.05, 1.05);
 }
+
+/* There was the previous menu button...
 
 .bar1, .bar2, .bar3 {
     width: 30px;
@@ -157,21 +180,47 @@ header h6 {
     transition: 0.4s;
     border-radius: 25px;
 }
+*/
 
-/* Rotate first bar */
+/* Rotate first bar
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-10px, 7px);
 }
 
-/* Fade out the second bar */
+/* Fade out the second bar
 .change .bar2 {opacity: 0;}
 
-/* Rotate last bar */
+/* Rotate last bar
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-5px, -8px);
     transform: rotate(45deg) translate(-5px, -4px);
 }
+
+*/
+
+
+/* Gender Button css - semitransparent background*/
+#genderB {
+  background-color: rgba(255,255,255,1.0);
+}
+
+#genderB:hover {
+  background-color: #17a2b8;
+}
+
+#genderB:active {
+  background-color: #17a2b8;
+}
+
+#genderB:hover:after {
+  background-color: #17a2b8;
+}
+
+#genderB:not(:disabled):not(.disabled).active{
+  background-color: #17a2b8;
+}
+
 
 
 /* Menu */
@@ -210,6 +259,11 @@ header h6 {
   color: #019CC0;
   text-decoration: none;
   font-size: 17px;
+}
+
+#cssHamburgerMenu a{
+  display: block;
+  position: fixed;
 }
 
 #cssHamburgerMenu:hover {
@@ -272,7 +326,8 @@ a .fab, a .fas{
 
 }
 
-a:hover .fab {
+a .fab:hover, a .fas:hover,
+a:hover .fab, a:hover .fas {
   transform: rotateY(360deg);
   color: white;
   transition: .5s;

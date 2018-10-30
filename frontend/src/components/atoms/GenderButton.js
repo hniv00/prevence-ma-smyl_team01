@@ -21,8 +21,8 @@ export class GenderButton extends Component {
     return (
       <div>
         <ButtonGroup>
-          <Button outline color="info" size="sm" onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Žena</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Muž</Button>
+          <Button outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Žena</Button>
+          <Button outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Muž</Button>
         </ButtonGroup>
       </div>
     );
