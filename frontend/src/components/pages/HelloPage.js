@@ -13,13 +13,13 @@ import {Footer} from '../organisms/Footer';
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 
-import image from '../../img/header_pic_2.jpg';
+import image from '../../img/test.png';
 
 export class HelloPage extends Component {
   render() {
     return (<div>
 
-        <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1900px'}>
+        <Parallax strength={200} bgImage={image} bgWidth={'auto'}>
           <header style={{margin: '2%'}}>
             <Row>
               <Col xs="0" sm="0" md="3">
@@ -59,7 +59,7 @@ export class HelloPage extends Component {
           </section>
         </Parallax>
 
-        <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1900px'}>
+        <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1920px'}>
           <section>
             <div className='parallax-content' id="justCare">
               <Motivation/>
@@ -80,3 +80,7 @@ export class HelloPage extends Component {
     </div>);
   }
 }
+
+
+
+// bgHeight={'1080px'} bgWidth={'1920px'}

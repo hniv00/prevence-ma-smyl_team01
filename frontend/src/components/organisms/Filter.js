@@ -23,28 +23,3 @@ export const Filter = (props) => {
     </div>
   );
 };
-
-
-/*
-
-export const Filter = (props) => {
-  return (
-    <div>
-      <Jumbotron>
-        <Row>
-          <Col><GenderSelection></GenderSelection></Col>
-        </Row>
-        <Row>
-          <Col><AgeSelection></AgeSelection></Col>
-        </Row>
-        <Row>
-          <Col></AnamnesisSelection></Col>
-        </Row>
-        <Row>
-          <Col><FindPrevention></FindPrevention></Col>
-        </Row>
-      </Jumbotron>
-    </div>
-  );
-};
-*/
