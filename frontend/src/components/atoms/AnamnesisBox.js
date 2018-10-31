@@ -29,9 +29,7 @@ export class AnamnesisBox extends Component {
           <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
           <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
           <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>Obezita</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(5)} active={this.state.cSelected.includes(5)}>Obezita</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(6)} active={this.state.cSelected.includes(6)}>Obezita</Button>
+          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>Vegan</Button>
         </ButtonGroup>
       </div>
     );

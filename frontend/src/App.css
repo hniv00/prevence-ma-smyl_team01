@@ -9,36 +9,24 @@ html {
   box-sizing: inherit;
 }
 
-/* Space out content a bit */
 body {
-  background-color: #019CC0;
+  background-color: white;
 }
 
 p {
   text-align: justify;
 }
 
-.decor{
-  color: #FFCF1C;
-}
-
-#cssTextProject {
-  background-color: #17a2b8;
-}
-
-#cssTextStory {
-  background-color: #019CC0;
-}
-
+/* Text styling */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
   text-align: center;
-  color: #01656E;
+  color: #026977;
   font-family: 'Quicksand', sans-serif;
 }
 
-h3 {
-  margin-top: 50px;
+h2 {
+  margin-top: 20px;
   text-align: center;
   color: black;
 }
@@ -49,6 +37,9 @@ header h6 {
   color: black;
 }
 
+.decor{
+  color: #EE4279;
+}
 
 /* Everything gets side spacing for mobile first views */
 .header,
@@ -58,25 +49,10 @@ header h6 {
   padding-right: 15px;
 }
 
-#cssAboutProject {
-  background-color: #17a2b8;
-  color: #01656E;
-}
-
-/* Custom page footer */
-.footer {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.logoPic{
   width: 100%;
-  padding: 15px;
-  background-color: #17a2b8;
-  text-align: center;
-}
-
-.footer p {
-  text-align: center;
+  max-width: 100px;
+  margin: 5px 5px;
 }
 
 /* Custom jumbotron */
@@ -88,11 +64,65 @@ header h6 {
     background-color: inherit;
 }
 
-/* Color of Examination */
+/* Basic components */
+.btn{
+  border-radius: .90rem;
+}
+
+#cssTextProject {
+  background-color: #61C5D3;
+}
+
+#cssAboutProject {
+  background-color: #61C5D3;
+}
+
+
+/* Custom page footer */
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #61C5D3;
+  text-align: center;
+}
+
+.footer p {
+  text-align: center;
+}
+.footerMenu a {
+  text-decoration: none;
+  display: flex;
+  position: fixed;
+}
+
+#cssFooterMenu {
+  font-size: 90%;
+  color: #026977;
+}
+
+#cssFooterMenu:hover {
+  color: #026977;
+  text-decoration: none;
+}
+
+#cssCopyright,
+#cssFooterArrow {
+  color: #026977;
+}
+
+
+/* Examination components */
 #filterButton{
   padding-top: 20px;
 }
 
+#filterButton .btn{
+  border-radius: 20px;
+}
 
 #cssExamination {
   background-color: #17a2b8;
@@ -100,47 +130,92 @@ header h6 {
 }
 
 #cssCardExamination {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
+  background-color: #fcfcfc;
+  color: black;
+  border-color: #ededed;
+  border-radius: .90rem;
   margin: 10px;
 }
 
-/* Color of Buttons */
-#cssButtonChecked  {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
+/* Examination Badge */
+#cssBadge{
+    background-color: #F26D98;
+    color: white;
+    font-weight: 500;
 }
 
-#cssButtonChecked:active {
-  background-color: #06213e;
+/* BUTTON - Gender Button css - semitransparent background - all the variations */
+#genderB {
+  background-color: rgba(255,255,255,1.0);
+}
+
+#genderB:hover {
+  background-color: #17a2b8;
+}
+
+#genderB:active {
+  background-color: #17a2b8;
+}
+
+#genderB:hover:after {
+  background-color: #17a2b8;
+}
+
+#genderB:not(:disabled):not(.disabled).active{
+  background-color: #17a2b8;
+}
+
+/* Menu */
+#flyoutMenu {
+  width: 66vw;
+  height: 100vh;
+  background-color: #EE4279;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  transition: transform .3s
+              cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+
+#flyoutMenu.hide {
+  transform: translate3d(+100vw, 0, 0);
+}
+
+#flyoutMenu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+
+#flyoutMenu a{
   color: white;
-  border-color: #06213e;
 }
 
-#cssButton  {
-  margin-left: auto;
-  margin-right: auto;
-
-/*  background-color: white;
-  color: #06213e;
-  border-color: #06213e; */
-}
-
-/*
-#cssButton:active {
-  background-color: #06213e;
+#flyoutMenu a p {
   color: white;
-  border-color: #06213e;
+  margin-left: 10px;
+  text-decoration: none;
+
 }
 
-#cssButton:hover {
-  background-color: #06213e;
-  color: white;
-  border-color: #06213e;
+#flyoutMenu a p:hover {
+  color: #61C5D3;
+  text-decoration: none;
+  font-size: 17px;
 }
-*/
+
+#cssHamburgerMenu a{
+  display: block;
+  position: fixed;
+}
+
+#cssHamburgerMenu:hover {
+  color: #61C5D3;
+  text-decoration: none;
+  font-size: 17px;
+}
 
 /* Menu button ala hamburger */
 .buttonContainer {
@@ -170,137 +245,10 @@ header h6 {
   transform: scale(1.05, 1.05);
 }
 
-/* There was the previous menu button...
-
-.bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.4s;
-    border-radius: 25px;
-}
-*/
-
-/* Rotate first bar
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-10px, 7px);
-}
-
-/* Fade out the second bar
-.change .bar2 {opacity: 0;}
-
-/* Rotate last bar
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-5px, -8px);
-    transform: rotate(45deg) translate(-5px, -4px);
-}
-
-*/
-
-
-/* Gender Button css - semitransparent background*/
-#genderB {
-  background-color: rgba(255,255,255,1.0);
-}
-
-#genderB:hover {
-  background-color: #17a2b8;
-}
-
-#genderB:active {
-  background-color: #17a2b8;
-}
-
-#genderB:hover:after {
-  background-color: #17a2b8;
-}
-
-#genderB:not(:disabled):not(.disabled).active{
-  background-color: #17a2b8;
-}
-
-
-
-/* Menu */
-#flyoutMenu {
-  width: 66vw;
-  height: 100vh;
-  background-color: #06213e;
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 15px;
-  transition: transform .3s
-              cubic-bezier(0, .52, 0, 1);
-  overflow: scroll;
-  z-index: 1000;
-}
-
-#flyoutMenu.hide {
-  transform: translate3d(+100vw, 0, 0);
-}
-
-#flyoutMenu.show {
-  transform: translate3d(0vw, 0, 0);
-  overflow: hidden;
-}
-
-#flyoutMenu a p {
-  color: white;
-  margin-left: 10px;
-  text-decoration: none;
-
-}
-
-
-#flyoutMenu a p:hover {
-  color: #019CC0;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-#cssHamburgerMenu a{
-  display: block;
-  position: fixed;
-}
-
-#cssHamburgerMenu:hover {
-  color: #019CC0;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.footerMenu a {
-  text-decoration: none;
-  display: flex;
-  position: fixed;
-}
-
-/* Color of Footer */
-#cssFooterMenu {
-  font-size: 90%;
-  color: #01656E;
-}
-
-#cssFooterMenu:hover {
-  color: #01656E;
-  text-decoration: none;
-}
-
-#cssCopyright {
-  color: #01656E;
-}
-
-#cssFooterArrow {
-  color: #01656E;
-}
-
 /* Admin login */
 #cssAdminLogin   {
   background-color: white;
-  color: #01656E;
+  color: #026977;
   border-color: #17a2b8;
 }
 
@@ -315,7 +263,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #01656E;
+  color: #026977;
   margin: 0 15px;
   display: block;
   border-radius: 50%;
@@ -334,12 +282,25 @@ a:hover .fab, a:hover .fas {
   text-decoration: none;
 }
 
-
+/* MEDIA QUERIES */
 @media screen and (min-width: 480px) {
 
   #flyoutMenu {
     width: 33vw;
   }
+
+  h2 {
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+  }
+
+  .logoPic {
+    width: 100%;
+    max-width: 200px;
+    margin: 0px 15px;
+  }
+
 }
 
 
@@ -348,4 +309,10 @@ a:hover .fab, a:hover .fas {
   #flyoutMenu {
     width: 25vw;
   }
+
+  #filterButton{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
 }

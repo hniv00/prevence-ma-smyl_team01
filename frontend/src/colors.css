@@ -1,0 +1,28 @@
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=43l0M0ksxE1hEMFn8H-BXvVCnol */
+
+/* As hex codes */
+
+.color-primary-0 { color: #17A4B8 }	/* Main Hlavní barva - tyrkysová */
+.color-primary-1 { color: #61C5D3 }
+.color-primary-2 { color: #39B2C3 }
+.color-primary-3 { color: #02899C }
+.color-primary-4 { color: #026877 }
+
+.color-secondary-1-0 { color: #FFCE1C }	/* Main Vedlejší barva (1) - žlutá */
+.color-secondary-1-1 { color: #FFE172 }
+.color-secondary-1-2 { color: #FFD847 }
+.color-secondary-1-3 { color: #FEC800 }
+.color-secondary-1-4 { color: #C29900 }
+
+.color-secondary-2-0 { color: #EB195C }	/* Main Vedlejší barva (2) - růžová */
+.color-secondary-2-1 { color: #F26D97 }
+.color-secondary-2-2 { color: #EE4279 }
+.color-secondary-2-3 { color: #E20048 }
+.color-secondary-2-4 { color: #AC0037 }
+
+.color-complement-0 { color: #FF891C }	/* Main Doplňková barva - oranžová */
+.color-complement-1 { color: #FFB672 }
+.color-complement-2 { color: #FF9F47 }
+.color-complement-3 { color: #FE7A00 }
+.color-complement-4 { color: #C25D00 }

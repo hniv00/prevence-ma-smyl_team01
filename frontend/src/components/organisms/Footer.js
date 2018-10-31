@@ -30,12 +30,7 @@ export class Footer extends Component {
           </Row>
           <Row>
             <Col>
-              <a id="cssCopyright" >-</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <a id="cssCopyright" >© Tým 1 - Prevence má smysl {new Date().getFullYear()}</a>
+              <a id="cssCopyright" >© tým 1 #PrevenceMáSmysl {new Date().getFullYear()}</a>
             </Col>
           </Row>
         </Container>
