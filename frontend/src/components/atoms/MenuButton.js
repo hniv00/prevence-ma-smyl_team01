@@ -5,10 +5,9 @@ export class MenuButton extends Component {
   render() {
     return (
       <div>
-        <div class="buttonContainer" onClick={this.myFunction}
+        <div class="buttonContainer" style={{display: 'inline-block'}} onClick={this.myFunction}
              onMouseDown={this.props.handleMouseDown}>
-             <i class="material-icons">menu</i>
-
+             <i class="material-icons buttonContainerItem">menu</i><span class="buttonContainerItem">MENU</span>
         </div>
       </div>
     );

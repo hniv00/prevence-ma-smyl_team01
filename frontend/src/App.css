@@ -11,10 +11,7 @@ html {
 
 body {
   background-color: white;
-}
-
-p {
-  text-align: justify;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Text styling */
@@ -23,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   color: #026977;
   font-family: 'Quicksand', sans-serif;
+}
+
+p {
+  text-align: justify;
 }
 
 h2 {
@@ -69,12 +70,27 @@ header h6 {
   border-radius: .90rem;
 }
 
-#cssTextProject {
+#cssAboutText {
   background-color: #61C5D3;
+  color: white;
 }
 
 #cssAboutProject {
   background-color: #61C5D3;
+}
+
+#cssContent{
+
+}
+
+/* Images */
+.imgRound{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 80%;
+    border-radius: 50%;
 }
 
 
@@ -107,6 +123,10 @@ header h6 {
 #cssFooterMenu:hover {
   color: #026977;
   text-decoration: none;
+}
+
+#cssCopyright{
+  font-size: 14px;
 }
 
 #cssCopyright,
@@ -201,7 +221,7 @@ header h6 {
 }
 
 #flyoutMenu a p:hover {
-  color: #61C5D3;
+  color: white;
   text-decoration: none;
   font-size: 17px;
 }
@@ -212,7 +232,7 @@ header h6 {
 }
 
 #cssHamburgerMenu:hover {
-  color: #61C5D3;
+  color: white;
   text-decoration: none;
   font-size: 17px;
 }
@@ -230,19 +250,28 @@ header h6 {
     color: black;
 }
 
-.buttonContainerClosed {
+.buttonContainerClose {
     display: inline-block;
     cursor: pointer;
     position: fixed;
-    margin-top: 15px;
-    margin-right: 15px;
-    top: 15px;
-    right: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    top: 10px;
+    right: 10px;
     color: white;
 }
 
 .buttonContainer:hover{
   transform: scale(1.05, 1.05);
+}
+
+.buttonContainerItem{
+  display: inline;
+  line-height: 1;
+  float: left;
+  vertical-align: middle;
+  padding-top: auto;
 }
 
 /* Admin login */
@@ -284,6 +313,9 @@ a:hover .fab, a:hover .fas {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 480px) {
+  #cssContent, #cssAboutText {
+    font-size: 18px;
+  }
 
   #flyoutMenu {
     width: 33vw;
@@ -293,6 +325,7 @@ a:hover .fab, a:hover .fas {
     margin-top: 50px;
     text-align: center;
     color: black;
+    font-size: 2.5rem;
   }
 
   .logoPic {
@@ -301,11 +334,29 @@ a:hover .fab, a:hover .fas {
     margin: 0px 15px;
   }
 
+  .buttonContainer {
+      margin-top: 15px;
+      margin-right: 15px;
+      top: 15px;
+      right: 15px;
+  }
+
+  .buttonContainerClosed {
+      margin-top: 15px;
+      margin-right: 15px;
+      top: 15px;
+      right: 15px;
+  }
+
 }
 
 
 
 @media screen and (min-width: 960px) {
+  .buttonContainer {
+      position: absolute;
+  }
+
   #flyoutMenu {
     width: 25vw;
   }
