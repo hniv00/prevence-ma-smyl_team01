@@ -1,24 +1,21 @@
 import React, {Component} from 'react';
-import { Jumbotron, Button, Row, Col, Label } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Jumbotron} from 'reactstrap';
 import {LoginButton} from '../atoms/LoginButton';
+import axios from 'axios';
 
 
-export class LoginForm extends React.Component {
+export class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username:'',
       password:'',
-      // error: {
-      //   message: 'Neplatné přihlášení'
-      // }
     }
   }
 
-  // signUp() {
-  //   console.log('this.state', this.state);
-  // }
+  signUp() {
+    console.log('this.state', this.state);
+  }
 
   render() {
     return (
@@ -38,10 +35,10 @@ export class LoginForm extends React.Component {
               className="login-input"
               placeholder="Heslo"
               type="password"
-              onChange={event => this.setState({username: event.target.value})}/>
+              onChange={event => this.setState({password: event.target.value})}/>
             </div>
             <div className="Submit-button">
-                <LoginButton></LoginButton>
+                <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
             </div>
         </Jumbotron>
     );

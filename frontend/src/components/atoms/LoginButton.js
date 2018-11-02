@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import { Button} from 'reactstrap';
 
 export class LoginButton extends Component {
+  constructor(props){
+    super(props);
+    console.log('Binding');
+    this.onClickFunc = props.onClickFunc;
+  }
   render() {
     return (
       <div>
@@ -9,7 +14,7 @@ export class LoginButton extends Component {
           id="cssButton"
           color="primary"
           className="login-button"
-          href="/admin-lp">
+          onClick={this.onClickFunc}>
           Přihlásit</Button>{' '}
       </div>
     );
