@@ -17,6 +17,8 @@ export class AgeSlider extends Component {
     return (
       <div class="sliderContainer">
          <input type="range" min="18" max="120" class="slider" value={this.state.value} onChange={this.handleChange}/>
+         <br/>
+         <input type="number" min="18" max="120" class="ageInput" value={this.state.value} onChange={this.handleChange}/>
       </div>
     );
   }

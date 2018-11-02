@@ -16,7 +16,6 @@ export class AdminLandingPage extends Component {
       <div>
         <h2>Vítejte v admin modulu</h2>
         <h3>Zde budete mít brzy možnost spravovat obsah webu ...</h3>
-
           <div>
               <LogoutButton></LogoutButton>
           </div>
