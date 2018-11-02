@@ -1,13 +1,15 @@
 .sliderContainer{
-    width: 50%;
+    width: 80%;
     margin: 2px auto;
 }
 
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    height: 2px;
+    height: 4px;
+    width: 80%;
     background: #17a2b8;
+    border-radius: 5px;
     outline: none;
 }
 

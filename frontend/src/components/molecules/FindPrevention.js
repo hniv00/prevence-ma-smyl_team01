@@ -5,7 +5,7 @@ export class FindPrevention extends Component {
   render() {
     return (
       <div id="filterButton">
-        <FilterButton></FilterButton>
+        <a href="/vysetreni#examinationList"><FilterButton></FilterButton></a>
       </div>
     );
   }

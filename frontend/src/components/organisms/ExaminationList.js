@@ -10,7 +10,7 @@ export class ExaminationList extends Component {
     console.log(result.length);
     for (let i = 0; i < 3; i++) {
       this.list.push(<Examination data={result[i]}/>);
-      this.forceUpdate(); 
+      this.forceUpdate();
     }
   }
 
@@ -25,9 +25,16 @@ export class ExaminationList extends Component {
     <div style={{ margin: '5%'}}>
         <h4>Seznam vyhledaných preventivních vyšetření</h4>
         <Examination/>
-      <div style={{ height: '20px'}} />
-        <Button color="info" size="md" style={{'border-radius': '20px'}}>Chci vidět více výsledků</Button>{' '}
-    </div>
+        </div>
   );
 }
 };
+
+
+
+/* This was excluded from the div..probably delete forever
+
+<div style={{ height: '20px'}} />
+  <Button color="info" size="md" style={{'border-radius': '20px'}}>Chci vidět více výsledků</Button>{' '}
+
+*/
