@@ -17,7 +17,7 @@ class App extends Component{
   render(){
     return(
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+
           <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={HelloPage} />
@@ -26,7 +26,7 @@ class App extends Component{
                 <Route path="/admin-lp" component={AdminLandingPage} />
               </Switch>
           </BrowserRouter>
-        </PersistGate>
+
       </Provider>
     );
   }
