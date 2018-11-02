@@ -1,24 +1,23 @@
 import React, {Component} from 'react';
+import { Jumbotron} from 'reactstrap';
 import { Button, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
 import {LoginButton} from '../atoms/LoginButton';
+import axios from 'axios';
 
 
-export class LoginForm extends React.Component {
+export class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username:'',
       password:'',
-      // error: {
-      //   message: 'Neplatné přihlášení'
-      // }
     }
   }
 
-  // signUp() {
-  //   console.log('this.state', this.state);
-  // }
+  signUp() {
+    console.log('this.state', this.state);
+  }
 
   render() {
     return (
@@ -39,15 +38,9 @@ export class LoginForm extends React.Component {
           type="password"
           onChange={event => this.setState({password: event.target.value})}
         />
-        <Button outline color="info" size="sm"
-          className="signin-btn"
-          //color="primary"
-          //type="button"
-          //onClick={() => this.signUp()}
-          href="/admin-lp"
-          >
-          Přihlásit
-        </Button>
+            <div className="Submit-button">
+                <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
+            </div>
         </div>
       </div>
     );
