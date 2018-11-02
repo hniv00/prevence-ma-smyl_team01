@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Jumbotron} from 'reactstrap';
+import { Button, Input } from 'reactstrap';
+import { Link } from "react-router-dom";
 import {LoginButton} from '../atoms/LoginButton';
 import axios from 'axios';
 
@@ -23,24 +25,24 @@ export class LoginForm extends Component {
         <h2 className="admin-login-title">
           Přihlášení
         </h2>
-        <div className="login-input-group">
-              <input
-                className="login-input"
-                placeholder="Uživatelské jméno"
-                type="text"
-                onChange={event => this.setState({username: event.target.value})}/>
-            </div>
-            <div className="login-input-group">
-              <input
-              className="login-input"
-              placeholder="Heslo"
-              type="password"
-              onChange={event => this.setState({password: event.target.value})}/>
-            </div>
+      <div className="admin-login">
+        <Input id="cssAdminLogin"
+          className="admin-username"
+          placeholder="Uživatelské jméno"
+          type="text"
+          onChange={event => this.setState({username: event.target.value})}
+        />
+        <Input id="cssAdminLogin"
+          className="admin-password"
+          placeholder="Heslo"
+          type="password"
+          onChange={event => this.setState({password: event.target.value})}
+        />
             <div className="Submit-button">
                 <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
             </div>
-        </Jumbotron>
+        </div>
+      </div>
     );
   }
 }

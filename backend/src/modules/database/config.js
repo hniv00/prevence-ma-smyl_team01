@@ -15,3 +15,7 @@
     "dialect": 'mysql'
   }
   };
+
+  export const loadDatabaseConfig = (sequelize) =>{
+    
+  }

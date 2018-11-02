@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import { Button, ButtonGroup } from 'reactstrap';
-
+import { ButtonGroup, Button } from 'reactstrap';
 
 export class AnamnesisBox extends Component {
   constructor (props) {
@@ -19,17 +18,19 @@ export class AnamnesisBox extends Component {
       this.state.cSelected.splice(index, 1);
     }
     this.setState({ cSelected: [...this.state.cSelected] });
+
+    console.log(JSON.stringify(this.state.cSelected));
   }
 
   render() {
     return (
       <div>
         <ButtonGroup>
-          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
-          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
-          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
+          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
+          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
+          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
+          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>Vegan</Button>
         </ButtonGroup>
-        <p id="cssTitle"> Selected: {JSON.stringify(this.state.cSelected)}</p>
       </div>
     );
   }
