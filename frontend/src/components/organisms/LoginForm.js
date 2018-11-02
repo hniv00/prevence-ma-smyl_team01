@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Button, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
+import {LoginButton} from '../atoms/LoginButton';
+
 
 export class LoginForm extends React.Component {
   constructor(props) {
@@ -20,12 +22,9 @@ export class LoginForm extends React.Component {
 
   render() {
     return (
-      <div
-      className="form-inline"
-      >
-      <h2
-        className="admin-login-title">
-        Přihlášení
+      <Jumbotron className= "login-form">
+        <h2 className="admin-login-title">
+          Přihlášení
         </h2>
       <div className="admin-login">
         <Input id="cssAdminLogin"

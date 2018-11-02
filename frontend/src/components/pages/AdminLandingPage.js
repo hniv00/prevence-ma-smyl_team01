@@ -6,6 +6,7 @@ import {Button} from 'reactstrap';
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
 import {Footer} from '../organisms/Footer';
+import {LogoutButton} from '../atoms/LogoutButton';
 
 import logo from '../../img/logo_prevence.png';
 

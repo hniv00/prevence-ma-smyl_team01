@@ -4,12 +4,13 @@ import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
 
 export const Examination = (props) => {
+  console.log(props);
     return (
       <div>
       <Row>
         <Col sm="12" md="6">
           <Card id="cssCardExamination" body>
-            <CardTitle>Preventivní prohlídka</CardTitle>
+            <CardTitle>{props.data.Name}</CardTitle>
             <CardText>
               <p>
               <Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}

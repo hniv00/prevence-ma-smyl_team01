@@ -236,6 +236,42 @@ header h6 {
   text-decoration: none;
   font-size: 17px;
 }
+/* Login Form */
+.login-form {
+  margin: auto;
+  width: 500px;
+  height: 300px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 5px 5px 30px #343233;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.login-input-group {
+  margin: 10px;
+
+}
+
+.login-input {
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+}
+/*login-button*/
+.login-button {
+  margin-top: 15px;
+  width: 48%;
+}
+
+/*logout-btn*/
+.logout-button{
+  margin-top: 10%;
+  margin-left: 70%;
+}
 
 /* Menu button ala hamburger */
 .buttonContainer {
