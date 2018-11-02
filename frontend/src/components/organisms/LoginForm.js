@@ -42,7 +42,7 @@ export class LoginForm extends Component {
                 <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
             </div>
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 }
