@@ -10,7 +10,7 @@ export const Examination = (props) => {
       <Row>
         <Col sm="12" md="6">
           <Card id="cssCardExamination" body>
-            <CardTitle>{props.data.Name}</CardTitle>
+            <CardTitle>Preventivní prohlídka</CardTitle>
             <CardText>
               <p>
               <Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
