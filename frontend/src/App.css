@@ -9,47 +9,38 @@ html {
   box-sizing: inherit;
 }
 
-/* Space out content a bit */
 body {
-  background-color: #019CC0;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Text styling */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #026977;
+  font-family: 'Quicksand', sans-serif;
 }
 
 p {
   text-align: justify;
 }
 
-#cssTextProject {
-  background-color: #13a1ab;
-}
-
-#cssTextStory {
-  background-color: #019CC0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 15px;
+h2 {
+  margin-top: 20px;
   text-align: center;
-  color: #065B69;
-}
-
-h3 {
-  margin-top: 80px;
-  text-align: center;
-  color: white;
+  color: black;
 }
 
 header h6 {
   margin-top: 20px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
-
-/* Color of "Selected:" */
-#cssTitle {
-  color: white;
+.decor{
+  color: #EE4279;
 }
-
 
 /* Everything gets side spacing for mobile first views */
 .header,
@@ -59,10 +50,49 @@ header h6 {
   padding-right: 15px;
 }
 
-#cssAboutProject {
-  background-color: #13a1ab;
-  color: #065B69;
+.logoPic{
+  width: 100%;
+  max-width: 100px;
+  margin: 5px 5px;
 }
+
+/* Custom jumbotron */
+.jumbotron, .jumbotron p {
+    text-align: center;
+    margin: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: inherit;
+}
+
+/* Basic components */
+.btn{
+  border-radius: .90rem;
+}
+
+#cssAboutText {
+  background-color: #61C5D3;
+  color: white;
+}
+
+#cssAboutProject {
+  background-color: #61C5D3;
+}
+
+#cssContent{
+
+}
+
+/* Images */
+.imgRound{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 80%;
+    border-radius: 50%;
+}
+
 
 /* Custom page footer */
 .footer {
@@ -72,117 +102,94 @@ header h6 {
   left: 0;
   width: 100%;
   padding: 15px;
-  background-color: #13a1ab;
+  background-color: #61C5D3;
   text-align: center;
 }
 
 .footer p {
   text-align: center;
 }
-
-/* Custom jumbotron */
-.jumbotron,
-.jumbotron p {
-  text-align: center;
-  margin: 5px;
-  background-color: inherit ;
+.footerMenu a {
+  text-decoration: none;
+  display: flex;
+  position: fixed;
 }
 
-/* Color of Examination */
+#cssFooterMenu {
+  font-size: 90%;
+  color: #026977;
+}
+
+#cssFooterMenu:hover {
+  color: #026977;
+  text-decoration: none;
+}
+
+#cssCopyright{
+  font-size: 14px;
+}
+
+#cssCopyright,
+#cssFooterArrow {
+  color: #026977;
+}
+
+
+/* Examination components */
+#filterButton{
+  padding-top: 20px;
+}
+
+#filterButton .btn{
+  border-radius: 20px;
+}
+
 #cssExamination {
-  background-color: #13a1ab;
+  background-color: #17a2b8;
   color: white;
 }
 
 #cssCardExamination {
-  background-color: white;
-  color: #06213;
-  border-color: #06213;
+  background-color: #fcfcfc;
+  color: black;
+  border-color: #ededed;
+  border-radius: .90rem;
+  margin: 10px;
 }
 
-/* Color of Buttons */
-#cssButtonChecked  {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
-}
-
-#cssButtonChecked:active {
-  background-color: #06213e;
-  color: white;
-  border-color: #06213e;
-}
-
-#cssButton  {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary {
-  background-color: white;
-  color: #06213e;
-  border-color: #06213e;
-}
-
-#cssButton:active {
-  background-color: #06213e;
-  color: white;
-  border-color: #06213e;
-}
-
-#cssButton:hover {
-  background-color: #06213e;
-  color: white;
-  border-color: #06213e;
-}
-
-/* Menu button ala hamburger */
-.buttonContainer {
-    z-index: 100;
-    display: inline-block;
-    cursor: pointer;
-    position: fixed;
-    margin-top: 15px;
-    top: 15px;
-    right: 15px;
+/* Examination Badge */
+#cssBadge{
+    background-color: #F26D98;
     color: white;
+    font-weight: 500;
 }
 
-.buttonContainer:hover {
-  transform: scale(1.1, 1.1);
+/* BUTTON - Gender Button css - semitransparent background - all the variations */
+#genderB {
+  background-color: rgba(255,255,255,1.0);
 }
 
-.bar1, .bar2, .bar3 {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.4s;
-    border-radius: 25px;
+#genderB:hover {
+  background-color: #17a2b8;
 }
 
-/* Rotate first bar */
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-10px, 7px);
+#genderB:active {
+  background-color: #17a2b8;
 }
 
-/* Fade out the second bar */
-.change .bar2 {opacity: 0;}
-
-/* Rotate last bar */
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-5px, -8px);
-    transform: rotate(45deg) translate(-5px, -4px);
+#genderB:hover:after {
+  background-color: #17a2b8;
 }
 
+#genderB:not(:disabled):not(.disabled).active{
+  background-color: #17a2b8;
+}
 
 /* Menu */
 #flyoutMenu {
   width: 66vw;
   height: 100vh;
-  background-color: #06213e;
+  background-color: #EE4279;
   position: fixed;
   top: 0;
   right: 0;
@@ -202,6 +209,10 @@ header h6 {
   overflow: hidden;
 }
 
+#flyoutMenu a{
+  color: white;
+}
+
 #flyoutMenu a p {
   color: white;
   margin-left: 10px;
@@ -209,23 +220,21 @@ header h6 {
 
 }
 
-
 #flyoutMenu a p:hover {
-  color: #019CC0;
+  color: white;
   text-decoration: none;
   font-size: 17px;
+}
+
+#cssHamburgerMenu a{
+  display: block;
+  position: fixed;
 }
 
 #cssHamburgerMenu:hover {
-  color: #019CC0;
+  color: white;
   text-decoration: none;
   font-size: 17px;
-}
-
-.footerMenu a {
-  text-decoration: none;
-  display: flex;
-  position: fixed;
 }
 /* Login Form */
 .login-form {
@@ -264,30 +273,48 @@ header h6 {
   margin-left: 70%;
 }
 
-/* Color of Footer */
-#cssFooterMenu {
-  font-size: 90%;
-  color: #065B69;
+/* Menu button ala hamburger */
+.buttonContainer {
+    z-index: 100;
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    margin-top: 15px;
+    margin-right: 15px;
+    top: 15px;
+    right: 15px;
+    color: black;
 }
 
-#cssFooterMenu:hover {
-  color: #065B69;
-  text-decoration: none;
+.buttonContainerClose {
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: auto;
+    top: 10px;
+    right: 10px;
+    color: white;
 }
 
-#cssCopyright {
-  color: #065B69;
+.buttonContainer:hover{
+  transform: scale(1.05, 1.05);
 }
 
-#cssFooterArrow {
-  color: #065B69;
+.buttonContainerItem{
+  display: inline;
+  line-height: 1;
+  float: left;
+  vertical-align: middle;
+  padding-top: auto;
 }
 
 /* Admin login */
 #cssAdminLogin {
   background-color: white;
-  color: #065B69;
-  border-color: #13a1ab;
+  color: #026977;
+  border-color: #17a2b8;
 }
 
 /* Admin landing page */
@@ -326,7 +353,7 @@ a .fab, a .fas{
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  color: #065B69;
+  color: #026977;
   margin: 0 15px;
   display: block;
   border-radius: 50%;
@@ -337,25 +364,67 @@ a .fab, a .fas{
 
 }
 
-a:hover .fab {
+a .fab:hover, a .fas:hover,
+a:hover .fab, a:hover .fas {
   transform: rotateY(360deg);
   color: white;
   transition: .5s;
   text-decoration: none;
 }
 
-
+/* MEDIA QUERIES */
 @media screen and (min-width: 480px) {
+  #cssContent, #cssAboutText {
+    font-size: 18px;
+  }
 
   #flyoutMenu {
     width: 33vw;
   }
+
+  h2 {
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+    font-size: 2.5rem;
+  }
+
+  .logoPic {
+    width: 100%;
+    max-width: 200px;
+    margin: 0px 15px;
+  }
+
+  .buttonContainer {
+      margin-top: 15px;
+      margin-right: 15px;
+      top: 15px;
+      right: 15px;
+  }
+
+  .buttonContainerClosed {
+      margin-top: 15px;
+      margin-right: 15px;
+      top: 15px;
+      right: 15px;
+  }
+
 }
 
 
 
 @media screen and (min-width: 960px) {
+  .buttonContainer {
+      position: absolute;
+  }
+
   #flyoutMenu {
     width: 25vw;
   }
+
+  #filterButton{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
 }

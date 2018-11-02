@@ -22,13 +22,11 @@ export class ExaminationList extends Component {
   }
   render() {
     return (
-    <div style={{ margin: '2%' }}>
-        <h5>Seznam vyhledaných preventivních vyšetření</h5>
-        <Row>
-        {this.list}
-        </Row>
-      <div style={{ height: '20px' }} />
-        <Button id="cssButton" color="info">Chci vidět více výsledků</Button>{' '}
+    <div style={{ margin: '5%'}}>
+        <h4>Seznam vyhledaných preventivních vyšetření</h4>
+        <Examination/>
+      <div style={{ height: '20px'}} />
+        <Button color="info" size="md" style={{'border-radius': '20px'}}>Chci vidět více výsledků</Button>{' '}
     </div>
   );
 }

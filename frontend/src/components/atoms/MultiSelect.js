@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Select from 'react-select';
 
 const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
+  { value: 'obezita', label: 'obezita' },
+  { value: 'kuřák', label: 'kuřák' },
+  { value: 'nesportovec', label: 'nesportovec' }
 ];
 
 export class MultiSelect extends Component {
@@ -19,7 +19,7 @@ export class MultiSelect extends Component {
     const { selectedOption } = this.state;
 
     return (
-      <Select
+      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px'}}
         value={selectedOption}
         onChange={this.handleChange}
         options={options}
