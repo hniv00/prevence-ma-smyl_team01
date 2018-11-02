@@ -11,15 +11,18 @@ class App extends Component{
 
   render(){
     return(
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={HelloPage} />
-          <Route path="/vysetreni" component={ExamPage} />
-          <Route path="/admin-login" component={LoginPage} />
-          <Route path="/admin-lp" component={AdminLandingPage} />
-        </Switch>
-      </BrowserRouter>
-
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+              <Switch>
+                <Route exact path="/" component={HelloPage} />
+                <Route path="/vysetreni" component={ExamPage} />
+                <Route path="/admin-login" component={LoginPage} />
+                <Route path="/admin-lp" component={AdminLandingPage} />
+              </Switch>
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
     );
   }
 }
