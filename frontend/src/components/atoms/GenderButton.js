@@ -12,6 +12,8 @@ export class GenderButton extends Component {
 
   onRadioBtnClick(rSelected) {
     this.setState({ rSelected });
+
+    console.log(JSON.stringify(this.state.rSelected));
   }
 
 
@@ -19,10 +21,9 @@ export class GenderButton extends Component {
     return (
       <div>
         <ButtonGroup>
-          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Žena</Button>
-          <Button id="cssButtonChecked" outline color="primary" size="sm" onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Muž</Button>
+          <Button outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Žena</Button>
+          <Button outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Muž</Button>
         </ButtonGroup>
-        <p id="cssTitle"> Selected: {this.state.rSelected}</p>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 import {FontIcon} from "../atoms/FontIcon";
 
@@ -16,7 +16,7 @@ export class Footer extends Component {
             <a id="cssFooterMenu" href="/pribehy" className="footerMenu">Příběhy</a><br/>
             <a id="cssFooterMenu" href="/akce" className="footerMenu">Akce</a><br/>
             <a id="cssFooterMenu" href="/kontakty" className="footerMenu">Kontakt</a><br/>
-            <a id="cssFooterMenu" href="/admin" className="footerMenu">Admin modul</a>
+            <a id="cssFooterMenu" href="/admin-login" className="footerMenu">Admin modul</a>
             </Col>
             <Col>
               <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'facebook'}/><i/></a>
@@ -25,17 +25,12 @@ export class Footer extends Component {
               <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'google'}/><i/></a>
             </Col>
             <Col>
-              <a id="cssFooterArrow" href="#" ><FontIcon icon={'angle-up'}/><i/></a>
+              <a id="cssFooterArrow" href="#" ><i class="material-icons" style={{position: 'absolute' , right: '10px'}}>expand_less</i></a>
             </Col>
           </Row>
           <Row>
             <Col>
-              <a id="cssCopyright" >-</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <a id="cssCopyright" >© Tým 1 - Prevence má smysl {new Date().getFullYear()}</a>
+              <a id="cssCopyright" >© tým 1 #PrevenceMáSmysl {new Date().getFullYear()}</a>
             </Col>
           </Row>
         </Container>

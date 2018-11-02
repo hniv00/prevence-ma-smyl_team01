@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.4.2"
+    "@fortawesome/fontawesome-free": "^5.4.2",
+    "react-select": "^2.1.1"
   }
 }
