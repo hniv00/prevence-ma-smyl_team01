@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
@@ -45,12 +45,12 @@ export const Examination = (props) => {
       <div>
         <Row>
           {data.map( item => (
-            <Col sm="12" md="6">
+            <Col key={item.id} sm="12" md="6">
               <Card id="cssCardExamination" body>
                 <CardTitle>{ item.title }</CardTitle>
                 <CardText>
                   <p>
-                  {item.badges.map( badge => <><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</> )}
+                  {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
                   </p>
                   { item.description }
                 </CardText>

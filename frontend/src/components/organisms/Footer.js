@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import {FontIcon} from "../atoms/FontIcon";
@@ -31,12 +31,12 @@ export class Footer extends Component {
           <Row>
             <Col>
               {data.map ( item => (
-                <><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></>
+                <Fragment key={item}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
               ))}
             </Col>
             <Col>
               {socialPages.map ( item => (
-                <a href={item.href} target="_blank"><FontIcon variant={"b"} icon={item.icon}/><i/></a>
+                <a key={item} href={item.href} target="_blank"><FontIcon variant={"b"} icon={item.icon}/><i/></a>
               ))}
             </Col>
             <Col>

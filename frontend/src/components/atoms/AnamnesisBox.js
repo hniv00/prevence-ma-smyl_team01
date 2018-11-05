@@ -35,7 +35,7 @@ export class AnamnesisBox extends Component {
       <div>
         <ButtonGroup>
         {data.map (item => (
-            <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(item.id)} active={cSelected.includes(item.id)}>
+            <Button key={item.id} outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(item.id)} active={cSelected.includes(item.id)}>
               item.anamnesis
             </Button>
           ))}
