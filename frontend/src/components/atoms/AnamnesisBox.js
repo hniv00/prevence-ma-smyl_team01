@@ -1,6 +1,13 @@
 import React, { Component } from "react"
 import { ButtonGroup, Button } from 'reactstrap';
 
+const data = [
+  { id: 1, anamnesis: 'Kuřák' },
+  { id: 2, anamnesis: 'Podvýživa' },
+  { id: 3, anamnesis: 'Obezita' },
+  { id: 4, anamnesis: 'Vegan' },
+]
+
 export class AnamnesisBox extends Component {
   constructor (props) {
     super(props);
@@ -23,13 +30,16 @@ export class AnamnesisBox extends Component {
   }
 
   render() {
+    const { cSelected } = this.state;
     return (
       <div>
         <ButtonGroup>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>Vegan</Button>
+        {data.map (item => (
+            <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(item.id)} active={cSelected.includes(item.id)}>
+              item.anamnesis
+            </Button>
+          ))}
+
         </ButtonGroup>
       </div>
     );
