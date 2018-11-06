@@ -1,7 +1,27 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import {FontIcon} from "../atoms/FontIcon";
+
+const data = [
+  { href: '/', title: 'Landing Page'},
+  { href: '/vysetreni', title: 'Preventivní vyšetření'},
+  { href: '/feed', title: '#PrevenceMaSmysl'},
+  { href: '/pribehy', title: 'Příběhy'},
+  { href: '/akce', title: 'Akce'},
+  { href: '/kontakty', title: 'Kontakt'},
+  { href: '/admin-login', title: 'Admin modul'}
+]
+
+const socialPages = [
+  { href: 'http://www.facebook.com/', icon: 'facebook'},
+  { href: 'http://www.twitter.com/', icon: 'twitter'},
+  { href: 'http://www.instagram.com/', icon: 'instagram'},
+  { href: 'http://www.google.com/', icon: 'google'},
+  { href: 'http://www.yahoo.com/', icon: 'yahoo'},
+  { href: 'http://www.github.com/', icon: 'github'},
+  { href: 'http://www.amazon.com/', icon: 'amazon'}
+]
 
 export class Footer extends Component {
   render() {
@@ -10,19 +30,14 @@ export class Footer extends Component {
         <Container>
           <Row>
             <Col>
-            <a id="cssFooterMenu" href="/" className="footerMenu">Landing Page</a><br/>
-            <a id="cssFooterMenu" href="/vysetreni" className="footerMenu">Preventivní vyšetření</a><br/>
-            <a id="cssFooterMenu" href="/feed" className="footerMenu">#PrevenceMaSmysl</a><br/>
-            <a id="cssFooterMenu" href="/pribehy" className="footerMenu">Příběhy</a><br/>
-            <a id="cssFooterMenu" href="/akce" className="footerMenu">Akce</a><br/>
-            <a id="cssFooterMenu" href="/kontakty" className="footerMenu">Kontakt</a><br/>
-            <a id="cssFooterMenu" href="/admin-login" className="footerMenu">Admin modul</a>
+              {data.map ( item => (
+                <Fragment key={item}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
+              ))}
             </Col>
             <Col>
-              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'facebook'}/><i/></a>
-              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'twitter'}/><i/></a>
-              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'instagram'}/><i/></a>
-              <a href="#" target="_blank" ><FontIcon variant={"b"} icon={'google'}/><i/></a>
+              {socialPages.map ( item => (
+                <a key={item} href={item.href} target="_blank"><FontIcon variant={"b"} icon={item.icon}/><i/></a>
+              ))}
             </Col>
             <Col>
               <a id="cssFooterArrow" href="#" ><i class="material-icons" style={{position: 'absolute' , right: '10px'}}>expand_less</i></a>
