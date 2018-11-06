@@ -15,7 +15,8 @@ export class LoginButton extends Component {
           color="primary"
           className="login-button"
           onClick={this.onClickFunc}>
-          Přihlásit</Button>{' '}
+          Přihlásit
+        </Button>{' '}
       </div>
     );
   }

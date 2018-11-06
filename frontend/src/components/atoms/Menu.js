@@ -3,8 +3,19 @@ import "../../App.css";
 import {MenuButtonClose} from "./MenuButtonClose"
 import { Button } from 'reactstrap';
 
+const data = [
+  { href: '/', title: 'Landing Page'},
+  { href: '/vysetreni', title: 'Preventivní vyšetření'},
+  { href: '/feed', title: '#PrevenceMaSmysl'},
+  { href: '/pribehy', title: 'Příběhy'},
+  { href: '/akce', title: 'Akce'},
+  { href: '/kontakty', title: 'Kontakt'},
+  { href: '/admin-login', title: 'Admin modul'}
+]
+
 export class Menu extends Component {
   render() {
+    const { handleMouseDown } = this.props
     var visibility = "hide";
 
     if (this.props.menuVisibility) {
@@ -16,15 +27,11 @@ export class Menu extends Component {
     return (
       <div id="flyoutMenu" className={visibility}>
         <a href="#" class="menu-close-button" data-rel="menu-close-button"
-            onMouseDown={this.props.handleMouseDown} className={visibility}>
+            onMouseDown={handleMouseDown} className={visibility}>
 				<MenuButtonClose class="menu-close-button" handleMouseDown={this.handleMouseDown}/> </a>
-        <a id="cssHamburgerMenu" href="/"><p>Landing Page</p></a>
-        <a id="cssHamburgerMenu" href="/vysetreni"><p>Preventivní vyšetření</p></a>
-        <a id="cssHamburgerMenu" href="/feed"><p>#PrevenceMaSmysl</p></a>
-        <a id="cssHamburgerMenu" href="/pribehy"><p>Příběhy</p></a>
-        <a id="cssHamburgerMenu" href="/akce"><p>Akce</p></a>
-        <a id="cssHamburgerMenu" href="/kontakty"><p>Kontakt</p></a>
-        <a id="cssHamburgerMenu" href="/admin-login"><p>Admin modul</p></a>
+        {data.map ( item => (
+          <a key={item} id="cssHamburgerMenu" href={item.href}><p>{item.title}</p></a>
+        ))}
       </div>
     );
   }

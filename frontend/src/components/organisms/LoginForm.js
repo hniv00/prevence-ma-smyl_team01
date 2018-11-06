@@ -21,6 +21,7 @@ export class LoginForm extends Component {
 
   render() {
     return (
+    <div>
       <Jumbotron className= "login-form">
         <h2 className="admin-login-title">
           Přihlášení
@@ -42,7 +43,8 @@ export class LoginForm extends Component {
                 <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
             </div>
         </div>
-      </Jumbotron>
+        </Jumbotron>
+      </div>
     );
   }
 }

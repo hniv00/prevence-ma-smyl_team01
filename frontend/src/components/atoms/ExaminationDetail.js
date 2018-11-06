@@ -18,12 +18,15 @@ export class ExaminationDetail extends Component {
   }
 
   render() {
-      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
 
-      return (
+    const { modal } = this.state
+    const { className } = this.props
+    const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
+
+    return (
       <div>
         <Button color="info" size="sm" onClick={this.toggle}>Zobrazit detail vyšetření</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={modal} toggle={this.toggle} className={className}>
           <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>Preventivní prohlídka</ModalHeader>
           <ModalBody id="cssCardExamination">
             <p><Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
