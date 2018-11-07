@@ -9,7 +9,8 @@ export class LogoutButton extends Component {
           className="logout-button"
           color="danger"
           href="/admin-login">
-          Odhlásit</Button>{' '}
+          Odhlásit
+        </Button>{' '}
       </div>
     );
   }
