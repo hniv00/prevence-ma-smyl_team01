@@ -15,7 +15,7 @@ export class HeightBMI extends Component {
   render() {
     return (
       <div>
-        <h6>Zadejte výšku</h6>
+        <h6>Zadej výšku</h6>
          <input type="number" min="120" max="260" class="inputBMI" value={this.state.value} onChange={this.handleChange}/>
       </div>
     );

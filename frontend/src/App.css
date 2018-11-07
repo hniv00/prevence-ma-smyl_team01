@@ -109,7 +109,7 @@ header h6 {
 .footer p {
   text-align: center;
 }
-.footerMenu a {
+.footerMenu a{
   text-decoration: none;
   display: flex;
   position: fixed;
