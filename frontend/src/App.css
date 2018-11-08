@@ -342,12 +342,6 @@ header h6 {
   margin-top: 20px;
 }
 
-/* Admin-Examination Page */
-.ExamInputForm {
-  margin:auto;
-  width: 50%;
-}
-
 .placeholder {
   color: black;
 }
@@ -358,6 +352,28 @@ header h6 {
 }
 .material-icons {
   margin-left: 15px;
+}
+
+/* Admin module - Examination page */
+
+#AdminExamContainer {
+  background-color: #d8f7ff;
+  color: black;
+  border-color: #ededed;
+  border-radius: .90rem;
+  margin: 10px;
+}
+
+.ageInput {
+  font-size: 12px;
+  width: 50px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 8px;
+  margin-left:auto;
+  margin-right: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Icons */
