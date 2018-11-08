@@ -16,6 +16,7 @@ export const ExamNameContainer = (props) => {
       <Jumbotron>
         <Row>
           <Col xs="0" sm="12" md="4"><ExamName></ExamName></Col>
+          <Col xs="0" sm="12" md="4"></Col>
           <Col xs="0" sm="12" md="4">
             <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
               <i class="material-icons">
@@ -29,7 +30,8 @@ export const ExamNameContainer = (props) => {
         </Row>
         <Row>
         <Col xs="0" sm="12" md="4"><ExamDescription></ExamDescription></Col>
-        <Col xs="0" sm="12" md="4"><ExamDiagnosis /></Col>
+        <Col xs="0" sm="12" md="4"></Col>
+        <Col xs="0" sm="12" md="4"><ExamDiagnosis></ExamDiagnosis></Col>
         </Row>
       </Jumbotron>
     </div>

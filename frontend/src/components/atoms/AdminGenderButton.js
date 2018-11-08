@@ -27,7 +27,7 @@ export class AdminGenderButton extends Component {
           <ButtonGroup>
             <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Žena</Button>
             <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Muž</Button>
-            <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 3}>Unisex</Button>
+            <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>Unisex</Button>
           </ButtonGroup>
         </div>
       </div>
