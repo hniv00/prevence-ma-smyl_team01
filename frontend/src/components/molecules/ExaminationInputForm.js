@@ -5,7 +5,7 @@ import {  FormGroup, Label, Input } from 'reactstrap';
 export class ExaminationInputForm extends Component {
   render() {
     return (
-    <div>
+    <div className="ExamInputForm">
       <FormGroup className="ExamName">
         <Input type="text" placeholder="Název vyšetření" />
       </FormGroup>

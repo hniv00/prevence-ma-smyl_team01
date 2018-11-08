@@ -16,11 +16,6 @@ import {
   Jumbotron} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
-import {Heading} from '../atoms/Heading';
-import {Footer} from '../organisms/Footer';
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
-
 //import logo from '../../img/logo_prevence.png';
 
 export class AdminLandingPage extends Component {
@@ -31,7 +26,7 @@ export class AdminLandingPage extends Component {
         <Navbar className="AdminNavBar" color="light" light expand="md">
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink className="AdminNavItem" href="/admin-prevence/">Prevence</NavLink>
+                <NavLink className="AdminNavItem" href="/admin-vysetreni/">Prevence</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="AdminNavItem" href="/admin-pribehy/">Příběhy</NavLink>

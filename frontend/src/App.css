@@ -338,12 +338,26 @@ header h6 {
 }
 /* Admin-Texts */
 .AdminWelcH2 {
-  color: #F0F0F0;
+  color: #000;
   margin-top: 20px;
+}
+
+/* Admin-Examination Page */
+.ExamInputForm {
+  margin:auto;
+  width: 50%;
 }
 
 .placeholder {
   color: black;
+}
+
+/* Admin module - icons */
+.adminIcons {
+  margin-left: 75%;
+}
+.material-icons {
+  margin-left: 15px;
 }
 
 /* Icons */

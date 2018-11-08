@@ -8,7 +8,8 @@ import {Footer} from '../organisms/Footer';
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
-import {ExaminationInputForm} from '../molecules/ExaminationInputForm';
+import {ExamNameContainer} from '../organisms/ExamNameContainer';
+import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
 
 
 //import logo from '../../img/logo_prevence.png';
@@ -19,12 +20,15 @@ export class AdminExamination extends Component {
       <div>
         <div>
           <AdminNav></AdminNav>
-          </div>
+        </div>
           <div>
             <h2 className="AdminWelcH2">Správa vyšetření</h2>
           </div>
           <div>
-            <ExaminationInputForm></ExaminationInputForm>
+            <ExamNameContainer />
+          </div>
+          <div>
+            <GenderPeriodicityContainer />
           </div>
       </div>
 
