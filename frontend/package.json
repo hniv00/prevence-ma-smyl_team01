@@ -22,6 +22,7 @@
     "react-scripts": "^2.0.5",
     "react-select": "^2.1.1",
     "react-select-popover": "^0.1.1",
+    "react-switch": "^3.0.4",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",

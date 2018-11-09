@@ -30,7 +30,7 @@ export class AdminLandingPage extends Component {
         <Navbar className="AdminNavBar" color="light" light expand="md">
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink className="AdminNavItem" href="/admin-prevence/">Prevence</NavLink>
+                <NavLink className="AdminNavItem" href="/admin-vysetreni/">Prevence</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="AdminNavItem" href="/admin-pribehy/">Příběhy</NavLink>
