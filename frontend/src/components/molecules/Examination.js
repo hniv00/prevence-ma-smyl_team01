@@ -11,7 +11,8 @@ const data = [{
     které praktický lékař provádí v intervalu 2 let.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
-  badges: [ 'Obezita', 'Krátkozrakost' ]
+  badges: [ 'Obezita', 'Krátkozrakost' ],
+  periodicity: '1 á 2 roky'
 }, {
   id: 2,
   title: 'Zubní prohlídka',
@@ -19,15 +20,17 @@ const data = [{
   ideálně jednou za půl roku.
   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
   Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
-  badges: [ 'Zubní kaz', 'Paradontoza' ]
+  badges: [ 'Zubní kaz', 'Paradontoza' ],
+  periodicity: '1 á 6 měsíců'
 }, {
   id: 3,
-  title: 'Preventivní prohlídka 1',
-  description: `Docházejte pravidelně na preventivní prohlídky,
-    které praktický lékař provádí v intervalu 2 let.
+  title: 'Oční prohlídka',
+  description: `Docházejte pravidelně na preventivní oční prohlídky,
+    které oční lékař provádí v intervalu jednoho roku.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
-  badges: [ 'Obezita', 'Krátkozrakost' ]
+  badges: [ 'Obezita', 'Krátkozrakost' ],
+  periodicity: '1 á 1 rok'
 }, {
   id: 4,
   title: 'Preventivní prohlídka 2',
@@ -35,7 +38,8 @@ const data = [{
     které praktický lékař provádí v intervalu 2 let.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.`,
-  badges: [ 'Obezita', 'Krátkozrakost' ]
+  badges: [ 'Obezita', 'Krátkozrakost' ],
+  periodicity: '1 á 2 roky'
 }
 ]
 
@@ -49,10 +53,18 @@ export const Examination = (props) => {
               <Card id="cssCardExamination" body>
                 <CardTitle>{ item.title }</CardTitle>
                 <CardText>
-                  <p>
-                  {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
-                  </p>
-                  { item.description }
+                  <Row>
+                    <Col style={{'text-align': 'left'}}>
+                      <p>
+                      {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
+                      </p>
+                    </Col>
+                    <Col>
+                      <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.periodicity }</Badge>{' '}
+                      </p>
+                    </Col>
+                  </Row>
+                    { item.description }
                 </CardText>
                 <ExaminationDetail/>
               </Card>

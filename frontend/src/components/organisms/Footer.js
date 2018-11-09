@@ -9,18 +9,14 @@ const data = [
   { href: '/feed', title: '#PrevenceMaSmysl'},
   { href: '/pribehy', title: 'Příběhy'},
   { href: '/akce', title: 'Akce'},
-  { href: '/kontakty', title: 'Kontakt'},
-  { href: '/admin-login', title: 'Admin modul'}
+  { href: '/kontakty', title: 'Kontakt'}
 ]
 
 const socialPages = [
   { href: 'http://www.facebook.com/', icon: 'facebook'},
   { href: 'http://www.twitter.com/', icon: 'twitter'},
   { href: 'http://www.instagram.com/', icon: 'instagram'},
-  { href: 'http://www.google.com/', icon: 'google'},
-  { href: 'http://www.yahoo.com/', icon: 'yahoo'},
-  { href: 'http://www.github.com/', icon: 'github'},
-  { href: 'http://www.amazon.com/', icon: 'amazon'}
+  { href: 'http://www.google.com/', icon: 'google'}
 ]
 
 export class Footer extends Component {
@@ -29,14 +25,14 @@ export class Footer extends Component {
       <div>
         <Container>
           <Row>
-            <Col>
+            <Col style={{'text-align': 'left'}}>
               {data.map ( item => (
                 <Fragment key={item}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
               ))}
             </Col>
-            <Col>
+            <Col style={{'text-decoration': 'none'}}>
               {socialPages.map ( item => (
-                <a key={item} href={item.href} target="_blank"><FontIcon variant={"b"} icon={item.icon}/><i/></a>
+                <a key={item} href={item.href} target="_blank" style={{'text-decoration': 'none'}}><FontIcon variant={"b"} icon={item.icon}/><i/></a>
               ))}
             </Col>
             <Col>

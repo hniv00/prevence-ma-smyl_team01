@@ -6,7 +6,7 @@ export class AnamnesisSelection extends Component {
   render() {
     return (
       <div>
-        <h6>Vyber anamnézu</h6>
+        <h6>Rodinná anamnéza</h6>
         <MultiSelect></MultiSelect>
       </div>
     );
