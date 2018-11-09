@@ -20,7 +20,7 @@ export class ExaminationList extends Component {
       this.fillList(response.data.examinations);
     });
   }
-  
+
   render() {
     return (
     <div style={{ margin: '5%'}}>
