@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import Select from 'react-select';
 
 const options = [
-  { value: 'obezita', label: 'obezita' },
-  { value: 'kuřák', label: 'kuřák' },
-  { value: 'nesportovec', label: 'nesportovec' }
+  { value: 'hypertenze', label: 'hypertenze' },
+  { value: 'diabetes', label: 'diabetes' },
+  { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' },
+  { value: 'vyšší cholesterol', label: 'vyšší cholesterol' }
 ];
 
 export class MultiSelect extends Component {

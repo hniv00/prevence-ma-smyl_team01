@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Modal, Button, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
+import { Modal, Row, Col, Button, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
 
 export class ExaminationDetail extends Component {
   constructor(props) {
@@ -29,8 +29,16 @@ export class ExaminationDetail extends Component {
         <Modal isOpen={modal} toggle={this.toggle} className={className}>
           <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>Preventivní prohlídka</ModalHeader>
           <ModalBody id="cssCardExamination">
-            <p><Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
-            <Badge id="cssBadge" color="secondary">Krátkozrakost</Badge></p>
+            <Row>
+              <Col>
+                <p><Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
+                <Badge id="cssBadge" color="secondary">Krátkozrakost</Badge></p>
+              </Col>
+              <Col>
+                <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">1 á 2 roky</Badge>{' '}
+                </p>
+              </Col>
+            </Row>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
