@@ -4,12 +4,10 @@ import Select from 'react-select';
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
   { value: 'diabetes', label: 'diabetes' },
-  { value: 'rakovina', label: 'rakovina' },
-  { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' },
-  { value: 'vyšší cholesterol', label: 'vyšší cholesterol' }
+  { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
 ];
 
-export class MultiSelect extends Component {
+export class MultiSelectDis extends Component {
   state = {
     selectedOption: null,
   }
@@ -21,7 +19,7 @@ export class MultiSelect extends Component {
     const { selectedOption } = this.state;
 
     return (
-      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px', 'font-size': '12px'}}
+      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px'}}
         value={selectedOption}
         onChange={this.handleChange}
         options={options}

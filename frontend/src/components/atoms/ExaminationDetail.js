@@ -31,11 +31,10 @@ export class ExaminationDetail extends Component {
           <ModalBody id="cssCardExamination">
             <Row>
               <Col>
-                <p><Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
-                <Badge id="cssBadge" color="secondary">Krátkozrakost</Badge></p>
-              </Col>
-              <Col>
                 <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">1 á 2 roky</Badge>{' '}
+                </p>
+                <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">
+                lidé trpící poruchami zažívání by toto vyšetření měli navštěvovat 1 á 6 měsíců</Badge>{' '}
                 </p>
               </Col>
             </Row>
@@ -45,7 +44,16 @@ export class ExaminationDetail extends Component {
             fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </ModalBody>
-
+          <ModalFooter id="cssCardExamination">
+            <Row>
+              <Col>
+                Díky preventivní prohlídce vyloučíte tyto diagnózy:
+                <p>
+                <Badge id="cssBadge" color="secondary">Obezita</Badge>{' '}
+                <Badge id="cssBadge" color="secondary">Krátkozrakost</Badge></p>
+              </Col>
+            </Row>
+          </ModalFooter>
         </Modal>
       </div>
     );
