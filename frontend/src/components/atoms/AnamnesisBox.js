@@ -1,6 +1,15 @@
 import React, { Component } from "react"
 import { ButtonGroup, Button } from 'reactstrap';
 
+// not imported to the filter
+
+const data = [
+  { id: 1, anamnesis: 'Kuřák' },
+  { id: 2, anamnesis: 'Podvýživa' },
+  { id: 3, anamnesis: 'Obezita' },
+  { id: 4, anamnesis: 'Vegan' },
+]
+
 export class AnamnesisBox extends Component {
   constructor (props) {
     super(props);
@@ -23,50 +32,18 @@ export class AnamnesisBox extends Component {
   }
 
   render() {
+    const { cSelected } = this.state;
     return (
       <div>
         <ButtonGroup>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>Kuřák</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>Podvýživa</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>Obezita</Button>
-          <Button outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(4)} active={this.state.cSelected.includes(4)}>Vegan</Button>
+        {data.map (item => (
+            <Button key={item.id} outline color="info" size="sm" onClick={() => this.onCheckboxBtnClick(item.id)} active={cSelected.includes(item.id)}>
+              item.anamnesis
+            </Button>
+          ))}
+
         </ButtonGroup>
       </div>
     );
   }
 }
-
-
-
-/* Test of combo box with tags */
-/*
-import { SelectPopover} from 'react-select-popover';
-
-export class AnamnesisBox extends Component {
-render () {
-var options = [
-    { label: "CSS", value: "css" },
-    { label: "HTML", value: "html" },
-    { label: "JavaScript", value: "js" },
-    { label: "Ruby on Rails", value: "ror" },
-];
-var selectFieldName = "my-select";
-var selectPlaceholder = "Choose some options...";
-var onChange = function(obj) {
-    console.log("EVENT", obj.event); // "added" or "removed"
-    console.log("ITEM", obj.item);   // item that has been added/removed { label: '...', value: '...' }
-    console.log("VALUE", obj.value); // [{label: '...', value: '...'}, {label: '...', value: '...'}]
-}
-
-return(
-    <SelectPopover
-        options={options}
-        name={selectFieldName}
-        selectPlaceholder={selectPlaceholder}
-        onChange={ onChange }
-    />
-);
-}
-}
-
-*/

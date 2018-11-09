@@ -1,12 +1,7 @@
 import React, { Component } from "react"
 import { Button, ButtonGroup } from 'reactstrap';
 
-const data = [
-  { id: 1, gender: 'Žena' },
-  { id: 2, gender: 'Muž' }
-]
-
-export class GenderButton extends Component {
+export class SmokerButton extends Component {
   constructor (props) {
     super(props);
 
@@ -23,15 +18,11 @@ export class GenderButton extends Component {
 
 
   render() {
-    const { rSelected } = this.state
     return (
       <div>
         <ButtonGroup>
-          {data.map (item => (
-            <Button key={item.id} outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick( item.id )} active={rSelected ===  item.id }>
-              { item.gender }
-            </Button>
-          ))}
+          <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>Kuřák</Button>
+          <Button outline color="info" size="sm" id="genderB" style={{width: '70px'}} onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>Nekuřák</Button>
         </ButtonGroup>
       </div>
     );

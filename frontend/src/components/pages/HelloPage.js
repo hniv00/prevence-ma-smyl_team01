@@ -43,10 +43,6 @@ export class HelloPage extends Component {
         </Parallax>
 
         <Parallax>
-          <ExaminationList/>
-        </Parallax>
-
-        <Parallax>
             <About/>
         </Parallax>
 

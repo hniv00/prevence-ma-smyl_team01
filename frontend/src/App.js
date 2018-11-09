@@ -8,20 +8,28 @@ import {LoginPage} from "./components/pages/LoginPage"
 import {AdminLandingPage} from "./components/pages/AdminLandingPage"
 import {AdminExamination} from "./components/pages/AdminExamination"
 
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { configureStore } from './store/configureStore.js';
+const { store, persistor } = configureStore();
+
 class App extends Component{
 
   render(){
     return(
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={HelloPage} />
-          <Route path="/vysetreni" component={ExamPage} />
-          <Route path="/admin-login" component={LoginPage} />
-          <Route path="/admin-lp" component={AdminLandingPage} />
-          <Route path="/admin-vysetreni" component={AdminExamination} />
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
 
+          <BrowserRouter>
+              <Switch>
+                <Route exact path="/" component={HelloPage} />
+                <Route path="/vysetreni" component={ExamPage} />
+                <Route path="/admin-login" component={LoginPage} />
+                <Route path="/admin-lp" component={AdminLandingPage} />
+                <Route path="/admin-vysetreni" component={AdminExamination} />
+              </Switch>
+          </BrowserRouter>
+
+      </Provider>
     );
   }
 }

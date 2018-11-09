@@ -109,7 +109,7 @@ header h6 {
 .footer p {
   text-align: center;
 }
-.footerMenu a {
+.footerMenu a{
   text-decoration: none;
   display: flex;
   position: fixed;
@@ -132,6 +132,19 @@ header h6 {
 #cssCopyright,
 #cssFooterArrow {
   color: #026977;
+}
+
+/* BMI filter */
+.inputBMI {
+  font-size: 14px;
+  width: 70px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 3px;
+  margin-left:auto;
+  margin-right: auto;
+  border: 1.6px solid #17a2b8;
+  border-radius: 5px;
 }
 
 
@@ -160,6 +173,12 @@ header h6 {
 /* Examination Badge */
 #cssBadge{
     background-color: #F26D98;
+    color: white;
+    font-weight: 500;
+}
+
+#cssBadgePeriodicity{
+    background-color: #39B2C3;
     color: white;
     font-weight: 500;
 }
