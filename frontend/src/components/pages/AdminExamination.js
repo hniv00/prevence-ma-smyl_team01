@@ -12,6 +12,9 @@ import {ExamNameContainer} from '../organisms/ExamNameContainer';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
 import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
 import {AdvancedFilterContainer} from '../organisms/AdvancedFilterContainer';
+import {AdminBasicFilterContainer} from '../organisms/AdminBasicFilterContainer';
+import {AdminBasicFilterContainer2} from '../organisms/AdminBasicFilterContainer2';
+
 
 //import logo from '../../img/logo_prevence.png';
 
@@ -34,9 +37,9 @@ export class AdminExamination extends Component {
           <div>
             <Row>
               <Col>
-                <BasicFilterContainer />
+                <AdminBasicFilterContainer />
               </Col>
-              <Col><AdvancedFilterContainer /></Col>
+              <Col><AdminBasicFilterContainer2 /></Col>
             </Row>
           </div>
           <div>
