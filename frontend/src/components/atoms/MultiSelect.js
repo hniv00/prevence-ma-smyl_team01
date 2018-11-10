@@ -21,11 +21,13 @@ export class MultiSelect extends Component {
     const { selectedOption } = this.state;
 
     return (
-      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px', 'font-size': '12px'}}
+      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px', 'font-size': '10px'}}
         value={selectedOption}
         onChange={this.handleChange}
         options={options}
         isMulti={true}
+        isSearchable={true}
+        placeholder="Nemoci v rodině"
       />
     );
   }
