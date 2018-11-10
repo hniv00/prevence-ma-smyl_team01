@@ -8,10 +8,11 @@ import {LoginPage} from "./components/pages/LoginPage"
 import {AdminLandingPage} from "./components/pages/AdminLandingPage"
 import {AdminExamination} from "./components/pages/AdminExamination"
 
-import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { configureStore } from './store/configureStore.js';
-const { store, persistor } = configureStore();
+import { createStore } from 'redux';
+import createRootReducer from './store/createRootReducer'
+
+const store = createStore(createRootReducer);
 
 class App extends Component{
 
