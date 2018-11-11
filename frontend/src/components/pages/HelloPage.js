@@ -4,7 +4,6 @@ import {Row, Col} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Filter} from '../organisms/Filter';
-import {ExaminationList} from '../organisms/ExaminationList';
 import {About} from '../organisms/About';
 import {Motivation} from '../organisms/Motivation';
 import {Partners} from '../organisms/Partners';
@@ -76,7 +75,5 @@ export class HelloPage extends Component {
     </div>);
   }
 }
-
-
 
 // bgHeight={'1080px'} bgWidth={'1920px'}
