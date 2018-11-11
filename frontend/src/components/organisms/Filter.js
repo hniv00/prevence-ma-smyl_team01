@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'; 
 import { Jumbotron, Row, Col } from 'reactstrap';
 
 import {GenderSelection} from '../molecules/GenderSelection';

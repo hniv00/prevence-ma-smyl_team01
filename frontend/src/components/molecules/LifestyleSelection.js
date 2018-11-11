@@ -7,7 +7,7 @@ export class LifestyleSelection extends Component {
     return (
       <div>
         <h6>Životní styl</h6>
-        <SmokerButton></SmokerButton>
+        <SmokerButton/>
       </div>
     );
   }

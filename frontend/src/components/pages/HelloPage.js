@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Parallax} from 'react-parallax';
 import {Row, Col} from 'reactstrap';
-import {connect} from 'react-redux'; 
 
 import {TopNav} from '../molecules/TopNav';
 import {Filter} from '../organisms/Filter';
@@ -15,7 +14,7 @@ import '../../parallax.css';
 
 import image from '../../img/POZADI_PSD.png';
 
-class HelloPageRaw extends Component {
+export class HelloPage extends Component {
   render() {
     return (<div>
 
@@ -76,14 +75,5 @@ class HelloPageRaw extends Component {
     </div>);
   }
 }
-
-const mapStateToProps = state => {
-  return{
-    filteredCriteria: state.filteredCriteria
-  }
-}
-
-export const HelloPage = connect(mapStateToProps)(HelloPageRaw);
-
 
 // bgHeight={'1080px'} bgWidth={'1920px'}

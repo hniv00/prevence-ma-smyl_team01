@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import createRootReducer from './store/createRootReducer'
 
-const store = createStore(createRootReducer);
+const store = createStore(createRootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 class App extends Component{
 
