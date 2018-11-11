@@ -6,7 +6,7 @@ export class GenderSelection extends Component {
     return (
       <div>
         <h6>Vyber pohlaví</h6>
-        <GenderButton></GenderButton>
+        <GenderButton/>
       </div>
     );
   }

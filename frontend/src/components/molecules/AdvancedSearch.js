@@ -8,8 +8,8 @@ export class AdvancedSearch extends Component {
     return (
       <div>
         <Row>
-          <Col xs="0" sm="12" md="3"><LifestyleSelection></LifestyleSelection></Col>
-          <Col xs="0" sm="12" md="9"><BMISelection></BMISelection></Col>
+          <Col xs="0" sm="12" md="3"><LifestyleSelection/></Col>
+          <Col xs="0" sm="12" md="9"><BMISelection/></Col>
         </Row>
       </div>
     );

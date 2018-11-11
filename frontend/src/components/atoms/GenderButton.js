@@ -1,26 +1,26 @@
 import React, { Component } from "react"
 import { Button, ButtonGroup } from 'reactstrap';
+import {connect} from 'react-redux';
+import {setGender} from '../../services/Filtration/actions';
 
 const data = [
   { id: 1, gender: 'Žena' },
   { id: 2, gender: 'Muž' }
 ]
 
-export class GenderButton extends Component {
+export class GenderButtonRaw extends Component {
   constructor (props) {
     super(props);
 
-    this.state = { cSelected: [] };
-
+    this.state = { rSelected: this.props.selected };
     this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
   }
 
   onRadioBtnClick(rSelected) {
-    this.setState({ rSelected });
-
-    console.log(JSON.stringify(this.state.rSelected));
+    this.setState({ rSelected },
+      () => this.props.setGender(this.state.rSelected)
+      );
   }
-
 
   render() {
     const { rSelected } = this.state
@@ -37,3 +37,14 @@ export class GenderButton extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  selected: state.filterState.gender
+});
+
+const mapDispatchToProps = {
+  setGender
+};
+
+export const GenderButton = connect(mapStateToProps, mapDispatchToProps)(GenderButtonRaw)
+
