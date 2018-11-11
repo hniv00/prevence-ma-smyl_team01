@@ -24,6 +24,8 @@ export class MultiSelectDis extends Component {
         onChange={this.handleChange}
         options={options}
         isMulti={true}
+        isSearchable={true}
+        placeholder="Vlastní nemoci"
       />
     );
   }
