@@ -1,11 +1,43 @@
 import { EXAMINATIONS } from './examTestData';
-import { IDS} from './examTestData';
-
+import { IDS } from './examTestData';
+import db from '../database/model/';
+const Op = db.Sequelize.Op;
+    
 // examinations (array of objects)
 
 export const examController = async (req, res) => {
-  return res.json({ examinations: EXAMINATIONS });
+    const exams = await db.Examination.findAll({});
+    return res.json({ exams });
+    
+    /*.query("SELECT * FROM Examination")
+        .then(exams => {
+            console.log(exams);
+        });*/
+
 };
+
+export const examBasicController = async (req, res) => {
+
+    const exams = await db.Examination.findAll({
+        where: {
+            Gender: {
+                [Op.or]: [req.params.gender, "U"]
+            },
+            AgeFrom_basic: {
+                [Op.lte]: req.params.age
+            },
+            AgeUntil_basic: {
+                [Op.gte]: req.params.age
+            },
+            IndicationNeeded: {
+                [Op.eq]: 0
+            }
+        }
+    });
+    return res.json({ exams });
+    
+};
+
 
 // examinations by gender(array of objects)
 
