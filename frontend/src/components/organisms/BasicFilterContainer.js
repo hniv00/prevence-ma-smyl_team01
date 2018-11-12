@@ -6,7 +6,6 @@ import {TooltipItem} from '../molecules/TooltipItem';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {ExamDescription} from '../molecules/ExamDescription';
 import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
-import {AdminBasicFilter} from '../molecules/AdminBasicFilter';
 
 
 
@@ -15,13 +14,12 @@ export const BasicFilterContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
-        <Row><AdminBasicFilter></AdminBasicFilter></Row>
         <Row>
           <Col>
             <Form>
               <FormGroup>
                 <Label>Věk od:</Label>
-                <Input className="ageInput" type="number"/>
+                <Input className="ageInput" type="number" min="18" max="120"/>
               </FormGroup>
             </Form>
           </Col>
@@ -29,7 +27,7 @@ export const BasicFilterContainer = (props) => {
             <Form>
               <FormGroup>
                 <Label>Věk do:</Label>
-                <Input className="ageInput" type="number"/>
+                <Input className="ageInput" type="number" min="18" max="120"/>
               </FormGroup>
             </Form>
           </Col>

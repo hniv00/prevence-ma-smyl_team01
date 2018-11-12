@@ -93,6 +93,15 @@ header h6 {
     border-radius: 50%;
 }
 
+.img{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 20px;
+    width: 80%;
+}
+
 
 /* Custom page footer */
 .footer {
@@ -166,7 +175,7 @@ header h6 {
   background-color: #fcfcfc;
   color: black;
   border-color: #ededed;
-  border-radius: .90rem;
+  border-radius: .20rem;
   margin: 10px;
 }
 
@@ -477,4 +486,7 @@ a:hover .fab, a:hover .fas {
     margin-bottom: 30px;
   }
 
+  .modal-dialog {
+      max-width: 800px;
+  }
 }

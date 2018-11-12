@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
-import {Jumbotron, Row, Col, Button} from 'reactstrap';
+import {Jumbotron, Row, Col, Button, Container} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
@@ -12,6 +12,9 @@ import {ExamNameContainer} from '../organisms/ExamNameContainer';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
 import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
 import {AdvancedFilterContainer} from '../organisms/AdvancedFilterContainer';
+import {AdminBasicFilterContainer} from '../organisms/AdminBasicFilterContainer';
+import {AdminAdvancedFilterContainer} from '../organisms/AdminAdvancedFilterContainer';
+
 
 //import logo from '../../img/logo_prevence.png';
 
@@ -20,31 +23,32 @@ export class AdminExamination extends Component {
     return (
       <div>
         <div>
-          <AdminNav></AdminNav>
+          <AdminNav/>
         </div>
-          <div>
-            <h2 className="AdminWelcH2">Správa vyšetření</h2>
-          </div>
-          <div>
-            <ExamNameContainer />
-          </div>
-          <div>
-            <GenderPeriodicityContainer />
-          </div>
-          <div>
-            <Row>
-              <Col>
-                <BasicFilterContainer />
-              </Col>
-              <Col><AdvancedFilterContainer /></Col>
-            </Row>
-          </div>
-          <div>
+        <div>
+        <Container>
+          <Row>
+            <Col><h2 className="AdminWelcH2">Správa vyšetření</h2></Col>
+          </Row>
+          <ExamNameContainer />
+          <GenderPeriodicityContainer />
+          <Row>
+            <Col>
+              <AdminBasicFilterContainer />
+            </Col>
+            <Col>
+              <AdminAdvancedFilterContainer />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
                 <Button color="info" size="md">Smazat</Button>
                 <Button color="info" size="md">Uložit</Button>
-          </div>
-      </div>
-
+            </Col>
+          </Row>
+          </Container>
+        </div>
+    </div>
     );
   }
 }
