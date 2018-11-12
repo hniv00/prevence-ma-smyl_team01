@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
-import {Jumbotron, Row, Col, Button} from 'reactstrap';
+import {Jumbotron, Row, Col, Button, Container} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
@@ -26,6 +26,7 @@ export class AdminExamination extends Component {
           <AdminNav/>
         </div>
         <div>
+        <Container>
           <Row>
             <Col><h2 className="AdminWelcH2">Správa vyšetření</h2></Col>
           </Row>
@@ -45,6 +46,7 @@ export class AdminExamination extends Component {
                 <Button color="info" size="md">Uložit</Button>
             </Col>
           </Row>
+          </Container>
         </div>
     </div>
     );
