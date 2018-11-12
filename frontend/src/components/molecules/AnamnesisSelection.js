@@ -2,15 +2,24 @@ import React, { Component } from "react";
 import {connect} from 'react-redux';
 import {setAnamnesis} from '../../services/Filtration/actions'
 import {MultiSelect} from '../atoms/MultiSelect';
+import {dumbStore} from '../../store/dumbStore';
+import axios from 'axios';
 
 export class AnamnesisSelectionRaw extends Component {
-   options = [
-    { value: 'hypertenze', label: 'hypertenze' },
-    { value: 'diabetes', label: 'diabetes' },
-    { value: 'rakovina', label: 'rakovina' },
-    { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' },
-    { value: 'vyšší cholesterol', label: 'vyšší cholesterol' }
-  ];
+   options = dumbStore.anamnesisOptions;
+
+  constructor(){
+    super()
+    this.fillFromDB = this.fillFromDB.bind(this);
+    this.options = dumbStore.anamnesisOptions;
+  }
+
+  fillFromDB(){
+    return 'lol';
+     axios.get('http://localhost:3030/api/examination').then((response)=>{
+      dumbStore.anamnesisOptions = response;
+     });
+  }
 
   handleChange = (selectedOption) => {
     this.props.setAnamnesis(selectedOption);

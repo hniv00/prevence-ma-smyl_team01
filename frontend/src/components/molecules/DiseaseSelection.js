@@ -2,14 +2,11 @@ import React, { Component } from "react"
 import {MultiSelect} from '../atoms/MultiSelect';
 import {connect} from 'react-redux';
 import {setDisease} from '../../services/Filtration/actions';
+import {dumbStore} from '../../store/dumbStore';
 
 export class DiseaseSelectionRaw extends Component {
 
-  options = [
-    { value: 'hypertenze', label: 'hypertenze' },
-    { value: 'diabetes', label: 'diabetes' },
-    { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
-  ];
+  options = dumbStore.diseaseOptions;
 
   handleChange = (selectedOption) => {
     this.props.setAnamnesis(selectedOption);
