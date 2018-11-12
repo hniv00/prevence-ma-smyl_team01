@@ -5,7 +5,7 @@ export class FilterButton extends Component {
   render() {
     return (
       <div>
-        <Button color="info" size="md">Vyhledej prevenci!</Button>{' '}
+        <Button onClick={this.props.onClick} color="info" size="md">Vyhledej prevenci!</Button>{' '}
       </div>
     );
   }

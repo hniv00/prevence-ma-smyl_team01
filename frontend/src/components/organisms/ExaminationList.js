@@ -1,26 +1,11 @@
 import React, {Component} from 'react';
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import {dumbStore} from '../../store/dumbStore';
 
 import {Examination} from '../molecules/Examination';
 import axios from 'axios'
 
-export class ExaminationList extends Component {
-  fillList(result){
-    this.list = [];
-    console.log(result.length);
-    for (let i = 0; i < 3; i++) {
-      this.list.push(<Examination data={result[i]}/>);
-      this.forceUpdate();
-    }
-  }
-
-  componentDidMount(){
-    axios.get('http://localhost:3030/api/examination').then((response)=>{
-      console.log(response);
-      this.fillList(response.data.examinations);
-    });
-  }
-  
+export class ExaminationList extends Component {  
   render() {
     return (
     <div style={{ margin: '5%'}}>
@@ -30,8 +15,6 @@ export class ExaminationList extends Component {
   );
 }
 };
-
-
 
 /* This was excluded from the div..probably delete forever
 
