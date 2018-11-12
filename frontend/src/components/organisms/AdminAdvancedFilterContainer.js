@@ -6,15 +6,15 @@ import {TooltipItem} from '../molecules/TooltipItem';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {ExamDescription} from '../molecules/ExamDescription';
 import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
-import {AdminShowAdvancedSearch2} from '../molecules/AdminShowAdvancedSearch2';
+import {AdminShowAdvanced} from '../molecules/AdminShowAdvanced';
 
 
 
-export const AdminBasicFilterContainer2 = (props) => {
+export const AdminAdvancedFilterContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
-        <Row><AdminShowAdvancedSearch2></AdminShowAdvancedSearch2></Row>
+        <Row><AdminShowAdvanced></AdminShowAdvanced></Row>
       </Jumbotron>
     </div>
   );

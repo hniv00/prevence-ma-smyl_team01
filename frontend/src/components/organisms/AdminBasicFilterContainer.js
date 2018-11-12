@@ -6,7 +6,7 @@ import {TooltipItem} from '../molecules/TooltipItem';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {ExamDescription} from '../molecules/ExamDescription';
 import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
-import {AdminShowAdvancedSearch} from '../molecules/AdminShowAdvancedSearch';
+import {AdminShowBasic} from '../molecules/AdminShowBasic';
 
 
 
@@ -14,7 +14,7 @@ export const AdminBasicFilterContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
-        <Row><AdminShowAdvancedSearch></AdminShowAdvancedSearch></Row>
+        <Row><AdminShowBasic></AdminShowBasic></Row>
       </Jumbotron>
     </div>
   );

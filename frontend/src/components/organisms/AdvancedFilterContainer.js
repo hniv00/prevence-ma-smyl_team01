@@ -47,7 +47,7 @@ export const AdvancedFilterContainer = (props) => {
 
         <Col align="left">
           <Form>
-            <Label>Rodinná anamnéza</Label>
+            <Label>Léčím se s</Label>
             <FormGroup check>
               <Label check>
                 <Input type="checkbox" />{' '}

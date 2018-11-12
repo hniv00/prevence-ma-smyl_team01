@@ -13,7 +13,7 @@ import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContaine
 import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
 import {AdvancedFilterContainer} from '../organisms/AdvancedFilterContainer';
 import {AdminBasicFilterContainer} from '../organisms/AdminBasicFilterContainer';
-import {AdminBasicFilterContainer2} from '../organisms/AdminBasicFilterContainer2';
+import {AdminAdvancedFilterContainer} from '../organisms/AdminAdvancedFilterContainer';
 
 
 //import logo from '../../img/logo_prevence.png';
@@ -23,31 +23,30 @@ export class AdminExamination extends Component {
     return (
       <div>
         <div>
-          <AdminNav></AdminNav>
+          <AdminNav/>
         </div>
-          <div>
-            <h2 className="AdminWelcH2">Správa vyšetření</h2>
-          </div>
-          <div>
-            <ExamNameContainer />
-          </div>
-          <div>
-            <GenderPeriodicityContainer />
-          </div>
-          <div>
-            <Row>
-              <Col>
-                <AdminBasicFilterContainer />
-              </Col>
-              <Col><AdminBasicFilterContainer2 /></Col>
-            </Row>
-          </div>
-          <div>
+        <div>
+          <Row>
+            <Col><h2 className="AdminWelcH2">Správa vyšetření</h2></Col>
+          </Row>
+          <ExamNameContainer />
+          <GenderPeriodicityContainer />
+          <Row>
+            <Col>
+              <AdminBasicFilterContainer />
+            </Col>
+            <Col>
+              <AdminAdvancedFilterContainer />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
                 <Button color="info" size="md">Smazat</Button>
                 <Button color="info" size="md">Uložit</Button>
-          </div>
-      </div>
-
+            </Col>
+          </Row>
+        </div>
+    </div>
     );
   }
 }

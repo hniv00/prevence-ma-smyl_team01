@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Collapse, Row, Col, Container } from 'reactstrap';
-import {AdminAdvancedSearch2} from '../molecules/AdminAdvancedSearch2';
+import {AdminAdvanced} from '../molecules/AdminAdvanced';
 
-export class AdminShowAdvancedSearch2 extends Component {
+export class AdminShowAdvanced extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -29,7 +29,7 @@ export class AdminShowAdvancedSearch2 extends Component {
         <Row>
           <Col xs="12">
             <Collapse isOpen={this.state.collapse}>
-              <AdminAdvancedSearch2></AdminAdvancedSearch2>
+              <AdminAdvanced></AdminAdvanced>
             </Collapse>
           </Col>
         </Row>
