@@ -4,7 +4,7 @@ import { Row, Col, Container, Jumbotron} from 'reactstrap';
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
 import {NewExamButton} from '../atoms/NewExamButton';
-import {AdminMenu} from '../molecules/AdminMenu';
+import {AdminNav} from '../organisms/AdminNav';
 import {AdminExamsTab} from '../organisms/AdminExamsTab';
 //import logo from '../../img/logo_prevence.png';
 
@@ -12,7 +12,7 @@ export class AdminExams extends Component {
   render() {
     return (
       <div>
-        <AdminMenu/>
+        <AdminNav/>
         <Container>
           <Row>
             <Col>

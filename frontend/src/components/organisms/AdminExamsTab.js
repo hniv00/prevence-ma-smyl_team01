@@ -30,8 +30,8 @@ export class AdminExamsTab extends Component {
             <tr key={item.id}>
               <th scope="row">{item.id}</th>
               <td>{item.name}</td>
-              <td><i class="material-icons">create</i></td>
-              <td><i class="material-icons">delete</i></td>
+              <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
+              <td><a href=""><i class="material-icons" id="cssFooterArrow">delete</i></a></td>
             </tr>
           ))}
         </tbody>

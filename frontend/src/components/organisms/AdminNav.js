@@ -7,7 +7,7 @@ export class AdminNav extends Component {
       <Navbar className="AdminNavBar" color="light" light expand="md">
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink className="AdminNavItem" href="/admin-vysetreni/">Vyšetření</NavLink>
+              <NavLink className="AdminNavItem" href="/admin-seznam-vysetreni/">Vyšetření</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="AdminNavItem" href="/admin-pribehy/">Příběhy</NavLink>
