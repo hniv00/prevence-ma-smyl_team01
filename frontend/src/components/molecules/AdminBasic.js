@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import {Row, Col} from 'reactstrap';
 import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
 
-export class AdminAdvancedSearch extends Component {
+export class AdminBasic extends Component {
   render() {
     return (
       <div>
