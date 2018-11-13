@@ -2,30 +2,20 @@ import React from 'react';
 import { Jumbotron, Button, Row, Col, UncontrolledTooltip } from 'reactstrap';
 
 import {ExamName} from '../molecules/ExamName';
-import {TooltipItem} from '../molecules/TooltipItem';
-import {MultiSelect} from '../atoms/MultiSelect';
+import {TooltipExamination} from '../atoms/TooltipExamination';
 import {ExamDescription} from '../molecules/ExamDescription';
 import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
-
-
 
 
 export const ExamNameContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
+        <Row style={{'text-align': 'right'}}>
+          <TooltipExamination/>
+        </Row>
         <Row>
           <Col xs="0" sm="12" md="8"><ExamName></ExamName></Col>
-          <Col xs="0" sm="12" md="4">
-            <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
-              <i class="material-icons" style={{color:"#28A3B7"}}>
-                help
-              </i>
-            </span>
-            <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
-              Hello world!
-            </UncontrolledTooltip>
-          </Col>
         </Row>
         <Row>
         <Col xs="0" sm="12" md="8"><ExamDescription></ExamDescription></Col>
