@@ -8,7 +8,13 @@ module.exports = (sequelize, DataTypes) => {
       AgeUntil_basic: DataTypes.INTEGER,
       AgeUntil_ext: DataTypes.INTEGER,
       Gender: DataTypes.STRING,
-      Periodicity_basic: DataTypes.INTEGER,
+      Periodicity_basic: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: "Periodicity",
+            key: "IDPeriodicity"
+        }
+      },
       Periodicity_ext: DataTypes.STRING,
       IndicationNeeded: DataTypes.INTEGER
   }, {

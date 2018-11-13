@@ -27,6 +27,7 @@ if (config.use_env_variable) {
 const modelModules = [
     require('./Diagnosis'),
     require('./Examination'),
+    require('./Periodicity'),
 ];
 
 modelModules.forEach(modelModule => {
