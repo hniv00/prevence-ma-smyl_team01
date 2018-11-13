@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import {MultiSelect} from '../atoms/MultiSelect';
+import {MultiSelectDis} from '../atoms/MultiSelectDis';
 import {connect} from 'react-redux';
 import {setDisease} from '../../services/Filtration/actions';
 
@@ -20,7 +20,7 @@ export class DiseaseSelectionRaw extends Component {
     return (
       <div>
         <h6>Léčím se s</h6>
-        <MultiSelect handleChange={this.handleChange.bind(this)}
+        <MultiSelectDis handleChange={this.handleChange.bind(this)}
           options={this.options}
           selectedOption={this.props.selectedOption}/>
       </div>
