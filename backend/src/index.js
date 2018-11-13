@@ -2,13 +2,17 @@ import dotenv from 'dotenv';
 
 import { app } from './server';
 import { setupLogging } from './logging';
-import  Sequelize  from 'sequelize';
+import Sequelize from 'sequelize';
 
 dotenv.config();
 const { PORT = 3030 } = process.env;
-const { DB_CONNECTIONSTRING} = process.env;
+const { DB_CONNECTIONSTRING } = process.env;
 
-const sequelize = new Sequelize(DB_CONNECTIONSTRING);
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    dialect: 'mysql',
+    logging: false
+});
 
 sequelize
     .authenticate()

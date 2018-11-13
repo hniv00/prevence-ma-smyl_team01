@@ -6,15 +6,15 @@ import {
   examDetailController,
   examGenderController,
   examAgeController,
-  examMultiController,
+  examBasicController,
+  examAdvancedController,
 } from './examController';
 
 const router = expressAsyncAwait(Router());
 router.get('/', examController);
-router.get('/:id', examDetailController);
-router.get('/g/:gender', examGenderController);
-router.get('/a/:age', examAgeController);
-router.get('/:gender/:age/', examMultiController);
+router.get('/:gender/:age/', examBasicController);
+router.get('/advanced/:gender/:age/', examAdvancedController);
+//router.get('/:id', examDetailController);
 /*router.get('/:::', examController.search);*/
 
 export default router;
