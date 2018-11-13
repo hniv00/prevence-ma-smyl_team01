@@ -13,10 +13,45 @@ export class LoginForm extends Component {
       username:'',
       password:'',
     }
+    this.nameRequired = this.nameRequired.bind(this);
+    this.passRequired = this.passRequired.bind(this);
+  }
+
+  nameRequired() {
+    let empt = this.state.username;
+     if (empt == "") {
+         alert("Vyplňte přihlašovací jméno!");
+         return false;
+      }
+      // fejk přihlášení
+     if (empt !== "admin") {
+       alert("Špatné přihlašovací jméno nebo heslo!");
+       return false;
+     }
+    return true;
+  }
+
+  passRequired() {
+      let empt = this.state.password;
+       if (empt == "") {
+           alert("Vyplňte heslo!");
+           return false;
+        }
+        // fejk přihlášení
+       if (empt !== "admin") {
+         alert("Špatné přihlašovací jméno nebo heslo!");
+         return false;
+       }
+       else{
+         window.location.href = '/admin-lp';
+         return true;
+       }
   }
 
   signUp() {
     console.log('this.state', this.state);
+    this.nameRequired();
+    this.passRequired();
   }
 
   render() {
@@ -31,16 +66,18 @@ export class LoginForm extends Component {
           className="admin-username"
           placeholder="Uživatelské jméno"
           type="text"
+          style={{'margin-top': '20px'}}
           onChange={event => this.setState({username: event.target.value})}
         />
         <Input id="cssAdminLogin"
           className="admin-password"
           placeholder="Heslo"
           type="password"
+          style={{'margin-top': '20px'}}
           onChange={event => this.setState({password: event.target.value})}
         />
             <div className="Submit-button">
-                <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
+                  <LoginButton onClickFunc={this.signUp.bind(this)}></LoginButton>
             </div>
         </div>
         </Jumbotron>

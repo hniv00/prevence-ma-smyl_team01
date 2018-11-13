@@ -267,8 +267,10 @@ header h6 {
 /* Login Form */
 .login-form {
   margin: auto;
-  width: 500px;
-  height: 300px;
+  max-width: 500px;
+  min-width: 400px;
+  max-height: 400px;
+  min-height: 300px;
   padding-left: 15px;
   padding-right: 15px;
   box-shadow: 5px 5px 30px #343233;
