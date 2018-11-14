@@ -26,10 +26,20 @@ p {
   text-align: justify;
 }
 
-h2 {
+.mainHeader {
   margin-top: 20px;
   text-align: center;
+  font-size: 54px;
   color: black;
+}
+
+.pageHeader {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 68px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 header h6 {
@@ -91,6 +101,7 @@ header h6 {
     margin: auto;
     width: 80%;
     border-radius: 50%;
+    margin-top: 20px;
 }
 
 .img{

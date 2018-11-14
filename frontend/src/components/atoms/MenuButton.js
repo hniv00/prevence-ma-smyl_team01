@@ -8,9 +8,18 @@ export class MenuButton extends Component {
       <div>
         <div class="buttonContainer" style={{display: 'inline-block'}} onClick={this.myFunction}
              onMouseDown={handleMouseDown}>
-             <i class="material-icons buttonContainerItem">menu</i><span class="buttonContainerItem">MENU</span>
+             <i class="material-icons buttonContainerItem">menu</i><span class="buttonContainerItem"></span>
         </div>
       </div>
     );
   }
 }
+
+
+// Hamburger button cannot be aligned in line with title Menu
+/*
+  <div class="buttonContainer" style={{display: 'inline-block'}} onClick={this.myFunction}
+       onMouseDown={handleMouseDown}>
+       <i class="material-icons buttonContainerItem">menu</i><span class="buttonContainerItem">MENU</span>
+  </div>
+*/

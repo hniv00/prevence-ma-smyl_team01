@@ -9,6 +9,7 @@ const data = [
   { href: '/feed', title: '#PrevenceMaSmysl'},
   { href: '/pribehy', title: 'Příběhy'},
   { href: '/akce', title: 'Akce'},
+  { href: '/partneri', title: 'Partnerské projekty'},
   { href: '/kontakty', title: 'Kontakt'}
 ]
 
