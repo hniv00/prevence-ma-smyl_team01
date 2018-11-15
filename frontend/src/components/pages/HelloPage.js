@@ -7,7 +7,7 @@ import {Filter} from '../organisms/Filter';
 import {About} from '../organisms/About';
 import {Stories} from '../organisms/Stories';
 import {Motivation} from '../organisms/Motivation';
-import {Partners} from '../organisms/Partners';
+import {PartnerCard} from "../molecules/PartnerCard"
 import {Footer} from '../organisms/Footer';
 
 import logo from '../../img/logo_prevence.png';
@@ -48,7 +48,7 @@ export class HelloPage extends Component {
             <Stories/>
           </section>
         </Parallax>
-        
+
         <Parallax>
             <About/>
         </Parallax>
@@ -65,7 +65,7 @@ export class HelloPage extends Component {
 
         <Parallax>
           <div className='parallax-content' id="stories">
-            <Partners/>
+            <PartnerCard/>
           </div>
         </Parallax>
 

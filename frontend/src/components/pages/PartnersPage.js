@@ -5,6 +5,7 @@ import {Parallax} from 'react-parallax';
 import {TopNav} from '../molecules/TopNav';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners"
+import {PartnerCard} from "../molecules/PartnerCard"
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';

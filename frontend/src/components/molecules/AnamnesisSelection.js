@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 import {setAnamnesis} from '../../services/Filtration/actions'
-import {MultiSelect} from '../atoms/MultiSelect';
+import {MultiSelectAna} from '../atoms/MultiSelectAna';
 import {dumbStore} from '../../store/dumbStore';
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ export class AnamnesisSelectionRaw extends Component {
     return (
       <div>
         <h6>Rodinná anamnéza</h6>
-        <MultiSelect handleChange={this.handleChange.bind(this)}
+        <MultiSelectAna handleChange={this.handleChange.bind(this)}
           options={this.options}
           selectedOption={this.props.selectedOption}/>
       </div>

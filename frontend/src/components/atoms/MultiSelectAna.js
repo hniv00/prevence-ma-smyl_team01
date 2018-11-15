@@ -1,25 +1,8 @@
 import React, { Component } from "react";
 import Select from 'react-select';
 
-
-const options = [
-  { value: 'hypertenze', label: 'hypertenze' },
-  { value: 'diabetes', label: 'diabetes' },
-  { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
-];
-
-export class MultiSelectDis extends Component {
-  state = {
-    selectedOption: null,
-  }
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  }
-
-
+export class MultiSelectAna extends Component {
   render() {
-    const { selectedOption } = this.state;
 
     // MultiSelect combobox custom styling
     const colourStyles = {
@@ -56,17 +39,16 @@ export class MultiSelectDis extends Component {
         }),
       };
 
-
     return (
       <Select
         styles={colourStyles}
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
+        value={this.props.selectedOption}
+        onChange={this.props.handleChange}
+        options={this.props.options}
         isMulti={true}
         isSearchable={true}
         theme={(theme) => ({...theme, borderRadius: 8, colors: {...theme.colors, text: 'black', primary: '#17A4B8', }, })}
-        placeholder="Vlastní nemoci"
+        placeholder="Nemoci v rodině"
       />
     );
   }
