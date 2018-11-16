@@ -1,14 +1,19 @@
-export class DiagnosisController{
-  getAll(res){
-    res.send({ express: 'Hello From Express again' });
-  }
+import db from '../database/model/';
+const Op = db.Sequelize.Op;
 
-  getById(req, res){
-    if (req.params.id === '0') next('route')
-    else next()
-  }
+export const diagController = async (req, res) => {
 
-  search(){
-
-  }
+    const newDiag = db.Diagnosis.build({
+        Name: req.body.Name,
+        Description: req.body.Description,
+    })
+        .save()
+        .then(exam => {
+             return res.json("sucessfuly added new diagnosis");
+        })
+        .catch(error => {
+            console.log(error);
+            console.log(newDiag);
+            return res.json("problem occured during insert");
+        })
 }
