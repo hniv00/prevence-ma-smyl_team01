@@ -1,6 +1,4 @@
-﻿import { EXAMINATIONS } from './examTestData';
-import { IDS } from './examTestData';
-import db from '../database/model/';
+﻿import db from '../database/model/';
 const Op = db.Sequelize.Op;
     
 export const examController = async (req, res) => {
