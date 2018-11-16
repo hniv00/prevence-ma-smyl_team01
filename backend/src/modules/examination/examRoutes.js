@@ -3,9 +3,6 @@ import { Router } from 'express';
 
 import {
   examController,
-  examDetailController,
-  examGenderController,
-  examAgeController,
   examBasicController,
   examAdvancedController,
 } from './examController';
@@ -13,8 +10,6 @@ import {
 const router = expressAsyncAwait(Router());
 router.get('/', examController);
 router.get('/:gender/:age/', examBasicController);
-router.get('/advanced/:gender/:age/', examAdvancedController);
-//router.get('/:id', examDetailController);
-/*router.get('/:::', examController.search);*/
+router.post('/advanced/:gender/:age/', examAdvancedController);
 
 export default router;
