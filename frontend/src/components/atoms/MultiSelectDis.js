@@ -8,20 +8,11 @@ const options = [
 ];
 
 export class MultiSelectDis extends Component {
-  state = {
-    selectedOption: null,
-  }
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
-  }
   render() {
-    const { selectedOption } = this.state;
-
     return (
       <Select style={{'border-color': '#17a2b8', 'border-radius': '20px'}}
-        value={selectedOption}
-        onChange={this.handleChange}
+        value={this.props.selectedOption}
+        onChange={this.props.handleChange}
         options={options}
         isMulti={true}
         isSearchable={true}

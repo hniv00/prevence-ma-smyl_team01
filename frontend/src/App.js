@@ -10,17 +10,16 @@ import {AdminExamination} from "./components/pages/AdminExamination"
 import {AdminExams} from "./components/pages/AdminExams"
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import createRootReducer from './store/createRootReducer'
+import { PersistGate } from 'redux-persist/integration/react';
+import configureStore from './store/configureStore';;
 
-const store = createStore(createRootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const {store, persistor} = configureStore();
 
 class App extends Component{
-
   render(){
     return(
       <Provider store={store}>
-
+        <PersistGate persistor={persistor}>
           <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={HelloPage} />
@@ -31,7 +30,7 @@ class App extends Component{
                 <Route path="/admin-seznam-vysetreni" component={AdminExams} />
               </Switch>
           </BrowserRouter>
-
+        </PersistGate>
       </Provider>
     );
   }
