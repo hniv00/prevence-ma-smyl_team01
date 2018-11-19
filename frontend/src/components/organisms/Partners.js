@@ -22,7 +22,9 @@ export class Partners extends Component {
         <Col xs="12" sm="4">
           <img src={loono} class="imgRound" alt="Loono tým"/>
         </Col>
+      
       </Row>
+      <span style={{ width: '1px', height: '20px', border: '3px', 'border-color': 'black'}}></span>
       <Row>
         <Col xs="12" sm="4">
           <img src={avon} class="imgRound" alt="Avon pochod"/>

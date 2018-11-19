@@ -3,6 +3,7 @@ import { Container, Button, Row, Col } from 'reactstrap';
 import {Parallax} from 'react-parallax';
 
 import {TopNav} from '../molecules/TopNav';
+import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners"
 import {PartnerCard} from "../molecules/PartnerCard"
@@ -16,7 +17,7 @@ export class PartnersPage extends Component {
     return (
       <div>
 
-      <Parallax strength={150} bgImage={image} bgWidth={'auto'}>
+      <Parallax strength={150} bgImage={image} bgWidth={'auto'} bgHeigth={'auto'}>
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
@@ -28,6 +29,15 @@ export class PartnersPage extends Component {
             </Col>
             <Col xs="0" sm="0" md="2">
               <TopNav/>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <p>Najdi si, který projekt tě zajímá...</p>
+            </Col>
+            <Col>
+              <MultiPartners/>
+              <br style={{'margin-bottom': '200px'}}/>
             </Col>
           </Row>
           </header>
