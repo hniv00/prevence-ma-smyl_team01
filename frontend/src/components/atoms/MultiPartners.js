@@ -20,11 +20,11 @@ export class MultiPartnersRaw extends Component {
   handleChange(event){
     //this.setState({value: event.target.value});
     this.props.setDiagnosis(this.selectedOption);
-    console.log(`Option selected:`, this.props.setDiagnosis);
+    console.log(`Option selected:`, this.selectedOption);
   }
 
   render() {
-    const { selectedOption } = this.props.setDiagnosis;
+    const { selectedOption } = this.props;
 
     // MultiSelect combobox custom styling
     const colourStyles = {
@@ -78,7 +78,7 @@ export class MultiPartnersRaw extends Component {
 }
 
 const mapStateToProps = state => ({
-  value: state.filterState.diagnosis
+  selectedOption: state.filterPartner.diagnosis
 });
 
 const mapDispatchToProps = {
