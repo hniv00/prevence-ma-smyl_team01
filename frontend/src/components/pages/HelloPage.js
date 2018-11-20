@@ -7,7 +7,8 @@ import {Filter} from '../organisms/Filter';
 import {About} from '../organisms/About';
 import {Stories} from '../organisms/Stories';
 import {Motivation} from '../organisms/Motivation';
-import {PartnerCard} from "../molecules/PartnerCard"
+import {PartnerCard} from "../molecules/PartnerCard";
+import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
 
 import logo from '../../img/logo_prevence.png';
@@ -64,8 +65,14 @@ export class HelloPage extends Component {
         </Parallax>
 
         <Parallax>
-          <div className='parallax-content' id="stories">
+          <div className='parallax-content'>
             <PartnerCard/>
+          </div>
+        </Parallax>
+
+        <Parallax>
+          <div className='parallax-content'>
+            <PartnersCarousel/>
           </div>
         </Parallax>
 

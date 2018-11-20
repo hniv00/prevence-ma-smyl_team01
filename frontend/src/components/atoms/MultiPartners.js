@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { setDiagnosis } from '../../services/Partners/actions';
 import Select from 'react-select';
 
-
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
   { value: 'diabetes', label: 'diabetes' },
