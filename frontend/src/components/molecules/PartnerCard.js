@@ -9,6 +9,10 @@ const data = [
   { src: './images/rucenaprsa_logo.jpg', title: 'Ruce na prsa', alt: 'Ruce na prsa logo'}
 ]
 
+/* Probably no more used component
+*
+*/
+
 export class PartnerCard extends Component {
   render() {
     return (
