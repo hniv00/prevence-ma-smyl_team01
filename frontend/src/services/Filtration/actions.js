@@ -77,12 +77,19 @@ export const startFetchFilteredExaminations = criteria => (dispatch, getState, {
     console.log(criteria);
     console.log(getState())
     api
-      .get('https://jsonplaceholder.typicode.com/posts')
+      .get(decideRoute(getState()))
       .then(({ data }) => {
         const examinations = data;
         dispatch(fetchFilteredExaminationSuccess(examinations));
       })
       .catch(() => {
-        dispatch(fetchFilteredExaminationFailure('Failed fetching products'));
+        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
       });
   };
+
+const decideRoute = (state) =>{
+    if (state.filterState.anamnesis.lenght === 0 || state.filterState.disease.lenght === 0) {
+        let {age, gender} = state.filterState;
+        return 'examinations/${gender}/${age}'
+    }
+}
