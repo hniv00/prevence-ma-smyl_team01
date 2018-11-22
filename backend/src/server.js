@@ -16,8 +16,8 @@ app.use(rootRouter);
    res.send({ express: 'Hello From Express' });
  });
 
- app.use((req, res, next) => {
-   res.status(404);
-   res.json({ error: '404: Stránka nenalezena :(' });
- });
- 
+
+app.use((req, res, next) => {
+    res.status(404);
+    res.json({ error: '404: Stránka nenalezena :(' });
+});
