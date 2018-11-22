@@ -9,6 +9,7 @@ const options = [
 ];
 
 export class MultiSelectDis extends Component {
+<<<<<<< HEAD
   state = {
     selectedOption: null,
   }
@@ -62,6 +63,13 @@ export class MultiSelectDis extends Component {
         styles={colourStyles}
         value={selectedOption}
         onChange={this.handleChange}
+=======
+  render() {
+    return (
+      <Select style={{'border-color': '#17a2b8', 'border-radius': '20px'}}
+        value={this.props.selectedOption}
+        onChange={this.props.handleChange}
+>>>>>>> bea29a9a33adfea35709e52d9f58bc7402339822
         options={options}
         isMulti={true}
         isSearchable={true}
