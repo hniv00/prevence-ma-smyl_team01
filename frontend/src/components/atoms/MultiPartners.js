@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { setDiagnosis } from '../../services/Partners/actions';
 import Select from 'react-select';
-
 
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
@@ -8,18 +9,21 @@ const options = [
   { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
 ];
 
-export class MultiSelectDis extends Component {
-  state = {
-    selectedOption: null,
-  }
-  handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+export class MultiPartnersRaw extends Component {
+  constructor(props){
+    super(props)
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
+  handleChange(event){
+    //this.setState({value: event.target.value});
+    this.props.setDiagnosis(this.selectedOption);
+    console.log(`Option selected:`, this.selectedOption);
+  }
 
   render() {
-    const { selectedOption } = this.state;
+    const { selectedOption } = this.props;
 
     // MultiSelect combobox custom styling
     const colourStyles = {
@@ -60,14 +64,24 @@ export class MultiSelectDis extends Component {
     return (
       <Select
         styles={colourStyles}
-        value={selectedOption}
+        value={this.props.value}
         onChange={this.handleChange}
         options={options}
         isMulti={true}
         isSearchable={true}
         theme={(theme) => ({...theme, borderRadius: 8, colors: {...theme.colors, text: 'black', primary: '#17A4B8', }, })}
-        placeholder="Vlastní nemoci"
+        placeholder="Filtrovat podle diagnózy..."
       />
     );
   }
 }
+
+const mapStateToProps = state => ({
+  selectedOption: state.filterPartner.diagnosis
+});
+
+const mapDispatchToProps = {
+  setDiagnosis
+};
+
+export const MultiPartners = connect(mapStateToProps, mapDispatchToProps)(MultiPartnersRaw);

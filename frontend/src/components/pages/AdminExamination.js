@@ -33,16 +33,15 @@ export class AdminExamination extends Component {
           <ExamNameContainer />
           <GenderPeriodicityContainer />
           <Row>
-            <Col>
+            <Col xs="4">
               <AdminBasicFilterContainer />
             </Col>
-            <Col>
+            <Col xs="8">
               <AdminAdvancedFilterContainer />
             </Col>
           </Row>
           <Row>
-            <Col sm="8"></Col>
-            <Col sm="4" style={{'margin-bottom': '30px'}}>
+            <Col style={{'margin-bottom': '30px', 'margin-right': '20px', 'text-align': 'right'}}>
                 <Button color="info" size="md">Smazat</Button>{' '}
                 <Button color="info" size="md">Uložit</Button>
             </Col>
