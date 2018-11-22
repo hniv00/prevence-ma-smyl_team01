@@ -37,7 +37,8 @@ const mapStateToProps = state => ({
   disease: state.filterState.disease,
   lifeStyle: state.filterState.lifeStyle,
   height: state.filterState.height,
-  weight: state.filterState.weight
+  weight: state.filterState.weight,
+  examinations: state.filterState.examinations
 });
 
 const mapDispatchToProps = {
