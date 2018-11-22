@@ -424,6 +424,12 @@ header h6 {
   border-radius: 5px;
 }
 
+/* Admin module - Diagnosis */
+
+.yesNoButton {
+  margin: 50px;
+}
+
 /* Icons */
 a .fab, a .fas{
   width: 50px;
