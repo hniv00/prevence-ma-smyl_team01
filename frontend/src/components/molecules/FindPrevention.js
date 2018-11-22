@@ -37,16 +37,11 @@ const mapStateToProps = state => ({
   disease: state.filterState.disease,
   lifeStyle: state.filterState.lifeStyle,
   height: state.filterState.height,
-  weight: state.filterState.weight,
-  examinations: state.filterState.examinations
+  weight: state.filterState.weight
 });
 
-<<<<<<< HEAD
-export const FindPrevention = connect(mapStateToProps)(FindPreventionRaw);
-=======
 const mapDispatchToProps = {
   fetchFilteredExaminations: startFetchFilteredExaminations
 }
 
 export const FindPrevention = connect(mapStateToProps, mapDispatchToProps)(FindPreventionRaw);
->>>>>>> 9377041... async actions

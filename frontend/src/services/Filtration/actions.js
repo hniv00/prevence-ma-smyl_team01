@@ -72,24 +72,33 @@ export const fetchFilteredExaminationFailure = error => ({
     payload: {error}
 });
 
-export const startFetchFilteredExaminations = criteria => (dispatch, getState, { api }) => {
+export const startFetchFilteredExaminations = () => (dispatch, getState, { api }) => {
     dispatch(fetchFilteredExamination());
-    console.log(criteria);
-    console.log(getState())
-    api
-      .get(decideRoute(getState()))
-      .then(({ data }) => {
-        const examinations = data;
-        dispatch(fetchFilteredExaminationSuccess(examinations));
-      })
-      .catch(() => {
-        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
-      });
-  };
+    let {filterState} = getState();
+    let {age, gender} = filterState;
+    gender = gender === 1 ? 'F' : 'M';
+    let indications = filterState.anamnesis.concat(filterState.disease);
 
-const decideRoute = (state) =>{
-    if (state.filterState.anamnesis.lenght === 0 || state.filterState.disease.lenght === 0) {
-        let {age, gender} = state.filterState;
-        return 'examinations/${gender}/${age}'
+    if(indications.length > 0 ){
+        api
+        .post(`examination/advanced/${gender}/${age}`, {indication: indications})
+        .then(({ data }) => {
+        const {exams} = data;
+        dispatch(fetchFilteredExaminationSuccess(exams));
+        })
+        .catch(() => {
+        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
+        });
+    }
+    else{
+        api
+        .get(`examination/${gender}/${age}`)
+        .then(({ data }) => {
+          const {exams} = data;
+          dispatch(fetchFilteredExaminationSuccess(exams));
+        })
+        .catch(() => {
+          dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
+        });
     }
 }
