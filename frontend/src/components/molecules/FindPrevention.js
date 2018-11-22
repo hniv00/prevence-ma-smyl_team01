@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {FilterButton} from '../atoms/FilterButton';
-import {dumbStore} from '../../store/dumbStore';
+import {startFetchFilteredExaminations} from '../../services/Filtration/actions'
 
 export class FindPreventionRaw extends Component {
   constructor(props){
@@ -18,10 +17,8 @@ export class FindPreventionRaw extends Component {
     let lifeStyle = this.props.lifeStyle;
     let height = this.props.height;
     let weight = this.props.weight;
-    console.log('FilterButton was clicked')
-    // axios.get('http://localhost:3030/api/examination').then((response)=>{
-    //   dumbStore.examinationResult = response;
-    // });
+    console.log('FilterButton was clicked');
+    this.props.fetchFilteredExaminations('criteriaTest');
   }
 
   render() {
@@ -43,4 +40,12 @@ const mapStateToProps = state => ({
   weight: state.filterState.weight
 });
 
+<<<<<<< HEAD
 export const FindPrevention = connect(mapStateToProps)(FindPreventionRaw);
+=======
+const mapDispatchToProps = {
+  fetchFilteredExaminations: startFetchFilteredExaminations
+}
+
+export const FindPrevention = connect(mapStateToProps, mapDispatchToProps)(FindPreventionRaw);
+>>>>>>> 9377041... async actions
