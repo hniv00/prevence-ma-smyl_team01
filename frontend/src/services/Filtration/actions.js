@@ -6,6 +6,8 @@ export const SET_LIFESTYLE = 'SET_LIFESTYLE';
 export const SET_HEIGHT = 'SET_HEIGHT';
 export const SET_WEIGHT = 'SET_WEIGHT';
 export const FETCH_FILTERED_EXAMINATION = 'FETCH_FILTERED_EXAMINATION';
+export const FETCH_FILTERED_EXAMINATION_SUCCESS = 'FETCH_FILTERED_EXAMINATION_SUCCESS';
+export const FETCH_FILTERED_EXAMINATION_FAILURE = 'FETCH_FILTERED_EXAMINATION_FAILURE';
 
 export const setGender = gender => ({
     type: SET_GENDER,
@@ -55,3 +57,32 @@ export const setWeight = weight => ({
         weight
     }
 });
+
+export const fetchFilteredExamination = () => ({
+    type: FETCH_FILTERED_EXAMINATION
+});
+
+export const fetchFilteredExaminationSuccess = examinations => ({
+    type: FETCH_FILTERED_EXAMINATION_SUCCESS,
+    payload: {examinations}
+});
+
+export const fetchFilteredExaminationFailure = error => ({
+    type: FETCH_FILTERED_EXAMINATION_FAILURE,
+    payload: {error}
+});
+
+export const startFetchFilteredExaminations = criteria => (dispatch, getState, { api }) => {
+    dispatch(fetchFilteredExamination());
+    console.log(criteria);
+    console.log(getState())
+    api
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then(({ data }) => {
+        const examinations = data;
+        dispatch(fetchFilteredExaminationSuccess(examinations));
+      })
+      .catch(() => {
+        dispatch(fetchFilteredExaminationFailure('Failed fetching products'));
+      });
+  };
