@@ -9,7 +9,7 @@ export const TooltipExamination = (props) => {
           help
         </i>
       </span>
-      <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample" style={{'min-width': '400px'}}>
+      <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample" style={{minWidth: '400px'}}>
         Vyplňte název a popis vyšetření. Přidejte, jaké diagnózy může vyšetření potenicálně vyloučit. Dále zvolte
         pro jaké pohlaví se vyšetření vykonává. Zadejte nejobecnější periodicitu vyšetření z výběrového boxu, případně
         vypište rozšířenou periodicitu pro specifické případy pacientů - s udáním specifičnosti. Zvolte, zda se vyšetření
