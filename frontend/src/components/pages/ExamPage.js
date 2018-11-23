@@ -7,7 +7,7 @@ import {Filter} from '../organisms/Filter';
 import {ExaminationList} from '../organisms/ExaminationList';
 import {Footer} from '../organisms/Footer';
 
-import logo from '../../img/logo_prevence.png';
+import logo from '../../img/logo_version2.png';
 import '../../parallax.css';
 import image from '../../img/POZADI_PSD.png';
 

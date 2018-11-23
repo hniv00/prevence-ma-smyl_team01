@@ -22,9 +22,9 @@ export class Partners extends Component {
         <Col xs="12" sm="4">
           <img src={loono} class="imgRound" alt="Loono tým"/>
         </Col>
-      
       </Row>
-      <span style={{ width: '1px', height: '20px', border: '3px', 'border-color': 'black'}}></span>
+      <hr/>
+
       <Row>
         <Col xs="12" sm="4">
           <img src={avon} class="imgRound" alt="Avon pochod"/>
@@ -35,6 +35,8 @@ export class Partners extends Component {
           partnerů je i nadace Avon, která každoročně pořádá <span class="decor">Avon pochod Prahou</span>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pellentesque quam vel velit. Praesent vitae arcu tempor neque lacinia pretium. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam sit amet magna in magna gravida vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quis nibh at felis congue commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </Col>
       </Row>
+      <hr/>
+
       <Row>
         <Col xs="12" sm="8">
           <h5>STK pro chlapy</h5>
@@ -46,6 +48,8 @@ export class Partners extends Component {
           <img src={stk} class="imgRound" alt="Loono tým"/>
         </Col>
       </Row>
+      <hr/>
+      
       <Row>
         <Col xs="12" sm="4">
           <img src={rucenaprsa} class="imgRound" alt="Avon pochod"/>

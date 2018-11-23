@@ -6,17 +6,19 @@ const initialState = {
 
 const partnersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_DIAGNOSIS:
-          /* Podle Petra to nemá byt tak...
-          ** return { ...state, diagnosis: action.payload.diagnosis }
-          ** ale tak... */
-            return {
-              ...state,
-              diagnosis: [ ...state.diagnosis, action.payload.diagnosis ]
-            }
-        default:
-            return state;
-    }
-}
+        case SET_DIAGNOSIS: {
+          const { diagnosis } = action.payload;
+          return {
+            ...state,
+            diagnosis,
+          };
+        }
 
+        default:
+          return state;
+
+    }
+};
+
+export const getDiagnosis = state => state.diagnosis;
 export default partnersReducer;

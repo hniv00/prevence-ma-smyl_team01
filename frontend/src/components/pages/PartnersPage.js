@@ -7,7 +7,7 @@ import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners"
 import {PartnerCard} from "../molecules/PartnerCard"
-import logo from '../../img/logo_prevence.png';
+import logo from '../../img/logo_version2.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
 
@@ -31,15 +31,18 @@ export class PartnersPage extends Component {
               <TopNav/>
             </Col>
           </Row>
-          <Row>
-            <Col>
-              <p>Najdi si, který projekt tě zajímá...</p>
-            </Col>
-            <Col>
-              <MultiPartners/>
-              <br style={{'margin-bottom': '200px'}}/>
-            </Col>
-          </Row>
+          <Container style={{backgroundColor: "rgba(2, 104, 119, 0.28)", borderRadius: '20px', maxWidth: '900px', paddingTop: '10px', marginTop: '20px'}}>
+            <Row style={{marginTop: '50px'}}>
+              <Col md="2"></Col>
+              <Col xs="6" md="4">
+                <p>Najdi si, který projekt tě zajímá...</p>
+              </Col>
+              <Col xs="6">
+                <MultiPartners/>
+                <br style={{'margin-bottom': '100px'}}/>
+              </Col>
+            </Row>
+          </Container>
           </header>
       </Parallax>
 
