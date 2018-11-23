@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import {Table} from 'reactstrap';
 
 const data = [{
   id: 1,

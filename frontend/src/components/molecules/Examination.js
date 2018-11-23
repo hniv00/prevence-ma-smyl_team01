@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, { Fragment} from 'react';
 import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
 import {dumbStore} from '../../store/dumbStore'
 

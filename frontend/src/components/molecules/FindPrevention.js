@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {FilterButton} from '../atoms/FilterButton';
-import {dumbStore} from '../../store/dumbStore';
+// import {dumbStore} from '../../store/dumbStore';
 
 export class FindPreventionRaw extends Component {
   constructor(props){

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Jumbotron, Row } from 'reactstrap';
 
 import {ExamName} from '../molecules/ExamName';
 import {TooltipItem} from '../molecules/TooltipItem';

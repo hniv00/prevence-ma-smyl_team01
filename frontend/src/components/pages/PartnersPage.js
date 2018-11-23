@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import {Parallax} from 'react-parallax';
 
 import {TopNav} from '../molecules/TopNav';
 import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners"
-import {PartnerCard} from "../molecules/PartnerCard"
 import logo from '../../img/logo_version2.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';

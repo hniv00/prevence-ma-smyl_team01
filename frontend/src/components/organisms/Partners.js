@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 import loono from '../../img/loono.jpg';
 import avon from '../../img/avon.jpg';

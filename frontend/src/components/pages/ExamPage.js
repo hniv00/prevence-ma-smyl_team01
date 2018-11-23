@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Container, Row, Col} from 'reactstrap';
+import {Row, Col} from 'reactstrap';
 import {Parallax} from 'react-parallax';
 
 import {TopNav} from '../molecules/TopNav';

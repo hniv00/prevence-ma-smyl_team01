@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import {dumbStore} from '../../store/dumbStore';
 
 import {Examination} from '../molecules/Examination';

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
-import {Jumbotron, Row, Col, Button, Container} from 'reactstrap';
+import {Row, Col, Button, Container} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';

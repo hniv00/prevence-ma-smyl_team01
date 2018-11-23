@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 
 import {ExamName} from '../molecules/ExamName';
 import {TooltipExamination} from '../atoms/TooltipExamination';

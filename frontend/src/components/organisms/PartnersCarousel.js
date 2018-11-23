@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Col, Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import Slider from "react-slick";
 import '../atoms/Carousel.css';
 
