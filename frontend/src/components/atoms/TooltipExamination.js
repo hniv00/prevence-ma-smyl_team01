@@ -4,7 +4,7 @@ import { UncontrolledTooltip } from 'reactstrap';
 export const TooltipExamination = (props) => {
   return (
     <div>
-      <span style={{textDecoration: "underline", color:"blue", 'text-align': 'right'}} href="#" id="UncontrolledTooltipExample">
+      <span style={{textDecoration: "underline", color:"blue", textAlign: 'right'}} href="#" id="UncontrolledTooltipExample">
         <i className="material-icons" style={{color:"#28A3B7"}}>
           help
         </i>

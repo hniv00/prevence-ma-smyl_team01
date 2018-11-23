@@ -24,7 +24,7 @@ export class BasicPeriodicity extends Component {
     return (
       <div>
         <Label>Základní periodicita</Label>
-        <Select style={{'border-color': '#17a2b8', 'border-radius': '20px'}}
+        <Select style={{'borderColor': '#17a2b8', 'borderRadius': '20px'}}
           value={selectedOption}
           onChange={this.handleChange}
           options={options}

@@ -41,7 +41,7 @@ export class AdminExamination extends Component {
             </Col>
           </Row>
           <Row>
-            <Col style={{'margin-bottom': '30px', 'margin-right': '20px', 'text-align': 'right'}}>
+            <Col style={{marginBottom: '30px', 'margin-right': '20px', textAlign: 'right'}}>
                 <Button color="info" size="md">Smazat</Button>{' '}
                 <Button color="info" size="md">Uložit</Button>
             </Col>

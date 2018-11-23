@@ -11,7 +11,7 @@ export const ExamNameContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
-        <Row style={{'text-align': 'right'}}>
+        <Row style={{textAlign: 'right'}}>
           <TooltipExamination/>
         </Row>
         <Row>

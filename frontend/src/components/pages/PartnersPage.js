@@ -39,7 +39,7 @@ export class PartnersPage extends Component {
               </Col>
               <Col xs="6">
                 <MultiPartners/>
-                <br style={{'margin-bottom': '100px'}}/>
+                <br style={{marginBottom: '100px'}}/>
               </Col>
             </Row>
           </Container>

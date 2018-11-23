@@ -17,15 +17,15 @@ export const Examination = (props) => {
                 <CardTitle>{ item.title }</CardTitle>
                 <CardText>
                   <Row>
-                    <Col style={{'text-align': 'left'}}>
+                    <Col style={{textAlign: 'left'}}>
                       <p>
                       {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
-                      <i className="material-icons" style={{color: "#F26D98", 'margin-left': '6px'}}>more_horiz</i>
+                      <i className="material-icons" style={{color: "#F26D98", marginLeft: '6px'}}>more_horiz</i>
                       </p>
                     </Col>
                     <Col>
                       <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.periodicity }</Badge>{' '}
-                      <i className="material-icons" style={{color: "#39B2C3", 'margin-left': '6px'}}>more_horiz</i>
+                      <i className="material-icons" style={{color: "#39B2C3", marginLeft: '6px'}}>more_horiz</i>
                       </p>
                     </Col>
                   </Row>

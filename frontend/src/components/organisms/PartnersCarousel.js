@@ -100,7 +100,7 @@ export class PartnersCarousel extends Component {
 
 {data.map ( item => (
   <Col>
-    <img key={item} width="240px" style={{margin: "10px"}} src={item.src} alt={item.alt} />
+    <img key={item.src} width="240px" style={{margin: "10px"}} src={item.src} alt={item.alt} />
     <span><p style={{'text-align': 'center'}}>{item.title}</p></span>
   </Col>
 ))}

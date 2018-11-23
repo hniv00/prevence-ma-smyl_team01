@@ -26,14 +26,14 @@ export class Footer extends Component {
       <div>
         <Container>
           <Row>
-            <Col style={{'text-align': 'left'}}>
+            <Col style={{textAlign: 'left'}}>
               {data.map ( item => (
                 <Fragment key={item.href}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
               ))}
             </Col>
-            <Col style={{'text-decoration': 'none'}}>
+            <Col style={{textDecoration: 'none'}}>
               {socialPages.map ( item => (
-                <a key={item.href} href={item.href} target="_blank" style={{'text-decoration': 'none'}}><FontIcon variant={"b"} icon={item.icon}/><i/></a>
+                <a key={item.href} href={item.href} target="_blank" style={{textDecoration: 'none'}}><FontIcon variant={"b"} icon={item.icon}/><i/></a>
               ))}
             </Col>
             <Col>
