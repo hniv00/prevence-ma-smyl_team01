@@ -20,12 +20,12 @@ export class ExamPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} class="logoPic" alt="My logo" />
+              <img src={logo} className="logoPic" alt="My logo" />
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">PREVENTIVNÍ VYŠETŘENÍ</h1>
               <h4 style={{color: 'black'}}>Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.
-                 Neměj strach jít k lékaři. Jde o Tvoje zdraví a věz, že <span class="decor">prevence má smysl</span>!
+                 Neměj strach jít k lékaři. Jde o Tvoje zdraví a věz, že <span className="decor">prevence má smysl</span>!
                  Jednoduše zvol, jestli jsi muž nebo žena, zadej svůj věk, případně další parametry a nech si vyfiltrovat doporučená
                  preventivní vyšetření. Na kolik si ceníš své zdraví? Aspoň na pár kliků určitě.</h4>
             </Col>
@@ -51,7 +51,7 @@ export class ExamPage extends Component {
 
 
 
-      <div class="footer">
+      <div className="footer">
             <Footer></Footer>
       </div>
 

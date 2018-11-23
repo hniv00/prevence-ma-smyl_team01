@@ -17,10 +17,10 @@ export class AgeSliderRaw extends Component {
 
   render() {
     return (
-      <div class="sliderContainer">
-         <input type="range" min="18" max="120" class="slider" value={this.props.value} onChange={this.handleChange}/>
+      <div className="sliderContainer">
+         <input type="range" min="18" max="120" className="slider" value={this.props.value} onChange={this.handleChange}/>
          <br/>
-         <input type="number" min="18" max="120" class="ageInput" value={this.props.value} onChange={this.handleChange}/>
+         <input type="number" min="18" max="120" className="ageInput" value={this.props.value} onChange={this.handleChange}/>
       </div>
     );
   }
@@ -35,5 +35,3 @@ const mapDispatchToProps = {
 };
 
 export const AgeSlider = connect(mapStateToProps, mapDispatchToProps)(AgeSliderRaw);
-
-

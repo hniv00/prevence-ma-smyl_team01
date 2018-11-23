@@ -5,7 +5,7 @@ export const TooltipExamination = (props) => {
   return (
     <div>
       <span style={{textDecoration: "underline", color:"blue", 'text-align': 'right'}} href="#" id="UncontrolledTooltipExample">
-        <i class="material-icons" style={{color:"#28A3B7"}}>
+        <i className="material-icons" style={{color:"#28A3B7"}}>
           help
         </i>
       </span>

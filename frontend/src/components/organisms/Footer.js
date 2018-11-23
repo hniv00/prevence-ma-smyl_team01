@@ -37,7 +37,7 @@ export class Footer extends Component {
               ))}
             </Col>
             <Col>
-              <a id="cssFooterArrow" href="#" ><i class="material-icons" style={{position: 'absolute' , right: '10px'}}>expand_less</i></a>
+              <a id="cssFooterArrow" href="#" ><i className="material-icons" style={{position: 'absolute' , right: '10px'}}>expand_less</i></a>
             </Col>
           </Row>
           <Row>

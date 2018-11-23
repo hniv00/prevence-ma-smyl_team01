@@ -21,7 +21,7 @@ export class PartnersPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} class="logoPic" alt="My logo" />
+              <img src={logo} className="logoPic" alt="My logo" />
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">PARTNERSKÉ PROJEKTY</h1>
@@ -52,7 +52,7 @@ export class PartnersPage extends Component {
         </div>
       </Parallax>
 
-      <div class="footer">
+      <div className="footer">
             <Footer></Footer>
       </div>
 

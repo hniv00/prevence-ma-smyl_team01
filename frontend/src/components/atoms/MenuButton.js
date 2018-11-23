@@ -6,9 +6,9 @@ export class MenuButton extends Component {
     const { handleMouseDown } = this.props
     return (
       <div>
-        <div class="buttonContainer" style={{display: 'inline-block'}} onClick={this.myFunction}
+        <div className="buttonContainer" style={{display: 'inline-block'}} onClick={this.myFunction}
              onMouseDown={handleMouseDown}>
-             <i class="material-icons buttonContainerItem">menu</i><span class="buttonContainerItem"></span>
+             <i className="material-icons buttonContainerItem">menu</i><span className="buttonContainerItem"></span>
         </div>
       </div>
     );

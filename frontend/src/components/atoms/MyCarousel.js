@@ -10,7 +10,7 @@ export const MyCarousel = props => {
     const { className, style, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <i class="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
+        <i className="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
       </div>
     );
   }
@@ -19,7 +19,7 @@ export const MyCarousel = props => {
     const { className, style, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
-        <i class="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
+        <i className="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
       </div>
     );
   }
