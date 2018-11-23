@@ -28,12 +28,12 @@ export class Footer extends Component {
           <Row>
             <Col style={{'text-align': 'left'}}>
               {data.map ( item => (
-                <Fragment key={item}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
+                <Fragment key={item.href}><a id="cssFooterMenu" href={item.href} className="footerMenu">{item.title}</a><br/></Fragment>
               ))}
             </Col>
             <Col style={{'text-decoration': 'none'}}>
               {socialPages.map ( item => (
-                <a key={item} href={item.href} target="_blank" style={{'text-decoration': 'none'}}><FontIcon variant={"b"} icon={item.icon}/><i/></a>
+                <a key={item.href} href={item.href} target="_blank" style={{'text-decoration': 'none'}}><FontIcon variant={"b"} icon={item.icon}/><i/></a>
               ))}
             </Col>
             <Col>

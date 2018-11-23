@@ -31,7 +31,7 @@ export class Menu extends Component {
             onMouseDown={handleMouseDown} className={visibility}>
 				<MenuButtonClose class="menu-close-button" handleMouseDown={this.handleMouseDown}/> </a>
         {data.map ( item => (
-          <a key={item} id="cssHamburgerMenu" href={item.href}><p>{item.title}</p></a>
+          <a key={item.href} id="cssHamburgerMenu" href={item.href}><p>{item.title}</p></a>
         ))}
       </div>
     );
