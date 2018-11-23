@@ -3,6 +3,7 @@ import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
 import {dumbStore} from '../../store/dumbStore'
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
+import {BadgesDetail} from '../atoms/BadgesDetail';
 
 const data = dumbStore.examinationResult;
 
@@ -14,14 +15,15 @@ export const Examination = (props) => {
           {data.map( item => (
             <Col key={item.id} sm="12" md="6">
               <Card id="cssCardExamination" body>
-                <CardTitle>{ item.title }</CardTitle>
+               <CardTitle>{ item.title }</CardTitle>
                 <CardText>
                   <Row>
                     <Col style={{'text-align': 'left'}}>
+                      <CardText>
                       <p>
-                      {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
-                      <i class="material-icons" style={{color: "#F26D98", 'margin-left': '6px'}}>more_horiz</i>
+                      <BadgesDetail/>
                       </p>
+                      </CardText>
                     </Col>
                     <Col>
                       <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.periodicity }</Badge>{' '}
