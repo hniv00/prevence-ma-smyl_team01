@@ -13,7 +13,7 @@ import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
 export const BasicFilterContainer = (props) => {
   return (
     <Container>
-      <Jumbotron id="AdminExamContainer">
+      <div>
         <Row>
           <Col>
             <Form>
@@ -32,7 +32,7 @@ export const BasicFilterContainer = (props) => {
             </Form>
           </Col>
         </Row>
-      </Jumbotron>
+      </div>
     </Container>
   );
 };
