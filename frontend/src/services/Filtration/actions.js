@@ -72,7 +72,6 @@ export const fetchFilteredExaminationFailure = error => ({
     payload: {error}
 });
 
-<<<<<<< HEAD
 export const startFetchFilteredExaminations = () => (dispatch, getState, { api }) => {
     dispatch(fetchFilteredExamination());
     let {filterState} = getState();
@@ -101,26 +100,5 @@ export const startFetchFilteredExaminations = () => (dispatch, getState, { api }
         .catch(() => {
           dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
         });
-=======
-export const startFetchFilteredExaminations = criteria => (dispatch, getState, { api }) => {
-    dispatch(fetchFilteredExamination());
-    console.log(criteria);
-    console.log(getState())
-    api
-      .get(decideRoute(getState()))
-      .then(({ data }) => {
-        const examinations = data;
-        dispatch(fetchFilteredExaminationSuccess(examinations));
-      })
-      .catch(() => {
-        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
-      });
-  };
-
-const decideRoute = (state) =>{
-    if (state.filterState.anamnesis.lenght === 0 || state.filterState.disease.lenght === 0) {
-        let {age, gender} = state.filterState;
-        return 'examinations/${gender}/${age}'
->>>>>>> bea29a9a33adfea35709e52d9f58bc7402339822
     }
 }
