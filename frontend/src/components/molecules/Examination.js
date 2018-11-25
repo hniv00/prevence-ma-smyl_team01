@@ -25,6 +25,7 @@ class ExaminationRaw extends Component{
                     <Col style={{'text-align': 'left'}}>
                       <CardText>
                         <Row>
+                          {/* There will never be item.badges, rename the prop to returned data */}
                           {item.badges.map((badge, i) => (<BadgesDetail style={{'margin-right': '5px', 'cursor' : 'pointer'}} key={i} examination={item.title} badge={badge}/>))}
                           <i class="material-icons" style={{ color: "#F26D98", 'margin-left': '6px' }}>more_horiz</i>
                         </Row>
