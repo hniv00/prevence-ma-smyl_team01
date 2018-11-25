@@ -190,6 +190,12 @@ header h6 {
   margin: 10px;
 }
 
+#cssCardExaminationName {
+  background-color: #fcfcfc;
+  color: #026977;
+}
+
+
 /* Examination Badge */
 #cssBadge{
     background-color: #F26D98;
