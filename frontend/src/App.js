@@ -11,17 +11,16 @@ import {AdminExams} from "./components/pages/AdminExams"
 import {PartnersPage} from "./components/pages/PartnersPage"
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import createRootReducer from './store/createRootReducer'
+import { PersistGate } from 'redux-persist/integration/react';
+import configureStore from './store/configureStore';;
 
-const store = createStore(createRootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const {store, persistor} = configureStore();
 
 class App extends Component{
-
   render(){
     return(
       <Provider store={store}>
-
+        <PersistGate persistor={persistor}>
           <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={HelloPage} />
@@ -33,7 +32,7 @@ class App extends Component{
                 <Route path="/partneri" component={PartnersPage} />
               </Switch>
           </BrowserRouter>
-
+        </PersistGate>
       </Provider>
     );
   }

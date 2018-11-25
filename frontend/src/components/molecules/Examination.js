@@ -1,23 +1,25 @@
 import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
 import { Card, CardTitle, CardText, Row, Col, Badge, Modal, Button, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
-import {dumbStore} from '../../store/dumbStore'
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
 import {BadgesDetail} from '../atoms/BadgesDetail';
 
-const data = dumbStore.examinationResult;
-
-export const Examination = (props) => {
-console.log(props);
-
-
+class ExaminationRaw extends Component{
+  data;
+  constructor(props){
+    super(props);
+  }
+  render(){
+    this.data = this.props.examinations
+    console.log(this.data);
     return (
       <div>
         <Row>
-          {data.map( item => (
-            <Col key={item.id} sm="12" md="6">
+          {this.data.map( item => (
+            <Col key={item.IDExamination} sm="12" md="6">
               <Card id="cssCardExamination" body>
-               <CardTitle>{ item.title }</CardTitle>
+                <CardTitle>{ item.ExamName }</CardTitle>
                 <CardText>
                   <Row>
                     <Col style={{'text-align': 'left'}}>
@@ -29,12 +31,12 @@ console.log(props);
                       </CardText>
                     </Col>
                     <Col>
-                      <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.periodicity }</Badge>{' '}
+                      <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.Periodicity_ext }</Badge>{' '}
                       <i class="material-icons" style={{color: "#39B2C3", 'margin-left': '6px'}}>more_horiz</i>
                       </p>
                     </Col>
                   </Row>
-                    { item.description }
+                    { item.Description }
                 </CardText>
                 <ExaminationDetail/>
               </Card>
@@ -42,5 +44,12 @@ console.log(props);
           ))}
         </Row>
       </div>
-  );
-};
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  examinations : state.filterState.examinations
+});
+
+export const Examination = connect(mapStateToProps)(ExaminationRaw);
