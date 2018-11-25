@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col, Badge, Modal, Button, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
+import {BadgesDetail} from '../atoms/BadgesDetail';
 
 class ExaminationRaw extends Component{
   data;
@@ -22,10 +23,12 @@ class ExaminationRaw extends Component{
                 <CardText>
                   <Row>
                     <Col style={{'text-align': 'left'}}>
-                      {/* <p>
-                      {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary">{badge}</Badge>{' '}</Fragment> )}
-                      <i class="material-icons" style={{color: "#F26D98", 'margin-left': '6px'}}>more_horiz</i>
-                      </p> */}
+                      <CardText>
+                        <Row>
+                          {item.badges.map((badge, i) => (<BadgesDetail style={{'margin-right': '5px', 'cursor' : 'pointer'}} key={i} examination={item.title} badge={badge}/>))}
+                          <i class="material-icons" style={{ color: "#F26D98", 'margin-left': '6px' }}>more_horiz</i>
+                        </Row>
+                      </CardText>
                     </Col>
                     <Col>
                       <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.Periodicity_ext }</Badge>{' '}
