@@ -22,10 +22,10 @@ console.log(props);
                   <Row>
                     <Col style={{'text-align': 'left'}}>
                       <CardText>
-                      <p>
-                      <BadgesDetail item={item}>
-                      </BadgesDetail>
-                      </p>
+                        <Row>
+                          {item.badges.map((badge, i) => (<BadgesDetail style={{'margin-right': '5px', 'cursor' : 'pointer'}} key={i} examination={item.title} badge={badge}/>))}
+                          <i class="material-icons" style={{ color: "#F26D98", 'margin-left': '6px' }}>more_horiz</i>
+                        </Row>
                       </CardText>
                     </Col>
                     <Col>
