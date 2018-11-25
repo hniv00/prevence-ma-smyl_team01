@@ -5,7 +5,8 @@ import {Parallax} from 'react-parallax';
 import {TopNav} from '../molecules/TopNav';
 import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
-import {Partners} from "../organisms/Partners"
+import {Partners} from "../organisms/Partners";
+import {FindPartner} from '../molecules/FindPartner';
 import logo from '../../img/logo_version2.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
@@ -41,12 +42,17 @@ export class PartnersPage extends Component {
                 <br style={{marginBottom: '100px'}}/>
               </Col>
             </Row>
+            <Row>
+              <Col style={{textAlign: 'center'}}>
+                <FindPartner/>
+              </Col>
+            </Row>
           </Container>
           </header>
       </Parallax>
 
       <Parallax>
-        <div className='parallax-content' id="stories">
+        <div className='parallax-content' id="content">
           <Partners/>
         </div>
       </Parallax>
