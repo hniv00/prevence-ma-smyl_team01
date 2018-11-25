@@ -34,22 +34,22 @@ export class BadgesDetail extends Component {
     return (
       <div>
         <Row>
-          {data.map( item => (
+
 
                       <CardText>
                         <p>
-                          {item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary" onClick={this.toggle}>{badge}</Badge>{' '}</Fragment> )}
+                          {this.props.item.badges.map( badge => <Fragment key={badge}><Badge id="cssBadge" color="secondary" onClick={this.toggle}>{badge}</Badge>{' '}</Fragment> )}
                           <i class="material-icons" style={{color: "#F26D98", 'margin-left': '6px'}}>more_horiz</i>
                         </p>
                       </CardText>
 
 
-                ))}
+
           </Row>
 
         <Modal isOpen={modal} toggle={this.toggle} className={className}>
 
-          <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>Obezita</ModalHeader>
+          <ModalHeader id="cssCardExamination" toggle={this.toggle} close={closeBtn}>{this.props.item.badges}</ModalHeader>
           <ModalBody id="cssCardExamination">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -58,8 +58,8 @@ export class BadgesDetail extends Component {
             mollit anim id est laborum.</p>
             <p>Související preventivní vyšetření:</p>
 
-            <p>Preventivní prohlídka</p>
-          
+            <p id="cssCardExaminationName">{this.props.item.title}</p>
+
           </ModalBody>
         </Modal>
 

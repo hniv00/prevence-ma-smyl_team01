@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { Card, CardTitle, CardText, Row, Col, Badge } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col, Badge, Modal, Button, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
 import {dumbStore} from '../../store/dumbStore'
 
 import {ExaminationDetail} from '../atoms/ExaminationDetail';
@@ -8,7 +8,9 @@ import {BadgesDetail} from '../atoms/BadgesDetail';
 const data = dumbStore.examinationResult;
 
 export const Examination = (props) => {
-  console.log(props);
+console.log(props);
+
+
     return (
       <div>
         <Row>
@@ -21,7 +23,8 @@ export const Examination = (props) => {
                     <Col style={{'text-align': 'left'}}>
                       <CardText>
                       <p>
-                      <BadgesDetail/>
+                      <BadgesDetail item={item}>
+                      </BadgesDetail>
                       </p>
                       </CardText>
                     </Col>
