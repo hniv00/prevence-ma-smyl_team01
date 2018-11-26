@@ -201,6 +201,12 @@ hr {
   margin: 10px;
 }
 
+#cssCardExaminationName {
+  background-color: #fcfcfc;
+  color: #026977;
+}
+
+
 /* Examination Badge */
 #cssBadge{
     background-color: #F26D98;
@@ -428,6 +434,14 @@ hr {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+/* Admin module - Diagnosis */
+
+.yesNoButton {
+  margin: 50px;
+}
+.relatedExams {}
+
 
 /* Icons */
 a .fab, a .fas{

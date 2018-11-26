@@ -9,7 +9,7 @@ export class DiseaseSelectionRaw extends Component {
   options = dumbStore.diseaseOptions;
 
   handleChange = (selectedOption) => {
-    this.props.setAnamnesis(selectedOption);
+    this.props.setDisease(selectedOption);
     console.log(`Option selected:`, selectedOption);
   }
 

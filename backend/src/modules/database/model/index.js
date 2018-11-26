@@ -28,6 +28,7 @@ const modelModules = [
     require('./Diagnosis'),
     require('./Examination'),
     require('./Periodicity'),
+    require('./AdminUser'),
 ];
 
 modelModules.forEach(modelModule => {

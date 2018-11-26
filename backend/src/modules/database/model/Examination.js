@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Examination = sequelize.define('Examination', {
       IDExamination: { type: DataTypes.INTEGER, primaryKey: true },
-      Name: DataTypes.STRING,
+      ExamName: DataTypes.TEXT,
       Description: DataTypes.TEXT,
       AgeFrom_basic: DataTypes.INTEGER,
       AgeFrom_ext: DataTypes.INTEGER,

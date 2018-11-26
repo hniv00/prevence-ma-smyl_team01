@@ -6,6 +6,8 @@ export const SET_LIFESTYLE = 'SET_LIFESTYLE';
 export const SET_HEIGHT = 'SET_HEIGHT';
 export const SET_WEIGHT = 'SET_WEIGHT';
 export const FETCH_FILTERED_EXAMINATION = 'FETCH_FILTERED_EXAMINATION';
+export const FETCH_FILTERED_EXAMINATION_SUCCESS = 'FETCH_FILTERED_EXAMINATION_SUCCESS';
+export const FETCH_FILTERED_EXAMINATION_FAILURE = 'FETCH_FILTERED_EXAMINATION_FAILURE';
 
 export const setGender = gender => ({
     type: SET_GENDER,
@@ -55,3 +57,48 @@ export const setWeight = weight => ({
         weight
     }
 });
+
+export const fetchFilteredExamination = () => ({
+    type: FETCH_FILTERED_EXAMINATION
+});
+
+export const fetchFilteredExaminationSuccess = examinations => ({
+    type: FETCH_FILTERED_EXAMINATION_SUCCESS,
+    payload: {examinations}
+});
+
+export const fetchFilteredExaminationFailure = error => ({
+    type: FETCH_FILTERED_EXAMINATION_FAILURE,
+    payload: {error}
+});
+
+export const startFetchFilteredExaminations = () => (dispatch, getState, { api }) => {
+    dispatch(fetchFilteredExamination());
+    let {filterState} = getState();
+    let {age, gender} = filterState;
+    gender = gender === 1 ? 'F' : 'M';
+    let indications = filterState.anamnesis.concat(filterState.disease);
+
+    if(indications.length > 0 ){
+        api
+        .post(`examination/advanced/${gender}/${age}`, {indication: indications})
+        .then(({ data }) => {
+        const {exams} = data;
+        dispatch(fetchFilteredExaminationSuccess(exams));
+        })
+        .catch(() => {
+        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
+        });
+    }
+    else{
+        api
+        .get(`examination/${gender}/${age}`)
+        .then(({ data }) => {
+          const {exams} = data;
+          dispatch(fetchFilteredExaminationSuccess(exams));
+        })
+        .catch(() => {
+          dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
+        });
+    }
+}

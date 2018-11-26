@@ -3,7 +3,6 @@ import { Jumbotron, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export const AdvancedFilterContainer = (props) => {
   return (
-    <div>
       <Jumbotron id="AdminExamContainer">
         <Row>
         <Col align="left">
@@ -79,6 +78,5 @@ export const AdvancedFilterContainer = (props) => {
         </Col>
       </Row>
     </Jumbotron>
-  </div>
   );
 };
