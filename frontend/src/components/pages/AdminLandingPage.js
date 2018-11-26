@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 import {AdminNav} from '../organisms/AdminNav';
-import {AdminNav} from '../organisms/AdminNav';
 //import logo from '../../img/logo_prevence.png';
 
 export class AdminLandingPage extends Component {
