@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import { Row, Col, Container, Jumbotron} from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 
-import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
 import {NewExamButton} from '../atoms/NewExamButton';
 import {AdminNav} from '../organisms/AdminNav';

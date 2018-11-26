@@ -24,10 +24,10 @@ export class HelloPage extends Component {
           <header style={{margin: '2%'}}>
             <Row>
               <Col xs="0" sm="0" md="3">
-                <img src={logo} class="logoPic" alt="My logo" />
+                <img src={logo} className="logoPic" alt="My logo" />
               </Col>
               <Col xs="12" sm="12" md="6">
-                <h2 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. <span class="decor">Prevence má smysl.</span></h2>
+                <h2 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. <span className="decor">Prevence má smysl.</span></h2>
                 <h3 style={{color: 'black'}}>Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.</h3>
               </Col>
               <Col xs="0" sm="0" md="3">
@@ -70,7 +70,7 @@ export class HelloPage extends Component {
           </div>
         </Parallax>
 
-      <div class="footer">
+      <div className="footer">
             <Footer/>
       </div>
 

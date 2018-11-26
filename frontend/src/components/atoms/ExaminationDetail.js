@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Modal, Row, Col, Button, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
+import { Modal, Row, Col, Button, ModalHeader, ModalBody, Badge } from 'reactstrap';
 
 export class ExaminationDetail extends Component {
   constructor(props) {

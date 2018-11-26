@@ -22,8 +22,8 @@ export class AdminShowAdvanced extends Component {
     return (
       <Container>
         <Row>
-          <Col xs="12" style={{'text-align': 'left'}}>
-            <a href="#filtration" onClick={this.toggle} style={{ color: '#17a2b8', 'text-align': 'center' }}>{this.state.text}</a>
+          <Col xs="12" style={{textAlign: 'left'}}>
+            <a href="#filtration" onClick={this.toggle} style={{ color: '#17a2b8', textAlign: 'center' }}>{this.state.text}</a>
           </Col>
         </Row>
         <Row>

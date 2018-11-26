@@ -6,9 +6,9 @@ export class MenuButtonClose extends Component {
     const { handleMouseDown } = this.props
     return (
       <div>
-        <div class="buttonContainerClose" onClick={this.myFunction}
+        <div className="buttonContainerClose" onClick={this.myFunction}
              onMouseDown={handleMouseDown}>
-             <i class="material-icons">close</i>
+             <i className="material-icons">close</i>
         </div>
       </div>
     );

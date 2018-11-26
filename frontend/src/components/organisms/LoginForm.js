@@ -66,14 +66,14 @@ export class LoginForm extends Component {
           className="admin-username"
           placeholder="Uživatelské jméno"
           type="text"
-          style={{'margin-top': '20px'}}
+          style={{marginTop: '20px'}}
           onChange={event => this.setState({username: event.target.value})}
         />
         <Input id="cssAdminLogin"
           className="admin-password"
           placeholder="Heslo"
           type="password"
-          style={{'margin-top': '20px'}}
+          style={{marginTop: '20px'}}
           onChange={event => this.setState({password: event.target.value})}
         />
             <div className="Submit-button">

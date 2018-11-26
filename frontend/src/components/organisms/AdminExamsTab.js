@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import {Table} from 'reactstrap';
 
 const data = [{
   id: 1,
@@ -30,8 +30,8 @@ export class AdminExamsTab extends Component {
             <tr key={item.id}>
               <th scope="row">{item.id}</th>
               <td>{item.name}</td>
-              <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
-              <td><a href=""><i class="material-icons" id="cssFooterArrow">delete</i></a></td>
+              <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td>
+              <td><a href=""><i className="material-icons" id="cssFooterArrow">delete</i></a></td>
             </tr>
           ))}
         </tbody>

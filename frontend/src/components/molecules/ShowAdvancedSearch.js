@@ -20,8 +20,8 @@ export class ShowAdvancedSearch extends Component {
     return (
       <Container>
         <Row>
-          <Col xs="12" style={{ 'margin-top': '2rem'}}>
-            <a href="#filtration" onClick={this.toggle} style={{ color: '#17a2b8', 'text-align': 'center' }}>{this.state.text}</a>
+          <Col xs="12" style={{ marginTop: '2rem'}}>
+            <a href="#filtration" onClick={this.toggle} style={{ color: '#17a2b8', textAlign: 'center' }}>{this.state.text}</a>
           </Col>
         </Row>
         <Row>

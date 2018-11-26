@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
-import {Jumbotron, Row, Col, Button, Container} from 'reactstrap';
+import {Row, Col, Button, Container} from 'reactstrap';
 
 import {TopNav} from '../molecules/TopNav';
 import {Heading} from '../atoms/Heading';
@@ -39,7 +38,7 @@ export class AdminExamination extends Component {
             </Col>
           </Row>
           <Row>
-            <Col style={{'margin-bottom': '30px', 'margin-right': '20px', 'text-align': 'right'}}>
+            <Col style={{marginBottom: '30px', 'margin-right': '20px', textAlign: 'right'}}>
                 <Button color="info" size="md">Smazat</Button>{' '}
                 <Button color="info" size="md">Uložit</Button>
             </Col>
