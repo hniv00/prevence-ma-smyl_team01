@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 
 import {AdminNav} from '../organisms/AdminNav';
-import {Footer} from '../organisms/Footer';
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
 //import logo from '../../img/logo_prevence.png';
 
