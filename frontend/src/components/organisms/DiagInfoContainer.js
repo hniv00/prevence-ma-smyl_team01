@@ -6,16 +6,19 @@ import {TooltipItem} from '../molecules/TooltipItem';
 import {YesNoButton} from '../atoms/YesNoButton';
 import {BasicPeriodicity} from '../molecules/BasicPeriodicity';
 import {AdvancedPeriodicity} from '../molecules/AdvancedPeriodicity';
-import {AdminGenderButton} from '../atoms/AdminGenderButton';
+import {BasicFilterContainer} from '../molecules/BasicFilterContainer';
+import {DiagRelatedExams} from '../molecules/DiagRelatedExams';
 
-export const GenderPeriodicityContainer = (props) => {
+
+
+export const DiagInfoContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
         <Row>
-          <Col xs="0" sm="12" md="4"><AdminGenderButton></AdminGenderButton></Col>
-          <Col xs="0" sm="12" md="4"><BasicPeriodicity></BasicPeriodicity></Col>
-          <Col xs="0" sm="12" md="4"><AdvancedPeriodicity></AdvancedPeriodicity></Col>
+          <Col xs="0" sm="12" md="4"><YesNoButton></YesNoButton></Col>
+          <Col xs="0" sm="12" md="4"><BasicFilterContainer></BasicFilterContainer></Col>
+          <Col xs="0" sm="12" md="4"><DiagRelatedExams></DiagRelatedExams></Col>
         </Row>
       </Jumbotron>
     </div>

@@ -10,8 +10,6 @@ import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
 import {ExamNameContainer} from '../organisms/ExamNameContainer';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
-import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
-import {AdvancedFilterContainer} from '../organisms/AdvancedFilterContainer';
 import {AdminBasicFilterContainer} from '../organisms/AdminBasicFilterContainer';
 import {AdminAdvancedFilterContainer} from '../organisms/AdminAdvancedFilterContainer';
 

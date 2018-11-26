@@ -20,12 +20,13 @@ import {Heading} from '../atoms/Heading';
 import {Footer} from '../organisms/Footer';
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
+import {AdminNav} from '../organisms/AdminNav';
 //import logo from '../../img/logo_prevence.png';
 
 export class AdminLandingPage extends Component {
   render() {
     return (
-      <div>
+    <div>
       <div>
         <AdminNav/>
       </div>
