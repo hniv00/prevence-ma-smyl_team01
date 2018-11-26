@@ -190,11 +190,22 @@ header h6 {
   margin: 10px;
 }
 
+#cssCardStories {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-radius: .20rem;
+  margin: 20px;
+}
+
+#cssStoriesParagraph {
+  text-align: center;
+}
+
 #cssCardExaminationName {
   background-color: #fcfcfc;
   color: #026977;
 }
-
 
 /* Examination Badge */
 #cssBadge{
