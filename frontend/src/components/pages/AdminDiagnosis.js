@@ -49,7 +49,7 @@ export class AdminDiagnosis extends Component {
                </i>
              </span>
              <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
-               Ve správě vyšetření můžete vytvářet či upravovat vyšetření.
+               Ve správě diagnóz můžete vytvářet či upravovat diagnózy.
              </UncontrolledTooltip>
             </Col>
           </Row>
