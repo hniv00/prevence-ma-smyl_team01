@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {FilterButton} from '../atoms/FilterButton';
-import {dumbStore} from '../../store/dumbStore';
+import {startFetchFilteredExaminations} from '../../services/Filtration/actions'
 
 export class FindPreventionRaw extends Component {
   constructor(props){
@@ -11,17 +10,7 @@ export class FindPreventionRaw extends Component {
   }
 
   handleOnClick(){
-    let gender = this.props.gender;
-    let age = this.props.age;
-    let anamnesis = this.props.anamnesis;
-    let disease = this.props.disease;
-    let lifeStyle = this.props.lifeStyle;
-    let height = this.props.height;
-    let weight = this.props.weight;
-    console.log('FilterButton was clicked')
-    // axios.get('http://localhost:3030/api/examination').then((response)=>{
-    //   dumbStore.examinationResult = response;
-    // });
+    this.props.fetchFilteredExaminations();
   }
 
   render() {
@@ -33,14 +22,8 @@ export class FindPreventionRaw extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  gender: state.filterState.gender,
-  age: state.filterState.age,
-  anamnesis: state.filterState.anamnesis,
-  disease: state.filterState.disease,
-  lifeStyle: state.filterState.lifeStyle,
-  height: state.filterState.height,
-  weight: state.filterState.weight
-});
+const mapDispatchToProps = {
+  fetchFilteredExaminations: startFetchFilteredExaminations
+}
 
-export const FindPrevention = connect(mapStateToProps)(FindPreventionRaw);
+export const FindPrevention = connect(null, mapDispatchToProps)(FindPreventionRaw);

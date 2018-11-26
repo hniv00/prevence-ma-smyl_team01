@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Jumbotron, Button, Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 import {ExamName} from '../molecules/ExamName';
 import {TooltipItem} from '../molecules/TooltipItem';
@@ -12,7 +12,6 @@ import {ExamDiagnosis} from '../molecules/ExamDiagnosis';
 
 export const AdvancedFilterContainer = (props) => {
   return (
-    <div>
       <Jumbotron id="AdminExamContainer">
         <Row>
         <Col align="left">
@@ -88,6 +87,5 @@ export const AdvancedFilterContainer = (props) => {
         </Col>
       </Row>
     </Jumbotron>
-  </div>
   );
 };
