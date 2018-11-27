@@ -21,7 +21,7 @@ export class DiagNameRaw extends Component {
       <Form>
         <FormGroup>
           <Label>Název diagnózy</Label>
-          <Input type="text" value={inputName} onBlur={this.handleChange}/>
+          <Input type="text" value={inputName} onChange={this.handleChange}/>
         </FormGroup>
       </Form>
     );

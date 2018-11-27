@@ -20,7 +20,7 @@ export class DiagDescriptionRaw extends Component {
       <Form>
         <FormGroup>
           <Label for="exampleText">Popis diagnózy</Label>
-          <Input type="textarea" name="text" id="exampleText" value={inputDescr} onBlur={this.handleChange}/>
+          <Input type="textarea" name="text" id="exampleText" value={inputDescr} onChange={this.handleChange}/>
         </FormGroup>
       </Form>
     );
