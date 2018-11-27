@@ -1,36 +1,14 @@
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
-import {
-  Col,
-  Row,
-  Button,
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Container,
-  UncontrolledTooltip,
-  Jumbotron} from 'reactstrap';
+import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
 
-import {TopNav} from '../molecules/TopNav';
-import {Heading} from '../atoms/Heading';
-import {Footer} from '../organisms/Footer';
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
 import {TooltipItem} from '../molecules/TooltipItem';
 import {DiagNameContainer} from '../organisms/DiagNameContainer';
-import {DiagInfoContainer} from '../organisms/DiagInfoContainer';
 
-//import logo from '../../img/logo_prevence.png';
 
 export class AdminDiagnosis extends Component {
   render() {
@@ -54,7 +32,6 @@ export class AdminDiagnosis extends Component {
             </Col>
           </Row>
            <DiagNameContainer />
-           <DiagInfoContainer />
              <Col>
                 <Button color="info" size="md" style={{margin: "10px"}}>Smazat</Button>
                 <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
