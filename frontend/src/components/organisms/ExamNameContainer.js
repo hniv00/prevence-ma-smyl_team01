@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 
 import {ExamName} from '../molecules/ExamName';
 import {TooltipExamination} from '../atoms/TooltipExamination';
@@ -11,7 +11,7 @@ export const ExamNameContainer = (props) => {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
-        <Row style={{'text-align': 'right'}}>
+        <Row style={{textAlign: 'right'}}>
           <TooltipExamination/>
         </Row>
         <Row>

@@ -22,9 +22,9 @@ export class PartnerCard extends Component {
         {data.map ( item => (
             <Col xs="3">
               <Card>
-                  <CardImg key={item} top width="318px" src={item.src} alt={item.alt} />
+                  <CardImg key={item.src} top width="318px" src={item.src} alt={item.alt} />
                 <CardBody>
-                  <CardTitle key={item} style={{color: 'black'}}>{item.title}</CardTitle>
+                  <CardTitle key={item.src} style={{color: 'black'}}>{item.title}</CardTitle>
                 </CardBody>
               </Card>
             </Col>

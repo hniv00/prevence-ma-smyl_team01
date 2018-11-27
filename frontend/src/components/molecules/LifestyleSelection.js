@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import {AnamnesisBox} from '../atoms/AnamnesisBox';
 import {SmokerButton} from '../atoms/SmokerButton';
 
 export class LifestyleSelection extends Component {

@@ -1,15 +1,13 @@
 import React, { Component } from "react"
 import {Row, Col} from 'reactstrap';
-import {BasicFilterContainer} from '../organisms/BasicFilterContainer';
+import {AdvancedFilterContainer} from '../molecules/AdvancedFilterContainer';
 
 export class AdminBasic extends Component {
   render() {
     return (
-      <div>
         <Row>
-          <Col><BasicFilterContainer></BasicFilterContainer></Col>
+          <Col><AdvancedFilterContainer></AdvancedFilterContainer></Col>
         </Row>
-      </div>
     );
   }
 }

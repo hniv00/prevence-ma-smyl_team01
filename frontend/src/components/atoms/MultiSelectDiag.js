@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Select from 'react-select';
+import  { MultiSelect } from './MultiSelect';
 
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
@@ -13,7 +13,7 @@ export class MultiSelectDiag extends Component {
   render() {
 
     return (
-      <Select
+      <MultiSelect
         value={this.props.selectedOption}
         onChange={this.props.handleChange}
         options={options}

@@ -27,11 +27,11 @@ export class Menu extends Component {
 
     return (
       <div id="flyoutMenu" className={visibility}>
-        <a href="#" class="menu-close-button" data-rel="menu-close-button"
+        <a href="#" className="menu-close-button" data-rel="menu-close-button"
             onMouseDown={handleMouseDown} className={visibility}>
-				<MenuButtonClose class="menu-close-button" handleMouseDown={this.handleMouseDown}/> </a>
+				<MenuButtonClose className="menu-close-button" handleMouseDown={this.handleMouseDown}/> </a>
         {data.map ( item => (
-          <a key={item} id="cssHamburgerMenu" href={item.href}><p>{item.title}</p></a>
+          <a key={item.href} id="cssHamburgerMenu" href={item.href}><p>{item.title}</p></a>
         ))}
       </div>
     );

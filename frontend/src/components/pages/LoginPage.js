@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
-import {Container, Row, Col} from 'reactstrap';
 
 import {LoginForm} from '../organisms/LoginForm';
 
@@ -10,7 +8,7 @@ export class LoginPage extends Component {
   render() {
     return (
       <div>
-      <LoginForm/>
+        <LoginForm/>
       </div>
     );
   }

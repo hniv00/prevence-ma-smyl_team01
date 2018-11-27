@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import { Col } from 'reactstrap';
+import { Col, Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import Slider from "react-slick";
-import './Carousel.css';
+import '../atoms/Carousel.css';
+
+// MyCarousel should be used like an atom instead of Slider
+import { MyCarousel } from '../atoms/MyCarousel';
 
 const data = [
   { src: './images/loono_logo.png', title: 'Loono', alt: 'Loono logo'},
@@ -16,7 +19,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
+      <i className="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
     </div>
   );
 }
@@ -25,7 +28,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
+      <i className="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
     </div>
   );
 }
@@ -78,8 +81,12 @@ export class PartnersCarousel extends Component {
         <Slider {...settings}>
           {data.map ( item => (
             <Col>
-              <img key={item} width="240px" style={{margin: "10px"}} src={item.src} alt={item.alt} />
-              <span><p style={{'text-align': 'center'}}>{item.title}</p></span>
+              <Card>
+                  <CardImg key={item} top width="240px" src={item.src} alt={item.alt} />
+                <CardBody>
+                  <CardTitle key={item} style={{color: 'black'}}>{item.title}</CardTitle>
+                </CardBody>
+              </Card>
             </Col>
           ))}
         </Slider>
@@ -88,3 +95,13 @@ export class PartnersCarousel extends Component {
     );
   }
 }
+
+/* this was used before
+
+{data.map ( item => (
+  <Col>
+    <img key={item.src} width="240px" style={{margin: "10px"}} src={item.src} alt={item.alt} />
+    <span><p style={{'text-align': 'center'}}>{item.title}</p></span>
+  </Col>
+))}
+*/
