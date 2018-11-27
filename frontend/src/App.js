@@ -9,6 +9,7 @@ import {AdminLandingPage} from "./components/pages/AdminLandingPage"
 import {AdminExamination} from "./components/pages/AdminExamination"
 import {AdminExams} from "./components/pages/AdminExams"
 import {PartnersPage} from "./components/pages/PartnersPage"
+import {StoriesPage} from "./components/pages/StoriesPage"
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -31,6 +32,7 @@ class App extends Component{
                 <Route path="/admin-vysetreni" component={AdminExamination} />
                 <Route path="/admin-seznam-vysetreni" component={AdminExams} />
                 <Route path="/partneri" component={PartnersPage} />
+                <Route path="/pribehy" component={StoriesPage} />
               </Switch>
           </BrowserRouter>
 
