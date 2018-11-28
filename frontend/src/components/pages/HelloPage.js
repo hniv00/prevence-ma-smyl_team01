@@ -11,7 +11,7 @@ import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
 
 // import logo from '../../img/logo_prevence.png';
-import logo from '../../img/logo_version2.png';
+import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 
 import image from '../../img/POZADI_PSD.png';
@@ -24,7 +24,7 @@ export class HelloPage extends Component {
           <header style={{margin: '2%'}}>
             <Row>
               <Col xs="0" sm="0" md="3">
-                <img src={logo} className="logoPic" alt="My logo" />
+                <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
               </Col>
               <Col xs="12" sm="12" md="6">
                 <h2 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. <span className="decor">Prevence má smysl.</span></h2>

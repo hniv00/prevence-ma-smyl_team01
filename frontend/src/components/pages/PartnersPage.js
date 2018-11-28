@@ -7,7 +7,7 @@ import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners";
 import {FindPartner} from '../molecules/FindPartner';
-import logo from '../../img/logo_version2.png';
+import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
 
@@ -21,7 +21,7 @@ export class PartnersPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} className="logoPic" alt="My logo" />
+              <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">PARTNERSKÉ PROJEKTY</h1>
