@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Row, Col, Container } from 'reactstrap';
-import {BasicFilterContainer} from '../molecules/BasicFilterContainer';
+import {AdvancedFilterContainer} from '../molecules/AdvancedFilterContainer';
 import {AdminAdvanced} from '../molecules/AdminAdvanced';
 
 export class AdminShowAdvanced extends Component {
@@ -28,8 +28,7 @@ export class AdminShowAdvanced extends Component {
         <Row>
           <Col xs="12">
             <Collapse isOpen={this.state.collapse}>
-            <Row><BasicFilterContainer></BasicFilterContainer></Row>
-              <AdminAdvanced></AdminAdvanced>
+              <AdvancedFilterContainer></AdvancedFilterContainer>
             </Collapse>
           </Col>
         </Row>

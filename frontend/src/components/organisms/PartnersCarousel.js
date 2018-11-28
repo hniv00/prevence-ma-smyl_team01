@@ -7,11 +7,11 @@ import '../atoms/Carousel.css';
 import { MyCarousel } from '../atoms/MyCarousel';
 
 const data = [
-  { src: './images/loono_logo.png', title: 'Loono', alt: 'Loono logo'},
-  { src: './images/stk_logo.png', title: 'STK pro chlapy', alt: 'STK pro chlapy logo'},
-  { src: './images/avon_logo.jpg', title: 'Avon', alt: 'Avon logo'},
-  { src: './images/rucenaprsa_logo.jpg', title: 'Ruce na prsa', alt: 'Ruce na prsa logo'},
-  { src: './images/proti_logo.png', title: 'S dětmi proti nadváze', alt: 'S dětmi proti nadváze logo'},
+  { src: './images/loono_logo.png', href: '/partneri#loono', title: 'Loono', alt: 'Loono logo'},
+  { src: './images/stk_logo.png', href: '/partneri#stk', title: 'STK pro chlapy', alt: 'STK pro chlapy logo'},
+  { src: './images/avon_logo.jpg', href: '/partneri#avon', title: 'Avon', alt: 'Avon logo'},
+  { src: './images/rucenaprsa_logo.jpg', href: '/partneri#rucenaprsa', title: 'Ruce na prsa', alt: 'Ruce na prsa logo'},
+  { src: './images/proti_logo.png', href: '/partneri', title: 'S dětmi proti nadváze', alt: 'S dětmi proti nadváze logo'},
 ]
 
 /* Custom arrows */
@@ -40,7 +40,7 @@ export class PartnersCarousel extends Component {
     const settings = {
     //  dots: true,
       infinite: true,
-      speed: 500,
+      speed: 1500,
       autoplay: true,
       pauseOnFocus: true,
       arrows: true,
@@ -81,8 +81,8 @@ export class PartnersCarousel extends Component {
         <Slider {...settings}>
           {data.map ( item => (
             <Col>
-              <Card>
-                  <CardImg key={item} top width="240px" src={item.src} alt={item.alt} />
+              <Card id="cssCardPartners">
+                  <a href={item.href}><CardImg key={item} top width="240px" src={item.src} alt={item.alt} /></a>
                 <CardBody>
                   <CardTitle key={item} style={{color: 'black'}}>{item.title}</CardTitle>
                 </CardBody>
@@ -95,13 +95,3 @@ export class PartnersCarousel extends Component {
     );
   }
 }
-
-/* this was used before
-
-{data.map ( item => (
-  <Col>
-    <img key={item.src} width="240px" style={{margin: "10px"}} src={item.src} alt={item.alt} />
-    <span><p style={{'text-align': 'center'}}>{item.title}</p></span>
-  </Col>
-))}
-*/
