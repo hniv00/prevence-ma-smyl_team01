@@ -74,23 +74,22 @@ export class Stories extends Component {
               </Row>
             ))}
           </Col>
-
-          {data.map ( item => (
-
-            <Col md="3">
-
-              <Card id="cssCardStories" body>
-                <CardTitle>{ item.name }, { item.age }</CardTitle>
-                <CardText>
-                    <p id="cssStoriesParagraph">
-                        { item.description }
-                    </p>
-                </CardText>
-              </Card>
-            </Col>
-
-          ))}
-
+          <Col>
+            <Row>
+              {data.map ( item => (
+                <Col md="6">
+                  <Card id="cssCardStories" body>
+                    <CardTitle>{ item.name }, { item.age }</CardTitle>
+                    <CardText>
+                        <p id="cssStoriesParagraph">
+                            { item.description }
+                        </p>
+                    </CardText>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Col>
         </Row>
       </div>
     );
