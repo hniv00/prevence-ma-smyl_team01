@@ -5,7 +5,7 @@ import {Row, Col} from 'reactstrap';
 import {TopNav} from '../molecules/TopNav';
 import {Filter} from '../organisms/Filter';
 import {About} from '../organisms/About';
-import {Stories} from '../organisms/Stories';
+import {StoriesCarousel} from '../organisms/StoriesCarousel';
 import {Motivation} from '../organisms/Motivation';
 import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
@@ -46,7 +46,7 @@ export class HelloPage extends Component {
 
         <Parallax>
           <section>
-            <Stories/>
+            <StoriesCarousel/>
           </section>
         </Parallax>
 
