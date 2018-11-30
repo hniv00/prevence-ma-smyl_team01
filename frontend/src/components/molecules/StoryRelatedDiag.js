@@ -4,7 +4,7 @@ import { Label } from 'reactstrap';
 
 import {MultiSelectDiag} from '../atoms/MultiSelectDiag';
 
-export class ExamDiagnosis extends Component {
+export class StoryRelatedDiag extends Component {
   render() {
     return (
       <div>
@@ -13,4 +13,4 @@ export class ExamDiagnosis extends Component {
       </div>
     );
   }
-} 
+}
