@@ -10,7 +10,14 @@ import {TooltipItem} from '../molecules/TooltipItem';
 import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
 
+
 export class AdminDiagnosis extends Component {
+
+  submit() {
+    console.log('this.state', this.state);
+    this.diagNameRequired();
+  }
+
   render() {
     return (
     <div>
@@ -33,8 +40,17 @@ export class AdminDiagnosis extends Component {
           </Row>
            <DiagNameContainer />
              <Col>
-                <Button color="info" size="md" style={{margin: "10px"}}>Smazat</Button>
-                <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
+                <Button color="info"
+                  size="md"
+                  style={{margin: "10px"}}>
+                  Smazat
+                </Button>
+                <Button color="info"
+                  size="md"
+                  style={{margin: "10px"}}
+                  >
+                  Uložit
+                </Button>
             </Col>
           </div>
         </div>
