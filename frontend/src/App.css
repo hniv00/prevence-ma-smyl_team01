@@ -207,6 +207,13 @@ hr {
   border-color: black;
   border-radius: .20rem;
   margin: 20px;
+  min-width: 220px;
+}
+
+#cssCardColumns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
 }
 
 #cssStoriesParagraph {

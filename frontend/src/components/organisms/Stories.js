@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col, CardColumns } from 'reactstrap';
 
 const data = [{
     id: 1,
@@ -53,15 +53,12 @@ export class Stories extends Component {
   render() {
 
     return (
-      <div className='parallax-content' id="stories">
-        <h4>Příběhy "Za 5min 12"</h4>
-        <h5>Příběhy těch, kterým prevence zachránila život</h5>
+      <div id="stories">
         <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pellentesque quam vel velit. Praesent vitae arcu tempor neque lacinia pretium. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam sit amet magna in magna gravida vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quis nibh at felis congue commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <Row>
           <Col md="6">
             {data.map ( item => (
               <Row>
-
                 <Card id="cssCardStories" body>
                   <CardTitle>{ item.name }, { item.age }</CardTitle>
                   <CardText>
@@ -70,25 +67,23 @@ export class Stories extends Component {
                       </p>
                   </CardText>
                 </Card>
-
               </Row>
             ))}
           </Col>
-          <Col>
-            <Row>
+
+          <Col md="6">
+            <CardColumns id="cssCardColumns">
               {data.map ( item => (
-                <Col md="6">
-                  <Card id="cssCardStories" body>
-                    <CardTitle>{ item.name }, { item.age }</CardTitle>
-                    <CardText>
-                        <p id="cssStoriesParagraph">
-                            { item.description }
-                        </p>
-                    </CardText>
-                  </Card>
-                </Col>
+                    <Card id="cssCardStories" body>
+                      <CardTitle>{ item.name }, { item.age }</CardTitle>
+                      <CardText>
+                          <p id="cssStoriesParagraph">
+                              { item.description }
+                          </p>
+                      </CardText>
+                    </Card>
               ))}
-            </Row>
+            </CardColumns>
           </Col>
         </Row>
       </div>
