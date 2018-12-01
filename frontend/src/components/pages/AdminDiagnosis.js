@@ -13,9 +13,72 @@ import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
 export class AdminDiagnosis extends Component {
 
-  submit() {
-    console.log('this.state', this.state);
+  constructor(props) {
+    super(props);
+    this.updateData = this.updateData.bind(this);
+    this.submitDiagnosis = this.submitDiagnosis.bind(this);
+    this.diagNameRequired = this.diagNameRequired.bind(this);
+    this.diagDescriptionRequired = this.diagDescriptionRequired.bind(this);
+    this.diagRelatedExamsRequired = this.diagRelatedExamsRequired.bind(this);
+
+    this.state = {
+      diagName:'',
+      diagDescription:'',
+      diagRelatedExams:[]
+    }
+  }
+
+  updateData(value,type) {
+    switch (type) {
+      case 'diagName':
+        this.setState({ ...this.state, diagName: value });
+        break;
+
+      case 'diagDescription':
+        this.setState({ ...this.state, diagDescription: value });
+        break;
+
+      case 'diagRelatedExams':
+        this.setState({ ...this.state, diagRelatedExams: value });
+        break;
+
+      default:
+        this.setState({ ...this.state});
+        break;
+
+    }
+  }
+
+  diagNameRequired() {
+    let empt = this.state.diagName;
+     if (empt === "") {
+         alert("Vyplňte název diagnózy!");
+         return false;
+      }
+    return true;
+  }
+
+  diagDescriptionRequired() {
+    let empt = this.state.diagDescription;
+     if (empt === "") {
+         alert("Vyplňte popis diagnózy!");
+         return false;
+      }
+    return true;
+  }
+  diagRelatedExamsRequired() {
+    let empt = this.state.diagRelatedExams;
+     if (empt.length === 0) {
+         console.log(empt)
+         alert("Vyplňte popis související vyšetření!");
+         return false;
+      }
+    return true;
+  }
+  submitDiagnosis(){
     this.diagNameRequired();
+    this.diagDescriptionRequired();
+    this.diagRelatedExamsRequired();
   }
 
   render() {
@@ -38,7 +101,10 @@ export class AdminDiagnosis extends Component {
              </UncontrolledTooltip>
             </Col>
           </Row>
-           <DiagNameContainer />
+           <DiagNameContainer
+            parentState = {this.state}
+            callback = {this.updateData}
+            />
              <Col>
                 <Button color="info"
                   size="md"
@@ -48,6 +114,7 @@ export class AdminDiagnosis extends Component {
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}
+                  onClick={this.submitDiagnosis}
                   >
                   Uložit
                 </Button>
