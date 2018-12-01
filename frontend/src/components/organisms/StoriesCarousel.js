@@ -15,42 +15,36 @@ const data = [{
 }, {
     id: 2,
     name: 'Daniela',
-    age: '23',
-    description: `Tak dnes dorazilo!!! Mile ráda podpořím nadační fond
-    @onemanshowfoundation !!! #1z10 protože je to to nejmenší co mohu udělat!!!
-    A jsem ráda, že kolegové z branže se podíleli na skvělým singlu Cizí zeď
-    #cizized a @kazma_kazmitch ať si myslí každý kdo chce, co chci..
-    Kamil má prostě skvělý nápady!!!... `
+    age: '40',
+    description: `Kamarádka mě přemluvila, abych s ní šla na Den prevence.
+    Jen díky tomu mi tehdy lékaři včas odhalili zhoubný nádor.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
 }, {
     id: 3,
     name: 'Jiří',
     age: '53',
-    description: `Dnes 26.9. krasne pocasi na D5. Unava nebo nepozornost
-    a prede mnou v pravem pruhu kamion a ridic, ktery nebrzdi pred kolonou,
-    ktera stoji v pravem jiznim pruhu. Celni naraz v plne rychlosti do
-    posledniho cisternoveho kamionu v kolone. Obrovska rana odhozeny kamion
-    a bily oblak z bileho prasku, ktery prevazela cisterna. Na miste ihned
-    mnoho lidi, ale vytekajici nafta z nadrze vetsinu lidi odradila od pomoci
-    zaklinenemu ridici. Na fotce ti, kteri to nevzdali.
-    Cesko-Slovensko-Nemecka pomoc nez prijely zachranne slozky.`
+    description: `Na preventivní prohlídky chodím pravidelně, když mě začaly trápit
+    problémy s častým močením, ihned jsem šel za svým urologem.
+    Udělal jsem dobře. I když jsem nakonec nebyl nijak vážně nemocný, člověk nikdy neví,
+    co se může stát a jaká choroba ho přemůže. Lepší je prevence.`
 }, {
     id: 4,
     name: 'Dominika',
     age: '63',
-    description: `Ten pocit, když je účastník kurzu na začátku rozechvělý
-    a říká, že si myslí, že to nemůže zvládnout. Pak mu nestačí základní
-    kurz a přijde i na ten pokročilý, kde na jeho konci musí fungovat při
-    autonehodě. Úplně v klidu zhodnotí situaci, neunikne mu, že člověk,
-    co byl nejdřív celkem v pohodě najednou faaakt nedýchá. Zvládne zavolat
-    na záchranku... s přehledem vytahuje zraněného z auta a zahájí
-    resuscitaci.... A co víc... Nezapomene na rukavice, které na začátku
-    považuje za zvláštní... To je prostě mazec v jednom dni. Úžasná proměna...`
+    description: `Nahmatala jsem si bulku v podpaží a ihned jsem šla k lékaři.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
 }, {
     id: 5,
     name: 'Roman',
     age: '20',
-    description: `Každý by měl zastavit, nikdy nevíš kdy budeš
-    potřebovat pomoct ty!! Já zastavila jsem #1z10 #zastaviljsem`
+    description: `Po procházce v lese jsem se pořádně neprohlédl.
+    O několik dní později jsem si na těle našel zakouslé klíště, okolo
+    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
 }]
 
 /* Custom arrows */
