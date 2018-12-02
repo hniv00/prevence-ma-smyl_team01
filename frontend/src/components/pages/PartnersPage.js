@@ -6,11 +6,9 @@ import {TopNav} from '../molecules/TopNav';
 import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners";
-import {FindPartner} from '../molecules/FindPartner';
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
-
 
 export class PartnersPage extends Component {
   render() {
@@ -31,31 +29,15 @@ export class PartnersPage extends Component {
               <TopNav/>
             </Col>
           </Row>
-          <Container style={{backgroundColor: "rgba(2, 104, 119, 0.28)", borderRadius: '20px', maxWidth: '900px', paddingTop: '10px', marginTop: '20px'}}>
-            <Row style={{marginTop: '50px'}}>
-              <Col md="2"></Col>
-              <Col xs="6" md="4">
-                <p>Najdi si, který projekt tě zajímá...</p>
-              </Col>
-              <Col xs="6">
-                <MultiPartners/>
-                <br style={{marginBottom: '100px'}}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col style={{textAlign: 'center'}}>
-                <FindPartner/>
-              </Col>
-            </Row>
-          </Container>
           </header>
       </Parallax>
 
-      <Parallax>
-        <div className='parallax-content' id="content">
+      <Container>
+          <Col md={{ size: 4, offset: 8}} style={{marginTop: '20px', marginBottom: '20px'}}>
+            <MultiPartners/>
+          </Col>
           <Partners/>
-        </div>
-      </Parallax>
+      </Container>
 
       <div className="footer">
             <Footer></Footer>

@@ -1,11 +1,55 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
 import { Row, Col } from 'reactstrap';
 
-import loono from '../../img/loono.jpg';
-import avon from '../../img/avon.jpg';
-import stk from '../../img/stk.jpg';
-import rucenaprsa from '../../img/rucenaprsa.jpg';
+export class PartnersRaw extends Component {
+  data;
+  constructor(props){
+    super(props);
+  }
 
+  render() {
+    this.data = this.props.partners;
+    console.log(this.props.partners);
+
+    return (
+    <div>
+          {this.data.map((item, i) => (
+                <div id={item.DivID}>
+                    <Row>
+
+                        {i%2 === 1 &&
+                        <Col xs="12" sm="4">
+                            <img src={item.Src} className="imgRound" alt={item.SrcAlt} />
+                        </Col>}
+
+                        <Col xs="12" sm="8">
+                            <h5 style={{ textTransform: 'uppercase' }}>{item.Name}</h5>
+                            <p id="cssContent">{item.Description}</p>
+                        </Col>
+
+                        {i%2 != 1 &&
+                        <Col xs="12" sm="4">
+                            <img src={item.Logo} className="imgRound" alt={item.LogoAlt} />
+                        </Col>}
+
+                    </Row>
+                    <hr />
+                </div>
+            ))}
+    </div>
+  );
+}
+};
+
+
+const mapStateToProps = (state) => ({
+  partners: state.filterPartner.partners
+});
+
+export const Partners = connect(mapStateToProps)(PartnersRaw);
+
+/*
 const data = [
   { name: 'Loono',
     text: `Jedním z našich největších partnerů je Loono.
@@ -42,35 +86,4 @@ const data = [
     src: './images/rucenaprsa.jpg',
     alt: 'STK pro chlapy'},
 ]
-
-export class Partners extends Component {
-  render() {
-    return (
-    <div>
-          {data.map((item, i) => (
-                <div id={item.id}>
-                    <Row>
-
-                        {i%2 === 1 &&
-                        <Col xs="12" sm="4">
-                            <img src={item.src} className="imgRound" alt={item.alt} />
-                        </Col>}
-
-                        <Col xs="12" sm="8">
-                            <h5 style={{ textTransform: 'uppercase' }}>{item.name}</h5>
-                            <p id="cssContent">{item.text}</p>
-                        </Col>
-
-                        {i%2 != 1 &&
-                        <Col xs="12" sm="4">
-                            <img src={item.src} className="imgRound" alt={item.alt} />
-                        </Col>}
-
-                    </Row>
-                    <hr />
-                </div>
-            ))}
-    </div>
-  );
-}
-};
+*/

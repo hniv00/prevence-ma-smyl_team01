@@ -1,7 +1,12 @@
 import {SET_DIAGNOSIS} from './actions';
+import {FETCH_FILTERED_PARTNERS,
+    FETCH_FILTERED_PARTNERS_SUCCESS,
+    FETCH_FILTERED_PARTNERS_FAILURE} from './actions';
 
 const initialState = {
-    diagnosis: []
+    diagnosis: [],
+    error : null,
+    partners : []
 }
 
 const partnersReducer = (state = initialState, action) => {
@@ -14,11 +19,19 @@ const partnersReducer = (state = initialState, action) => {
           };
         }
 
+        case FETCH_FILTERED_PARTNERS:
+            return { ...state, error: null }
+
+        case FETCH_FILTERED_PARTNERS_SUCCESS:
+            return { ...state, error: null, partners: action.payload.partners }
+
+        case FETCH_FILTERED_PARTNERS_FAILURE:
+            return { ...state, error: action.payload.error}
+
         default:
-          return state;
+          return state, console.log(state);
 
     }
 };
 
-export const getDiagnosis = state => state.diagnosis;
 export default partnersReducer;
