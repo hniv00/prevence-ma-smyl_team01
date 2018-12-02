@@ -25,7 +25,8 @@ export const newPartnerController = async (req, res) => {
 
 export const partnerDiagController = async (req, res) => {
     var diags = req.body.diagnosis;
-    if (diags !== "") {
+    console.log(req.body.diagnosis);
+    if (diags) {
         db.sequelize.query("SELECT DISTINCT PartnerProject.Name, PartnerProject.IDProject, PartnerProject.Description, PartnerProject.DivID, PartnerProject.Src, PartnerProject.SrcAlt, PartnerProject.Logo, PartnerProject.LogoAlt FROM PartnerProject INNER JOIN Diag_Partner ON Diag_Partner.PartnerID = PartnerProject.IDProject INNER JOIN Diagnosis ON Diag_Partner.DiagID = Diagnosis.IDDiagnosis WHERE Diagnosis.Name IN (:diagnosis)", {
             replacements: { diagnosis: diags, type: db.sequelize.QueryTypes.SELECT }
         }).spread(projects => {
