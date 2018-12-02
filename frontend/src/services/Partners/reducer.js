@@ -29,7 +29,8 @@ const partnersReducer = (state = initialState, action) => {
             return { ...state, error: action.payload.error}
 
         default:
-          return state, console.log(state);
+          console.log(state);
+          return state;
 
     }
 };
