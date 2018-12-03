@@ -12,6 +12,7 @@ const options = [
 ];
 
 export class MultiSelectExaminationRaw extends Component {
+
   render() {
     const { selectedOption, setExamination } = this.props;
 

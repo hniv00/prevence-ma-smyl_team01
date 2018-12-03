@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
+import {connect} from 'react-redux';
 
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
@@ -11,7 +12,7 @@ import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
 
 
-export class AdminDiagnosis extends Component {
+export class AdminDiagnosisRaw extends Component {
 
   constructor(props) {
     super(props);
@@ -67,7 +68,7 @@ export class AdminDiagnosis extends Component {
     return true;
   }
   diagRelatedExamsRequired() {
-    let empt = this.state.diagRelatedExams;
+    let empt = this.props.selectedOption;
      if (empt.length === 0) {
          console.log(empt)
          alert("Vyplňte popis související vyšetření!");
@@ -125,3 +126,8 @@ export class AdminDiagnosis extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  selectedOption: state.createDiagnosis.examination
+});
+export const AdminDiagnosis = connect(mapStateToProps)(AdminDiagnosisRaw);
