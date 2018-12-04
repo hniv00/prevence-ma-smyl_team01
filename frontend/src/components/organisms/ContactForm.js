@@ -11,12 +11,7 @@ export class ContactForm extends Component {
       text:'',
     }
     this.validate = this.validate.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-   this.setState({value: event.target.value});
   }
 
   validate() {
@@ -50,7 +45,7 @@ export class ContactForm extends Component {
           <FormGroup>
             <Label for="email">E-mail *</Label>
             <Input type="email" name="email" id="email" placeholder="Napiš svůj e-mail" inline
-            value={this.state.email} onChange={this.handleChange}/>
+            onChange={event => this.setState({email: event.target.value})}/>
           </FormGroup>
           </Col>
         </Row>
@@ -58,7 +53,7 @@ export class ContactForm extends Component {
         <FormGroup>
           <Label for="text">Vzkaz</Label>
           <Input type="textarea" name="text" id="text" placeholder="Napiš, co nám chceš vzkázat..."
-          value={this.state.text} onChange={this.handleChange}/>
+          onChange={event => this.setState({text: event.target.value})}/>
         </FormGroup>
 
         <FormGroup check>
