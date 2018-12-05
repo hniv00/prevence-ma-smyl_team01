@@ -10,7 +10,7 @@ export const PatientAgeContainer = (props) => {
             <Form>
               <FormGroup>
                 <Label>Věk:</Label>
-                <Input className="ageInput" type="number" min="18" max="120"/>
+                <Input className="ageInput" type="number" min="18" max="120" style={{minWidth: '100px'}}/>
               </FormGroup>
             </Form>
           </Col>
