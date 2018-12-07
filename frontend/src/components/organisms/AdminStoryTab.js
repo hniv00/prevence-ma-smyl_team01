@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import { getAdminStories } from '../../services/AdminStories/reducer';
 
 /*
 const data = [{
@@ -20,13 +21,9 @@ const data = [{
 */
 
 export class AdminStoryTabRaw extends Component {
-  data;
-  constructor(props){
-    super(props)
-  }
 
   render() {
-    this.data = this.props.stories;
+    const { stories } = this.props;
     console.log(this.stories);
     return (
       <Table hover>
@@ -39,7 +36,7 @@ export class AdminStoryTabRaw extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.data.map( item => (
+          {stories.map( item => (
             <tr key={item.i}>
               <th scope="row">{item.i}</th>
               <td>{item.Name}, {item.Age}</td>
@@ -54,8 +51,12 @@ export class AdminStoryTabRaw extends Component {
 }
 
 
-const mapStateToProps = (state) => ({
-  stories: state.showAdminStories.stories
-});
+const mapStateToProps = (state) => {
+  const stories = getAdminStories(state.adminStories);
+
+  return {
+    stories,
+  };
+};
 
 export const AdminStoryTab = connect(mapStateToProps)(AdminStoryTabRaw);

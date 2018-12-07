@@ -8,5 +8,5 @@ export default combineReducers({
     filterState: filtrationReducer,
     filterPartner: partnersReducer,
     createDiagnosis: diagnosisReducer,
-    showAdminStories: adminStoriesReducer,
+    adminStories: adminStoriesReducer,
 });

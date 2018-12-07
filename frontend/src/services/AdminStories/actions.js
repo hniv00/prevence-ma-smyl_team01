@@ -1,16 +1,16 @@
-export const GET_D_NAME ='GET_D_NAME';
-export const GET_D_AGE ='GET_D_AGE';
-export const FETCH_STORIES = 'FETCH_STORIES';
+export const GET_S_NAME ='ADMIN_STORIES.GET_S_NAME';
+export const GET_S_AGE ='ADMIN_STORIES.GET_S_AGE';
+export const FETCH_STORIES = 'ADMIN_STORIES.FETCH_STORIES';
 
 export const getName = name => ({
-    type: GET_D_NAME,
+    type: GET_S_NAME,
     payload : {
         name
     }
 });
 
 export const getAge = age => ({
-    type: GET_D_AGE,
+    type: GET_S_AGE,
     payload : {
         age
     }
