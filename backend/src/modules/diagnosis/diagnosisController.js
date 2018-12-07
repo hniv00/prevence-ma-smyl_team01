@@ -1,5 +1,4 @@
 import db from '../database/model/';
-const Op = db.Sequelize.Op;
 
 export const newDiagController = async (req, res) => {
 
@@ -26,4 +25,25 @@ export const deleteDiagController = async (req, res) => {
         .then(deletedDiag => {
             console.log(`Diagnosis deleted? 1 means yes, 0 means no: ${deletedDiag}`);
         });
+};
+
+export const diagController = async (req, res) => {
+    const diagList = await db.Diagnosis.findAll({
+        attributes: ['IDDiagnosis', 'Name', 'Description'],
+        raw: true,
+    });
+    return res.json({ diagList });
+
+};
+
+export const updateDiagController = async (req, res) => {
+
+    db.Diagnosis.update({
+        Name: req.body.Name,
+        Description: req.body.Description
+    }, {
+            where: { IDDiagnosis: req.params.id }
+        })
+        .then(result => { return res.json("Diagnosis updated"); })
+        .catch(err => { return res.json("An error occured while changing the diagnosis"); })
 };

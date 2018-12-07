@@ -78,7 +78,7 @@ export const examAdvancedController = async (req, res) => {
 };
 
 
-export const examAMController = async (req, res) => {
+export const examNewController = async (req, res) => {
 
     const newExam = db.Examination.build({
         ExamName: req.body.ExamName,
@@ -112,4 +112,24 @@ export const examDeleteController = async (req, res) => {
     .then(deletedExam => {
         return res.json(`Examination deleted? 1 means yes, 0 means no: ${deletedExam}`);
     });
+};
+
+
+export const examUpdateController = async (req, res) => {
+
+    db.Examination.update({
+            ExamName: req.body.ExamName,
+            Description: req.body.Description,
+            AgeFrom_basic: req.body.AgeFrom_basic,
+            AgeFrom_ext: req.body.AgeFrom_ext,
+            AgeUntil_basic: req.body.AgeUntil_basic,
+            AgeUntil_ext: req.body.AgeUntil_ext,
+            Gender: req.body.Gender,
+            Periodicity_ext: req.body.Periodicity_ext,
+            IndicationNeeded: req.body.IndicationNeeded
+    }, {
+            where: { IDExamination: req.params.id }
+        })
+        .then(result => { return res.json("Examination updated"); })
+        .catch(err => { return res.json("An error occured while changing the examination"); })
 };

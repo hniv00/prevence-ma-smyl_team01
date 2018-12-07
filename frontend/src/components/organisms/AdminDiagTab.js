@@ -1,20 +1,17 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux';
 import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import { getAdminDiagnosis } from '../../services/AdminDiagnosis/reducer';
+import { startFetchDiagnosis } from '../../services/AdminDiagnosis/actions';
 
-const data = [{
-  id: 1,
-  name: 'Diabetes'
-}, {
-  id: 2,
-  name: 'Zvýšený krevní tlak'
-}, {
-  id: 3,
-  name: 'Krátkozrakost'
-}
-]
+export class AdminDiagTabRaw extends Component {
+  componentDidMount(){
+    this.props.startFetchDiagnosis();
+  }
 
-export class AdminDiagTab extends Component {
   render() {
+    const { diagnosis } = this.props;
+    console.log(this.props);
     return (
       <Table hover>
         <thead>
@@ -26,10 +23,10 @@ export class AdminDiagTab extends Component {
           </tr>
         </thead>
         <tbody>
-          {data.map( item => (
-            <tr key={item.id}>
-              <th scope="row">{item.id}</th>
-              <td>{item.name}</td>
+          {diagnosis.map( item => (
+            <tr key={item.IDDiagnosis}>
+              <th scope="row">{item.IDDiagnosis}</th>
+              <td>{item.Name}</td>
               <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
               <td><a href=""><i class="material-icons" id="cssFooterArrow">delete</i></a></td>
             </tr>
@@ -39,3 +36,18 @@ export class AdminDiagTab extends Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => {
+  const diagnosis = getAdminDiagnosis(state.adminDiagnosis);
+
+  return {
+    diagnosis,
+  };
+};
+
+const mapDispatchToProps = {
+  startFetchDiagnosis
+}
+
+export const AdminDiagTab = connect(mapStateToProps, mapDispatchToProps)(AdminDiagTabRaw);

@@ -30,6 +30,5 @@ const adminStoriesReducer = (state = initialState, action) => {
     }
 
 }
-export
-const getAdminStories = state => state.stories || [];
+export const getAdminStories = state => state.stories || [];
 export default adminStoriesReducer;

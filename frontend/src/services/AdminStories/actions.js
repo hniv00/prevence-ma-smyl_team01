@@ -42,3 +42,13 @@ export const startFetchStories = () => (dispatch, getState, { api }) => {
   })
   .catch(fetchStoriesFailure("Failed to fetch stories"));
 }
+
+/* Just a start of an experiment */
+/*
+export const startDeleteStory = () => (dispatch, getState, {api}) => {
+  dispatch(deleteStory());
+  api
+  .post('story/deletestory/:id', deleteStoryController)
+  .catch(deleteStoryFailure("Failed to delete the story"));
+}
+*/

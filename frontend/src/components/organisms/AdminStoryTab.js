@@ -1,25 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import {Table} from 'reactstrap';
 import { getAdminStories } from '../../services/AdminStories/reducer';
 import { startFetchStories } from '../../services/AdminStories/actions'
-
-/*
-const data = [{
-  id: 1,
-  name: 'Petr',
-  age: '23'
-}, {
-  id: 2,
-  name: 'Daniela',
-  age: '23'
-}, {
-  id: 3,
-  name: 'Jiří',
-  age: '50'
-}
-]
-*/
 
 export class AdminStoryTabRaw extends Component {
 
@@ -28,7 +11,7 @@ export class AdminStoryTabRaw extends Component {
   }
   render() {
     const { stories } = this.props;
-    console.log(this.stories);
+    console.log(this.props);
     return (
       <Table hover>
         <thead>

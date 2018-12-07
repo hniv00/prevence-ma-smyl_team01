@@ -39,3 +39,17 @@ export const storyController = async (req, res) => {
 
 };
 
+export const updateStoryController = async (req, res) => {
+
+    db.Story.update({
+        Name: req.body.Name,
+        Age: req.body.Age,
+        Description: req.body.Description,
+        Img: req.body.Img
+    }, {
+            where: { IDStory: req.params.id }
+        })
+        .then(result => { return res.json("Story updated"); })
+        .catch(err => { return res.json("An error occured while changing the story"); })
+};
+
