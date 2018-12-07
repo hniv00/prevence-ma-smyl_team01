@@ -37,8 +37,8 @@ export class AdminStoryTabRaw extends Component {
         </thead>
         <tbody>
           {stories.map( item => (
-            <tr key={item.i}>
-              <th scope="row">{item.i}</th>
+            <tr key={item.IDStory}>
+              <th scope="row">{item.IDStory}</th>
               <td>{item.Name}, {item.Age}</td>
               <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
               <td><a href=""><i class="material-icons" id="cssFooterArrow">delete</i></a></td>

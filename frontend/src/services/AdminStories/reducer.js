@@ -17,7 +17,7 @@ const adminStoriesReducer = (state = initialState, action) => {
             return { ...state, age: action.payload.age }
 
         case FETCH_STORIES:
-            return { ...state, }
+            return { ...state, stories: action.payload.stories}
 
         default:
             return { ...state}
