@@ -1,6 +1,8 @@
 export const GET_S_NAME ='ADMIN_STORIES.GET_S_NAME';
 export const GET_S_AGE ='ADMIN_STORIES.GET_S_AGE';
 export const FETCH_STORIES = 'ADMIN_STORIES.FETCH_STORIES';
+export const FETCH_STORIES_SUCCESS = 'ADMIN_STORIES.FETCH_SUCCESS';
+export const FETCH_STORIES_FAILURE = 'ADMIN_STORIES.FETCH_FAILURE';
 
 export const getName = name => ({
     type: GET_S_NAME,
@@ -16,18 +18,27 @@ export const getAge = age => ({
     }
 });
 
-export const fetchStories = stories => ({
+export const fetchStories = () => ({
     type: FETCH_STORIES,
+});
+
+export const fetchStoriesSuccess = stories => ({
+    type: FETCH_STORIES_SUCCESS,
     payload: {stories}
+});
+
+export const fetchStoriesFailure = error => ({
+    type: FETCH_STORIES_FAILURE,
+    payload: {error}
 });
 
 export const startFetchStories = () => (dispatch, getState, { api }) => {
   dispatch(fetchStories());
-
   api
   .get(`story/list`)
   .then(({ data }) => {
-    const {stories} = data;
-    dispatch(fetchStories(stories));
+      let {stories} = data;
+    dispatch(fetchStoriesSuccess(stories));
   })
+  .catch(fetchStoriesFailure("Failed to fetch stories"));
 }

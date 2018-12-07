@@ -1,6 +1,6 @@
 import {GET_S_NAME} from './actions';
 import {GET_S_AGE} from './actions';
-import {FETCH_STORIES} from './actions';
+import {FETCH_STORIES, FETCH_STORIES_SUCCESS, FETCH_STORIES_FAILURE} from './actions';
 
 const initialState = {
     name: null,
@@ -17,7 +17,13 @@ const adminStoriesReducer = (state = initialState, action) => {
             return { ...state, age: action.payload.age }
 
         case FETCH_STORIES:
-            return { ...state, stories: action.payload.stories}
+            return { ...state, error: null }
+
+        case FETCH_STORIES_SUCCESS:
+            return { ...state, error: null, stories: action.payload.stories }
+
+        case FETCH_STORIES_FAILURE:
+            return { ...state, error: action.payload.error}
 
         default:
             return { ...state}

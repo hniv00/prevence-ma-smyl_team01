@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
 import { getAdminStories } from '../../services/AdminStories/reducer';
+import { startFetchStories } from '../../services/AdminStories/actions'
 
 /*
 const data = [{
@@ -22,6 +23,9 @@ const data = [{
 
 export class AdminStoryTabRaw extends Component {
 
+  componentDidMount(){
+    this.props.startFetchStories();
+  }
   render() {
     const { stories } = this.props;
     console.log(this.stories);
@@ -50,7 +54,6 @@ export class AdminStoryTabRaw extends Component {
   }
 }
 
-
 const mapStateToProps = (state) => {
   const stories = getAdminStories(state.adminStories);
 
@@ -59,4 +62,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export const AdminStoryTab = connect(mapStateToProps)(AdminStoryTabRaw);
+const mapDispatchToProps = {
+  startFetchStories
+}
+
+export const AdminStoryTab = connect(mapStateToProps, mapDispatchToProps)(AdminStoryTabRaw);
