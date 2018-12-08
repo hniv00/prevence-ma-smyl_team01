@@ -44,7 +44,7 @@ export const MultiSelect = props => {
       theme={theme => ({
         ...theme,
         borderRadius: 8,
-        colors: { ...theme.colors, text: 'black', primary: '#17A4B8' },
+        colors: { ...theme.colors, text: 'black', primary: '#17A4B8' }
       })}
       {...props}
     />

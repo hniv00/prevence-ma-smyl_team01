@@ -8,6 +8,6 @@ import {
 
 const router = expressAsyncAwait(Router());
 router.post('/newpartner/', newPartnerController);
-router.post('/list/', partnerDiagController);
+router.get('/list/', partnerDiagController);
 
 export default router;
