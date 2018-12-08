@@ -52,7 +52,7 @@ export class ExamPage extends Component {
 
 
       <div className="footer">
-            <Footer></Footer>
+            <Footer/>
       </div>
 
     </div>

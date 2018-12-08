@@ -43,6 +43,14 @@ export const examBasicController = async (req, res) => {
             }
         }
     });
+    for (let exam of exams) {
+        const examId = exam.IDExamination;
+        await db.sequelize.query("SELECT Diagnosis.Name FROM Diagnosis INNER JOIN Exam_Diag on Diagnosis.IDDiagnosis = Exam_Diag.DiagID INNER JOIN Examination on Examination.IDExamination = Exam_Diag.ExamID WHERE Examination.IDExamination = :exid", {
+            replacements: { exid: examId }
+        }).spread((diagList) => {
+            exam.dataValues.Diagnosis = diagList;
+        })
+    }
     return res.json({ exams });
     
 };
