@@ -23,7 +23,7 @@ const diagnosisReducer = (state = initialState, action) => {
             return { ...state, }
 
         default:
-            return { ...state}
+            return state
     }
 }
 

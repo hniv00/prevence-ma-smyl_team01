@@ -53,7 +53,7 @@ const filtrationReducer = (state = initialState, action) => {
             return { ...state, error: action.payload.error}
 
         default:
-            return { ...state}
+            return state
     }
 } 
 

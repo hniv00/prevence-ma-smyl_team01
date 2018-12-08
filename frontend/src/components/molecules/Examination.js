@@ -1,56 +1,52 @@
-import React, {Component, Fragment} from 'react';
-import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col, Badge, Modal, Button, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
+import React, { Component} from 'react';
+import { Card, CardTitle, CardText, Row, Col, Badge, Collapse } from 'reactstrap';
 
-import {ExaminationDetail} from '../atoms/ExaminationDetail';
-import {BadgesDetail} from '../atoms/BadgesDetail';
+import { ExaminationDetail } from '../atoms/ExaminationDetail';
+import { BadgesDetail } from '../atoms/BadgesDetail';
 
-class ExaminationRaw extends Component{
-  data;
-  constructor(props){
+export class Examination extends Component {
+  constructor(props) {
     super(props);
+    this.state = { toggle: false }
+    this.toggleCollapse = this.toggleCollapse.bind(this);
   }
-  render(){
-    this.data = this.props.examinations
-    console.log(this.data);
+
+  toggleCollapse() {
+    this.setState({ toggle: !this.state.toggle })
+  }
+
+  render() {
     return (
-      <div>
-        <Row>
-          {this.data.map( item => (
-            <Col key={item.IDExamination} sm="12" md="6">
-              <Card id="cssCardExamination" body>
-                <CardTitle>{ item.ExamName }</CardTitle>
+        <Card id="cssCardExamination" body>
+          <CardTitle>{this.props.data.ExamName}</CardTitle>
+          <CardText>
+            <Row>
+              <Col style={{ 'text-align': 'left' }}>
                 <CardText>
                   <Row>
-                    <Col style={{'text-align': 'left'}}>
-                      <CardText>
-                        <Row>
-                          {/* There will never be item.badges, rename the prop to returned data */}
-                          {item.badges.map((badge, i) => (<BadgesDetail style={{'margin-right': '5px', 'cursor' : 'pointer'}} key={i} examination={item.title} badge={badge}/>))}
-                          <i class="material-icons" style={{ color: "#F26D98", 'margin-left': '6px' }}>more_horiz</i>
-                        </Row>
-                      </CardText>
-                    </Col>
-                    <Col>
-                      <p style={{'text-align': 'right'}}><Badge id="cssBadgePeriodicity">{ item.Periodicity_ext }</Badge>{' '}
-                      <i class="material-icons" style={{color: "#39B2C3", 'margin-left': '6px'}}>more_horiz</i>
-                      </p>
-                    </Col>
+                    {this.props.data.Diagnosis.slice(1, 4).map((diag, i) => (
+                      <BadgesDetail style={{ 'margin-right': '5px', 'cursor': 'pointer' }} key={i} examination={this.props.data.title} badge={diag.Name} />)
+                    )}
+                    <Collapse isOpen={this.state.toggle}>
+                      {this.props.data.Diagnosis.slice(4, this.props.data.Diagnosis.length).map((diag, i) => (
+                        <BadgesDetail style={{ 'margin-right': '5px', 'cursor': 'pointer' }} key={i} examination={this.props.data.title} badge={diag.Name} />)
+                      )}
+                    </Collapse>
+                    {this.props.data.Diagnosis.length - 3 > 0 &&
+                      <i class="material-icons" style={{ color: "#F26D98", 'margin-left': '6px' }} onClick={this.toggleCollapse}>more_horiz</i>}
                   </Row>
-                    { item.Description }
                 </CardText>
-                <ExaminationDetail/>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
+              </Col>
+              <Col>
+                <p style={{ 'text-align': 'right' }}><Badge id="cssBadgePeriodicity">{this.props.data.Periodicity_ext}</Badge>{' '}
+                  <i class="material-icons" style={{ color: "#39B2C3", 'margin-left': '6px' }}>more_horiz</i>
+                </p>
+              </Col>
+            </Row>
+            {this.props.data.Description}
+          </CardText>
+          <ExaminationDetail />
+        </Card>
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  examinations : state.filterState.examinations
-});
-
-export const Examination = connect(mapStateToProps)(ExaminationRaw);
