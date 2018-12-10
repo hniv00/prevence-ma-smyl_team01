@@ -5,6 +5,7 @@ import { setupLogging } from './logging';
 import Sequelize from 'sequelize';
 
 dotenv.config();
+console.log(process.env.DB_USER);
 const { PORT = 3030 } = process.env;
 const { DB_CONNECTIONSTRING } = process.env;
 

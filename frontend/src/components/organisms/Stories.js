@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
+import {StoryButton} from '../atoms/StoryButton';
 
 import Slider from "react-slick";
 
@@ -117,6 +118,9 @@ export class Stories extends Component {
                 <CardText>
                     <p id="cssStoriesParagraph">{item.description}</p>
                 </CardText>
+                <div id="storyButton">
+                  <a href="/pribehy"><StoryButton/></a>
+                </div>
               </Card>
             </Col>
           ))}
