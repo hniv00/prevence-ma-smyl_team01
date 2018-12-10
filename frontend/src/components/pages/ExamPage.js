@@ -7,7 +7,7 @@ import {Filter} from '../organisms/Filter';
 import {ExaminationList} from '../organisms/ExaminationList';
 import {Footer} from '../organisms/Footer';
 
-import logo from '../../img/logo_version2.png';
+import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/POZADI_PSD.png';
 
@@ -20,7 +20,7 @@ export class ExamPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} className="logoPic" alt="My logo" />
+              <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">PREVENTIVNÍ VYŠETŘENÍ</h1>

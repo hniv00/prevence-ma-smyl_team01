@@ -4,7 +4,6 @@ import {MenuButtonClose} from "./MenuButtonClose"
 import { Button } from 'reactstrap';
 
 const data = [
-  { href: '/', title: 'Landing Page'},
   { href: '/vysetreni', title: 'Preventivní vyšetření'},
   { href: '/pribehy', title: 'Příběhy #PrevenceMaSmysl'},
   { href: '/akce', title: 'Akce'},

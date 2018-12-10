@@ -201,8 +201,8 @@ hr {
   margin: 10px;
 }
 
-
 /* Stories */
+
 #cssCardStories {
   background-color: white;
   color: black;
@@ -223,9 +223,13 @@ hr {
   width: auto;
 }
 
-#cssCardExaminationName {
-  background-color: #fcfcfc;
-  color: #026977;
+/* Partners slider - cards styles */
+#cssCardPartners {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-radius: .20rem;
+  /*margin: 20px;*/
 }
 
 #storiesCarousel a:hover, #storiesCarousel a:active {
@@ -367,6 +371,7 @@ hr {
   text-decoration: none;
   font-size: 17px;
 }
+
 /* Login Form */
 .login-form {
   margin: auto;

@@ -13,4 +13,4 @@ export class ExamDiagnosis extends Component {
       </div>
     );
   }
-}
+} 
