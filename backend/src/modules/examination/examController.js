@@ -2,20 +2,21 @@
 const Op = db.Sequelize.Op;
     
 export const examController = async (req, res) => {
+    console.log("Examination all was called");
     db.Examination.belongsTo(db.Periodicity, { foreignKey: 'Periodicity_basic', targetKey: 'Periodicity_value'});
     const exams = await db.Examination.findAll({
         attributes: ['IDExamination', 'ExamName', 'Description', 'Gender', 'AgeFrom_basic', 'AgeUntil_basic', 'AgeFrom_ext', 'AgeUntil_ext', 'IndicationNeeded', 'Periodicity_ext'],
-        include: [{
-            model: db.Periodicity,
-            attributes: ['Periodicity_value'],
-            required: true
-        }],
+        // include: [{
+        //     model: db.Periodicity,
+        //     attributes: ['Periodicity_value'],
+        //     required: true
+        // }],
         raw: true,
-        where: {
-            IndicationNeeded: {
-                [Op.eq]: 0
-            }
-        }
+        // where: {
+        //     IndicationNeeded: {
+        //         [Op.eq]: 0
+        //     }
+        // }
     });
     return res.json({ exams });
 

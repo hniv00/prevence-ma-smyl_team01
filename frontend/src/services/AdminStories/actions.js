@@ -3,6 +3,9 @@ export const GET_S_AGE ='ADMIN_STORIES.GET_S_AGE';
 export const FETCH_STORIES = 'ADMIN_STORIES.FETCH_STORIES';
 export const FETCH_STORIES_SUCCESS = 'ADMIN_STORIES.FETCH_SUCCESS';
 export const FETCH_STORIES_FAILURE = 'ADMIN_STORIES.FETCH_FAILURE';
+export const DELETE_STORY = 'ADMIN_STORIES.DELETE_STORIES';
+export const DELETE_STORY_SUCCESS = 'ADMIN_STORIES.DELETE_SUCCESS';
+export const DELETE_STORY_FAILURE = 'ADMIN_STORIES.DELETE_FAILURE';
 
 export const getName = name => ({
     type: GET_S_NAME,
@@ -41,6 +44,33 @@ export const startFetchStories = () => (dispatch, getState, { api }) => {
     dispatch(fetchStoriesSuccess(stories));
   })
   .catch(fetchStoriesFailure("Failed to fetch stories"));
+}
+
+ // -- DELETE -- //
+
+ export const deleteStory = () => ({
+    type: DELETE_STORY,
+});
+
+export const deleteStorySuccess = response => ({
+    type: DELETE_STORY_SUCCESS,
+    payload: {response}
+});
+
+export const deleteStoryFailure = error => ({
+    type: DELETE_STORY_FAILURE,
+    payload: {error}
+});
+
+export const startDeleteStory = (storyId) => (dispatch, getState, { api }) => {
+  dispatch(deleteStory());
+  api
+  .post(`story/deletestory/${storyId}`)
+  .then(() => {
+    dispatch(deleteStorySuccess(`Deleted storyination with ID ${storyId}`));
+  })
+  .catch(deleteStoryFailure("Failed to delete story"));
+  dispatch(startFetchStories())
 }
 
 /* Just a start of an experiment */
