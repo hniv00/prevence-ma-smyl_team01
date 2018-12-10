@@ -147,12 +147,12 @@ export class Stories extends Component {
                 <div  class="container"
                       style={{maxWidth: '266px', minWidth: '200px', margin: '10px'}}
                 >
-                  <img  src={ item.src } class="imageLarger"
-                        style={{maxWidth: '266px', minWidth: '200px', margin: '10px'}}></img>
+                  <img  src={ item.src }
+                        style={{maxWidth: '266px', minWidth: '200px', marginTop: '10px'}}></img>
                   <div class="overlay">
                     <div class="text">
                         <p id="cssStoriesParagraph" style={{color: 'black', textAlign: 'justify',
-                                                          maxWidth: '266px', minWidth: '200px', margin: '10px'}}>
+                                                          maxWidth: '266px', minWidth: '200px', margin: '20px'}}>
                         { item.description }
                         </p>
                         <h6>{ item.username }</h6>
