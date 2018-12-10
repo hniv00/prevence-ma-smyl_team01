@@ -19,7 +19,7 @@ export class AdminDiagTabRaw extends Component {
           <tr>
             <th>#</th>
             <th>Název diagnózy</th>
-            <th>Upravit</th>
+            {/* <th>Upravit</th> */}
             <th>Odstranit</th>
           </tr>
         </thead>
@@ -28,7 +28,7 @@ export class AdminDiagTabRaw extends Component {
             <tr key={item.IDDiagnosis}>
               <th scope="row">{item.IDDiagnosis}</th>
               <td>{item.Name}</td>
-              <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
+              {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
               <td><i onClick={() =>this.props.startDeleteDiagnosis(item.IDDiagnosis)} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}

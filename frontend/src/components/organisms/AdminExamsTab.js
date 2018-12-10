@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Table} from 'reactstrap';
 import { getAdminExams } from '../../services/AdminExaminations/reducer';
-import { startFetchExams } from '../../services/AdminExaminations/actions'
+import { startFetchExams, startDeleteExam } from '../../services/AdminExaminations/actions'
 
 export class AdminExamsTabRaw extends Component {
 
@@ -18,7 +18,7 @@ export class AdminExamsTabRaw extends Component {
           <tr>
             <th>#</th>
             <th>Název vyšetření</th>
-            <th>Upravit</th>
+            {/* <th>Upravit</th> */}
             <th>Odstranit</th>
           </tr>
         </thead>
@@ -27,8 +27,8 @@ export class AdminExamsTabRaw extends Component {
             <tr key={item.IDExamination}>
               <th scope="row">{item.IDExamination}</th>
               <td>{item.ExamName}</td>
-              <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td>
-              <td><a href=""><i className="material-icons" id="cssFooterArrow">delete</i></a></td>
+              {/* <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td> */}
+              <td><i onClick={() => this.props.startDeleteExam(item.IDExamination)} className="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>
@@ -46,7 +46,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  startFetchExams
+  startFetchExams,
+  startDeleteExam
 }
 
 export const AdminExamsTab = connect(mapStateToProps, mapDispatchToProps)(AdminExamsTabRaw);
