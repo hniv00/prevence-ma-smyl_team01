@@ -13,7 +13,7 @@ export class AdminNav extends Component {
               <NavLink className="AdminNavItem" href="/admin-seznam-diagnoz/">Diagnózy</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="AdminNavItem" href="/admin-pribehy/">Příběhy</NavLink>
+              <NavLink className="AdminNavItem" href="/admin-seznam-pribehu/">Příběhy</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="AdminNavItem" href="/admin-prevencemasmysl/">#PrevenceMaSmysl</NavLink>

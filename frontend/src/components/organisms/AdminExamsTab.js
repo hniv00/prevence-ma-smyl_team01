@@ -1,20 +1,17 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import {Table} from 'reactstrap';
+import { getAdminExams } from '../../services/AdminExaminations/reducer';
+import { startFetchExams } from '../../services/AdminExaminations/actions'
 
-const data = [{
-  id: 1,
-  name: 'Preventivní prohlídka'
-}, {
-  id: 2,
-  name: 'Zubní prohlídka'
-}, {
-  id: 3,
-  name: 'Oční prohlídka'
-}
-]
+export class AdminExamsTabRaw extends Component {
 
-export class AdminExamsTab extends Component {
+    componentDidMount(){
+      this.props.startFetchExams();
+    }
   render() {
+    const { exams } = this.props;
+    console.log(this.props);
     return (
       <Table hover>
         <thead>
@@ -26,10 +23,10 @@ export class AdminExamsTab extends Component {
           </tr>
         </thead>
         <tbody>
-          {data.map( item => (
-            <tr key={item.id}>
-              <th scope="row">{item.id}</th>
-              <td>{item.name}</td>
+          {exams.map( item => (
+            <tr key={item.IDExamination}>
+              <th scope="row">{item.IDExamination}</th>
+              <td>{item.ExamName}</td>
               <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td>
               <td><a href=""><i className="material-icons" id="cssFooterArrow">delete</i></a></td>
             </tr>
@@ -39,3 +36,17 @@ export class AdminExamsTab extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  const exams = getAdminExams(state.adminExams);
+
+  return {
+    exams,
+  };
+};
+
+const mapDispatchToProps = {
+  startFetchExams
+}
+
+export const AdminExamsTab = connect(mapStateToProps, mapDispatchToProps)(AdminExamsTabRaw);

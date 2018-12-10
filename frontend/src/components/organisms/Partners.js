@@ -8,6 +8,7 @@ export class PartnersRaw extends Component {
     super(props);
   }
 
+export class Partners extends Component {
   render() {
     this.data = this.props.partners;
     console.log(this.props.partners);

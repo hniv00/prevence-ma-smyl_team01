@@ -6,6 +6,7 @@ import {TopNav} from '../molecules/TopNav';
 import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
 import {Partners} from "../organisms/Partners";
+
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
