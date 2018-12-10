@@ -4,7 +4,7 @@ import {Parallax} from 'react-parallax';
 
 import {TopNav} from '../molecules/TopNav';
 import {Footer} from '../organisms/Footer';
-import {Partners} from "../organisms/Partners"
+import {Stories} from "../organisms/Stories"
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
@@ -37,7 +37,7 @@ export class StoriesPage extends Component {
 
       <Parallax>
         <div className='parallax-content' id="stories">
-          <Partners/>
+          <Stories/>
         </div>
       </Parallax>
 

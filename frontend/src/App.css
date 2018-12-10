@@ -201,22 +201,26 @@ hr {
   margin: 10px;
 }
 
-#cssCardExaminationName {
-  background-color: #fcfcfc;
-  color: #026977;
-}
+/* Stories */
 
-/* Stories slider - cards styles */
 #cssCardStories {
   background-color: white;
   color: black;
   border-color: black;
   border-radius: .20rem;
-  /*margin: 20px;*/
+  margin: 20px;
+  min-width: 220px;
+}
+
+#cssCardColumns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
 }
 
 #cssStoriesParagraph {
-  text-align: align;
+  text-align: justify;
+  width: auto;
 }
 
 /* Partners slider - cards styles */
@@ -226,6 +230,60 @@ hr {
   border-color: black;
   border-radius: .20rem;
   /*margin: 20px;*/
+}
+
+#storiesCarousel a:hover, #storiesCarousel a:active {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.imageSmaller {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 200px;
+}
+
+.imageLarger {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 300px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  /*font-size: 20px;*/
+  position: absolute;
+  /*top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /*text-align: center;*/
 }
 
 /* Examination Badge */
