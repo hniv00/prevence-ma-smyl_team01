@@ -145,17 +145,24 @@ export class Stories extends Component {
             <Col id="cssCardColumns">
               {data2.map ( item => (
                 <div  class="container"
-                      style={{maxWidth: '266px', minWidth: '200px', margin: '10px'}}
+                      style={{maxWidth: '266px', minWidth: '240px', margin: '10px'}}
                 >
                   <img  src={ item.src }
-                        style={{maxWidth: '266px', minWidth: '200px', marginTop: '10px'}}></img>
+                        style={{maxWidth: '266px', minWidth: '240px', marginTop: '10px'}}></img>
                   <div class="overlay">
                     <div class="text">
-                        <p id="cssStoriesParagraph" style={{color: 'black', textAlign: 'justify',
-                                                          maxWidth: '266px', minWidth: '200px', margin: '20px'}}>
-                        { item.description }
+                        <p id="cssStoriesParagraph" style={{color: 'black', textAlign: 'justify', width: 'auto',
+                                                          maxWidth: '266px', minWidth: '200px', margin: '30px'}}>
+                          <TextEllipsis
+                            lines={10}
+                            tag={'p'}
+                            ellipsisChars={'...'}
+                            tagClass={'className'}
+                            debounceTimeoutOnResize={200}
+                            useJsOnly={true}>
+                            { item.description }
+                          </TextEllipsis>
                         </p>
-                        <h6>{ item.username }</h6>
                     </div>
                   </div>
                   <h6>{ item.username }</h6>

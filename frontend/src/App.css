@@ -219,7 +219,8 @@ hr {
 }
 
 #cssStoriesParagraph {
-  text-align: center;
+  text-align: justify;
+  width: auto;
 }
 
 #cssCardExaminationName {
