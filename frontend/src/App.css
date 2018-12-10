@@ -201,21 +201,31 @@ hr {
   margin: 10px;
 }
 
+#cssCardExaminationName {
+  background-color: #fcfcfc;
+  color: #026977;
+}
+
+/* Stories slider - cards styles */
 #cssCardStories {
   background-color: white;
   color: black;
   border-color: black;
   border-radius: .20rem;
-  margin: 20px;
+  /*margin: 20px;*/
 }
 
 #cssStoriesParagraph {
-  text-align: center;
+  text-align: align;
 }
 
-#cssCardExaminationName {
-  background-color: #fcfcfc;
-  color: #026977;
+/* Partners slider - cards styles */
+#cssCardPartners {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-radius: .20rem;
+  /*margin: 20px;*/
 }
 
 /* Examination Badge */
