@@ -201,6 +201,8 @@ hr {
   margin: 10px;
 }
 
+
+/* Stories */
 #cssCardStories {
   background-color: white;
   color: black;
@@ -223,6 +225,10 @@ hr {
 #cssCardExaminationName {
   background-color: #fcfcfc;
   color: #026977;
+}
+
+#storiesCarousel a:hover, #storiesCarousel a:active {
+  text-decoration: none;
 }
 
 .container {
@@ -256,7 +262,7 @@ hr {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .container:hover .overlay {

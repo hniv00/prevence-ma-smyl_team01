@@ -11,7 +11,9 @@ const data = [{
     age: '23',
     description: `Po procházce v lese jsem se pořádně neprohlédl.
     O několik dní později jsem si na těle našel zakouslé klíště, okolo
-    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.`
+    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
+    I tak jsem rád za to, že jsem nelenil a začal problém řešit hned.
+    Mohl jsem totiž dopadnout ještě mnohem hůř.`
 }, {
     id: 2,
     name: 'Daniela',
@@ -34,6 +36,7 @@ const data = [{
     name: 'Dominika',
     age: '63',
     description: `Nahmatala jsem si bulku v podpaží a ihned jsem šla k lékaři.
+    Když doktor určil diagnózu, málem jsem to neustála. Ale věděla jsem, že musím bojovat.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
 }, {
@@ -122,17 +125,15 @@ export class StoriesCarousel extends Component {
                       <TextEllipsis
                         lines={6}
                         tag={'p'}
-                        ellipsisChars={' ...'}
+                        ellipsisChars={'...'}
                         tagClass={'className'}
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
                         { item.description }
                       </TextEllipsis>
                     </p>
+                    <a href="/pribehy" className="storiesCarousel">Celý příběh...</a>
                 </CardText>
-                <div id="storyButton">
-                  <a href="/pribehy"><StoryButton/></a>
-                </div>
               </Card>
             </Col>
           ))}
