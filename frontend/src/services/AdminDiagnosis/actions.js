@@ -4,6 +4,9 @@ export const SET_D_EXAMINATION = 'ADMIN_DIAGNOSIS.SET_D_EXAMINATION';
 export const FETCH_DIAGNOSIS = 'ADMIN_DIAGNOSIS.FETCH_DIAGNOSIS';
 export const FETCH_DIAGNOSIS_SUCCESS = 'ADMIN_DIAGNOSIS.FETCH_DIAGNOSIS_SUCCESS';
 export const FETCH_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.FETCH_DIAGNOSIS_FAILURE';
+export const DELETE_DIAGNOSIS = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS';
+export const DELETE_DIAGNOSIS_SUCCESS = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS_SUCCESS';
+export const DELETE_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS_FAILURE';
 
 export const setName = name => ({
     type: SET_D_NAME,
@@ -45,8 +48,33 @@ export const startFetchDiagnosis = () => (dispatch, getState, { api }) => {
   api
   .get(`diagnosis/list`)
   .then(({ data }) => {
-      let {diagnosis} = data;
-    dispatch(fetchDiagnosisSuccess(diagnosis));
+      let {diagList} = data;
+    dispatch(fetchDiagnosisSuccess(diagList));
   })
   .catch(fetchDiagnosisFailure("Failed to fetch diagnosis"));
+}
+
+export const deleteDiagnosis = () => ({
+    type: DELETE_DIAGNOSIS,
+});
+
+export const deleteDiagnosisSuccess = response => ({
+    type: DELETE_DIAGNOSIS_SUCCESS,
+    payload: {response}
+});
+
+export const deleteDiagnosisFailure = error => ({
+    type: DELETE_DIAGNOSIS_FAILURE,
+    payload: {error}
+});
+
+export const startDeleteDiagnosis = (diagId) => (dispatch, getState, { api }) => {
+  dispatch(deleteDiagnosis());
+  api
+  .post(`diagnosis/deletediag/${diagId}`)
+  .then(() => {
+    dispatch(deleteDiagnosisSuccess("Diagnosis has been deleted"));
+    dispatch(startFetchDiagnosis());
+  })
+  .catch(deleteDiagnosisFailure("Failed to delete diagnosis"));
 }

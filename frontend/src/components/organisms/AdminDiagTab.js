@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
-import { Row, Col, Container, Jumbotron, Table} from 'reactstrap';
+import { Table} from 'reactstrap';
 import { getAdminDiagnosis } from '../../services/AdminDiagnosis/reducer';
-import { startFetchDiagnosis } from '../../services/AdminDiagnosis/actions';
+import { startFetchDiagnosis, startDeleteDiagnosis } from '../../services/AdminDiagnosis/actions';
 
 export class AdminDiagTabRaw extends Component {
+
   componentDidMount(){
     this.props.startFetchDiagnosis();
   }
@@ -28,7 +29,7 @@ export class AdminDiagTabRaw extends Component {
               <th scope="row">{item.IDDiagnosis}</th>
               <td>{item.Name}</td>
               <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td>
-              <td><a href=""><i class="material-icons" id="cssFooterArrow">delete</i></a></td>
+              <td><i onClick={() =>this.props.startDeleteDiagnosis(item.IDDiagnosis)} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>
@@ -36,7 +37,6 @@ export class AdminDiagTabRaw extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   const diagnosis = getAdminDiagnosis(state.adminDiagnosis);
@@ -47,7 +47,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-  startFetchDiagnosis
+  startFetchDiagnosis,
+  startDeleteDiagnosis
 }
 
 export const AdminDiagTab = connect(mapStateToProps, mapDispatchToProps)(AdminDiagTabRaw);

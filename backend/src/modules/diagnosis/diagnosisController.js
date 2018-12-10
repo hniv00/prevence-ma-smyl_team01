@@ -24,6 +24,7 @@ export const deleteDiagController = async (req, res) => {
     })
         .then(deletedDiag => {
             console.log(`Diagnosis deleted? 1 means yes, 0 means no: ${deletedDiag}`);
+            res.json({response: deletedDiag == 1 ? `Diagnosis with ID ${deletedDiag} was deleted`: 'Diagnosis with ID ${deletedDiag}  was not deleted'})
         });
 };
 

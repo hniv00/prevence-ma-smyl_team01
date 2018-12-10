@@ -6,7 +6,7 @@ import {TopNav} from '../molecules/TopNav';
 import {Footer} from '../organisms/Footer';
 import {ContactForm} from '../organisms/ContactForm';
 import {Contact} from '../molecules/Contact';
-import logo from '../../img/logo_version2.png';
+import logo from '../../img/logo_prevence.png';
 import image from '../../img/pozadi_nadpis.png';
 import '../../parallax.css';
 

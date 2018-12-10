@@ -3,12 +3,6 @@ import {connect} from 'react-redux';
 import { Row, Col } from 'reactstrap';
 
 export class PartnersRaw extends Component {
-  data;
-  constructor(props){
-    super(props);
-  }
-
-export class Partners extends Component {
   render() {
     this.data = this.props.partners;
     console.log(this.props.partners);
@@ -42,7 +36,6 @@ export class Partners extends Component {
   );
 }
 };
-
 
 const mapStateToProps = (state) => ({
   partners: state.filterPartner.partners
