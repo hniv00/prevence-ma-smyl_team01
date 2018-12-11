@@ -6,7 +6,7 @@ import {FETCH_FILTERED_PARTNERS,
 const initialState = {
     diagnosis: [],
     error : null,
-    partners : []
+    partners : [],
 }
 
 const partnersReducer = (state = initialState, action) => {
@@ -30,7 +30,6 @@ const partnersReducer = (state = initialState, action) => {
 
         default:
           return state;
-
     }
 };
 

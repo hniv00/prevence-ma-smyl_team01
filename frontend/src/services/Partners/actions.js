@@ -31,7 +31,7 @@ export const startFetchFilteredPartners = () => (dispatch, getState, { api }) =>
 
     if(diagnosis.length > 0 ){
         api
-        .post('/list/', {diagnosis: diagnosis})
+        .post('partners/list/', {diagnosis: diagnosis})
         .then(({ data }) => {
           const {partners} = data;
           dispatch(fetchFilteredPartnersSuccess(partners));
@@ -42,10 +42,10 @@ export const startFetchFilteredPartners = () => (dispatch, getState, { api }) =>
     }
     else{
         api
-        .post('/list/')
+        .post('partners/list/')
         .then(({ data }) => {
-          const {partners} = data;
-          dispatch(fetchFilteredPartnersSuccess(partners));
+          const {projects} = data;
+          dispatch(fetchFilteredPartnersSuccess(projects));
         })
         .catch(() => {
           dispatch(fetchFilteredPartnersFailure('Failed fetching partner projects'));

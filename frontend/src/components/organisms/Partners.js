@@ -1,12 +1,17 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import { Row, Col } from 'reactstrap';
+import {startFetchFilteredPartners} from '../../services/Partners/actions'
 
 export class PartnersRaw extends Component {
+
+  componentDidMount(){
+    this.props.startFetchFilteredPartners();
+  }
+
   render() {
     this.data = this.props.partners;
     console.log(this.props.partners);
-
     return (
     <div>
           {this.data.map((item, i) => (
@@ -41,7 +46,11 @@ const mapStateToProps = (state) => ({
   partners: state.filterPartner.partners
 });
 
-export const Partners = connect(mapStateToProps)(PartnersRaw);
+const mapDispatchToProps = {
+  startFetchFilteredPartners
+}
+
+export const Partners = connect(mapStateToProps, mapDispatchToProps)(PartnersRaw);
 
 /*
 const data = [
