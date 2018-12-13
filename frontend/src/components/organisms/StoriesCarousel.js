@@ -1,54 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 import {StoryButton} from '../atoms/StoryButton';
-
 import TextEllipsis from 'react-text-ellipsis';
 import Slider from "react-slick";
-
-const data = [{
-    id: 1,
-    name: 'Petr',
-    age: '23',
-    description: `Po procházce v lese jsem se pořádně neprohlédl.
-    O několik dní později jsem si na těle našel zakouslé klíště, okolo
-    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
-    I tak jsem rád za to, že jsem nelenil a začal problém řešit hned.
-    Mohl jsem totiž dopadnout ještě mnohem hůř.`
-}, {
-    id: 2,
-    name: 'Daniela',
-    age: '40',
-    description: `Kamarádka mě přemluvila, abych s ní šla na Den prevence.
-    Jen díky tomu mi tehdy lékaři včas odhalili zhoubný nádor.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}, {
-    id: 3,
-    name: 'Jiří',
-    age: '53',
-    description: `Na preventivní prohlídky chodím pravidelně, když mě začaly trápit
-    problémy s častým močením, ihned jsem šel za svým urologem.
-    Udělal jsem dobře. I když jsem nakonec nebyl nijak vážně nemocný, člověk nikdy neví,
-    co se může stát a jaká choroba ho přemůže. Lepší je prevence.`
-}, {
-    id: 4,
-    name: 'Dominika',
-    age: '63',
-    description: `Nahmatala jsem si bulku v podpaží a ihned jsem šla k lékaři.
-    Když doktor určil diagnózu, málem jsem to neustála. Ale věděla jsem, že musím bojovat.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}, {
-    id: 5,
-    name: 'Roman',
-    age: '20',
-    description: `Po procházce v lese jsem se pořádně neprohlédl.
-    O několik dní později jsem si na těle našel zakouslé klíště, okolo
-    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}]
+import {getStories} from '../../services/Stories/reducer';
+import {startFetchStories} from '../../services/Stories/actions'
 
 /* Custom arrows */
 function SampleNextArrow(props) {
@@ -69,8 +26,15 @@ function SamplePrevArrow(props) {
   );
 }
 
-export class StoriesCarousel extends Component {
+export class StoriesCarouselRaw extends Component {
+
+  componentDidMount(){
+    this.props.startFetchStories();
+  }
+
   render() {
+    const { stories } = this.props;
+    console.log(this.props);
 
         const settings = {
           dots: true,
@@ -114,12 +78,12 @@ export class StoriesCarousel extends Component {
       <div className='parallax-content' id="stories">
         <h4>Příběhy "Za 5min 12"</h4>
         <h5>Příběhy těch, kterým prevence zachránila život</h5>
-        <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pellentesque quam vel velit. Praesent vitae arcu tempor neque lacinia pretium. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat ante, in pharetra metus odio a lectus. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nullam sit amet magna in magna gravida vehicula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quis nibh at felis congue commodo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <Slider {...settings}>
-          {data.map ( item => (
+          {stories.map ( item => (
             <Col>
               <Card id="cssCardStories" body>
-                <CardTitle>{ item.name }, { item.age }</CardTitle>
+                <CardTitle>{ item.Name }, { item.Age }</CardTitle>
                 <CardText>
                     <p id="cssStoriesParagraph">
                       <TextEllipsis
@@ -129,7 +93,7 @@ export class StoriesCarousel extends Component {
                         tagClass={'className'}
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
-                        { item.description }
+                        { item.Description }
                       </TextEllipsis>
                     </p>
                     <a href="/pribehy" className="storiesCarousel">Celý příběh...</a>
@@ -143,3 +107,17 @@ export class StoriesCarousel extends Component {
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  const stories = getStories(state.showStories);
+
+  return {
+    stories,
+  };
+};
+
+const mapDispatchToProps = {
+  startFetchStories
+}
+
+export const StoriesCarousel = connect(mapStateToProps, mapDispatchToProps)(StoriesCarouselRaw);
