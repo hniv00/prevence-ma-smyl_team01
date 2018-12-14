@@ -40,6 +40,7 @@ export class ExamPage extends Component {
             </Col>
             <Col xs="0" sm="2"/>
           </Row>
+          
           </header>
       </Parallax>
 

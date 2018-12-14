@@ -47,6 +47,7 @@ const filtrationReducer = (state = initialState, action) => {
             return { ...state, error: null }
 
         case FETCH_FILTERED_EXAMINATION_SUCCESS:
+        console.log(action.payload.examinations);
             return { ...state, error: null, examinations: action.payload.examinations }
 
         case FETCH_FILTERED_EXAMINATION_FAILURE:

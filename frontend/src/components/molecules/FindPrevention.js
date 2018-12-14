@@ -16,7 +16,7 @@ export class FindPreventionRaw extends Component {
   render() {
     return (
       <div id="filterButton">
-        <a href="/vysetreni#examinationList"><FilterButton onClick={this.handleOnClick}/></a>
+        <FilterButton onClick={this.handleOnClick}/>
       </div>
     );
   }
