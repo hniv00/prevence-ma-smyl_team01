@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 import { Col, Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import Slider from "react-slick";
 import '../atoms/Carousel.css';
+import {startFetchFilteredPartners} from '../../services/Partners/actions'
 
 // MyCarousel should be used like an atom instead of Slider
 import { MyCarousel } from '../atoms/MyCarousel';
 
+/*
 const data = [
   { src: './images/loono_logo.png', href: '/partneri#loono', title: 'Loono', alt: 'Loono logo'},
   { src: './images/stk_logo.png', href: '/partneri#stk', title: 'STK pro chlapy', alt: 'STK pro chlapy logo'},
@@ -13,6 +16,7 @@ const data = [
   { src: './images/rucenaprsa_logo.jpg', href: '/partneri#rucenaprsa', title: 'Ruce na prsa', alt: 'Ruce na prsa logo'},
   { src: './images/proti_logo.png', href: '/partneri', title: 'S dětmi proti nadváze', alt: 'S dětmi proti nadváze logo'},
 ]
+*/
 
 /* Custom arrows */
 function SampleNextArrow(props) {
@@ -34,8 +38,15 @@ function SamplePrevArrow(props) {
 }
 
 
-export class PartnersCarousel extends Component {
+export class PartnersCarouselRaw extends Component {
+
+  componentDidMount(){
+    this.props.startFetchFilteredPartners();
+  }
+
   render() {
+    this.data = this.props.partners;
+    console.log(this.props.partners);
 
     const settings = {
     //  dots: true,
@@ -79,12 +90,12 @@ export class PartnersCarousel extends Component {
       <div>
         <h4> Partneské projekty </h4>
         <Slider {...settings}>
-          {data.map ( item => (
+          {this.data.map ( item => (
             <Col>
               <Card id="cssCardPartners">
-                  <a href={item.href}><CardImg key={item} top width="240px" src={item.src} alt={item.alt} /></a>
+                  <a href='/partneri'><CardImg key={item} top width="240px" src={item.Logo} alt={item.LogoAlt} /></a>
                 <CardBody>
-                  <CardTitle key={item} style={{color: 'black'}}>{item.title}</CardTitle>
+                  <CardTitle key={item} style={{color: 'black'}}>{item.Name}</CardTitle>
                 </CardBody>
               </Card>
             </Col>
@@ -95,3 +106,14 @@ export class PartnersCarousel extends Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => ({
+  partners: state.filterPartner.partners
+});
+
+const mapDispatchToProps = {
+  startFetchFilteredPartners
+}
+
+export const PartnersCarousel = connect(mapStateToProps, mapDispatchToProps)(PartnersCarouselRaw);

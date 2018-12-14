@@ -29,6 +29,8 @@ const modelModules = [
     require('./Examination'),
     require('./Periodicity'),
     require('./AdminUser'),
+    require('./PartnerProject'),
+    require('./Story'),
 ];
 
 modelModules.forEach(modelModule => {

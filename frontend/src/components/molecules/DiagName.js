@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { setName } from '../../services/AdminDiagnosis/actions';
 
 export class DiagNameRaw extends Component {
-
   constructor(props) {
     super(props)
 

@@ -5,7 +5,7 @@ import {FontIcon} from "../atoms/FontIcon";
 
 const data = [
   { href: '/vysetreni', title: 'Preventivní vyšetření'},
-  { href: '/pribehy', title: '#PrevenceMaSmysl'},
+  { href: '/pribehy', title: 'Příběhy #PrevenceMaSmysl'},
   { href: '/akce', title: 'Akce'},
   { href: '/partneri', title: 'Partnerské projekty'},
   { href: '/kontakty', title: 'Kontakt'}

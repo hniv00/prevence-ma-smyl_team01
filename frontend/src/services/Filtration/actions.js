@@ -1,3 +1,5 @@
+import parseData from '../../helpers/ParseMultiSelect'
+
 export const SET_GENDER ='SET_GENDER';
 export const SET_AGE = 'SET_AGE';
 export const SET_ANAMNESIS = 'SET_ANAMNESIS';
@@ -80,14 +82,16 @@ export const startFetchFilteredExaminations = () => (dispatch, getState, { api }
     let indications = filterState.anamnesis.concat(filterState.disease);
 
     if(indications.length > 0 ){
+        let parsedIndications = parseData(indications)
         api
-        .post(`examination/advanced/${gender}/${age}`, {indication: indications})
-        .then(({ data }) => {
-        const {exams} = data;
-        dispatch(fetchFilteredExaminationSuccess(exams));
+        .post(`examination/advanced/${gender}/${age}`, {indication: parsedIndications})
+        .then(({data}) => {
+          const {exams} = data;
+          dispatch(fetchFilteredExaminationSuccess(exams));
         })
+        .then(() => {window.location.href = '/vysetreni';})
         .catch(() => {
-        dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
+          dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
         });
     }
     else{
@@ -95,8 +99,10 @@ export const startFetchFilteredExaminations = () => (dispatch, getState, { api }
         .get(`examination/${gender}/${age}`)
         .then(({ data }) => {
           const {exams} = data;
+          console.log(data);
           dispatch(fetchFilteredExaminationSuccess(exams));
         })
+        .then(() => {window.location.href = '/vysetreni';})
         .catch(() => {
           dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
         });

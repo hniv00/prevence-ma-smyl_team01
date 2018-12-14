@@ -25,11 +25,13 @@
     "react-select-popover": "^0.1.1",
     "react-slick": "^0.23.2",
     "react-switch": "^3.0.4",
+    "react-text-ellipsis": "^1.5.1",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "text-ellipsis": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

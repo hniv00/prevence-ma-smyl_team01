@@ -1,23 +1,30 @@
-import React, {Component} from 'react';
-import {dumbStore} from '../../store/dumbStore';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Row, Col } from 'reactstrap';
 
-import {Examination} from '../molecules/Examination';
-import axios from 'axios'
+import { Examination } from '../molecules/Examination';
 
-export class ExaminationList extends Component {
+export class ExaminationListRaw extends Component {
   render() {
     return (
-    <div style={{ margin: '5%'}}>
+      <div style={{ margin: '5%' }}>
         <h4>Seznam vyhledaných preventivních vyšetření</h4>
-        <Examination/>
+        <div>
+          <Row>
+            {this.props.examinations.map((item, i) => (
+              <Col sm="12" md="6">
+                <Examination key={i} data={item} />
+              </Col>
+            ))}
+          </Row>
         </div>
-  );
-}
+      </div>
+    );
+  }
 };
 
-/* This was excluded from the div..probably delete forever
+const mapStateToProps = (state) => ({
+  examinations: state.filterState.examinations
+});
 
-<div style={{ height: '20px'}} />
-  <Button color="info" size="md" style={{borderRadius: '20px'}}>Chci vidět více výsledků</Button>{' '}
-
-*/
+export const ExaminationList = connect(mapStateToProps)(ExaminationListRaw);

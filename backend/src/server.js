@@ -8,6 +8,7 @@ export const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+app.disable('etag');
 
 app.use(rootRouter);
 
