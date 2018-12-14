@@ -5,22 +5,29 @@ import { connect } from 'react-redux';
 import { setDescription } from '../../services/AdminDiagnosis/actions';
 
 export class DiagDescriptionRaw extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event){
-    this.props.setDescription(event.target.value);
+  handleChange(e) {
+    this.setState({value: e.target.value});
+    this.props.callback(e.target.value, 'diagDescription');
   }
 
   render() {
-    const { inputDescr } = this.props;
     return (
       <Form>
         <FormGroup>
           <Label for="exampleText">Popis diagnózy</Label>
-          <Input type="textarea" name="text" id="exampleText" value={inputDescr} onChange={this.handleChange}/>
+            <Input
+              type="textarea"
+              name="text"
+              id="exampleText"
+              value={this.props.value}
+              onChange={e => (this.handleChange(e))}
+            />
         </FormGroup>
       </Form>
     );

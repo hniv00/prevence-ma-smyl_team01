@@ -5,23 +5,27 @@ import { connect } from 'react-redux';
 import { setName } from '../../services/AdminDiagnosis/actions';
 
 export class DiagNameRaw extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event){
-    this.props.setName(event.target.value);
+  handleChange(e) {
+    this.setState({value: e.target.value});
+    this.props.callback(e.target.value, 'diagName');
+
   }
 
   render() {
-    const { inputName } = this.props;
-
     return (
       <Form>
         <FormGroup>
           <Label>Název diagnózy</Label>
-          <Input type="text" value={inputName} onChange={this.handleChange}/>
+          <Input type="text"
+           value={this.props.value}
+           onChange={e => (this.handleChange(e))}
+           />
         </FormGroup>
       </Form>
     );
