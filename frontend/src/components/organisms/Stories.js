@@ -1,52 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Card, CardTitle, CardText, Row, Col, CardColumns } from 'reactstrap';
 import TextEllipsis from 'react-text-ellipsis';
+import {getStories} from '../../services/Stories/reducer';
+import {startFetchStories} from '../../services/Stories/actions'
 
-const data = [{
-    id: 1,
-    name: 'Petr',
-    age: '23',
-    description: `Po procházce v lese jsem se pořádně neprohlédl.
-    O několik dní později jsem si na těle našel zakouslé klíště, okolo
-    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
-    I tak jsem rád za to, že jsem nelenil a začal problém řešit hned.
-    Mohl jsem totiž dopadnout ještě mnohem hůř.`
-}, {
-    id: 2,
-    name: 'Daniela',
-    age: '40',
-    description: `Kamarádka mě přemluvila, abych s ní šla na Den prevence.
-    Jen díky tomu mi tehdy lékaři včas odhalili zhoubný nádor.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}, {
-    id: 3,
-    name: 'Jiří',
-    age: '53',
-    description: `Na preventivní prohlídky chodím pravidelně, když mě začaly trápit
-    problémy s častým močením, ihned jsem šel za svým urologem.
-    Udělal jsem dobře. I když jsem nakonec nebyl nijak vážně nemocný, člověk nikdy neví,
-    co se může stát a jaká choroba ho přemůže. Lepší je prevence.`
-}, {
-    id: 4,
-    name: 'Dominika',
-    age: '63',
-    description: `Nahmatala jsem si bulku v podpaží a ihned jsem šla k lékaři.
-    Když doktor určil diagnózu, málem jsem to neustála. Ale věděla jsem, že musím bojovat.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}, {
-    id: 5,
-    name: 'Roman',
-    age: '20',
-    description: `Po procházce v lese jsem se pořádně neprohlédl.
-    O několik dní později jsem si na těle našel zakouslé klíště, okolo
-    místa vkusu zarudlé místo. Ihned jsem jel k lékaři, ale nepomohlo to.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit.`
-}]
-
+/* This data2 should be replaced with Twitter or Instagram feed */
 const data2 = [{
     id: 1,
     username: 'jeronym220',
@@ -119,20 +78,28 @@ const data2 = [{
     src: './images/kluk4.jpg'
 }]
 
-export class Stories extends Component {
+export class StoriesRaw extends Component {
+
+  componentDidMount(){
+    this.props.startFetchStories();
+  }
+
   render() {
+    const { stories } = this.props;
+    console.log(this.props);
+
     return (
       <div id="stories">
         <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <Row>
           <Col md="6">
-            {data.map ( item => (
+            {stories.map ( item => (
               <Row>
                 <Card id="cssCardStories" body>
-                  <CardTitle>{ item.name }, { item.age }</CardTitle>
+                  <CardTitle>{ item.Name }, { item.Age }</CardTitle>
                   <CardText>
                       <p id="cssStoriesParagraph" style={{textAlign: 'justify'}}>
-                          { item.description }
+                          { item.Description }
                       </p>
                   </CardText>
                 </Card>
@@ -174,3 +141,17 @@ export class Stories extends Component {
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  const stories = getStories(state.showStories);
+
+  return {
+    stories,
+  };
+};
+
+const mapDispatchToProps = {
+  startFetchStories
+}
+
+export const Stories = connect(mapStateToProps, mapDispatchToProps)(StoriesRaw);

@@ -30,7 +30,7 @@ export class PartnersRaw extends Component {
 
                         {i%2 != 1 &&
                         <Col xs="12" sm="4">
-                            <img src={item.Logo} className="imgRound" alt={item.LogoAlt} />
+                            <img src={item.Src} className="imgRound" alt={item.SrcAlt} />
                         </Col>}
 
                     </Row>

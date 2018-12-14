@@ -20,7 +20,7 @@ export class StoriesPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} class="logoPic" alt="My logo" />
+              <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">PŘÍBĚHY</h1>
@@ -29,7 +29,7 @@ export class StoriesPage extends Component {
             <Col xs="0" sm="0" md="2">
               <TopNav/>
             </Col>
-            <br style={{'margin-bottom': '200px'}}/>
+            <br style={{'marginBottom': '200px'}}/>
           </Row>
 
           </header>
@@ -41,7 +41,7 @@ export class StoriesPage extends Component {
         </div>
       </Parallax>
 
-      <div class="footer">
+      <div className="footer">
             <Footer></Footer>
       </div>
 

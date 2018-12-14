@@ -19,7 +19,7 @@ export class ContactPage extends Component {
         <header style={{margin: '2%'}}>
           <Row>
             <Col xs="0" sm="0" md="2">
-              <img src={logo} className="logoPic" alt="My logo" />
+              <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
               <h1 className="pageHeader">KONTAKTUJTE NÁS</h1>
