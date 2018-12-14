@@ -2,16 +2,16 @@ import expressAsyncAwait from 'express-async-await';
 import { Router } from 'express';
 
 import {
+    diagController,
     newDiagController,
     deleteDiagController,
-    diagController,
     updateDiagController,
 } from './diagnosisController';
 
 const router = expressAsyncAwait(Router());
-router.post('/newdiag/', newDiagController);
-router.post('/deletediag/:id', deleteDiagController);
-router.post('/updatediag/:id', updateDiagController);
 router.get('/list/', diagController);
+router.post('/new/', newDiagController);
+router.post('/delete/:id', deleteDiagController);
+router.post('/update/:id', updateDiagController);
 
 export default router;

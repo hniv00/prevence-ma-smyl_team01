@@ -10,8 +10,8 @@ import {
 
 const router = expressAsyncAwait(Router());
 router.get('/list/', storyController);
-router.post('/newstory/', newStoryController);
-router.post('/deletestory/:id', deleteStoryController);
-router.post('/updatestory/:id', updateStoryController);
+router.post('/new/', newStoryController);
+router.post('/delete/:id', deleteStoryController);
+router.post('/update/:id', updateStoryController);
 
 export default router;
