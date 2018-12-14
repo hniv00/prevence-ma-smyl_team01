@@ -86,10 +86,10 @@ export const startFetchFilteredExaminations = () => (dispatch, getState, { api }
         api
         .post(`examination/advanced/${gender}/${age}`, {indication: parsedIndications})
         .then(({data}) => {
-          const {examList} = data;
-          dispatch(fetchFilteredExaminationSuccess(examList));
-          window.location.href = '/vysetreni';
+          const {exams} = data;
+          dispatch(fetchFilteredExaminationSuccess(exams));
         })
+        .then(() => {window.location.href = '/vysetreni';})
         .catch(() => {
           dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
         });
@@ -98,10 +98,11 @@ export const startFetchFilteredExaminations = () => (dispatch, getState, { api }
         api
         .get(`examination/${gender}/${age}`)
         .then(({ data }) => {
-          const {examList} = data;
-          dispatch(fetchFilteredExaminationSuccess(examList));
-          window.location.href = '/vysetreni';
+          const {exams} = data;
+          console.log(data);
+          dispatch(fetchFilteredExaminationSuccess(exams));
         })
+        .then(() => {window.location.href = '/vysetreni';})
         .catch(() => {
           dispatch(fetchFilteredExaminationFailure('Failed fetching examinations'));
         });

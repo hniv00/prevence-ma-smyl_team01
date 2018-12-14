@@ -1,3 +1,5 @@
+import parseData from '../../helpers/ParseMultiSelect';
+
 export const SET_DIAGNOSIS ='SET_DIAGNOSIS';
 export const FETCH_FILTERED_PARTNERS = 'FETCH_FILTERED_PARTNERS';
 export const FETCH_FILTERED_PARTNERS_SUCCESS = 'FETCH_FILTERED_PARTNERS_SUCCESS';
@@ -28,13 +30,13 @@ export const startFetchFilteredPartners = () => (dispatch, getState, { api }) =>
     dispatch(fetchFilteredPartners());
     let {filterPartner} = getState();
     let {diagnosis} = filterPartner;
-
+    let parsedDiagnosis = parseData(diagnosis);
     if(diagnosis.length > 0 ){
         api
-        .post('partners/list/', {diagnosis: diagnosis})
+        .post('partners/list/', {diagnosis: parsedDiagnosis})
         .then(({ data }) => {
-          const {partners} = data;
-          dispatch(fetchFilteredPartnersSuccess(partners));
+          const {projects} = data;
+          dispatch(fetchFilteredPartnersSuccess(projects));
         })
         .catch(() => {
           dispatch(fetchFilteredPartnersFailure('Failed fetching partner projects'));

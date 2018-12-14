@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setDiagnosis } from '../../services/Partners/actions';
-import  { MultiSelect } from './MultiSelect';
+import { MultiSelect } from './MultiSelect';
+import { setDiagnosis, startFetchFilteredPartners } from '../../services/Partners/actions'
 
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
@@ -9,21 +9,21 @@ const options = [
   { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
 ];
 
-export class MultiPartners extends Component {
-  state = {
-    selectedOption: null,
+class MultiPartnersRaw extends Component {
+  constructor(props){
+    super(props)
+    this.handleChange = this.handleChange.bind(this);
   }
-  handleChange = (selectedOption) => {
-    this.setState({selectedOption});
-    console.log(`Option selected:`, selectedOption);
+
+  handleChange(addedOption){
+    this.props.setDiagnosis(addedOption);
+    this.props.startFetchFilteredPartners();
   }
 
   render() {
-    const { selectedOption } = this.props;
-
     return (
       <MultiSelect
-        value={this.selectedOption}
+        value={this.props.selectedOption}
         onChange={this.handleChange}
         options={options}
         isMulti={true}
@@ -33,3 +33,14 @@ export class MultiPartners extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  value: state.filterPartner.diagnosis
+});
+
+const mapDispatchToProps = {
+  setDiagnosis,
+  startFetchFilteredPartners
+};
+
+export const MultiPartners = connect(mapStateToProps, mapDispatchToProps)(MultiPartnersRaw);
