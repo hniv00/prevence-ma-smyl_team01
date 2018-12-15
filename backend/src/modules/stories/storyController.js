@@ -1,5 +1,4 @@
 import db from '../database/model/';
-const Op = db.Sequelize.Op;
 
 export const newStoryController = async (req, res) => {
 
@@ -14,8 +13,6 @@ export const newStoryController = async (req, res) => {
             return res.json("sucessfuly added new story");
         })
         .catch(error => {
-            console.log(error);
-            console.log(newStory);
             return res.json("problem occured during insert");
         })
 };
@@ -26,7 +23,9 @@ export const deleteStoryController = async (req, res) => {
         where: { IDStory: req.params.id }
     })
         .then(deletedStory => {
-            console.log(`Story deleted? 1 means yes, 0 means no: ${deletedStory}`);
+            res.json({
+                response: deletedStory == 1 ? `Story with ID ${req.params.id} was deleted` : `Story with ID ${req.params.id} was not deleted`
+            })
         });
 };
 

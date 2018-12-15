@@ -20,10 +20,8 @@ if (config.use_env_variable) {
         dialect: 'mysql',
         logging: false
     });
-    console.log("2nd initiate");
 }
 
-// Add all modules to this array
 const modelModules = [
     require('./Diagnosis'),
     require('./Examination'),
@@ -31,6 +29,10 @@ const modelModules = [
     require('./AdminUser'),
     require('./PartnerProject'),
     require('./Story'),
+    require('./Indication'),
+    require('./Article'),
+    require('./Event'),
+    require('./Question'),
 ];
 
 modelModules.forEach(modelModule => {
@@ -46,17 +48,5 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
-db.sequelize
-    .authenticate()
-    .then(() => {
-        console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database:', err);
-    });
-
-//db.exam = require('./Examination')(sequelize, Sequelize);
-
 
 export default db;

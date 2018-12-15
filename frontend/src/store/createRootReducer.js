@@ -7,6 +7,8 @@ import adminDiagnosisReducer from '../services/AdminDiagnosis/reducer'
 import adminStoriesReducer from '../services/AdminStories/reducer'
 import adminExamsReducer from '../services/AdminExaminations/reducer'
 import storiesReducer from '../services/Stories/reducer'
+import adminIndicationReducer from '../services/AdminIndication/reducer'
+import adminArticlesReducer from '../services/AdminArticle/reducer'
 
 export default combineReducers({
     filterState: filtrationReducer,
@@ -17,4 +19,6 @@ export default combineReducers({
     adminStories: adminStoriesReducer,
     adminExams: adminExamsReducer,
     showStories: storiesReducer,
+    adminIndication: adminIndicationReducer,
+    adminArticles: adminArticlesReducer,
 });

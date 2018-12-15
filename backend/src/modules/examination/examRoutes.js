@@ -11,11 +11,11 @@ import {
 } from './examController';
 
 const router = expressAsyncAwait(Router());
-router.get('/', examController);
+router.get('/list/', examController);
 router.get('/:gender/:age/', examBasicController);
 router.post('/advanced/:gender/:age/', examAdvancedController);
-router.post('/newexam/', examNewController);
-router.post('/deleteexam/:id', examDeleteController);
-router.post('/updateexam/:id', examUpdateController);
+router.post('/new/', examNewController);
+router.post('/delete/:id', examDeleteController);
+router.post('/update/:id', examUpdateController);
 
 export default router;

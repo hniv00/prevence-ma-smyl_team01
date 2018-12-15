@@ -15,6 +15,12 @@ import {AdminDiagnosisPage} from "./components/pages/AdminDiagnosisPage"
 import {ContactPage} from "./components/pages/ContactPage"
 import {AdminStories} from "./components/pages/AdminStories"
 import {AdminStoriesPage} from "./components/pages/AdminStoriesPage"
+import {AdminBlog} from "./components/pages/AdminBlog"
+import {AdminBlogPage} from "./components/pages/AdminBlogPage"
+import {AdminIndication} from "./components/pages/AdminIndication"
+import {AdminIndicationPage} from "./components/pages/AdminIndicationPage"
+import {AdminEvent} from "./components/pages/AdminEvent"
+import {AdminEventPage} from "./components/pages/AdminEventPage"
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -42,7 +48,12 @@ class App extends Component{
                 <Route path="/kontakty" component={ContactPage} />
                 <Route path="/admin-pribehy" component={AdminStories} />
                 <Route path="/admin-seznam-pribehu" component={AdminStoriesPage} />
-
+                <Route path="/admin-clanky" component={AdminBlog} />
+                <Route path="/admin-seznam-clanku" component={AdminBlogPage} />
+                <Route path="/admin-akce" component={AdminEvent} />
+                <Route path="/admin-seznam-akci" component={AdminEventPage} />
+                <Route path="/admin-indikace" component={AdminIndication} />
+                <Route path="/admin-seznam-indikaci" component={AdminIndicationPage} />
               </Switch>
           </BrowserRouter>
         </PersistGate>

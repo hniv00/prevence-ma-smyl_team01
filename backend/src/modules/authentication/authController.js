@@ -1,5 +1,4 @@
 import db from '../database/model/';
-const Op = db.Sequelize.Op;
 var bcrypt = require('bcrypt');
 
 export const authController = async (req, res) => {
