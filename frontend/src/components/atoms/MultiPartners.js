@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { MultiSelect } from './MultiSelect';
 import { setDiagnosis, startFetchFilteredPartners } from '../../services/Partners/actions'
+import { getAdminDiagnosis } from '../../services/AdminDiagnosis/reducer';
+import { startFetchDiagnosis } from '../../services/AdminDiagnosis/actions';
 
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
@@ -9,7 +11,12 @@ const options = [
   { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
 ];
 
+
 class MultiPartnersRaw extends Component {
+  componentDidMount(){
+    this.props.startFetchDiagnosis();
+  }
+
   constructor(props){
     super(props)
     this.handleChange = this.handleChange.bind(this);
@@ -21,11 +28,14 @@ class MultiPartnersRaw extends Component {
   }
 
   render() {
+    const { diagnosis } = this.props.diagnosis;
+    console.log(this.props.diagnosis);
+
     return (
       <MultiSelect
         value={this.props.selectedOption}
         onChange={this.handleChange}
-        options={options}
+        options={this.diagnosis}
         isMulti={true}
         isSearchable={true}
         placeholder="Vyhledej si projekt podle zaměření..."
@@ -34,11 +44,17 @@ class MultiPartnersRaw extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  value: state.filterPartner.diagnosis
-});
+const mapStateToProps = (state) => {
+  const diagnosis = getAdminDiagnosis(state.adminDiagnosis);
+
+  return {
+    diagnosis,
+    value: state.filterPartner.diagnosis
+  };
+};
 
 const mapDispatchToProps = {
+  startFetchDiagnosis,
   setDiagnosis,
   startFetchFilteredPartners
 };

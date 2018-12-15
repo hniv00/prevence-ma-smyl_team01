@@ -7,6 +7,9 @@ export const FETCH_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.FETCH_DIAGNOSIS_FAILURE'
 export const DELETE_DIAGNOSIS = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS';
 export const DELETE_DIAGNOSIS_SUCCESS = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS_SUCCESS';
 export const DELETE_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS_FAILURE';
+export const CREATE_DIAGNOSIS = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS';
+export const CREATE_DIAGNOSIS_SUCCESS = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS_SUCCESS';
+export const CREATE_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS_FAILURE';
 
 export const setName = name => ({
     type: SET_D_NAME,
@@ -77,4 +80,30 @@ export const startDeleteDiagnosis = (diagId) => (dispatch, getState, { api }) =>
     dispatch(startFetchDiagnosis());
   })
   .catch(deleteDiagnosisFailure("Failed to delete diagnosis"));
+}
+
+
+export const createDiagnosis = () => ({
+    type: CREATE_DIAGNOSIS,
+});
+
+export const createDiagnosisSuccess = response => ({
+    type: CREATE_DIAGNOSIS_SUCCESS,
+    payload: {response}
+});
+
+export const createDiagnosisFailure = error => ({
+    type: CREATE_DIAGNOSIS_FAILURE,
+    payload: {error}
+});
+
+export const startCreateDiagnosis = () => (dispatch, getState, { api }) => {
+  dispatch(createDiagnosis());
+  api
+  .post(`diagnosis/newdiag/`)
+  .then(() => {
+    dispatch(createDiagnosisSuccess("Diagnosis has been created"));
+    dispatch(startFetchDiagnosis());
+  })
+  .catch(createDiagnosisFailure("Failed to create diagnosis"));
 }
