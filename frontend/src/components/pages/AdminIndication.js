@@ -1,91 +1,13 @@
-
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
-import {connect} from 'react-redux';
-import { startCreateDiagnosis } from '../../services/AdminDiagnosis/actions';
-
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
 import {TooltipItem} from '../molecules/TooltipItem';
-import {DiagNameContainer} from '../organisms/DiagNameContainer';
-
-
-
-export class AdminIndicationRaw extends Component {
-
-  constructor(props) {
-    super(props);
-    this.updateData = this.updateData.bind(this);
-    this.submitDiagnosis = this.submitDiagnosis.bind(this);
-    this.diagNameRequired = this.diagNameRequired.bind(this);
-    this.diagDescriptionRequired = this.diagDescriptionRequired.bind(this);
-    this.diagRelatedExamsRequired = this.diagRelatedExamsRequired.bind(this);
-
-    this.state = {
-      diagName:'',
-      diagDescription:'',
-      diagRelatedExams:[]
-    }
-  }
-
-  updateData(value,type) {
-    switch (type) {
-      case 'diagName':
-        this.setState({ ...this.state, diagName: value });
-        break;
-
-      case 'diagDescription':
-        this.setState({ ...this.state, diagDescription: value });
-        break;
-
-      case 'diagRelatedExams':
-        this.setState({ ...this.state, diagRelatedExams: value });
-        break;
-
-      default:
-        this.setState({ ...this.state});
-        break;
-
-    }
-  }
-
-  diagNameRequired() {
-    let empt = this.state.diagName;
-     if (empt === "") {
-         alert("Vyplňte název diagnózy!");
-         return false;
-      }
-    return true;
-  }
-
-  diagDescriptionRequired() {
-    let empt = this.state.diagDescription;
-     if (empt === "") {
-         alert("Vyplňte popis diagnózy!");
-         return false;
-      }
-    return true;
-  }
-  diagRelatedExamsRequired() {
-    let empt = this.props.selectedOption;
-     if (empt.length === 0) {
-         console.log(empt)
-         alert("Vyplňte popis související vyšetření!");
-         return false;
-      }
-    return true;
-  }
-
-  submitDiagnosis(){
-    this.diagNameRequired();
-    this.diagDescriptionRequired();
-    this.diagRelatedExamsRequired();
-  //  this.startCreateDiagnosis();
-  }
-
+import {IndicationNameContainer} from '../organisms/IndicationNameContainer';
+ export class AdminIndication extends Component {
   render() {
     return (
     <div>
@@ -102,27 +24,14 @@ export class AdminIndicationRaw extends Component {
                </i>
              </span>
              <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
-               Ve správě diagnóz můžete vytvářet či upravovat indikace.
+               Ve správě indikací můžete vytvářet či upravovat indikace.
              </UncontrolledTooltip>
             </Col>
           </Row>
-           <DiagNameContainer
-            parentState = {this.state}
-            callback = {this.updateData}
-            />
+           <IndicationNameContainer />
              <Col>
-                <Button color="info"
-                  size="md"
-                  style={{margin: "10px"}}>
-                  Smazat
-                </Button>
-                <Button color="info"
-                  size="md"
-                  style={{margin: "10px"}}
-                  onClick={this.submitDiagnosis}
-                  >
-                  Uložit
-                </Button>
+                <Button color="info" size="md" style={{margin: "10px"}}>Smazat</Button>
+                <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
             </Col>
           </div>
         </div>
@@ -130,8 +39,3 @@ export class AdminIndicationRaw extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  selectedOption: state.createDiagnosis.examination
-});
-export const AdminIndication = connect(mapStateToProps)(AdminIndicationRaw);

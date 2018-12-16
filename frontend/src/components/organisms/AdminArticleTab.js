@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {Table} from 'reactstrap';
 import { getAdminArticles } from '../../services/AdminArticle/reducer';
-import { startFetchArticles, startDeleteArticle } from '../../services/AdminArticle/actions'
+import { startDeleteArticle, startFetchArticles } from '../../services/AdminArticle/actions';
 
 export class AdminArticleTabRaw extends Component {
 
@@ -24,11 +24,11 @@ export class AdminArticleTabRaw extends Component {
         </thead>
         <tbody>
           {articles.map( item => (
-            <tr key={item.IDStory}>
-              <th scope="row">{item.IDStory}</th>
-              <td>{item.Name}, {item.Age}</td>
+            <tr key={item.IDArticle}>
+              <th scope="row">{item.IDArticle}</th>
+              <td>{item.ArticleName}</td>
               {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={() =>{this.props.startDeleteStory(item.IDStory)}} class="material-icons" id="cssFooterArrow">delete</i></td>
+              <td><i onClick={() =>{this.props.startDeleteArticle(item.IDArticle)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>

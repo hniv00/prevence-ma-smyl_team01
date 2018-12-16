@@ -1,9 +1,33 @@
+export const SET_I_NAME ='ADMIN_INDICATION.SET_I_NAME';
+export const SET_I_DESCRIPTION = 'ADMIN_INDICATION.SET_I_DESCRIPTION';
+export const SET_I_TYPE = 'ADMIN_INDICATION.SET_I_TYPE';
 export const FETCH_INDICATION = 'ADMIN_INDICATION.FETCH_INDICATION';
 export const FETCH_INDICATION_SUCCESS = 'ADMIN_INDICATION.FETCH_INDICATION_SUCCESS';
 export const FETCH_INDICATION_FAILURE = 'ADMIN_INDICATION.FETCH_INDICATION_FAILURE';
 export const DELETE_INDICATION = 'ADMIN_INDICATION.DELETE_INDICATION';
 export const DELETE_INDICATION_SUCCESS = 'ADMIN_INDICATION.DELETE_INDICATION_SUCCESS';
 export const DELETE_INDICATION_FAILURE = 'ADMIN_INDICATION.DELETE_INDICATION_FAILURE';
+
+export const setName = name => ({
+    type: SET_I_NAME,
+    payload : {
+        name
+    }
+});
+
+export const setDescription = description => ({
+    type: SET_I_DESCRIPTION,
+    payload : {
+        description
+    }
+});
+
+export const setType = type => ({
+    type: SET_I_TYPE,
+    payload : {
+        type
+    }
+});
 
 export const fetchIndication = () => ({
     type: FETCH_INDICATION,
@@ -24,8 +48,8 @@ export const startFetchIndication = () => (dispatch, getState, { api }) => {
   api
   .get(`indication/list`)
   .then(({ data }) => {
-      let {indication} = data;
-    dispatch(fetchIndicationSuccess(indication));
+      let {indicationList} = data;
+    dispatch(fetchIndicationSuccess(indicationList));
   })
   .catch(fetchIndicationFailure("Failed to fetch indication"));
 }

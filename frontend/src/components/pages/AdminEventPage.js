@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import { Row, Col, Container, Jumbotron} from 'reactstrap';
 
 import {Heading} from '../atoms/Heading';
-import {NewDiagButton} from '../atoms/NewDiagButton';
+import {NewEventButton} from '../atoms/NewEventButton';
 import {AdminNav} from '../organisms/AdminNav';
-import {AdminDiagTab} from '../organisms/AdminDiagTab';
+import {AdminEventTab} from '../organisms/AdminEventTab';
 
 export class AdminEventPage extends Component {
   render() {
@@ -14,17 +14,17 @@ export class AdminEventPage extends Component {
         <Container>
           <Row>
             <Col>
-              <Heading className="AdminWelcH2">Správa diagnóz</Heading>
+              <Heading className="AdminWelcH2">Správa akcí</Heading>
             </Col>
           </Row>
           <Row>
             <Col md="9"></Col>
             <Col md="3">
-              <a href="/admin-diagnozy"><NewDiagButton/></a>
+              <a href="/admin-akce"><NewEventButton/></a>
             </Col>
           </Row>
           <Row>
-            <AdminDiagTab/>
+            <AdminEventTab/>
           </Row>
         </Container>
       </div>
