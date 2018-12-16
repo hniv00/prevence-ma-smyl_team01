@@ -38,7 +38,7 @@ export class AdminIndiTabRaw extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const indication = getAdminIndication(state.adminIndication);
+  const indication = getAdminIndication(state.adminIndications);
 
   return {
     indication,

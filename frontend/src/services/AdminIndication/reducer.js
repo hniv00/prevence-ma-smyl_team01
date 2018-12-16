@@ -19,7 +19,7 @@ const initialState = {
     response: null
 }
 
-const adminIndicationReducer = (state = initialState, action) => {
+const adminIndicationsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_I_NAME:
             return { ...state, name: action.payload.name }
@@ -34,7 +34,7 @@ const adminIndicationReducer = (state = initialState, action) => {
             return { ...state, error: null }
 
         case FETCH_INDICATION_SUCCESS:
-            return { ...state, error: null, indication: action.payload.indication}
+            return { ...state, error: null, indication: action.payload.indication }
 
         case FETCH_INDICATION_FAILURE:
             return { ...state, error: action.payload.error }
@@ -53,4 +53,4 @@ const adminIndicationReducer = (state = initialState, action) => {
     }
 }
 export const getAdminIndication = state => state.indication || [];
-export default adminIndicationReducer;
+export default adminIndicationsReducer;
