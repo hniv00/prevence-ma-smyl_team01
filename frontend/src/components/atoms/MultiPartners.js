@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { MultiSelect } from './MultiSelect';
+import { MultiSelectP } from './MultiSelectP';
 import { setDiagnosis, startFetchFilteredPartners } from '../../services/Partners/actions'
 import { getAdminDiagnosis } from '../../services/AdminDiagnosis/reducer';
 import { startFetchDiagnosis } from '../../services/AdminDiagnosis/actions';
@@ -20,6 +20,7 @@ class MultiPartnersRaw extends Component {
   constructor(props){
     super(props)
     this.handleChange = this.handleChange.bind(this);
+    this.getDiagName = this.getDiagName.bind(this);
   }
 
   handleChange(addedOption){
@@ -27,19 +28,28 @@ class MultiPartnersRaw extends Component {
     this.props.startFetchFilteredPartners();
   }
 
+  getDiagName(){
+    let diagName = []
+    for (const diagnosis of this.props.diagnosis) {
+      diagName.push({label: diagnosis.Name, value: diagnosis.Name});
+      console.log(diagName);
+    }
+    return diagName;
+  }
+
   render() {
     const { diagnosis } = this.props.diagnosis;
     console.log(this.props.diagnosis);
 
     return (
-      <MultiSelect
-        value={this.props.selectedOption}
-        onChange={this.handleChange}
-        options={this.diagnosis}
-        isMulti={true}
-        isSearchable={true}
-        placeholder="Vyhledej si projekt podle zaměření..."
-      />
+        <MultiSelectP
+          value={this.props.selectedOption}
+          onChange={this.handleChange}
+          options={this.getDiagName()}
+          isMulti={true}
+          isSearchable={true}
+          placeholder="Vyhledej si projekt podle zaměření..."
+        />
     );
   }
 }
