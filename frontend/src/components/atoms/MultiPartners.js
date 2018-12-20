@@ -5,12 +5,13 @@ import { setDiagnosis, startFetchFilteredPartners } from '../../services/Partner
 import { getAdminDiagnosis } from '../../services/AdminDiagnosis/reducer';
 import { startFetchDiagnosis } from '../../services/AdminDiagnosis/actions';
 
+/*
 const options = [
   { value: 'hypertenze', label: 'hypertenze' },
   { value: 'diabetes', label: 'diabetes' },
   { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
 ];
-
+*/
 
 class MultiPartnersRaw extends Component {
   componentDidMount(){
