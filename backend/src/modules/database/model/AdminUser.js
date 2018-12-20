@@ -9,10 +9,3 @@ module.exports = (sequelize, DataTypes) => {
     });
      return AdminUser;
 };
-
-/*
-instanceMethods: {
-    validPassword: function (pass) {
-        return bcrypt.compareSync(pass, this.Password);
-    }
-}*/

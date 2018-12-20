@@ -23,7 +23,7 @@ export const fetchExamsFailure = error => ({
 export const startFetchExams = () => (dispatch, getState, { api }) => {
   dispatch(fetchExams());
   api
-  .get(`examination/`)
+  .get(`examination/list`)
   .then(({ data }) => {
       let {exams} = data;
     dispatch(fetchExamsSuccess(exams));

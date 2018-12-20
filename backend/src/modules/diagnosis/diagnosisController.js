@@ -11,8 +11,6 @@ export const newDiagController = async (req, res) => {
             return res.json("sucessfuly added new diagnosis");
         })
         .catch(error => {
-            console.log(error);
-            console.log(newDiag);
             return res.json("problem occured during insert");
         })
 };
@@ -23,8 +21,8 @@ export const deleteDiagController = async (req, res) => {
         where: { IDDiagnosis: req.params.id }
     })
         .then(deletedDiag => {
-            console.log(`Diagnosis deleted? 1 means yes, 0 means no: ${deletedDiag}`);
-            res.json({response: deletedDiag == 1 ? `Diagnosis with ID ${deletedDiag} was deleted`: 'Diagnosis with ID ${deletedDiag}  was not deleted'})
+            res.json({
+                response: deletedDiag == 1 ? `Diagnosis with ID ${req.params.id} was deleted` : `Diagnosis with ID ${req.params.id} was not deleted`})
         });
 };
 

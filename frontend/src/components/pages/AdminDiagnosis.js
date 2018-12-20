@@ -1,7 +1,9 @@
+
 import React, {Component} from 'react'
 import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
 import {connect} from 'react-redux';
+import { startCreateDiagnosis } from '../../services/AdminDiagnosis/actions';
 
 import {LogoutButton} from '../atoms/LogoutButton';
 import {MultiSelect} from '../atoms/MultiSelect';
@@ -76,10 +78,12 @@ export class AdminDiagnosisRaw extends Component {
       }
     return true;
   }
+
   submitDiagnosis(){
     this.diagNameRequired();
     this.diagDescriptionRequired();
     this.diagRelatedExamsRequired();
+  //  this.startCreateDiagnosis();
   }
 
   render() {
