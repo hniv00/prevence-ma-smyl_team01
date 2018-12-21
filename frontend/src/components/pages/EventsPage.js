@@ -4,12 +4,11 @@ import {Parallax} from 'react-parallax';
 
 import {TopNav} from '../molecules/TopNav';
 import {Footer} from '../organisms/Footer';
-import {Stories} from "../organisms/Stories"
+import {Events} from "../organisms/Events"
 import logo from '../../img/logo_prevence.png';
-import '../../parallax.css';
 import image from '../../img/pozadi_nadpis.png';
 
-export class StoriesPage extends Component {
+export class EventsPage extends Component {
   render() {
     return (
       <div>
@@ -21,8 +20,8 @@ export class StoriesPage extends Component {
               <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
-              <h1 className="pageHeader">PŘÍBĚHY</h1>
-              <h4 style={{color: 'black'}}>Příběhy těch, kterým prevence zachránila život.</h4>
+              <h1 className="pageHeader">AKCE</h1>
+              <h4 style={{color: 'black'}}>Akce, které se v budoucnu budou konat</h4>
             </Col>
             <Col xs="0" sm="0" md="2">
               <TopNav/>
@@ -34,8 +33,8 @@ export class StoriesPage extends Component {
       </Parallax>
 
       <Parallax>
-        <div className='parallax-content' id="stories">
-          <Stories/>
+        <div className='parallax-content' id="events">
+          <Events/>
         </div>
       </Parallax>
 

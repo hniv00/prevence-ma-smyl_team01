@@ -21,6 +21,7 @@ import {AdminIndication} from "./components/pages/AdminIndication"
 import {AdminIndicationPage} from "./components/pages/AdminIndicationPage"
 import {AdminEvent} from "./components/pages/AdminEvent"
 import {AdminEventPage} from "./components/pages/AdminEventPage"
+import {EventsPage} from "./components/pages/EventsPage"
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -43,6 +44,7 @@ class App extends Component{
                 <Route path="/admin-seznam-vysetreni" component={AdminExams} />
                 <Route path="/partneri" component={PartnersPage} />
                 <Route path="/pribehy" component={StoriesPage} />
+                <Route path="/akce" component={EventsPage} />
                 <Route path="/admin-diagnozy" component={AdminDiagnosis} />
                 <Route path="/admin-seznam-diagnoz" component={AdminDiagnosisPage} />
                 <Route path="/kontakty" component={ContactPage} />

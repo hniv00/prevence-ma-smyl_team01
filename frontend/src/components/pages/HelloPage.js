@@ -6,6 +6,7 @@ import {TopNav} from '../molecules/TopNav';
 import {Filter} from '../organisms/Filter';
 import {About} from '../organisms/About';
 import {StoriesCarousel} from '../organisms/StoriesCarousel';
+import {EventsCarousel} from '../organisms/EventsCarousel';
 import {Motivation} from '../organisms/Motivation';
 import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
@@ -42,6 +43,12 @@ export class HelloPage extends Component {
               <Col xs="0" sm="2"/>
             </Row>
             </header>
+        </Parallax>
+
+        <Parallax>
+          <section>
+            <EventsCarousel/>
+          </section>
         </Parallax>
 
         <Parallax>
