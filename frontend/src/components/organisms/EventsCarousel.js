@@ -4,7 +4,6 @@ import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 import {StoryButton} from '../atoms/StoryButton';
 
-import TextEllipsis from 'react-text-ellipsis';
 import Slider from "react-slick";
 import {getEvents} from '../../services/Events/reducer';
 import {startFetchEvents} from '../../services/Events/actions'
