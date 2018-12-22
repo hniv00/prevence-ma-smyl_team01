@@ -16,18 +16,40 @@ export class EventsRaw extends Component {
     console.log(this.props);
 
     return (
-      <div id="stories">
-        <p id="cssContent">TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      <div id="events">
+        <p id="cssContent">Prohlédněte si akce, které pořádáme my sami, anebo naši parteři.
+         Navštívit můžete různé workshopy, odborné přednášky, charitativní akce jako jsou koncerty, běhy pro zdraví,
+         výtvarné akce podporující vzdělávání těžce nemocných dětí a podobně.
+         Většina pořádaných akcí je zdarma, jiné jsou za poplatek. Rádi bychom upozornili, že žádná z akcí není
+         samostatně výdělečná, veškeré vybrané peníze jdou na podporu nemocných, rozvoj zdravotních organizací,
+         nákup zdravotních pomůcek a podobně. Největší množství akcí se koná přímo v Praze, ale nebojte,
+         některé události pořádají naši partneři i na Moravě, jako třeba v Brně nebo Olomouci, ale i v jiných
+         koutech republiky. Stačí mrknout níže.</p>
         <Row>
-          <Col md="6">
+          <Col md="12">
             {events.map ( item => (
               <Row>
                 <Card id="cssCardStories" body>
-                  <CardTitle>{ item.Name }</CardTitle>
+                  <CardTitle>{ item.Name }
+                  </CardTitle>
                   <CardText>
+                    <Row>
+                      <Col sm="6">
+                      <i class="material-icons">event</i>{' '}
+                        { item.Date }
+                        <i class="material-icons">schedule</i>
+                        { item.Time }
+                      </Col>
+                      <Col sm="6" style={{textAlign: 'right'}}>
+                      <i class="material-icons">place</i>
+                      { item.City }, { item.Street } { item.StreetNum } {' '}
+                      </Col>
+                    </Row>
+                    <Col xs="12">
                       <p id="cssStoriesParagraph">
-                        { item.Date }, { item.Time }
+                        { item.Description }
                       </p>
+                    </Col>
                   </CardText>
                 </Card>
               </Row>

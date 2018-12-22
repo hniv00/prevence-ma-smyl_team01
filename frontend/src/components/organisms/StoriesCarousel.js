@@ -39,11 +39,11 @@ export class StoriesCarouselRaw extends Component {
         const settings = {
           dots: true,
           infinite: true,
-          speed: 500,
+          speed: 1500,
           autoplay: true,
           pauseOnFocus: true,
           arrows: true,
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
@@ -76,8 +76,7 @@ export class StoriesCarouselRaw extends Component {
 
     return (
       <div className='parallax-content' id="stories">
-        <h4>Příběhy "Za 5min 12"</h4>
-        <h5>Příběhy těch, kterým prevence zachránila život</h5>
+        <h4>Příběhy těch, kterým prevence zachránila život</h4>
       <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <Slider {...settings}>
           {stories.map ( item => (
@@ -96,7 +95,7 @@ export class StoriesCarouselRaw extends Component {
                         { item.Description }
                       </TextEllipsis>
                     </p>
-                    <a href="/pribehy" className="storiesCarousel">Celý příběh...</a>
+                    <a href="/pribehy" className="storiesCarousel" style={{color: '#026977'}}>Celý příběh...</a>
                 </CardText>
               </Card>
             </Col>

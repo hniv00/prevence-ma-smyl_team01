@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
+import TextEllipsis from 'react-text-ellipsis';
 
 import {StoryButton} from '../atoms/StoryButton';
 
@@ -40,11 +41,11 @@ export class EventsCarouselRaw extends Component {
         const settings = {
           dots: true,
           infinite: true,
-          speed: 500,
+          speed: 1500,
           autoplay: true,
           pauseOnFocus: true,
           arrows: true,
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
@@ -77,9 +78,7 @@ export class EventsCarouselRaw extends Component {
 
     return (
       <div className='parallax-content' id="events">
-        <h4>Akce</h4>
-        <h5>Akce, které se v budoucnu budou konat</h5>
-      <p id="cssContent">TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <h4>Akce, které se v budoucnu budou konat</h4>
         <Slider {...settings}>
           {events.map ( item => (
             <Col>
@@ -87,9 +86,19 @@ export class EventsCarouselRaw extends Component {
                 <CardTitle>{ item.Name }</CardTitle>
                 <CardText>
                     <p id="cssStoriesParagraph">
-                      { item.Date }, { item.Time }
+                      <TextEllipsis
+                        lines={8}
+                        tag={'p'}
+                        ellipsisChars={'...'}
+                        tagClass={'className'}
+                        debounceTimeoutOnResize={200}
+                        useJsOnly={true}>
+                        <i class="material-icons">event</i>
+                        { item.Date }, { item.City } <br/>
+                        { item.Description }
+                      </TextEllipsis>
                     </p>
-                    <a href="/akce" className="storiesCarousel">Popis akce...</a>
+                    <a href="/akce" className="storiesCarousel" style={{color: '#026977'}}>Zobrazit akci...</a>
                 </CardText>
               </Card>
             </Col>

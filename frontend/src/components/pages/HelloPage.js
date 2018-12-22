@@ -28,7 +28,7 @@ export class HelloPage extends Component {
                 <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
               </Col>
               <Col xs="12" sm="12" md="6">
-                <h2 className="mainHeader" >Nebolí a nic nestojí. Může ti zachránit život. <span className="decor">Prevence má smysl.</span></h2>
+                <h2 className="mainHeader" >Nebolí a nic to nestojí. Může ti zachránit život. <span className="decor">Prevence má smysl.</span></h2>
                 <h3 style={{color: 'black'}}>Stačí pár kliknutí a hned víš, na jakou preventivní prohlídku nezapomenout.</h3>
               </Col>
               <Col xs="0" sm="0" md="3">
@@ -47,21 +47,9 @@ export class HelloPage extends Component {
 
         <Parallax>
           <section>
-            <EventsCarousel/>
-          </section>
-        </Parallax>
-
-        <Parallax>
-          <section>
             <StoriesCarousel/>
           </section>
         </Parallax>
-
-        <Parallax>
-            <About/>
-        </Parallax>
-
-
 
         <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1920px'}>
           <section>
@@ -69,6 +57,16 @@ export class HelloPage extends Component {
               <Motivation/>
             </div>
           </section>
+        </Parallax>
+
+        <Parallax>
+          <section>
+            <EventsCarousel/>
+          </section>
+        </Parallax>
+
+        <Parallax>
+            <About/>
         </Parallax>
 
         <Parallax>
