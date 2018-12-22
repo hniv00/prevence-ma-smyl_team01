@@ -90,7 +90,13 @@ export class StoriesRaw extends Component {
 
     return (
       <div id="stories">
-        <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p id="cssContent">Příběhy za 5 minut 12.
+        Ne každý má v životě štěstí. Někteří si ale díky včasné prevenci dokázali
+        zachránit život. Ne vždy se to ale podaří. Prevence je důležitá a své o tom vědí
+        právě lidé, kteří se nebojí svěřit se se svým příběhem. Máš i ty svůj osobní příběh,
+        kdy jsi díky prevenci předešel zbytečným komplikacím, anebo víš naopak o někom, komu
+        se nečinnost a nezájem o vlastní tělo vymstily? Sdílej svůj příběh s hashtagem #prevenceMaSmysl
+        na Twitteru nebo Instagramu a inspiruj tak ostatní k tomu, aby se zajímali o své zdraví.</p>
         <Row>
           <Col md="6">
             {stories.map ( item => (

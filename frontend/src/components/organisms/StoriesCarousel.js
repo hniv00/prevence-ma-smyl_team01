@@ -77,7 +77,6 @@ export class StoriesCarouselRaw extends Component {
     return (
       <div className='parallax-content' id="stories">
         <h4>Příběhy těch, kterým prevence zachránila život</h4>
-      <p id="cssContent">Příběhy za 5 minut 12. TBD Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Nunc tincidunt ante vitae massa. Nam quis nulla. Phasellus et lorem id felis nonummy placerat.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         <Slider {...settings}>
           {stories.map ( item => (
             <Col>

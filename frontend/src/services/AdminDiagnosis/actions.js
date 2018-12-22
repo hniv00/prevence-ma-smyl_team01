@@ -74,7 +74,7 @@ export const deleteDiagnosisFailure = error => ({
 export const startDeleteDiagnosis = (diagId) => (dispatch, getState, { api }) => {
   dispatch(deleteDiagnosis());
   api
-  .post(`diagnosis/deletediag/${diagId}`)
+  .post(`diagnosis/delete/${diagId}`)
   .then(() => {
     dispatch(deleteDiagnosisSuccess("Diagnosis has been deleted"));
     dispatch(startFetchDiagnosis());

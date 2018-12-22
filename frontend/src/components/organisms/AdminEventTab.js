@@ -29,7 +29,7 @@ export class AdminEventTabRaw extends Component {
               <th scope="row">{item.IDEvent}</th>
               <td>{item.Name}</td>
               {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={() =>this.props.startDeleteEvent(item.IDEvent)} className="material-icons" id="cssFooterArrow">delete</i></td>
+              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tuto událost?')) this.props.startDeleteEvent(item.IDEvent)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>

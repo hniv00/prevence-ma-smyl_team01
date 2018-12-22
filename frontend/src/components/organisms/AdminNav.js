@@ -19,9 +19,6 @@ export class AdminNav extends Component {
               <NavLink className="AdminNavItem" href="/admin-seznam-pribehu/">Příběhy</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="AdminNavItem" href="/admin-prevencemasmysl/">#PrevenceMaSmysl</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink className="AdminNavItem" href="/admin-seznam-akci/">Akce</NavLink>
             </NavItem>
             <NavItem>

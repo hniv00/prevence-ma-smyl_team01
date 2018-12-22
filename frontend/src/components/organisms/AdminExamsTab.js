@@ -28,7 +28,7 @@ export class AdminExamsTabRaw extends Component {
               <th scope="row">{item.IDExamination}</th>
               <td>{item.ExamName}</td>
               {/* <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={() => this.props.startDeleteExam(item.IDExamination)} className="material-icons" id="cssFooterArrow">delete</i></td>
+              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit toto vyšetření?')) this.props.startDeleteExam(item.IDExamination)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>
