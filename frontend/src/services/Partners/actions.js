@@ -44,7 +44,7 @@ export const startFetchFilteredPartners = () => (dispatch, getState, { api }) =>
     }
     else{
         api
-        .post('partners/list/')
+        .get('partners/list/')
         .then(({ data }) => {
           const {projects} = data;
           dispatch(fetchFilteredPartnersSuccess(projects));

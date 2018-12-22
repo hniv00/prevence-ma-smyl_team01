@@ -21,8 +21,8 @@ export const startFetchEvents = () => (dispatch, getState, { api }) => {
   api
   .get(`event/list`)
   .then(({ data }) => {
-      let {events} = data;
-    dispatch(fetchEventsSuccess(events));
+      let {eventList} = data;
+    dispatch(fetchEventsSuccess(eventList));
   })
   .catch(fetchEventsFailure("Failed to fetch events"));
 }
