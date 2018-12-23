@@ -11,6 +11,9 @@ export const newEventController = async (req, res) => {
         StreetNum: req.body.StreetNum,
         City: req.body.City,
         PostalCode: req.body.PostalCode,
+        EntryFee: req.body.EntryFee,
+        URL: req.body.URL,
+        Photo: req.body.Photo,
     })
         .save()
         .then(event => {
@@ -35,7 +38,7 @@ export const deleteEventController = async (req, res) => {
 
 export const eventController = async (req, res) => {
     const eventList = await db.Event.findAll({
-        attributes: ['IDEvent', 'Name', 'Description', 'Date', 'Time', 'Street', 'StreetNum', 'City', 'PostalCode'],
+        attributes: ['IDEvent', 'Name', 'Description', 'Date', 'Time', 'Street', 'StreetNum', 'City', 'PostalCode', 'EntryFee', 'URL', 'Photo'],
         raw: true,
     });
     return res.json({ eventList });
@@ -52,7 +55,10 @@ export const updateEventController = async (req, res) => {
         Street: req.body.Street,
         StreetNum: req.body.StreetNum,
         City: req.body.City,
-        PostalCode: req.body.PostalCode
+        PostalCode: req.body.PostalCode,
+        EntryFee: req.body.EntryFee,
+        URL: req.body.URL,
+        Photo: req.body.Photo,
     }, {
             where: { IDEvent: req.params.id }
         })
