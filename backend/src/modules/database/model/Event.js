@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
         Street: DataTypes.STRING,
         StreetNum: DataTypes.STRING,
         City: DataTypes.STRING,
-        PostalCode: DataTypes.INTEGER
+        PostalCode: DataTypes.INTEGER,
+        EntryFee: DataTypes.STRING,
+        URL: DataTypes.STRING,
+        Photo: DataTypes.TEXT
     }, {
             freezeTableName: true,
             timestamps: false
