@@ -28,7 +28,7 @@ export class AdminStoryTabRaw extends Component {
               <th scope="row">{item.IDStory}</th>
               <td>{item.Name}, {item.Age}</td>
               {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={() =>{this.props.startDeleteStory(item.IDStory)}} class="material-icons" id="cssFooterArrow">delete</i></td>
+              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tento příběh?')) this.props.startDeleteStory(item.IDStory)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>

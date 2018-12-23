@@ -28,7 +28,7 @@ export class AdminArticleTabRaw extends Component {
               <th scope="row">{item.IDArticle}</th>
               <td>{item.ArticleName}</td>
               {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={() =>{this.props.startDeleteArticle(item.IDArticle)}} class="material-icons" id="cssFooterArrow">delete</i></td>
+              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tento článek?')) this.props.startDeleteArticle(item.IDArticle)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>

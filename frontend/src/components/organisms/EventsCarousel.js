@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
-import {StoryButton} from '../atoms/StoryButton';
 import TextEllipsis from 'react-text-ellipsis';
+
+import {StoryButton} from '../atoms/StoryButton';
+
 import Slider from "react-slick";
-import {getStories} from '../../services/Stories/reducer';
-import {startFetchStories} from '../../services/Stories/actions'
+import {getEvents} from '../../services/Events/reducer';
+import {startFetchEvents} from '../../services/Events/actions'
 
 /* Custom arrows */
 function SampleNextArrow(props) {
@@ -26,14 +28,14 @@ function SamplePrevArrow(props) {
   );
 }
 
-export class StoriesCarouselRaw extends Component {
+export class EventsCarouselRaw extends Component {
 
   componentDidMount(){
-    this.props.startFetchStories();
+    this.props.startFetchEvents();
   }
 
   render() {
-    const { stories } = this.props;
+    const { events } = this.props;
     console.log(this.props);
 
         const settings = {
@@ -75,26 +77,28 @@ export class StoriesCarouselRaw extends Component {
         };
 
     return (
-      <div className='parallax-content' id="stories">
-        <h4>Příběhy těch, kterým prevence zachránila život</h4>
+      <div className='parallax-content' id="events">
+        <h4>Akce, které se v budoucnu budou konat</h4>
         <Slider {...settings}>
-          {stories.map ( item => (
+          {events.map ( item => (
             <Col>
               <Card id="cssCardStories" body>
-                <CardTitle>{ item.Name }, { item.Age }</CardTitle>
+                <CardTitle>{ item.Name }</CardTitle>
                 <CardText>
                     <p id="cssStoriesParagraph">
                       <TextEllipsis
-                        lines={6}
+                        lines={8}
                         tag={'p'}
                         ellipsisChars={'...'}
                         tagClass={'className'}
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
+                        <i class="material-icons">event</i>
+                        { item.Date }, { item.City } <br/>
                         { item.Description }
                       </TextEllipsis>
                     </p>
-                    <a href="/pribehy" className="storiesCarousel" style={{color: '#026977'}}>Celý příběh...</a>
+                    <a href="/akce" className="storiesCarousel" style={{color: '#026977'}}>Zobrazit akci...</a>
                 </CardText>
               </Card>
             </Col>
@@ -107,15 +111,15 @@ export class StoriesCarouselRaw extends Component {
 };
 
 const mapStateToProps = (state) => {
-  const stories = getStories(state.showStories);
+  const events = getEvents(state.showEvents);
 
   return {
-    stories,
+    events,
   };
 };
 
 const mapDispatchToProps = {
-  startFetchStories
+  startFetchEvents
 }
 
-export const StoriesCarousel = connect(mapStateToProps, mapDispatchToProps)(StoriesCarouselRaw);
+export const EventsCarousel = connect(mapStateToProps, mapDispatchToProps)(EventsCarouselRaw);

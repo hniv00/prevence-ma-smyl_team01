@@ -48,8 +48,8 @@ export const startFetchIndication = () => (dispatch, getState, { api }) => {
   api
   .get(`indication/list`)
   .then(({ data }) => {
-      let {indicationList} = data;
-    dispatch(fetchIndicationSuccess(indicationList));
+      let {indications} = data;
+    dispatch(fetchIndicationSuccess(indications));
   })
   .catch(fetchIndicationFailure("Failed to fetch indication"));
 }
