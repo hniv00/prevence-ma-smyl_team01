@@ -30,26 +30,41 @@ export class EventsRaw extends Component {
             {events.map ( item => (
               <Row>
                 <Card id="cssCardStories" body>
-                  <CardTitle>{ item.Name }
+                  <CardTitle id={item.IDEvent}>{ item.Name }
                   </CardTitle>
                   <CardText>
+                    <Col>
+                      <Row>
+                        <Col sm="6">
+                        <i class="material-icons">event</i>{' '}
+                          { item.Date }
+                          <i class="material-icons">schedule</i>
+                          { item.Time }
+                        </Col>
+                        <Col sm="6" style={{textAlign: 'right'}}>
+                        <i class="material-icons">place</i>
+                        { item.City }, { item.Street } { item.StreetNum } {' '}
+                        </Col>
+                      </Row>
+                    </Col>
                     <Row>
-                      <Col sm="6">
-                      <i class="material-icons">event</i>{' '}
-                        { item.Date }
-                        <i class="material-icons">schedule</i>
-                        { item.Time }
+                      <Col xs="12" md="8">
+                        <Col xs="12">
+                          <p id="cssStoriesParagraph">
+                            { item.Description }
+                          </p>
+                        </Col>
+                        <Col>
+                          Vstup: { item.EntryFee }
+                        </Col>
+                        <Col>
+                          Více info zde: <a href={`{ item.URL }`} className="storiesCarousel" style={{color: '#EE4279'}}>{ item.URL }</a>
+                        </Col>
                       </Col>
-                      <Col sm="6" style={{textAlign: 'right'}}>
-                      <i class="material-icons">place</i>
-                      { item.City }, { item.Street } { item.StreetNum } {' '}
+                      <Col xs="12" md="4">
+                        <img src={ item.Photo } className="imgEvent" alt="obrázek akce" />
                       </Col>
                     </Row>
-                    <Col xs="12">
-                      <p id="cssStoriesParagraph">
-                        { item.Description }
-                      </p>
-                    </Col>
                   </CardText>
                 </Card>
               </Row>

@@ -93,7 +93,7 @@ export class PartnersCarouselRaw extends Component {
           {this.data.map ( item => (
             <Col>
               <Card id="cssCardPartners">
-                  <a href={`/partneri/#${item.DivID}`}><CardImg key={item} top width="240px" src={item.Logo} alt={item.LogoAlt} /></a>
+                  <a href={`/partneri/#${item.IDEvent}`}><CardImg key={item} top width="240px" src={item.Logo} alt={item.LogoAlt} /></a>
                 <CardBody>
                   <CardTitle key={item} style={{color: 'black'}}>{item.Name}</CardTitle>
                 </CardBody>
