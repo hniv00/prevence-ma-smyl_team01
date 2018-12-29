@@ -1,16 +1,16 @@
 import db from '../database/model/';
 
 export const newDiagController = async (req, res) => {
-
-    const newDiag = db.Diagnosis.build({
+    console.log('Creating new diagnosis');
+    db.Diagnosis.build({
         Name: req.body.Name,
         Description: req.body.Description,
     })
         .save()
-        .then(exam => {
+        .then(() => {
             return res.json("sucessfuly added new diagnosis");
         })
-        .catch(error => {
+        .catch(() => {
             return res.json("problem occured during insert");
         })
 };

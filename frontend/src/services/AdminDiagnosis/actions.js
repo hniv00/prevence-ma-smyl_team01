@@ -10,6 +10,15 @@ export const DELETE_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.DELETE_DIAGNOSIS_FAILUR
 export const CREATE_DIAGNOSIS = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS';
 export const CREATE_DIAGNOSIS_SUCCESS = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS_SUCCESS';
 export const CREATE_DIAGNOSIS_FAILURE = 'ADMIN_DIAGNOSIS.CREATE_DIAGNOSIS_FAILURE';
+export const CHANGE_DIAGNOSIS_STATE = 'ADMIN.DIAGNOSIS.CHANGE_DIAGNOSIS_STATE';
+
+
+export const changeDiagnosisState = diagParams => ({
+    type: CHANGE_DIAGNOSIS_STATE,
+    payload: {
+        diagParams
+    }
+})
 
 export const setName = name => ({
     type: SET_D_NAME,
@@ -82,7 +91,6 @@ export const startDeleteDiagnosis = (diagId) => (dispatch, getState, { api }) =>
   .catch(deleteDiagnosisFailure("Failed to delete diagnosis"));
 }
 
-
 export const createDiagnosis = () => ({
     type: CREATE_DIAGNOSIS,
 });
@@ -98,9 +106,12 @@ export const createDiagnosisFailure = error => ({
 });
 
 export const startCreateDiagnosis = () => (dispatch, getState, { api }) => {
+    let diagState = getState().adminDiagnosis;
+    console.log(diagState);
+    let body = {Name: diagState.name, Description: diagState.Description};
   dispatch(createDiagnosis());
   api
-  .post(`diagnosis/newdiag/`)
+  .post(`diagnosis/new`, body)
   .then(() => {
     dispatch(createDiagnosisSuccess("Diagnosis has been created"));
     dispatch(startFetchDiagnosis());

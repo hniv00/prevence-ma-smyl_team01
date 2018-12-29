@@ -1,4 +1,4 @@
-import {SET_D_NAME} from './actions';
+import {SET_D_NAME, CHANGE_DIAGNOSIS_STATE} from './actions';
 import {SET_D_DESCRIPTION} from './actions';
 import {SET_D_EXAMINATION} from './actions';
 import {FETCH_DIAGNOSIS,
@@ -21,6 +21,10 @@ const initialState = {
 
 const adminDiagnosisReducer = (state = initialState, action) => {
     switch (action.type) {
+        case CHANGE_DIAGNOSIS_STATE:
+            console.log(action.payload.diagParams);
+            return {...state, ...action.payload.diagParams }
+
         case SET_D_NAME:
             return { ...state, name: action.payload.name }
 
@@ -49,10 +53,10 @@ const adminDiagnosisReducer = (state = initialState, action) => {
             return { ...state, error: action.payload.error }
 
         case CREATE_DIAGNOSIS:
-            return { ...state, error: null}
+            return { ...state, error: null }
 
         case CREATE_DIAGNOSIS_SUCCESS:
-            return { ...state, error: null, response: action.payload.response }
+            return { ...state, error: null, response: action.payload.response}
 
         case CREATE_DIAGNOSIS_FAILURE:
             return { ...state, error: action.payload.error }

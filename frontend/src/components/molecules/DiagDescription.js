@@ -1,10 +1,7 @@
 import React, { Component } from "react"
-
 import {  FormGroup, Form, Label, Input } from 'reactstrap';
-import { connect } from 'react-redux';
-import { setDescription } from '../../services/AdminDiagnosis/actions';
 
-export class DiagDescriptionRaw extends Component {
+export class DiagDescription extends Component {
   constructor(props) {
     super(props)
 
@@ -13,7 +10,7 @@ export class DiagDescriptionRaw extends Component {
 
   handleChange(e) {
     this.setState({value: e.target.value});
-    this.props.callback(e.target.value, 'diagDescription');
+    this.props.onChange({description: e.target.value});
   }
 
   render() {
@@ -33,14 +30,3 @@ export class DiagDescriptionRaw extends Component {
     );
   }
 }
-
-
-const mapStateToProps = state => ({
-  inputDescr: state.createDiagnosis.description
-});
-
-const mapDispatchToProps = {
-  setDescription
-};
-
-export const DiagDescription = connect(mapStateToProps, mapDispatchToProps)(DiagDescriptionRaw);
