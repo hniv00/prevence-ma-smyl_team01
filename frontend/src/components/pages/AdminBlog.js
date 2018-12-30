@@ -94,7 +94,7 @@ export class AdminBlogRaw extends Component {
         <div>
           <Row style={{margin: "20px"}}>
           <Col></Col>
-          <Col  xs="11"><h2 className="AdminWelcH2">Správa diagnóz</h2></Col>
+          <Col  xs="11"><h2 className="AdminWelcH2">Správa článků na blogu</h2></Col>
             <Col>
              <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
                <i class="material-icons" style={{color:"#28A3B7"}}>
@@ -102,7 +102,7 @@ export class AdminBlogRaw extends Component {
                </i>
              </span>
              <UncontrolledTooltip placement="right" target="UncontrolledTooltipExample">
-               Ve správě diagnóz můžete vytvářet či upravovat diagnózy.
+               Ve správě článků můžete vytvářet či upravovat články na blogové stránce webu.
              </UncontrolledTooltip>
             </Col>
           </Row>
@@ -111,11 +111,13 @@ export class AdminBlogRaw extends Component {
             callback = {this.updateData}
             />
              <Col>
-                <Button color="info"
-                  size="md"
-                  style={{margin: "10px"}}>
-                  Smazat
-                </Button>
+                 <a href="/admin-seznam-clanku">
+                 <Button color="info"
+                   size="md"
+                   style={{margin: "10px"}}>
+                   Zrušit
+                 </Button>
+                 </a>
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}

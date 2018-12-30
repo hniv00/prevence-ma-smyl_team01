@@ -28,11 +28,13 @@ export class AdminEvent extends Component {
           </Row>
            <EventContainer/>
              <Col>
-                <Button color="info"
-                  size="md"
-                  style={{margin: "10px"}}>
-                  Smazat
-                </Button>
+                 <a href="/admin-seznam-akci">
+                 <Button color="info"
+                   size="md"
+                   style={{margin: "10px"}}>
+                   Zrušit
+                 </Button>
+                 </a>
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}>

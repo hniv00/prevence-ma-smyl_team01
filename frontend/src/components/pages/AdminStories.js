@@ -1,16 +1,31 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
+import {connect} from 'react-redux';
+import {startCreateStory, changeStoryState } from '../../services/AdminStories/actions';
 
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
-import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
-import {TooltipItem} from '../molecules/TooltipItem';
 import {StoryNameContainer} from '../organisms/StoryNameContainer';
 
 
-export class AdminStories extends Component {
+export class AdminStoriesRaw extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.submitStory = this.submitStory.bind(this);
+  //  this.diagNameRequired = this.diagNameRequired.bind(this);
+  //  this.diagDescriptionRequired = this.diagDescriptionRequired.bind(this);
+  //  this.diagRelatedExamsRequired = this.diagRelatedExamsRequired.bind(this);
+  }
+
+  submitStory(){
+    if(1==1)
+    {
+      this.props.startCreateStory();
+      alert('Nový příběh byl vytvořen!');
+    }
+  }
+
+
   render() {
     return (
     <div>
@@ -31,10 +46,21 @@ export class AdminStories extends Component {
              </UncontrolledTooltip>
             </Col>
           </Row>
-           <StoryNameContainer />
+           <StoryNameContainer
+           onChange = {this.props.changeStoryState}
+           nameValue = {this.props.name}
+           ageValue = {this.props.age}
+           descriptionValue = {this.props.description}
+           />
              <Col>
-                <Button color="info" size="md" style={{margin: "10px"}}>Smazat</Button>
-                <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
+                 <a href="/admin-seznam-pribehu">
+                 <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
+                 </a>{' '}
+                <Button color="info" size="md" style={{margin: "10px"}}
+                onClick={this.submitStory}
+                >
+                Uložit
+                </Button>
             </Col>
           </div>
         </div>
@@ -42,3 +68,15 @@ export class AdminStories extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+//  name : state.createStory.name,
+  age : state.createStory.age,
+  description : state.createStory.description,
+});
+
+const mapDispatchToProps = {
+  startCreateStory,
+  changeStoryState
+}
+export const AdminStories = connect(mapStateToProps, mapDispatchToProps)(AdminStoriesRaw);

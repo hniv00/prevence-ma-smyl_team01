@@ -39,8 +39,10 @@ export class AdminExamination extends Component {
           </Row>
           <Row>
             <Col style={{marginBottom: '30px', 'margin-right': '20px', textAlign: 'right'}}>
-                <Button color="info" size="md">Smazat</Button>{' '}
-                <Button color="info" size="md">Uložit</Button>
+                <a href="/admin-seznam-vysetreni">
+                <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
+                </a>{' '}
+                <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
             </Col>
           </Row>
           </Container>

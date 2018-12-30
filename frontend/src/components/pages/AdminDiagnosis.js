@@ -91,11 +91,13 @@ export class AdminDiagnosisRaw extends Component {
             options = {this.state.options}
             />
              <Col>
+                <a href="/admin-seznam-diagnoz">
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}>
-                  Smazat
+                  Zrušit
                 </Button>
+                </a>
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}

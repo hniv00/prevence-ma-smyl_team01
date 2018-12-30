@@ -11,12 +11,27 @@ export const StoryNameContainer = (props) => {
     <div>
       <Jumbotron id="AdminExamContainer">
         <Row>
-          <Col><PatientName></PatientName></Col>
-          <Col><PatientAgeContainer></PatientAgeContainer></Col>
+          <Col>
+            <PatientName
+            value = {this.props.nameValue}
+            onChange = {this.props.onChange}/>
+          </Col>
+          <Col>
+            <PatientAgeContainer
+            value = {this.props.ageValue}
+            onChange = {this.props.onChange}/>
+          </Col>
         </Row>
         <Row>
-        <Col md="6"><StoryDescription></StoryDescription></Col>
-        <Col md="6"><StoryRelatedDiag></StoryRelatedDiag></Col>
+        <Col md="6">
+          <StoryDescription
+          value = {this.props.descriptionValue}
+          onChange = {this.props.onChange}
+          />
+        </Col>
+        <Col md="6">
+          <StoryRelatedDiag/>
+        </Col>
         </Row>
       </Jumbotron>
     </div>
