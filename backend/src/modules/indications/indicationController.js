@@ -8,10 +8,24 @@ export const newIndicationController = async (req, res) => {
     })
         .save()
         .then(indication => {
-            return res.json("sucessfuly added new indication");
+            const indicID = indication.IDIndication;
+            const exams = req.body.ExamID;
+            for (let exam of exams) {
+                db.Exam_Indic.build({
+                    ExamID: exam,
+                    IndicID: indicID,
+                })
+                    .save()
+                    .then(examIndic => {
+                        return res.json("sucessfuly added new indication with relation");
+                    })
+                    .catch(error => {
+                        console.log("problem occured during inner insert");
+                    })
+            }
         })
         .catch(error => {
-            return res.json("problem occured during insert");
+            console.log("problem occured during insert");
         })
 };
 

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
     const PartnerProject = sequelize.define('PartnerProject', {
-      IDProject: { type: DataTypes.INTEGER, primaryKey: true },
+      IDProject: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       Name: DataTypes.STRING,
       Description: DataTypes.TEXT,
       DivID: DataTypes.STRING,
