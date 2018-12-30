@@ -9,6 +9,7 @@ import indicationRoutes from './modules/indications/indicationRoutes';
 import articleRoutes from './modules/articles/articleRoutes';
 import eventRoutes from './modules/events/eventRoutes';
 import questionRoutes from './modules/questions/questionRoutes';
+import twitterFeedRoutes from './modules/twitterFeed/twitterFeedRoutes';
 
 const router = Router();
 
@@ -21,5 +22,6 @@ router.use('/api/indication', indicationRoutes);
 router.use('/api/article', articleRoutes);
 router.use('/api/event', eventRoutes);
 router.use('/api/question', questionRoutes);
+router.use('/api/twitterfeed', twitterFeedRoutes)
 
 export default router;
