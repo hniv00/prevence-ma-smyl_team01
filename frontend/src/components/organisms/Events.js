@@ -36,10 +36,10 @@ export class EventsRaw extends Component {
                     <Col>
                       <Row>
                         <Col sm="6">
-                        <i class="material-icons">event</i>{' '}
-                          { item.Date }
-                          <i class="material-icons">schedule</i>
-                          { item.Time }
+                        <i className="material-icons">event</i>{' '}
+                          <span style={{fontWeight: 'bold'}}> { item.Date } </span>
+                          <i className="material-icons">schedule</i>
+                          <span style={{fontWeight: 'bold'}}> { item.Time } </span>
                         </Col>
                         <Col sm="6" style={{textAlign: 'right'}}>
                         <i class="material-icons">place</i>

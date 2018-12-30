@@ -10,6 +10,7 @@ import adminExamsReducer from '../services/AdminExaminations/reducer'
 import storiesReducer from '../services/Stories/reducer'
 import eventsReducer from '../services/Events/reducer'
 import adminIndicationsReducer from '../services/AdminIndication/reducer'
+import adminIndications from '../services/AdminIndication/reducer'
 import adminArticlesReducer from '../services/AdminArticle/reducer'
 import adminEventsReducer from '../services/AdminEvents/reducer'
 
@@ -18,6 +19,7 @@ export default combineReducers({
     filterPartner: partnersReducer,
     createDiagnosis: diagnosisReducer,
     createStory: adminStories,
+    createIndication: adminIndications,
     sendContactForm: contactFormReducer,
     adminDiagnosis: adminDiagnosisReducer,
     adminStories: adminStoriesReducer,

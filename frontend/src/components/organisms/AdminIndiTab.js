@@ -18,6 +18,7 @@ export class AdminIndiTabRaw extends Component {
           <tr>
             <th>#</th>
             <th>Název indikace</th>
+            <th>/Typ indikace/</th>
             {/* <th>Upravit</th> */}
             <th>Odstranit</th>
           </tr>
@@ -27,6 +28,7 @@ export class AdminIndiTabRaw extends Component {
             <tr key={item.IDIndication}>
               <th scope="row">{item.IDIndication}</th>
               <td>{item.NameInd}</td>
+              <td>{item.Type}</td>
               {/* <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td> */}
               <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tuto indikaci?')) this.props.startDeleteIndication(item.IDIndication)}} class="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>

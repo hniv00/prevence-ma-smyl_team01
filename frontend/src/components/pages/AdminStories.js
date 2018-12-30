@@ -12,13 +12,53 @@ export class AdminStoriesRaw extends Component {
     super(props);
     this.state = {};
     this.submitStory = this.submitStory.bind(this);
-  //  this.diagNameRequired = this.diagNameRequired.bind(this);
-  //  this.diagDescriptionRequired = this.diagDescriptionRequired.bind(this);
-  //  this.diagRelatedExamsRequired = this.diagRelatedExamsRequired.bind(this);
+    this.patientNameRequired = this.patientNameRequired.bind(this);
+    this.patientAgeRequired = this.patientAgeRequired.bind(this);
+    this.storyDescriptionRequired = this.storyDescriptionRequired.bind(this);
+  //  this.storyRelatedDiagnosisRequired = this.storyRelatedDiagnosisRequired.bind(this);
   }
 
+  patientNameRequired() {
+    let empt = this.props.name;
+     if (empt === "") {
+         alert("Vyplňte jméno pacienta tohoto příběhu!");
+         return false;
+      }
+    return true;
+  }
+
+  patientAgeRequired() {
+    let empt = this.props.age;
+     if (empt === "") {
+         alert("Vyplňte věk pacienta!");
+         return false;
+      }
+    return true;
+  }
+
+  storyDescriptionRequired() {
+    let empt = this.props.description;
+     if (empt === "") {
+         alert("Vyplňte popis příběhu!");
+         return false;
+      }
+    return true;
+  }
+
+/*
+  storyRelatedDiagnosisRequired() {
+    let empt = this.props.selectedDiagnosis;
+     if (empt.length === 0) {
+         console.log(empt)
+         alert("Vyplňte související diagnózy!");
+         return false;
+      }
+    return true;
+  }
+  */
+
   submitStory(){
-    if(1==1)
+    if(this.patientNameRequired() && this.patientAgeRequired() && this.storyDescriptionRequired())
     {
       this.props.startCreateStory();
       alert('Nový příběh byl vytvořen!');

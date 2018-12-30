@@ -1,13 +1,49 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
+import {connect} from 'react-redux';
+import {startCreateIndication, changeIndicationState } from '../../services/AdminIndication/actions';
+
 import {AdminNav} from '../organisms/AdminNav';
-import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
-import {TooltipItem} from '../molecules/TooltipItem';
 import {IndicationNameContainer} from '../organisms/IndicationNameContainer';
- export class AdminIndication extends Component {
+
+export class AdminIndicationRaw extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.submitIndication = this.submitIndication.bind(this);
+    this.indicationNameRequired = this.indicationNameRequired.bind(this);
+    this.indicationTypeRequired = this.indicationTypeRequired.bind(this);
+  }
+
+  indicationNameRequired() {
+    let empt = this.props.name;
+     if (empt === "") {
+         alert("Vyplňte název indikace!");
+         return false;
+      }
+    return true;
+  }
+
+
+  indicationTypeRequired() {
+    let empt = this.props.type;
+     if (empt.length === 0) {
+         alert("Vyplňte typ indikace!");
+         return false;
+      }
+    return true;
+  }
+
+
+  submitIndication(){
+    if (1==1)
+    //if(this.indicationNameRequired() && this.indicationTypeRequired())
+    {
+      this.props.startCreateIndication();
+      alert('Nová indikace byla vytvořena!');
+    }
+  }
+
   render() {
     return (
     <div>
@@ -19,7 +55,7 @@ import {IndicationNameContainer} from '../organisms/IndicationNameContainer';
           <Col  xs="11"><h2 className="AdminWelcH2">Správa indikací</h2></Col>
             <Col>
              <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
-               <i class="material-icons" style={{color:"#28A3B7"}}>
+               <i className="material-icons" style={{color:"#28A3B7"}}>
                  help
                </i>
              </span>
@@ -28,12 +64,20 @@ import {IndicationNameContainer} from '../organisms/IndicationNameContainer';
              </UncontrolledTooltip>
             </Col>
           </Row>
-           <IndicationNameContainer />
+           <IndicationNameContainer
+           onChange = {this.props.changeIndicationState}
+           nameValue = {this.props.name}
+           typeValue = {this.props.type}
+           />
              <Col>
                  <a href="/admin-seznam-indikaci">
                  <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
                  </a>{' '}
-                <Button color="info" size="md" style={{margin: "10px"}}>Uložit</Button>
+                <Button color="info" size="md" style={{margin: "10px"}}
+                onClick={this.submitIndication}
+                >
+                Uložit
+                </Button>
             </Col>
           </div>
         </div>
@@ -41,3 +85,14 @@ import {IndicationNameContainer} from '../organisms/IndicationNameContainer';
     );
   }
 }
+
+const mapStateToProps = state => ({
+  name : state.createIndication.name,
+  type : state.createIndication.type
+});
+
+const mapDispatchToProps = {
+  startCreateIndication,
+  changeIndicationState
+}
+export const AdminIndication = connect(mapStateToProps, mapDispatchToProps)(AdminIndicationRaw);

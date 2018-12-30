@@ -85,7 +85,7 @@ export const deleteStoryFailure = error => ({
 export const startDeleteStory = (storyId) => (dispatch, getState, { api }) => {
   dispatch(deleteStory());
   api
-  .post(`story/deletestory/${storyId}`)
+  .post(`story/delete/${storyId}`)
   .then(() => {
     dispatch(deleteStorySuccess(`Deleted storyination with ID ${storyId}`));
   })
@@ -112,7 +112,7 @@ export const startDeleteStory = (storyId) => (dispatch, getState, { api }) => {
  export const startCreateStory = () => (dispatch, getState, { api }) => {
      let storyState = getState().adminStories;
      console.log(storyState);
-     let body = {Name: storyState.Name, Age: storyState.Age, Description: storyState.Description};
+     let body = {Name: storyState.name, Age: storyState.age, Description: storyState.description};
    dispatch(createStory());
    api
    .post(`story/new`, body)

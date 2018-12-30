@@ -96,7 +96,7 @@ export class EventsCarouselRaw extends Component {
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
                         <i class="material-icons">event</i>
-                        { item.Date }, { item.City } <br/>
+                        <span style={{fontWeight: 'bold'}}> { item.Date }, { item.City } </span> <br/>
                         { item.Description } <br/>
                       </TextEllipsis>
                     </p>
