@@ -59,6 +59,7 @@ export class AdminDiagnosisRaw extends Component {
     if(this.diagNameRequired() && this.diagDescriptionRequired() && this.diagRelatedExamsRequired())
     {
       this.props.startCreateDiagnosis();
+      alert('Nová diagnóza byla vytvořena!');
     }
   }
 
@@ -118,8 +119,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  startCreateDiagnosis, 
+  startCreateDiagnosis,
   changeDiagnosisState,
-  startFetchExams 
+  startFetchExams
 }
 export const AdminDiagnosis = connect(mapStateToProps, mapDispatchToProps)(AdminDiagnosisRaw);

@@ -18,7 +18,7 @@ export class ContactFormRaw extends Component {
     this.verifyCallback = this.verifyCallback.bind(this);
 
     this.state = {
-      isVerified: false
+      isVerified: false,
     }
   }
 
