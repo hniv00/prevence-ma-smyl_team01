@@ -4,6 +4,7 @@ import partnersReducer from '../services/Partners/reducer'
 import diagnosisReducer from '../services/AdminDiagnosis/reducer'
 import contactFormReducer from '../services/Contact/reducer'
 import adminDiagnosisReducer from '../services/AdminDiagnosis/reducer'
+import adminStories from '../services/AdminStories/reducer'
 import adminStoriesReducer from '../services/AdminStories/reducer'
 import adminExamsReducer from '../services/AdminExaminations/reducer'
 import storiesReducer from '../services/Stories/reducer'
@@ -16,6 +17,7 @@ export default combineReducers({
     filterState: filtrationReducer,
     filterPartner: partnersReducer,
     createDiagnosis: diagnosisReducer,
+    createStory: adminStories,
     sendContactForm: contactFormReducer,
     adminDiagnosis: adminDiagnosisReducer,
     adminStories: adminStoriesReducer,

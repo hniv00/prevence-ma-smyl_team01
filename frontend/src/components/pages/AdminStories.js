@@ -70,7 +70,7 @@ export class AdminStoriesRaw extends Component {
 }
 
 const mapStateToProps = state => ({
-//  name : state.createStory.name,
+  name : state.createStory.name,
   age : state.createStory.age,
   description : state.createStory.description,
 });

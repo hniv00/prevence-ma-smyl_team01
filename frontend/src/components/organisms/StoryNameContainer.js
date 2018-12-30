@@ -1,12 +1,13 @@
-import React from 'react';
-import { Jumbotron, Button, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import React, { Component } from "react";
+import { Jumbotron, Button, Row, Col } from 'reactstrap';
 
 import {PatientName} from '../molecules/PatientName';
 import {StoryDescription} from '../molecules/StoryDescription';
 import {StoryRelatedDiag} from '../molecules/StoryRelatedDiag';
 import {PatientAgeContainer} from '../molecules/PatientAgeContainer';
 
-export const StoryNameContainer = (props) => {
+export class StoryNameContainer extends Component{
+render () {
   return (
     <div>
       <Jumbotron id="AdminExamContainer">
@@ -36,4 +37,5 @@ export const StoryNameContainer = (props) => {
       </Jumbotron>
     </div>
   );
+}
 };
