@@ -1,59 +1,35 @@
-
-import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
+import React, {Component} from 'react';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
 import {connect} from 'react-redux';
-import { startCreateDiagnosis } from '../../services/AdminDiagnosis/actions';
+import { startCreateDiagnosis, changeDiagnosisState } from '../../services/AdminDiagnosis/actions';
+import {startFetchExams} from '../../services/AdminExaminations/actions';
 
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
-import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
-import {TooltipItem} from '../molecules/TooltipItem';
 import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
 
 
 export class AdminDiagnosisRaw extends Component {
-
   constructor(props) {
     super(props);
-    this.updateData = this.updateData.bind(this);
+    this.state = {};
     this.submitDiagnosis = this.submitDiagnosis.bind(this);
     this.diagNameRequired = this.diagNameRequired.bind(this);
     this.diagDescriptionRequired = this.diagDescriptionRequired.bind(this);
     this.diagRelatedExamsRequired = this.diagRelatedExamsRequired.bind(this);
-
-    this.state = {
-      diagName:'',
-      diagDescription:'',
-      diagRelatedExams:[]
-    }
   }
 
-  updateData(value,type) {
-    switch (type) {
-      case 'diagName':
-        this.setState({ ...this.state, diagName: value });
-        break;
-
-      case 'diagDescription':
-        this.setState({ ...this.state, diagDescription: value });
-        break;
-
-      case 'diagRelatedExams':
-        this.setState({ ...this.state, diagRelatedExams: value });
-        break;
-
-      default:
-        this.setState({ ...this.state});
-        break;
-
+  componentDidMount(){
+    this.props.startFetchExams();
+    let options = [];
+    for (const exam of this.props.rawExams) {
+      options.push({value: exam.ExamName, label: exam.ExamName})
     }
+    this.setState({options: options})
   }
 
   diagNameRequired() {
-    let empt = this.state.diagName;
+    let empt = this.props.diagName;
      if (empt === "") {
          alert("Vyplňte název diagnózy!");
          return false;
@@ -70,20 +46,20 @@ export class AdminDiagnosisRaw extends Component {
     return true;
   }
   diagRelatedExamsRequired() {
-    let empt = this.props.selectedOption;
+    let empt = this.props.selectedExams;
      if (empt.length === 0) {
          console.log(empt)
-         alert("Vyplňte popis související vyšetření!");
+         alert("Vyplňte související vyšetření!");
          return false;
       }
     return true;
   }
 
   submitDiagnosis(){
-    this.diagNameRequired();
-    this.diagDescriptionRequired();
-    this.diagRelatedExamsRequired();
-  //  this.startCreateDiagnosis();
+    if(this.diagNameRequired() && this.diagDescriptionRequired() && this.diagRelatedExamsRequired())
+    {
+      this.props.startCreateDiagnosis();
+    }
   }
 
   render() {
@@ -107,8 +83,11 @@ export class AdminDiagnosisRaw extends Component {
             </Col>
           </Row>
            <DiagNameContainer
-            parentState = {this.state}
-            callback = {this.updateData}
+            onChange = {this.props.changeDiagnosisState}
+            nameValue = {this.props.name}
+            descriptionValue = {this.props.description}
+            selectedExams = {this.props.selectedExams}
+            options = {this.state.options}
             />
              <Col>
                 <Button color="info"
@@ -132,6 +111,15 @@ export class AdminDiagnosisRaw extends Component {
 }
 
 const mapStateToProps = state => ({
-  selectedOption: state.createDiagnosis.examination
+  selectedExams: state.createDiagnosis.examination,
+  name : state.createDiagnosis.name,
+  description : state.createDiagnosis.description,
+  rawExams : state.adminExams.exams
 });
-export const AdminDiagnosis = connect(mapStateToProps)(AdminDiagnosisRaw);
+
+const mapDispatchToProps = {
+  startCreateDiagnosis, 
+  changeDiagnosisState,
+  startFetchExams 
+}
+export const AdminDiagnosis = connect(mapStateToProps, mapDispatchToProps)(AdminDiagnosisRaw);

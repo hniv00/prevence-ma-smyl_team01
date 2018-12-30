@@ -1,10 +1,8 @@
 import React, { Component } from "react"
 
 import {  FormGroup, Form, Label, Input } from 'reactstrap';
-import { connect } from 'react-redux';
-import { setName } from '../../services/AdminDiagnosis/actions';
 
-export class DiagNameRaw extends Component {
+export class DiagName extends Component {
   constructor(props) {
     super(props)
 
@@ -13,7 +11,7 @@ export class DiagNameRaw extends Component {
 
   handleChange(e) {
     this.setState({value: e.target.value});
-    this.props.callback(e.target.value, 'diagName');
+    this.props.onChange({name: e.target.value});
 
   }
 
@@ -31,14 +29,3 @@ export class DiagNameRaw extends Component {
     );
   }
 }
-
-
-const mapStateToProps = state => ({
-  inputName: state.createDiagnosis.name
-});
-
-const mapDispatchToProps = {
-  setName
-};
-
-export const DiagName = connect(mapStateToProps, mapDispatchToProps)(DiagNameRaw);

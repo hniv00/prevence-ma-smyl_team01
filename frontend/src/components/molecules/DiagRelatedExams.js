@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Label } from 'reactstrap';
 
 import {MultiSelectExamination} from '../atoms/MultiSelectExamination';
+import { MultiSelect } from "../atoms/MultiSelect";
 
 export class DiagRelatedExams extends Component {
 
@@ -11,21 +12,23 @@ export class DiagRelatedExams extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
-    console.log(e);
-    this.setState({value: e});
-    this.props.callback(e.target.value, 'diagRelatedExams');
-
+  handleChange(selectedExams) {
+    this.setState({value: selectedExams});
+    this.props.onChange({examination: selectedExams});
   }
 
   render() {
     return (
       <div className="relatedExams">
         <Label for="exampleText">Související vyšetření</Label>
-        <MultiSelectExamination
-        selectedOption={this.setState.value}
-        setExamination={this.handleChange}
-        ></MultiSelectExamination>
+        <MultiSelect
+        value={this.props.selectedExams}
+        onChange={this.handleChange}
+        options={this.props.options}
+        isMulti={true}
+        isSearchable={true}
+        placeholder="Vyberte vyšetření..."
+        />
       </div>
     );
   }
