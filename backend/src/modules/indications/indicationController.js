@@ -50,6 +50,45 @@ export const indicationController = async (req, res) => {
 
 };
 
+export const indicationTreatmentController = async (req, res) => {
+    const indications = await db.Indication.findAll({
+        attributes: ['IDIndication', 'NameInd', 'Type'],
+        raw: true,
+        where: {
+            Type: {
+                $like: '%' + 'se s' + '%'
+            }
+        }
+    });
+    return res.json({ indications });
+};
+
+export const indicationFanamnesisController = async (req, res) => {
+    const indications = await db.Indication.findAll({
+        attributes: ['IDIndication', 'NameInd', 'Type'],
+        raw: true,
+        where: {
+            Type: {
+                $like: '%' + 'rodin' + '%'
+            }
+        }
+    });
+    return res.json({ indications });
+};
+
+export const indicationLifestyleController = async (req, res) => {
+    const indications = await db.Indication.findAll({
+        attributes: ['IDIndication', 'NameInd', 'Type'],
+        raw: true,
+        where: {
+            Type: {
+                $like: '%' + 'styl' + '%'
+            }
+        }
+    });
+    return res.json({ indications });
+};
+
 export const updateIndicationController = async (req, res) => {
 
     db.Indication.update({
