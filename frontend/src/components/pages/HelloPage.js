@@ -11,7 +11,6 @@ import {Motivation} from '../organisms/Motivation';
 import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
 
-// import logo from '../../img/logo_prevence.png';
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 
