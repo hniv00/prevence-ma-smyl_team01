@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
 
-import programko from '../../img/programko.jpg';
+import zapojse from '../../img/zapojse.jpg';
 
 export class JoinUs extends Component {
   render() {
@@ -22,7 +22,7 @@ export class JoinUs extends Component {
               </p>
             </Col>
             <Col xs="12" sm="5">
-              <img src={programko} className="imgRound" alt="Programování aplikace"/>
+              <img src={zapojse} className="imgRound" alt="Lidé šířící poselství"/>
             </Col>
           </Row>
       </div>
