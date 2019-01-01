@@ -13,16 +13,29 @@ export const newPartnerController = async (req, res) => {
     })
         .save()
         .then(project => {
-            return res.json("sucessfuly added new partner project");
+            const partnerID = project.IDProject;
+            const diagnoses = req.body.DiagID;
+            for (let diag of diagnoses) {
+                db.Diag_Partner.build({
+                    DiagID: diag,
+                    PartnerID: partnerID,
+                })
+                    .save()
+                    .then(diagPartner => {
+                        return res.json("sucessfuly added new diagnosis+partner relation");
+                    })
+                    .catch(error => {
+                        console.log("problem occured during inner insert");
+                    })
+            }
         })
         .catch(error => {
-            return res.json("problem occured during insert");
+            console.log("problem occured during insert");
         })
 };
 
 export const partnerDiagController = async (req, res) => {
     var diags = req.body.diagnosis;
-    console.log(req.body.diagnosis);
     if (diags) {
         db.sequelize.query("SELECT DISTINCT PartnerProject.Name, PartnerProject.IDProject, PartnerProject.Description, PartnerProject.DivID, PartnerProject.Src, PartnerProject.SrcAlt, PartnerProject.Logo, PartnerProject.LogoAlt FROM PartnerProject INNER JOIN Diag_Partner ON Diag_Partner.PartnerID = PartnerProject.IDProject INNER JOIN Diagnosis ON Diag_Partner.DiagID = Diagnosis.IDDiagnosis WHERE Diagnosis.Name IN (:diagnosis)", {
             replacements: { diagnosis: diags, type: db.sequelize.QueryTypes.SELECT }
