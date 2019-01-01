@@ -8,7 +8,9 @@ const data = [
   { href: '/pribehy', title: '#PrevenceMaSmysl'},
   { href: '/akce', title: 'Akce'},
   { href: '/partneri', title: 'Partnerské projekty'},
-  { href: '/kontakty', title: 'Kontakt'}
+  { href: '/kontakty', title: 'Kontakt'},
+  { href: '/projekt', title: 'O projektu'},
+  { href: '/blog', title: 'Blog'}
 ]
 
 const socialPages = [

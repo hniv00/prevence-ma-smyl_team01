@@ -9,6 +9,8 @@ const data = [
   { href: '/akce', title: 'Akce'},
   { href: '/partneri', title: 'Partnerské projekty'},
   { href: '/kontakty', title: 'Kontakt'},
+  { href: '/projekt', title: 'O projektu'},
+  { href: '/blog', title: 'Blog'},
   { href: '/admin-login', title: 'Admin modul'}
 ]
 

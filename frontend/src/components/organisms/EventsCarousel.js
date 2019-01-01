@@ -83,7 +83,9 @@ export class EventsCarouselRaw extends Component {
           {events.map ( item => (
             <Col>
               <Card id="cssCardStories" body>
-                <CardTitle>{ item.Name }</CardTitle>
+                <CardTitle>
+                  <a href={`/akce/#${item.IDEvent}`} className="storiesCarousel" style={{color: '#026977'}}>{ item.Name }</a>
+                </CardTitle>
                 <CardText>
                     <p id="cssStoriesParagraph">
                       <TextEllipsis
@@ -94,11 +96,10 @@ export class EventsCarouselRaw extends Component {
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
                         <i class="material-icons">event</i>
-                        { item.Date }, { item.City } <br/>
-                        { item.Description }
+                        <span style={{fontWeight: 'bold'}}> { item.Date }, { item.City } </span> <br/>
+                        { item.Description } <br/>
                       </TextEllipsis>
                     </p>
-                    <a href="/akce" className="storiesCarousel" style={{color: '#026977'}}>Zobrazit akci...</a>
                 </CardText>
               </Card>
             </Col>

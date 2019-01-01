@@ -59,6 +59,7 @@ export class AdminDiagnosisRaw extends Component {
     if(this.diagNameRequired() && this.diagDescriptionRequired() && this.diagRelatedExamsRequired())
     {
       this.props.startCreateDiagnosis();
+      alert('Nová diagnóza byla vytvořena!');
     }
   }
 
@@ -90,11 +91,13 @@ export class AdminDiagnosisRaw extends Component {
             options = {this.state.options}
             />
              <Col>
+                <a href="/admin-seznam-diagnoz">
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}>
-                  Smazat
+                  Zrušit
                 </Button>
+                </a>
                 <Button color="info"
                   size="md"
                   style={{margin: "10px"}}
@@ -118,8 +121,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  startCreateDiagnosis, 
+  startCreateDiagnosis,
   changeDiagnosisState,
-  startFetchExams 
+  startFetchExams
 }
 export const AdminDiagnosis = connect(mapStateToProps, mapDispatchToProps)(AdminDiagnosisRaw);
