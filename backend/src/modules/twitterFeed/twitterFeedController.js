@@ -11,7 +11,7 @@ const oauth = OAuth({
   });
 
 const requestData = {
-    url: 'https://api.twitter.com/1.1/collections/entries.json?id=custom-539487832448843776',
+    url: 'https://api.twitter.com/1.1/collections/entries.json?id=custom-1079370365640544256',
     method: 'GET'
 }
 const token  = {
@@ -23,7 +23,25 @@ export const twitterFeedController = async (req, res) => {
     await axios.get(requestData.url, {
         headers: authHeader
     }).then(({data}) => {
-        console.log(data);
-        return res.json(data)
+        const tweets = data.objects.tweets;
+        const users = data.objects.users;
+        const response = [];
+        for (const key in tweets) {
+            if (tweets.hasOwnProperty(key)) {
+                let tweet = tweets[key];
+                let regex = /http:\/\/t\.co\/.*/g
+                let text = tweet.text.replace(regex, '');
+                let src = 'default.jpg';
+                if (tweet.entities.media) {
+                    src = tweet.entities.media[0].media_url;
+                    console.log(src);
+                }
+                response.push({id: tweet.id, 
+                    text: text, 
+                    user: users[tweet.user.id].screen_name, 
+                    src: src})
+            }
+        }
+        return res.json(response)
     }).catch((res) => {console.log(res)})
 }
