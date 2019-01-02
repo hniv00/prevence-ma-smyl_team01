@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from "react"
 import { Jumbotron, Row } from 'reactstrap';
 
 import {AdminShowBasic} from '../molecules/AdminShowBasic';
 
-
-
-export const AdminBasicFilterContainer = () => {
+export class AdminBasicFilterContainer extends Component {
+  render() {
   return (<Jumbotron id="AdminExamContainer">
-    <Row><AdminShowBasic></AdminShowBasic></Row>
+    <Row>
+    <AdminShowBasic
+    onChange = {this.props.changeExaminationState}
+    agefrombasicValue = {this.props.agefrombasicValue}
+    ageuntilbasicValue = {this.props.ageuntilbasicValue}
+    />
+    </Row>
   </Jumbotron>);
+}
 };

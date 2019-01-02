@@ -118,8 +118,8 @@ export class AdminExaminationRaw extends Component {
             <Col xs="4">
               <AdminBasicFilterContainer
               onChange = {this.props.changeExaminationState}
-              agefrombasicValue = {this.props.agefrombasic}
-              ageuntilbasicValue = {this.props.ageuntilbasic}
+              agefrombasicValue = {this.props.agefrombasicValue}
+              ageuntilbasicValue = {this.props.ageuntilbasicValue}
               />
             </Col>
             <Col xs="8">
