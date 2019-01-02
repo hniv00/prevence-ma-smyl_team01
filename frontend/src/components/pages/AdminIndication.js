@@ -27,7 +27,8 @@ export class AdminIndicationRaw extends Component {
 
   indicationTypeRequired() {
     let empt = this.props.type;
-     if (empt.length === 0) {
+     if (empt === null || empt === undefined || empt.length === 0) {
+         console.log(empt)
          alert("Vyplňte typ indikace!");
          return false;
       }
@@ -36,8 +37,7 @@ export class AdminIndicationRaw extends Component {
 
 
   submitIndication(){
-    if (1==1)
-    //if(this.indicationNameRequired() && this.indicationTypeRequired())
+    if(this.indicationNameRequired() && this.indicationTypeRequired())
     {
       this.props.startCreateIndication();
       alert('Nová indikace byla vytvořena!');
