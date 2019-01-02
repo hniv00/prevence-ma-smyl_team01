@@ -15,7 +15,7 @@ export class IndicationType extends Component {
     console.log(e);
     this.setState({value: e});
     this.props.callback(e.target.value, 'diagRelatedExams');
-
+    this.props.onChange({name: e.target.value});
   }
 
   render() {
@@ -25,6 +25,7 @@ export class IndicationType extends Component {
         <MultiSelectIndicationType
         selectedOption={this.setState.value}
         setExamination={this.handleChange}
+        onChange={e => (this.handleChange(e))}
         ></MultiSelectIndicationType>
       </div>
     );

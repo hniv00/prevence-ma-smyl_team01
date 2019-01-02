@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Row, Col, Button, Form, FormGroup, Label, Input, CustomInput } from 'reactstrap';
 import { connect } from 'react-redux';
+import Recaptcha from 'react-recaptcha';
+
 import {setName} from '../../services/Contact/actions';
 import {setEmail} from '../../services/Contact/actions';
 import {setMessage} from '../../services/Contact/actions';
@@ -11,8 +13,13 @@ export class ContactFormRaw extends Component {
     super(props);
 
     this.handleChange = this.handleChange.bind(this);
-    this.validate = this.validate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
+
+    this.state = {
+      isVerified: false,
+    }
   }
 
   handleChange(event){
@@ -21,20 +28,25 @@ export class ContactFormRaw extends Component {
     this.props.setMessage(event.target.message);
   }
 
-  validate() {
-    let emailEmpt = this.props.email;
-    let textEmpt = this.props.message;
-
-    if (emailEmpt == "" || textEmpt == "") {
-          alert("Políčka 'e-mail' a 'vzkaz' musí být vyplněna.");
-         return false;
-    }
-    return true;
+  recaptchaLoaded() {
+    console.log('reCAPCHA úspěšně naloadovaná!');
   }
 
   handleSubmit(event) {
-    this.validate();
-    event.preventDefault();
+    if (this.state.isVerified) {
+      event.preventDefault();
+      alert('Váš dotaz byl odeslán!');
+    } else {
+      alert('Prosím potvrďte, že nejste robot!');
+    }
+  }
+
+  verifyCallback(response) {
+    if (response) {
+      this.setState({
+        isVerified: true
+      })
+    }
   }
 
   render() {
@@ -53,20 +65,27 @@ export class ContactFormRaw extends Component {
           <FormGroup>
             <Label for="email">E-mail *</Label>
             <Input type="email" name="email" id="email" placeholder="Napiš svůj e-mail" inline
-            value={this.props.value} onChange={this.handleChange}/>
+            value={this.props.value} onChange={this.handleChange} required/>
           </FormGroup>
           </Col>
         </Row>
 
         <FormGroup>
-          <Label for="text">Vzkaz</Label>
+          <Label for="text">Vzkaz *</Label>
           <Input type="textarea" name="text" id="text" placeholder="Napiš, co nám chceš vzkázat..."
-          value={this.props.value} onChange={this.handleChange}/>
+          value={this.props.value} onChange={this.handleChange} required/>
         </FormGroup>
 
-        <FormGroup check>
-          <CustomInput type="checkbox" id="checkbox" label="Souhlasím se zpracováním osobních údajů. *" />
+        <FormGroup check style={{marginBottom: '20px'}}>
+          <CustomInput type="checkbox" id="checkbox" label="Souhlasím se zpracováním osobních údajů. *" required/>
         </FormGroup>
+
+        <Recaptcha
+            sitekey="6LeBYoUUAAAAADeQVhqv5AWZYcOPXMhI26C1meth"
+            render="explicit"
+            onloadCallback={this.recaptchaLoaded}
+            verifyCallback={this.verifyCallback}
+          />
 
         <Button id="submit">Odeslat zprávu</Button>
       </Form>

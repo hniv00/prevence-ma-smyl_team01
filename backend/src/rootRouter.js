@@ -10,6 +10,11 @@ import articleRoutes from './modules/articles/articleRoutes';
 import eventRoutes from './modules/events/eventRoutes';
 import questionRoutes from './modules/questions/questionRoutes';
 import twitterFeedRoutes from './modules/twitterFeed/twitterFeedRoutes';
+import diagIndicRoutes from './modules/diagIndics/diagIndicRoutes';
+import diagPartnerRoutes from './modules/diagPartners/diagPartnerRoutes';
+import examDiagRoutes from './modules/examDiags/examDiagRoutes';
+import examIndicRoutes from './modules/examIndics/examIndicRoutes';
+import periodicityRoutes from './modules/periodicities/periodicityRoutes';
 
 const router = Router();
 
@@ -23,5 +28,10 @@ router.use('/api/article', articleRoutes);
 router.use('/api/event', eventRoutes);
 router.use('/api/question', questionRoutes);
 router.use('/api/twitterfeed', twitterFeedRoutes)
+router.use('/api/diagindic', diagIndicRoutes);
+router.use('/api/diagpartner', diagPartnerRoutes);
+router.use('/api/examdiag', examDiagRoutes);
+router.use('/api/examindic', examIndicRoutes);
+router.use('/api/periodicity', periodicityRoutes);
 
 export default router;

@@ -7,6 +7,18 @@ export const FETCH_INDICATION_FAILURE = 'ADMIN_INDICATION.FETCH_INDICATION_FAILU
 export const DELETE_INDICATION = 'ADMIN_INDICATION.DELETE_INDICATION';
 export const DELETE_INDICATION_SUCCESS = 'ADMIN_INDICATION.DELETE_INDICATION_SUCCESS';
 export const DELETE_INDICATION_FAILURE = 'ADMIN_INDICATION.DELETE_INDICATION_FAILURE';
+export const CREATE_INDICATION = 'ADMIN_INDICATION.CREATE_INDICATION';
+export const CREATE_INDICATION_SUCCESS = 'ADMIN_INDICATION.CREATE_INDICATION_SUCCESS';
+export const CREATE_INDICATION_FAILURE = 'ADMIN_INDICATION.CREATE_INDICATION_FAILURE';
+export const CHANGE_INDICATION_STATE = 'ADMIN_INDICATION.CHANGE_INDICATION_STATE';
+
+
+export const changeIndicationState = indiParams => ({
+    type: CHANGE_INDICATION_STATE,
+    payload: {
+        indiParams
+    }
+})
 
 export const setName = name => ({
     type: SET_I_NAME,
@@ -78,3 +90,31 @@ export const startDeleteIndication = (indiId) => (dispatch, getState, { api }) =
   })
   .catch(deleteIndicationFailure("Failed to delete indication"));
 }
+
+ export const createIndication = () => ({
+     type: CREATE_INDICATION,
+ });
+
+ export const createIndicationSuccess = response => ({
+     type: CREATE_INDICATION_SUCCESS,
+     payload: {response}
+ });
+
+ export const createIndicationFailure = error => ({
+     type: CREATE_INDICATION_FAILURE,
+     payload: {error}
+ });
+
+ export const startCreateIndication = () => (dispatch, getState, { api }) => {
+     let indiState = getState().adminIndications;
+     console.log(indiState);
+     let body = {Name: indiState.name, Type: indiState.type};
+   dispatch(createIndication());
+   api
+   .post(`indication/new`, body)
+   .then(() => {
+     dispatch(createIndicationSuccess("Indication has been created"));
+     dispatch(startFetchIndication());
+   })
+   .catch(createIndicationFailure("Failed to create indication"));
+ }

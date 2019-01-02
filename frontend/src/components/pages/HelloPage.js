@@ -11,11 +11,11 @@ import {Motivation} from '../organisms/Motivation';
 import {PartnersCarousel} from "../organisms/PartnersCarousel";
 import {Footer} from '../organisms/Footer';
 
-// import logo from '../../img/logo_prevence.png';
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
 
 import image from '../../img/POZADI_PSD.png';
+import motivation from '../../img/lp_motivation.jpg';
 
 export class HelloPage extends Component {
   render() {
@@ -51,7 +51,7 @@ export class HelloPage extends Component {
           </section>
         </Parallax>
 
-        <Parallax strength={400} bgImage={image} bgHeight={'1080px'} bgWidth={'1920px'}>
+        <Parallax strength={400} bgImage={motivation} bgHeight={'1080px'} bgWidth={'1920px'}>
           <section>
             <div className='parallax-content' id="justCare">
               <Motivation/>

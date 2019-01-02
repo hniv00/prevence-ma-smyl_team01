@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import  { MultiSelect } from './MultiSelect';
 import { connect } from 'react-redux';
-import { setExamination } from '../../services/AdminDiagnosis/actions';
+import { setType } from '../../services/AdminIndication/actions';
 
 const options = [
   { value: 'Rodinná anamnéza', label: 'Rodinná anamnéza' },
@@ -12,14 +12,14 @@ const options = [
 export class MultiSelectIndicationType extends Component {
 
   render() {
-//    const { selectedOption, setExamination } = this.props;
+    const { selectedOption, setType } = this.props;
 
     return (
       <MultiSelect
-//        value={selectedOption}
-//        onChange={setExamination}
+        value={selectedOption}
+        onChange={setType}
         options={options}
-        isMulti={true}
+        isMulti={false}
         isSearchable={true}
         placeholder="Vyberte typ indikace..."
       />
@@ -27,16 +27,14 @@ export class MultiSelectIndicationType extends Component {
   }
 }
 
+/*
+const mapStateToProps = state => ({
+    selectedOption: state.createIndication.type
+});
 
-//const mapStateToProps = state => ({
-//    selectedOption: state.createDiagnosis.examination
-//});
+const mapDispatchToProps = {
+  setType,
+};
 
-//const mapDispatchToProps = {
-//  setExamination,
-//};
-
-//export const MultiSelectIndicationType = connect(
-  /*mapStateToProps,
-  mapDispatchToProps,*/
-//)(MultiSelectIndicationType);
+export const MultiSelectIndicationType = connect( mapStateToProps, mapDispatchToProps)(MultiSelectIndicationType);
+*/

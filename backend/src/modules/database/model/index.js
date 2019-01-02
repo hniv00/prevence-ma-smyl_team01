@@ -33,6 +33,10 @@ const modelModules = [
     require('./Article'),
     require('./Event'),
     require('./Question'),
+    require('./Diag_Indic'),
+    require('./Diag_Partner'),
+    require('./Exam_Diag'),
+    require('./Exam_Indic'),
 ];
 
 modelModules.forEach(modelModule => {
