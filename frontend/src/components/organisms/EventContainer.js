@@ -16,23 +16,42 @@ export class EventContainer extends Component{
         <Jumbotron id="AdminExamContainer">
           <Row>
             <Col>
-              <EventName/>
+              <EventName
+              value = {this.props.nameValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
           </Row>
           <Row>
             <Col md="6">
-              <EventDescription/>
+              <EventDescription
+              value = {this.props.descriptionValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
             <Col md="6">
-              <EventUrl/>
+              <EventUrl
+              value = {this.props.urlValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
           </Row>
           <Row>
             <Col md="6">
-              <EventPlace/>
+              <EventPlace
+              streetValue = {this.props.streetValue}
+              numValue = {this.props.numValue}
+              cityValue = {this.props.cityValue}
+              zipValue = {this.props.zipValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
             <Col md="6">
-              <EventDateTime/>
+              <EventDateTime
+              dateValue = {this.props.dateValue}
+              timeValue = {this.props.timeValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
           </Row>
           <Row>
@@ -40,7 +59,10 @@ export class EventContainer extends Component{
               <EventPhoto/>
             </Col>
             <Col md="6">
-              <EventPrice/>
+              <EventPrice
+              value = {this.props.priceValue}
+              onChange = {this.props.onChange}
+              />
             </Col>
           </Row>
         </Jumbotron>

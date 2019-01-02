@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Label } from 'reactstrap';
 
-import {MultiSelectExamination} from '../atoms/MultiSelectExamination';
 import { MultiSelect } from "../atoms/MultiSelect";
 
 export class DiagRelatedExams extends Component {

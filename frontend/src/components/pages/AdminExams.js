@@ -5,7 +5,7 @@ import {Heading} from '../atoms/Heading';
 import {NewExamButton} from '../atoms/NewExamButton';
 import {AdminNav} from '../organisms/AdminNav';
 import {AdminExamsTab} from '../organisms/AdminExamsTab';
-//import logo from '../../img/logo_prevence.png';
+
 
 export class AdminExams extends Component {
   render() {

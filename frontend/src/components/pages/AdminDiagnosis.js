@@ -7,8 +7,6 @@ import {startFetchExams} from '../../services/AdminExaminations/actions';
 import {AdminNav} from '../organisms/AdminNav';
 import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
-
-
 export class AdminDiagnosisRaw extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +43,7 @@ export class AdminDiagnosisRaw extends Component {
       }
     return true;
   }
+  
   diagRelatedExamsRequired() {
     let empt = this.props.selectedExams;
      if (empt.length === 0) {

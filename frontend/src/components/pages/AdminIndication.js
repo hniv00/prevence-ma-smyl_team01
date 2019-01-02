@@ -65,20 +65,20 @@ export class AdminIndicationRaw extends Component {
             </Col>
           </Row>
            <IndicationNameContainer
-           onChange = {this.props.changeIndicationState}
-           nameValue = {this.props.name}
-           typeValue = {this.props.type}
+               onChange = {this.props.changeIndicationState}
+               nameValue = {this.props.name}
+               typeValue = {this.props.type}
            />
-             <Col>
-                 <a href="/admin-seznam-indikaci">
-                 <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
-                 </a>{' '}
-                <Button color="info" size="md" style={{margin: "10px"}}
-                onClick={this.submitIndication}
-                >
+          <Col>
+             <a href="/admin-seznam-indikaci">
+             <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
+             </a>{' '}
+              <Button color="info" size="md" style={{margin: "10px"}}
+              onClick={this.submitIndication}
+              >
                 Uložit
-                </Button>
-            </Col>
+              </Button>
+          </Col>
           </div>
         </div>
       </div>

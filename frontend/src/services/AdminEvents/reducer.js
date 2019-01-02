@@ -1,17 +1,22 @@
 import {SET_E_NAME} from './actions';
 import {SET_E_DESCRIPTION} from './actions';
-import {SET_E_PLACE} from './actions';
+import {SET_E_PLACE_STREET, SET_E_PLACE_NUM, SET_E_PLACE_CITY, SET_E_PLACE_ZIP} from './actions';
 import {SET_E_DATE} from './actions';
 import {SET_E_TIME} from './actions';
 import {SET_E_PRICE} from './actions';
 import {SET_E_URL} from './actions';
 import {FETCH_EVENTS, FETCH_EVENTS_SUCCESS, FETCH_EVENTS_FAILURE,
     DELETE_EVENT, DELETE_EVENT_SUCCESS, DELETE_EVENT_FAILURE} from './actions';
+import {CREATE_EVENT, CREATE_EVENT_SUCCESS, CREATE_EVENT_FAILURE,
+    CHANGE_EVENT_STATE} from './actions';
 
 const initialState = {
     name: null,
     description: null,
-    place: null,
+    street: null,
+    num: null,
+    city: null,
+    zip: null,
     date: null,
     time: null,
     price: null,
@@ -22,14 +27,27 @@ const initialState = {
 
 const adminEventsReducer = (state = initialState, action) => {
     switch (action.type) {
+        case CHANGE_EVENT_STATE:
+            console.log(action.payload.eventParams);
+            return {...state, ...action.payload.eventParams }
+
         case SET_E_NAME:
             return { ...state, name: action.payload.name }
 
         case SET_E_DESCRIPTION:
             return { ...state, description: action.payload.description }
 
-        case SET_E_PLACE:
-            return { ...state, place: action.payload.place }
+        case SET_E_PLACE_STREET:
+            return { ...state, place: action.payload.street }
+
+        case SET_E_PLACE_NUM:
+            return { ...state, place: action.payload.num }
+
+        case SET_E_PLACE_CITY:
+            return { ...state, place: action.payload.city }
+
+        case SET_E_PLACE_ZIP:
+            return { ...state, place: action.payload.zip }
 
         case SET_E_DATE:
             return { ...state, date: action.payload.date }
@@ -59,6 +77,15 @@ const adminEventsReducer = (state = initialState, action) => {
             return { ...state, error: null, response: action.payload.response}
 
         case DELETE_EVENT_FAILURE:
+            return { ...state, error: action.payload.error }
+
+        case CREATE_EVENT:
+            return { ...state, error: null }
+
+        case CREATE_EVENT_SUCCESS:
+            return { ...state, error: null, response: action.payload.response}
+
+        case CREATE_EVENT_FAILURE:
             return { ...state, error: action.payload.error }
 
         default:

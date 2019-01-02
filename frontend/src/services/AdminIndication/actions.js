@@ -1,5 +1,4 @@
 export const SET_I_NAME ='ADMIN_INDICATION.SET_I_NAME';
-export const SET_I_DESCRIPTION = 'ADMIN_INDICATION.SET_I_DESCRIPTION';
 export const SET_I_TYPE = 'ADMIN_INDICATION.SET_I_TYPE';
 export const FETCH_INDICATION = 'ADMIN_INDICATION.FETCH_INDICATION';
 export const FETCH_INDICATION_SUCCESS = 'ADMIN_INDICATION.FETCH_INDICATION_SUCCESS';
@@ -24,13 +23,6 @@ export const setName = name => ({
     type: SET_I_NAME,
     payload : {
         name
-    }
-});
-
-export const setDescription = description => ({
-    type: SET_I_DESCRIPTION,
-    payload : {
-        description
     }
 });
 
