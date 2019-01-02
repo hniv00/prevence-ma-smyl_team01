@@ -10,7 +10,7 @@ const initialState = {
     age: null,
     description: null,
     stories: null,
-    response: null
+    response: null,
 };
 
 const adminStoriesReducer = (state = initialState, action) => {

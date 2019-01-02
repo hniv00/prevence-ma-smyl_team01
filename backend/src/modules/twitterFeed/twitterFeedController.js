@@ -29,9 +29,9 @@ export const twitterFeedController = async (req, res) => {
         for (const key in tweets) {
             if (tweets.hasOwnProperty(key)) {
                 let tweet = tweets[key];
-                let regex = /http:\/\/t\.co\/.*/g
+                let regex = /https:\/\/t\.co\/.*/g
                 let text = tweet.text.replace(regex, '');
-                let src = 'default.jpg';
+                let src = './images/defaultTweet.jpg';
                 if (tweet.entities.media) {
                     src = tweet.entities.media[0].media_url;
                     console.log(src);
