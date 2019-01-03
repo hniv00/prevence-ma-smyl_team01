@@ -39,13 +39,20 @@ export class Examination extends Component {
               </Col>
               <Col>
                 <p style={{ 'text-align': 'right' }}><Badge id="cssBadgePeriodicity">{this.props.data.Periodicity_ext}</Badge>{' '}
-                  <i class="material-icons" style={{ color: "#39B2C3", 'margin-left': '6px' }}>more_horiz</i>
+                <i class="material-icons" style={{ color: "#39B2C3", 'margin-left': '6px' }}>more_horiz</i>
                 </p>
               </Col>
             </Row>
             {this.props.data.Description}
           </CardText>
-          <ExaminationDetail key={this.props.data.ExamName} title={this.props.data.ExamName}/>
+          <ExaminationDetail
+              key={this.props.data.ExamName}
+              title={this.props.data.ExamName}
+              descr={this.props.data.Description}
+              extPeriodicity={this.props.data.Periodicity_ext}
+              basicPeriodicity={this.props.data.Periodicity_value}
+              diags={this.props.data.Diagnosis}
+          />
         </Card>
     );
   }
