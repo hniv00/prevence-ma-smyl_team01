@@ -45,7 +45,7 @@ export class Examination extends Component {
             </Row>
             {this.props.data.Description}
           </CardText>
-          <ExaminationDetail />
+          <ExaminationDetail key={this.props.data.ExamName} title={this.props.data.ExamName}/>
         </Card>
     );
   }
