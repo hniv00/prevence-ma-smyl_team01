@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import { Button } from 'reactstrap';
 
 import {HelloPage} from "./components/pages/HelloPage"
 import {ExamPage} from "./components/pages/ExamPage"

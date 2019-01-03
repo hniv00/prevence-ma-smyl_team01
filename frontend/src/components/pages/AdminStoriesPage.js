@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Row, Col, Container, Jumbotron} from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 
 import {Heading} from '../atoms/Heading';
 import {NewStoryButton} from '../atoms/NewStoryButton';

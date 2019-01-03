@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import "../../App.css";
 import {MenuButtonClose} from "./MenuButtonClose"
-import { Button } from 'reactstrap';
 
 const data = [
   { href: '/vysetreni', title: 'Preventivní vyšetření'},

@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, CardTitle, CardText, Col } from 'reactstrap';
 import TextEllipsis from 'react-text-ellipsis';
-
-import {StoryButton} from '../atoms/StoryButton';
 
 import Slider from "react-slick";
 import {getEvents} from '../../services/Events/reducer';
@@ -11,19 +9,19 @@ import {startFetchEvents} from '../../services/Events/actions'
 
 /* Custom arrows */
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_forward_ios</i>
     </div>
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_back_ios</i>
     </div>
   );
 }
@@ -95,7 +93,7 @@ export class EventsCarouselRaw extends Component {
                         tagClass={'className'}
                         debounceTimeoutOnResize={200}
                         useJsOnly={true}>
-                        <i class="material-icons">event</i>
+                        <i className="material-icons">event</i>
                         <span style={{fontWeight: 'bold'}}> { item.Date }, { item.City } </span> <br/>
                         { item.Description } <br/>
                       </TextEllipsis>

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export class EventPhoto extends Component {
   render() {

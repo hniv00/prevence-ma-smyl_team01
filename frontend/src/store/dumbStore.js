@@ -48,19 +48,7 @@ const innerStore = {
         { value: 'hypertenze', label: 'hypertenze' },
         { value: 'diabetes', label: 'diabetes' },
         { value: 'poruchy štítné žlázy', label: 'poruchy štítné žlázy' }
-      ]  
-}
-
-const trueExams = {
-    exams : [
-        {
-            IDExamination: 1,
-            ExamName: "Fyzikální vyšetření",
-            Description: "Doktor mě viděl osobně",
-            Periodicity_basic: 5,
-            Periodicity_ext: "1 á 1 rok",
-            },
-    ]
+      ]
 }
 
 export const dumbStore = innerStore;

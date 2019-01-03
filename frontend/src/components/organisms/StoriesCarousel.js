@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
-import {StoryButton} from '../atoms/StoryButton';
+import { Card, CardTitle, CardText, Col } from 'reactstrap';
 import TextEllipsis from 'react-text-ellipsis';
 import Slider from "react-slick";
 import {getStories} from '../../services/Stories/reducer';
@@ -9,19 +8,19 @@ import {startFetchStories} from '../../services/Stories/actions'
 
 /* Custom arrows */
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_forward_ios</i>
     </div>
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i class="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_back_ios</i>
     </div>
   );
 }

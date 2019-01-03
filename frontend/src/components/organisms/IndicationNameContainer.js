@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Row, Col, UncontrolledTooltip } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 
 import {IndicationName} from '../molecules/IndicationName';
 import {IndicationType} from '../molecules/IndicationType';
