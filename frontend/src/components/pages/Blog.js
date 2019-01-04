@@ -5,7 +5,7 @@ import {Parallax} from 'react-parallax';
 import {TopNav} from '../molecules/TopNav';
 import {MultiPartners} from '../atoms/MultiPartners';
 import {Footer} from '../organisms/Footer';
-import {Partners} from "../organisms/Partners";
+import {Article} from "../organisms/Article";
 
 import logo from '../../img/logo_prevence.png';
 import '../../parallax.css';
@@ -23,8 +23,8 @@ export class Blog extends Component {
               <a href='/'><img src={logo} className="logoPic" alt="My logo" /></a>
             </Col>
             <Col xs="12" sm="12" md="8">
-              <h1 className="pageHeader">PARTNERSKÉ PROJEKTY</h1>
-              <h4 style={{color: 'black'}}>Společně věříme, že prevence má smysl.</h4>
+              <h1 className="pageHeader">BLOG</h1>
+              <h4 style={{color: 'black'}}>Co by ti nemělo uniknout ze světa prevence a zdraví!</h4>
             </Col>
             <Col xs="0" sm="0" md="2">
               <TopNav/>
@@ -34,10 +34,7 @@ export class Blog extends Component {
       </Parallax>
 
       <Container>
-          <Col md={{ size: 4, offset: 8}} style={{marginTop: '20px', marginBottom: '20px'}}>
-            <MultiPartners/>
-          </Col>
-          <Partners/>
+          <Article/>
       </Container>
 
       <div className="footer">
