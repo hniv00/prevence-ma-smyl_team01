@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Row, Col, Container } from 'reactstrap';
 import {AdvancedFilterContainer} from '../molecules/AdvancedFilterContainer';
-import {AdminAdvanced} from '../molecules/AdminAdvanced';
 
 export class AdminShowAdvanced extends Component {
   constructor(props) {

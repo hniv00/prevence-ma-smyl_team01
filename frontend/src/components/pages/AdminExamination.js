@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
 import {Row, Col, Button, Container} from 'reactstrap';
 
-import {TopNav} from '../molecules/TopNav';
-import {Heading} from '../atoms/Heading';
-import {Footer} from '../organisms/Footer';
-import {LogoutButton} from '../atoms/LogoutButton';
-import {MultiSelect} from '../atoms/MultiSelect';
 import {AdminNav} from '../organisms/AdminNav';
 import {ExamNameContainer} from '../organisms/ExamNameContainer';
 import {GenderPeriodicityContainer} from '../organisms/GenderPeriodicityContainer';
@@ -38,7 +33,7 @@ export class AdminExamination extends Component {
             </Col>
           </Row>
           <Row>
-            <Col style={{marginBottom: '30px', 'margin-right': '20px', textAlign: 'right'}}>
+            <Col style={{marginBottom: '30px', marginRight: '20px', textAlign: 'right'}}>
                 <a href="/admin-seznam-vysetreni">
                 <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
                 </a>{' '}

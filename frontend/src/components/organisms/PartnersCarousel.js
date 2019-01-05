@@ -6,7 +6,7 @@ import '../atoms/Carousel.css';
 import {startFetchFilteredPartners} from '../../services/Partners/actions'
 
 // MyCarousel should be used like an atom instead of Slider
-import { MyCarousel } from '../atoms/MyCarousel';
+//import { MyCarousel } from '../atoms/MyCarousel';
 
 /*
 const data = [
@@ -20,19 +20,19 @@ const data = [
 
 /* Custom arrows */
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i className="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_forward_ios</i>
     </div>
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <i className="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>
+      <i className="material-icons" style={{margin: '10px', color: '#026977'}}>arrow_back_ios</i>
     </div>
   );
 }
@@ -93,9 +93,9 @@ export class PartnersCarouselRaw extends Component {
           {this.data.map ( item => (
             <Col>
               <Card id="cssCardPartners">
-                  <a href={`/partneri/#${item.IDEvent}`}><CardImg key={item} top width="240px" src={item.Logo} alt={item.LogoAlt} /></a>
+                  <a href={`/partneri/#${item.IDEvent}`}><CardImg key={item.LogoAlt} top width="240px" src={item.Logo} alt={item.LogoAlt} /></a>
                 <CardBody>
-                  <CardTitle key={item} style={{color: 'black'}}>{item.Name}</CardTitle>
+                  <CardTitle key={item.IDEvent} style={{color: 'black'}}>{item.Name}</CardTitle>
                 </CardBody>
               </Card>
             </Col>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 export const BasicFilterContainer = (props) => {
   return (

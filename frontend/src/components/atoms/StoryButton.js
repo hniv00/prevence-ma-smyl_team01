@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, ButtonGroup } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 export class StoryButton extends Component {
   render() {

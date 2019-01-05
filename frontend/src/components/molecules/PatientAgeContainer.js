@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Jumbotron, Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
+import { Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 export class PatientAgeContainer extends Component {
   constructor(props) {

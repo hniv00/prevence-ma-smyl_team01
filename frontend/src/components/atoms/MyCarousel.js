@@ -7,7 +7,7 @@ import './Carousel.css';
 export const MyCarousel = props => {
   /* Custom arrows */
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
         <i className="material-icons" style={{'margin': '10px',color: '#026977'}}>arrow_forward_ios</i>
@@ -16,7 +16,7 @@ export const MyCarousel = props => {
   }
 
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, onClick } = props;
     return (
       <div className={className} onClick={onClick}>
         <i className="material-icons" style={{'margin': '10px', color: '#026977'}}>arrow_back_ios</i>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Parallax, Background} from 'react-parallax';
 import { Col, Row, Button, UncontrolledTooltip } from 'reactstrap';
 
 import {AdminNav} from '../organisms/AdminNav';
@@ -17,7 +16,7 @@ export class AdminEvent extends Component {
           <Col  xs="11"><h2 className="AdminWelcH2">Správa akcí</h2></Col>
             <Col>
              <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
-               <i class="material-icons" style={{color:"#28A3B7"}}>
+               <i className="material-icons" style={{color:"#28A3B7"}}>
                  help
                </i>
              </span>

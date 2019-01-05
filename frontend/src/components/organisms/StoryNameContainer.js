@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Row, Col } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 
 import {PatientName} from '../molecules/PatientName';
 import {StoryDescription} from '../molecules/StoryDescription';

@@ -27,7 +27,7 @@ export class StoriesPage extends Component {
             <Col xs="0" sm="0" md="2">
               <TopNav/>
             </Col>
-            <br style={{'marginBottom': '200px'}}/>
+            <br style={{marginBottom: '200px'}}/>
           </Row>
 
           </header>

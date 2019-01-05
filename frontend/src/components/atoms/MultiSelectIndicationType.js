@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import  { MultiSelect } from './MultiSelect';
-import { connect } from 'react-redux';
-import { setType } from '../../services/AdminIndication/actions';
 
 const options = [
   { value: 'Rodinná anamnéza', label: 'Rodinná anamnéza' },

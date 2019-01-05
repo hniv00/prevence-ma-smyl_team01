@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col, CardColumns } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 import TextEllipsis from 'react-text-ellipsis';
 import {getStories} from '../../services/Stories/reducer';
 import {startFetchStories} from '../../services/Stories/actions'
@@ -116,13 +116,13 @@ export class StoriesRaw extends Component {
           <Col md="6">
             <Col id="cssCardColumns">
               {data2.map ( item => (
-                <div  class="container"
+                <div  className="container"
                       style={{maxWidth: '266px', minWidth: '240px', margin: '10px'}}
                 >
                   <img  src={ item.src }
                         style={{maxWidth: '266px', minWidth: '240px', marginTop: '10px'}}></img>
-                  <div class="overlay">
-                    <div class="text">
+                  <div className="overlay">
+                    <div className="text">
                         <p id="cssStoriesParagraph" style={{color: 'black', textAlign: 'justify', width: 'auto',
                                                           maxWidth: '266px', minWidth: '200px', margin: '30px'}}>
                           <TextEllipsis

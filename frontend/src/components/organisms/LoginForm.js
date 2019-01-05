@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import { Jumbotron} from 'reactstrap';
-import { Button, Input } from 'reactstrap';
-import { Link } from "react-router-dom";
-import {LoginButton} from '../atoms/LoginButton';
-import axios from 'axios';
+import { Input } from 'reactstrap';
+import { LoginButton } from '../atoms/LoginButton';
 
 
 export class LoginForm extends Component {
@@ -19,7 +17,7 @@ export class LoginForm extends Component {
 
   nameRequired() {
     let empt = this.state.username;
-     if (empt == "") {
+     if (empt === "") {
          alert("Vyplňte přihlašovací jméno!");
          return false;
       }
@@ -33,7 +31,7 @@ export class LoginForm extends Component {
 
   passRequired() {
       let empt = this.state.password;
-       if (empt == "") {
+       if (empt === "") {
            alert("Vyplňte heslo!");
            return false;
         }
