@@ -9,7 +9,7 @@ import {
 } from './partnerController';
 
 const router = expressAsyncAwait(Router());
-router.get('/list/', partnerDiagController);
+router.post('/list/', partnerDiagController);
 router.post('/new/', newPartnerController);
 router.post('/delete/:id', deletePartnerController);
 router.post('/update/:id', updatePartnerController);
