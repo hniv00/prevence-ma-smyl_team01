@@ -15,6 +15,7 @@ import diagPartnerRoutes from './modules/diagPartners/diagPartnerRoutes';
 import examDiagRoutes from './modules/examDiags/examDiagRoutes';
 import examIndicRoutes from './modules/examIndics/examIndicRoutes';
 import periodicityRoutes from './modules/periodicities/periodicityRoutes';
+import emailRoutes from './modules/email/emailRoutes';
 
 const router = Router();
 
@@ -33,5 +34,6 @@ router.use('/api/diagpartner', diagPartnerRoutes);
 router.use('/api/examdiag', examDiagRoutes);
 router.use('/api/examindic', examIndicRoutes);
 router.use('/api/periodicity', periodicityRoutes);
+router.use('/api/email', emailRoutes);
 
 export default router;

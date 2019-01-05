@@ -3,9 +3,7 @@ import { Row, Col, Button, Form, FormGroup, Label, Input, CustomInput } from 're
 import { connect } from 'react-redux';
 import Recaptcha from 'react-recaptcha';
 
-import {setName} from '../../services/Contact/actions';
-import {setEmail} from '../../services/Contact/actions';
-import {setMessage} from '../../services/Contact/actions';
+import {startSendForm, changeFormState} from '../../services/Contact/actions';
 import './ContactForm.css';
 
 export class ContactFormRaw extends Component {
@@ -23,9 +21,10 @@ export class ContactFormRaw extends Component {
   }
 
   handleChange(event){
-    this.props.setName(event.target.name);
-    this.props.setEmail(event.target.email);
-    this.props.setMessage(event.target.message);
+    let data = {};
+    data[event.target.name] = event.target.value;
+    console.log(data);
+    this.props.changeFormState(data);
   }
 
   recaptchaLoaded() {
@@ -35,6 +34,7 @@ export class ContactFormRaw extends Component {
   handleSubmit(event) {
     if (this.state.isVerified) {
       event.preventDefault();
+      this.props.startSendForm();
       alert('Váš dotaz byl odeslán!');
     } else {
       alert('Prosím potvrďte, že nejste robot!');
@@ -101,9 +101,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  setName,
-  setEmail,
-  setMessage
+  changeFormState,
+  startSendForm
 };
 
 export const ContactForm = connect(mapStateToProps, mapDispatchToProps)(ContactFormRaw);

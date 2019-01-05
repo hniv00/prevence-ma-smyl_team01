@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Row, Col, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 export class BasicFilterContainer extends Component {

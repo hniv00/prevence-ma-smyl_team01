@@ -47,7 +47,7 @@ export class ContactPage extends Component {
       </Parallax>
 
       <div className="footer">
-            <Footer></Footer>
+            <Footer/>
       </div>
 
     </div>

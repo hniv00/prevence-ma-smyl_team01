@@ -1,26 +1,18 @@
-import {SET_NAME} from './actions';
-import {SET_EMAIL} from './actions';
-import {SET_MESSAGE} from './actions';
+import {CHANGE_FORM_STATE} from './actions';
 import {SEND_FORM, SEND_FORM_SUCCESS, SEND_FORM_FAILURE} from './actions';
 
 const initialState = {
     name: '',
     email: '',
-    message: '',
+    text: '',
     error: null,
     form: []
 }
 
 const contactFormReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_NAME:
-            return { ...state, name: action.payload.name }
-
-        case SET_EMAIL:
-            return { ...state, email: action.payload.email }
-
-        case SET_MESSAGE:
-            return { ...state, message: action.payload.message }
+        case CHANGE_FORM_STATE:
+            return { ...state, ...action.payload.formState }
 
         case SEND_FORM:
             return { ...state, error: null }
