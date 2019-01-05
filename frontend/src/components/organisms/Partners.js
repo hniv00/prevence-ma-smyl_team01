@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import {startFetchFilteredPartners} from '../../services/Partners/actions'
@@ -28,7 +28,7 @@ export class PartnersRaw extends Component {
                             <p id="cssContent">{item.Description}</p>
                         </Col>
 
-                        {i%2 != 1 &&
+                        {i%2 !== 1 &&
                         <Col xs="12" sm="4">
                             <img src={item.Src} className="imgRound" alt={item.SrcAlt} />
                         </Col>}

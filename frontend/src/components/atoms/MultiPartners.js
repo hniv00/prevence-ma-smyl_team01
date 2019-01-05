@@ -39,7 +39,6 @@ class MultiPartnersRaw extends Component {
   }
 
   render() {
-    const { diagnosis } = this.props.diagnosis;
     console.log(this.props.diagnosis);
 
     return (

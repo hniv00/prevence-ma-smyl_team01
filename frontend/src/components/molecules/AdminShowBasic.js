@@ -27,7 +27,11 @@ export class AdminShowBasic extends Component {
         <Row>
           <Col xs="12">
             <Collapse isOpen={this.state.collapse}>
-              <AdminBasic></AdminBasic>
+              <AdminBasic
+              onChange = {this.props.changeExaminationState}
+              agefrombasicValue = {this.props.agefrombasicValue}
+              ageuntilbasicValue = {this.props.ageuntilbasicValue}
+              />
             </Collapse>
           </Col>
         </Row>

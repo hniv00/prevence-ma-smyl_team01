@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Card, CardTitle, CardText, Row, Col, CardColumns } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col } from 'reactstrap';
 import {getEvents} from '../../services/Events/reducer';
 import {startFetchEvents} from '../../services/Events/actions'
 
@@ -42,7 +42,7 @@ export class EventsRaw extends Component {
                           <span style={{fontWeight: 'bold'}}> { item.Time } </span>
                         </Col>
                         <Col sm="6" style={{textAlign: 'right'}}>
-                        <i class="material-icons">place</i>
+                        <i className="material-icons">place</i>
                         { item.City }, { item.Street } { item.StreetNum } {' '}
                         </Col>
                       </Row>

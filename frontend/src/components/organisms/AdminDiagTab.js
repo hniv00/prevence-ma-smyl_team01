@@ -28,8 +28,8 @@ export class AdminDiagTabRaw extends Component {
             <tr key={item.IDDiagnosis}>
               <th scope="row">{item.IDDiagnosis}</th>
               <td>{item.Name}</td>
-              {/* <td><a href=""><i class="material-icons" id="cssFooterArrow">create</i></a></td> */}
-              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tuto diagnózu?')) this.props.startDeleteDiagnosis(item.IDDiagnosis)}} class="material-icons" id="cssFooterArrow">delete</i></td>
+              {/* <td><a href=""><i className="material-icons" id="cssFooterArrow">create</i></a></td> */}
+              <td><i onClick={(e) => { if (window.confirm('Jste si jistí, že chcete odstranit tuto diagnózu?')) this.props.startDeleteDiagnosis(item.IDDiagnosis)}} className="material-icons" id="cssFooterArrow">delete</i></td>
             </tr>
           ))}
         </tbody>

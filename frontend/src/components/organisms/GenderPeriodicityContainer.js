@@ -1,9 +1,6 @@
 import React from 'react';
 import { Jumbotron, Row, Col } from 'reactstrap';
 
-import {ExamName} from '../molecules/ExamName';
-import {TooltipItem} from '../molecules/TooltipItem';
-import {YesNoButton} from '../atoms/YesNoButton';
 import {BasicPeriodicity} from '../molecules/BasicPeriodicity';
 import {AdvancedPeriodicity} from '../molecules/AdvancedPeriodicity';
 import {AdminGenderButton} from '../atoms/AdminGenderButton';

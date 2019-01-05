@@ -77,7 +77,7 @@ export class AdminStoriesRaw extends Component {
           <Col  xs="11"><h2 className="AdminWelcH2">Správa příběhů</h2></Col>
             <Col>
              <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
-               <i class="material-icons" style={{color:"#28A3B7"}}>
+               <i className="material-icons" style={{color:"#28A3B7"}}>
                  help
                </i>
              </span>

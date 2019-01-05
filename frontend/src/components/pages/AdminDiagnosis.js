@@ -7,8 +7,6 @@ import {startFetchExams} from '../../services/AdminExaminations/actions';
 import {AdminNav} from '../organisms/AdminNav';
 import {DiagNameContainer} from '../organisms/DiagNameContainer';
 
-
-
 export class AdminDiagnosisRaw extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +43,7 @@ export class AdminDiagnosisRaw extends Component {
       }
     return true;
   }
+  
   diagRelatedExamsRequired() {
     let empt = this.props.selectedExams;
      if (empt.length === 0) {
@@ -74,7 +73,7 @@ export class AdminDiagnosisRaw extends Component {
           <Col  xs="11"><h2 className="AdminWelcH2">Správa diagnóz</h2></Col>
             <Col>
              <span style={{textDecoration: "underline", color:"blue"}} href="#" id="UncontrolledTooltipExample">
-               <i class="material-icons" style={{color:"#28A3B7"}}>
+               <i className="material-icons" style={{color:"#28A3B7"}}>
                  help
                </i>
              </span>

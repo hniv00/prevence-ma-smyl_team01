@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { CardText, Row, Badge, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import React, { Component } from 'react';
+import { Badge, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 export class BadgesDetail extends Component {
   constructor(props) {

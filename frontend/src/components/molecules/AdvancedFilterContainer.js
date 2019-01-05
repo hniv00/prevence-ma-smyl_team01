@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { Component } from "react"
 import { Jumbotron, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 
-export const AdvancedFilterContainer = (props) => {
+export class AdvancedFilterContainer extends Component {
+  render() {
   return (
       <Jumbotron id="AdminExamContainer">
+        <Row>
+            <Col>
+              <Form>
+                <FormGroup>
+                  <Label>Věk od:</Label>
+                  <Input
+                  className="ageInput"
+                  type="number"
+                  min="18"
+                  max="120"
+                  />
+                </FormGroup>
+              </Form>
+            </Col>
+            <Col>
+              <Form>
+                <FormGroup>
+                  <Label>Věk do:</Label>
+                  <Input
+                  className="ageInput"
+                  type="number"
+                  min="18"
+                  max="120"
+                  />
+                </FormGroup>
+              </Form>
+            </Col>
+        </Row>
+
         <Row>
         <Col align="left">
           <Form>
@@ -79,4 +109,5 @@ export const AdvancedFilterContainer = (props) => {
       </Row>
     </Jumbotron>
   );
+}
 };

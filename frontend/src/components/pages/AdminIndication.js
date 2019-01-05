@@ -27,7 +27,8 @@ export class AdminIndicationRaw extends Component {
 
   indicationTypeRequired() {
     let empt = this.props.type;
-     if (empt.length === 0) {
+     if (empt === null || empt === undefined || empt.length === 0) {
+         console.log(empt)
          alert("Vyplňte typ indikace!");
          return false;
       }
@@ -36,8 +37,7 @@ export class AdminIndicationRaw extends Component {
 
 
   submitIndication(){
-    if (1==1)
-    //if(this.indicationNameRequired() && this.indicationTypeRequired())
+    if(this.indicationNameRequired() && this.indicationTypeRequired())
     {
       this.props.startCreateIndication();
       alert('Nová indikace byla vytvořena!');
@@ -65,20 +65,20 @@ export class AdminIndicationRaw extends Component {
             </Col>
           </Row>
            <IndicationNameContainer
-           onChange = {this.props.changeIndicationState}
-           nameValue = {this.props.name}
-           typeValue = {this.props.type}
+               onChange = {this.props.changeIndicationState}
+               nameValue = {this.props.name}
+               typeValue = {this.props.type}
            />
-             <Col>
-                 <a href="/admin-seznam-indikaci">
-                 <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
-                 </a>{' '}
-                <Button color="info" size="md" style={{margin: "10px"}}
-                onClick={this.submitIndication}
-                >
+          <Col>
+             <a href="/admin-seznam-indikaci">
+             <Button color="info" size="md" style={{margin: "10px"}}>Zrušit</Button>
+             </a>{' '}
+              <Button color="info" size="md" style={{margin: "10px"}}
+              onClick={this.submitIndication}
+              >
                 Uložit
-                </Button>
-            </Col>
+              </Button>
+          </Col>
           </div>
         </div>
       </div>
