@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Label } from 'reactstrap';
 
-
 import {MultiSelectDiag} from '../atoms/MultiSelectDiag';
 
 export class ExamDiagnosis extends Component {
@@ -13,4 +12,4 @@ export class ExamDiagnosis extends Component {
       </div>
     );
   }
-} 
+}

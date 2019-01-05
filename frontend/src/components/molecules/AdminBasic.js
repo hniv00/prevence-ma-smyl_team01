@@ -6,7 +6,13 @@ export class AdminBasic extends Component {
   render() {
     return (
         <Row>
-          <Col><BasicFilterContainer></BasicFilterContainer></Col>
+          <Col>
+            <BasicFilterContainer
+            onChange = {this.props.changeExaminationState}
+            agefrombasicValue = {this.props.agefrombasic}
+            ageuntilbasicValue = {this.props.ageuntilbasic}
+            />
+          </Col>
         </Row>
     );
   }

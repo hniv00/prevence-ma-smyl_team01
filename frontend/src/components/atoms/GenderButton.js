@@ -28,7 +28,9 @@ export class GenderButtonRaw extends Component {
       <div>
         <ButtonGroup>
           {data.map (item => (
-            <Button key={item.id} outline color="info" size="sm" id="genderB" style={{width: '50px'}} onClick={() => this.onRadioBtnClick( item.id )} active={rSelected ===  item.id }>
+            <Button key={item.id} outline color="info" size="sm" id="genderB" style={{width: '50px'}}
+            onClick={() => this.onRadioBtnClick( item.id )}
+            active={rSelected ===  item.id }>
               { item.gender }
             </Button>
           ))}
@@ -47,4 +49,3 @@ const mapDispatchToProps = {
 };
 
 export const GenderButton = connect(mapStateToProps, mapDispatchToProps)(GenderButtonRaw)
-

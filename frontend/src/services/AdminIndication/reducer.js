@@ -1,5 +1,4 @@
 import {SET_I_NAME} from './actions';
-import {SET_I_DESCRIPTION} from './actions';
 import {SET_I_TYPE} from './actions';
 import {FETCH_INDICATION,
     FETCH_INDICATION_SUCCESS,
@@ -14,7 +13,6 @@ import {FETCH_INDICATION,
 
 const initialState = {
     name: null,
-    description: null,
     type: null,
     indication: null,
     response: null
@@ -28,9 +26,6 @@ const adminIndicationsReducer = (state = initialState, action) => {
 
         case SET_I_NAME:
             return { ...state, name: action.payload.name }
-
-        case SET_I_DESCRIPTION:
-            return { ...state, description: action.payload.description }
 
         case SET_I_TYPE:
             return { ...state, name: action.payload.type }
