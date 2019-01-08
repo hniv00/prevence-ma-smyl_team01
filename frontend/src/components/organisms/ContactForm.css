@@ -1,0 +1,62 @@
+#name, #email, #text {
+  background-color: rgba(255,255,255,1.0);
+  border-radius: 20px;
+}
+
+#text {
+  min-height: 180px;
+}
+
+#submit {
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+#name:focus, #email:focus, #text:focus {
+  border-color: #02899C;
+  box-shadow: 0 0 0 0.2rem rgba(2,137,156,.25);
+}
+
+#checkbox::before, #checkbox::after, #checkbox:focus {
+  background-color: #02899C;
+  box-shadow: 0 0 0 0.2rem rgba(2,137,156,.25);
+  outline-color: #02899C;
+
+}
+
+#contactHeading {
+  text-align: left;
+  margin-bottom: auto;
+}
+
+#contactJumbo, #contactJumbo p {
+    text-align: left;
+    background-color: #f1f2f3;
+    margin: 0px;
+    padding-top: 0px;
+}
+
+#contactJumbo {
+  padding-top: 30px;
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #02899C;
+}
+
+.custom-control-input:active~.custom-control-label::before {
+    color: #fff;
+    background-color: #39B2C3;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(2,137,156,.25);
+}
+
+@media screen and (min-width: 960px) {
+  #contactJumbo {
+    margin-right: 50px;
+  }
+}

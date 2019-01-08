@@ -1,0 +1,47 @@
+.sliderContainer{
+    width: 80%;
+    margin: 2px auto;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    width: 100%;
+    background: #17a2b8;
+    border-radius: 5px;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #17a2b8;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: white;
+}
+
+.slider::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+.ageInput {
+  font-size: 12px;
+  width: 50px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 8px;
+  margin-left:auto;
+  margin-right: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
